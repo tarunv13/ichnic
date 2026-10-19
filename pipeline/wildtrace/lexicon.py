@@ -1,6 +1,7 @@
 """Load the species/trade lexicon and match it against text in any script."""
 from __future__ import annotations
 
+import os
 import re
 import unicodedata
 from functools import lru_cache
@@ -57,10 +58,11 @@ def load() -> dict[str, Any]:
     """Curated lexicon, extended by the PMC8579131 codebook when it has been built
     (`wildtrace codebook`). Codebook names go under `pmc_<lang>` keys so their
     provenance stays visible."""
-    with open(RESOURCES / "lexicon.yaml", encoding="utf-8") as f:
+    custom = os.environ.get("WILDTRACE_LEXICON")      # another topic's vocabulary (wildtrace new-topic)
+    with open(custom or (RESOURCES / "lexicon.yaml"), encoding="utf-8") as f:
         lex = yaml.safe_load(f)
     pmc = RESOURCES / "lexicon_pmc.yaml"
-    if pmc.exists():
+    if pmc.exists() and not custom:
         extra = yaml.safe_load(pmc.read_text(encoding="utf-8")) or {}
         for gid, g in (extra.get("groups") or {}).items():
             if gid not in lex["groups"]:
@@ -156,8 +158,13 @@ def ambiguous_hits(text: str) -> list[dict]:
                 a.get("needs_regex") and re.search(a["needs_regex"], snip))
             if terms_ok:
                 ctx.add("terms")
+            ok = terms_ok if a.get("needs_regex") else (bool(ctx & set(a.get("needs") or [])) or terms_ok)
+            # blocks_regex names the other meaning ("कोयला" for illegal mining in a sand project): its presence vetoes.
+            if a.get("blocks_regex") and re.search(a["blocks_regex"], snip):
+                ctx.add("blocked")
+                ok = False
             out.append({"term": a["term"], "group": a.get("group"), "cue": a.get("cue"), "context": sorted(ctx), "span": m.span(),
-                        "accepted": terms_ok if a.get("needs_regex") else (bool(ctx & set(a.get("needs") or [])) or terms_ok)})
+                        "accepted": ok})
             break
     return out
 

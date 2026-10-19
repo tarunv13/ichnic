@@ -23,6 +23,28 @@ sources:
     terms: "Public releases by government bodies; searched per domain (gov.br, gob.mx, go.id, gov.in, justice.gov, info.gov.hk ...)"
     notes: "Highest source tier. A case with an official source is marked 'Official source'."
 
+  - id: agency_rss
+    name: Agency press-release feeds (Hong Kong GovNews, French customs, US Department of Justice)
+    url: https://www.info.gov.hk/gia/rss/general_en.xml
+    access: rss
+    enabled: true
+    role: [enforcement, validation]
+    region: global
+    terms: "Public government releases; derived facts and links only"
+    notes: "collect/agency.py AGENCY_FEEDS, daily. Hong Kong history from the public daily index (collect --hk-archive),
+      2 s between requests. No feed (checked 2026-10-19): customs.gov.hk, fws.gov, gob.mx/profepa, abf.gov.au, news.navy.lk."
+
+  - id: youtube_news
+    name: YouTube enforcement videos
+    url: https://www.youtube.com/
+    access: scrape
+    enabled: true
+    role: [enforcement, news]
+    region: global
+    terms: "Metadata, captions and upload date only; nothing downloaded; never in CI; channel names never published"
+    notes: "collect/video.py (yt-dlp, youtube-transcript-api). video_channels: channel ids for the RSS route, none yet."
+    video_channels: []
+
   - id: gdelt
     name: GDELT DOC 2.0 news index
     url: https://www.gdeltproject.org/

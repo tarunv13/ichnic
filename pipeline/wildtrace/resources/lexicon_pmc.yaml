@@ -545,7 +545,6 @@ groups:
       - baya weaver
       - birds of paradise
       - birds-of-paradise
-      - black
       - black & white warbler
       - black robin
       - black thrush
@@ -575,9 +574,7 @@ groups:
       - brown-chested martin
       - bulbul
       - canada jay
-      - canary
       - canary island chaffinch
-      - cardinal
       - cardinal honeyeater
       - cardinal myzomela
       en_db:
@@ -1856,6 +1853,9 @@ groups:
     ambiguous:
     - bird
     - parrot
+    - black
+    - cardinal
+    - canary
   bulbs_ornamental:
     terms:
       cy:
@@ -3314,7 +3314,6 @@ groups:
       - redberry
       - serpentine wood
       - serpentine-wood
-      - sheng
       - snakewood
       en_db:
       - agarwood
@@ -3355,7 +3354,8 @@ groups:
     - wood
     - wood chips
     - wood product
-    ambiguous: []
+    ambiguous:
+    - sheng
   monitor_lizard:
     terms:
       de:
@@ -3524,7 +3524,6 @@ groups:
       - tiger orchid
       - tiny flowered paphiopedilum
       - urn orchid
-      - vanilla
       - venus' slipper
       - west indian vanilla
       - wood-lily
@@ -3662,7 +3661,8 @@ groups:
     - root
     - seedling
     - unspecified
-    ambiguous: []
+    ambiguous:
+    - vanilla
   owl:
     terms:
       NA:
@@ -5069,7 +5069,6 @@ groups:
       - malay gavial
       - malayan gharial
       - malaysian blood python
-      - mamba
       - mindoro crocodile
       - morelet's crocodile
       - morelet’s crocodile
@@ -5249,7 +5248,8 @@ groups:
     - trimming
     - trophy
     - unspecified
-    ambiguous: []
+    ambiguous:
+    - mamba
   red_sanders:
     terms:
       en:

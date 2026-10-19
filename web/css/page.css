@@ -46,19 +46,12 @@ ul.cases a:hover, ul.sources a:hover { text-decoration: underline; }
 .pill:hover { border-color: var(--accent); }
 footer { border-top: 1px solid var(--line); margin-top: 38px; padding: 16px 0 34px; }
 footer p { font-size: 0.86rem; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ground: #0e1513; --card: #16201d; --ink: #eef3f1; --ink-2: #c3cec9; --ink-3: #93a09b;
-    --line: rgba(255, 255, 255, 0.12); --link: #86b0ff;
-  }
-  :root:not([data-theme="light"]) .brand { color: var(--ink); }
-}
 .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .cols2 h3 { margin: 0 0 4px; font-size: 1rem; }
 @media (max-width: 640px) { .cols2 { grid-template-columns: 1fr; } }
 
 /* Risk pathways page */
-.eyebrow { font: 700 0.74rem/1 system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 10px 0 6px; }
+.eyebrow { font: 700 0.74rem/1 system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); margin: 10px 0 6px; }
 .answer { background: var(--card); border-radius: 14px; padding: 4px 18px 8px; border-left: 4px solid var(--accent); margin: 16px 0; }
 .answer h2 { margin: 12px 0 6px; font-size: 1rem; }
 .answer li { margin: 4px 0; color: var(--ink-2); }
@@ -98,3 +91,45 @@ ul.who li { background: var(--card); border-radius: 10px; padding: 9px 12px; }
 
 .brand { display: inline-flex; align-items: center; gap: 8px; }
 .brand img { display: block; }
+
+/* One design system with the Atlas (jury fixes, 2026-10-19): the same ground, glass cards, logotype and
+ * colour meanings; a hover answer on everything clickable; page changes cross-fade; 44 px targets on phones;
+ * small text in the darker ink of each colour so it passes 4.5:1. */
+:root { --accent-ink: #8a5300; --glass: rgba(255, 255, 255, 0.78); --edge: rgba(255, 255, 255, 0.9);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset, 0 18px 40px -24px rgba(15, 26, 23, 0.3), 0 2px 8px -3px rgba(15, 26, 23, 0.07);
+  --ease: cubic-bezier(0.2, 0, 0, 1); --link: #1d4fbf; }
+@view-transition { navigation: auto; }
+body { background: radial-gradient(1200px 600px at 85% -10%, rgba(37, 99, 235, 0.07), transparent 60%),
+  radial-gradient(900px 500px at -10% 10%, rgba(33, 138, 91, 0.08), transparent 60%), var(--ground); background-attachment: fixed; }
+.brand { view-transition-name: brand; }
+h1 { view-transition-name: title; }
+a { color: var(--ink); text-decoration-color: color-mix(in srgb, var(--link) 45%, transparent); text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+a:hover { text-decoration-color: var(--link); }
+:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; border-radius: 6px; }
+.account, .facts, ul.cols li, ul.cases li, ul.sources li, .answer, figure.pw, .link, ul.bars, ul.who li, .pill {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), var(--glass)); border: 1px solid var(--edge); box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(16px) saturate(160%); backdrop-filter: blur(16px) saturate(160%); }
+@media (prefers-reduced-transparency: reduce) { .account, .facts, ul.cols li, ul.cases li, ul.sources li, .answer, .link, .pill { backdrop-filter: none; background: #fff; } }
+ul.cols { gap: 8px; }
+ul.cols li, ul.cases li, ul.sources li, ul.who li { padding: 0; border-radius: 14px; transition: transform 180ms var(--ease), box-shadow 180ms var(--ease); }
+ul.cols li > a, ul.cases li > a, ul.sources li > a { display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  min-height: 44px; padding: 10px 14px; text-decoration: none; color: var(--ink); }
+ul.cols li > a::after, ul.cases li > a::after { content: "→"; color: var(--ink-3); transition: transform 180ms var(--ease), color 180ms; }
+ul.cols li:hover, ul.cases li:hover, ul.sources li:hover { transform: translateY(-2px);
+  box-shadow: var(--shadow), 0 0 0 2px color-mix(in srgb, var(--species) 35%, transparent); }
+ul.cols li:hover > a::after, ul.cases li:hover > a::after { transform: translateX(3px); color: var(--species); }
+ul.who li { padding: 9px 12px; }
+.pill { color: var(--ink); transition: background 180ms var(--ease), color 180ms, transform 180ms var(--ease); }
+.pill:hover { background: var(--ink); color: #fff; border-color: var(--ink); transform: translateY(-1px); }
+.brand { transition: transform 180ms var(--ease); }
+.brand:hover { transform: translateY(-1px); }
+.big { color: var(--ink); }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 10; padding: 10px 16px; border-radius: 12px; background: var(--ink);
+  color: #fff; font-weight: 650; text-decoration: none; }
+.skip:focus { top: 12px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } @view-transition { navigation: none; } }
+.chart-t { font-size: 0.86rem; color: var(--ink-2); margin: 2px 4px 4px; }
+figure.pw ul.bars { box-shadow: none; border: 0; background: transparent; margin: 0; }
+pre.cite { white-space: pre-wrap; font: 0.84rem/1.5 ui-monospace, Consolas, monospace; background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; user-select: all; }
+.qn { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink-3); margin-right: 4px; }

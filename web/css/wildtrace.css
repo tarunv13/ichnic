@@ -690,3 +690,10 @@ svg .hit { fill: transparent; cursor: default; }
 .abar { display: grid; grid-template-columns: minmax(7rem, 42%) 1fr auto; align-items: center; gap: 8px; font-size: 12.5px; }
 .abar i { display: block; height: 9px; border-radius: 5px; width: var(--w); background: var(--qc); opacity: .85; }
 @media (prefers-reduced-motion: reduce) { .qcard { transition: none; } }
+
+/* Skip link: the first Tab stop, visible only when focused. */
+.skip { position: fixed; left: 16px; top: -60px; z-index: 100; padding: 10px 16px; border-radius: 12px; background: var(--ink);
+  color: #fff; font-weight: 650; text-decoration: none; transition: top 160ms var(--ease); }
+.skip:focus { top: 16px; }
+.brand { transition: transform 200ms var(--ease), box-shadow 200ms var(--ease); }
+.brand:hover { transform: translateY(-1px); box-shadow: var(--shadow), 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }

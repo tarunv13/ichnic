@@ -40,7 +40,7 @@ export function renderPulse(el) {
       <button class="linkish ask-all" data-all-q>All ${A.length} questions and their sources →</button>
     </section>`;
   el.innerHTML = `${ask}
-    <h1 class="headline${ask ? " sub" : ""}">${fmt(cs.length)} cases across ${countries.size} ${countries.size === 1 ? "country" : "countries"}</h1>
+    <${ask ? "h2" : "h1"} class="headline${ask ? " sub" : ""}">${fmt(cs.length)} cases across ${countries.size} ${countries.size === 1 ? "country" : "countries"}</${ask ? "h2" : "h1"}>
     <p class="lede">${any ? "Filtered view. Click a chip to remove it." : `Seizures, arrests and convictions from ${fmt(reports)} public reports, ${esc(m.window?.[0] || "")} to ${esc(m.window?.[1] || "")}. <b>${fmt(mapped)}</b> are pinned to a city or district; the rest are country-level or name no place. Nobody accused is ever named.`}</p>
     ${any ? "" : `<button class="guide-card-cta" data-guide aria-label="Watch the 2-minute video guide">
       <span class="gc-thumb"><img src="media/guide-thumb.jpg" alt=""><span class="gc-play">▶</span></span>

@@ -55,6 +55,11 @@ def long_date(d: str) -> str:
     return f"{int(m.group(3))} {MONTHS[int(m.group(2)) - 1]} {m.group(1)}" if m else "an unrecorded date"
 
 
+def _count_label(news: int, cites: int) -> str:
+    """Browse tiles: the number of news cases, or, for groups seen only in CITES records, that count."""
+    return f"{news:,}" if news or not cites else f"{cites:,} CITES"
+
+
 def page(title: str, desc: str, canonical: str, body: str, jsonld: dict | None = None,
          crumbs: list[tuple[str, str]] | None = None) -> str:
     """One small, fast, mobile-first document. No JavaScript: nothing here needs it."""
@@ -83,9 +88,10 @@ def page(title: str, desc: str, canonical: str, body: str, jsonld: dict | None =
 {ld}
 </head>
 <body>
-<header class="top"><a class="brand" href="{SITE}/"><img src="{SITE}/brand/mark.svg" alt="" width="26" height="26">Wild<b>Trace</b></a>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top"><a class="brand" href="{SITE}/"><img src="{SITE}/brand/mark.svg" alt="" width="26" height="26">WildTrace</a>
   <span class="tag">Follow the trade. Open evidence on illegal wildlife trade.</span></header>
-<main>
+<main id="main">
 {crumb}
 {body}
 </main>
@@ -159,7 +165,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         place = c.get("place") or {}
         where = place.get("name") or "location not reported"
         sp = [sp_label(s) for s in c.get("species", [])]
-        title = f"{c.get('summary', 'Wildlife trade case')} — WildTrace"
+        title = f"{c.get('summary', 'Wildlife trade case')} | WildTrace"
         desc = (f"{', '.join(sp) or 'Wildlife'} case reported {long_date(c.get('date'))}"
                 + (f" in {where}" if place else "") + f". {c.get('n_sources', 1)} source(s), evidence: "
                 f"{c.get('verification', 'single')}. Open data from WildTrace.")
@@ -262,7 +268,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         recent = sorted(mine, key=lambda c: c.get("date") or "", reverse=True)[:25]
         official = sum(1 for c in mine if c.get("verification") in ("official", "validated"))
         if not mine:   # CITES-only page
-            title = f"{label} in the illegal wildlife trade: {cz['n']:,} seized shipments reported to CITES — WildTrace"
+            title = f"{label} trafficking: {cz['n']:,} seizures reported to CITES | WildTrace"
             desc = (f"{cz['n']:,} seized or confiscated shipments of {label.lower()} reported to CITES since {cites_since}: "
                     f"where they were taken from and where they were seized. Open data.")
             body = f"""
@@ -277,7 +283,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
             write(f"species/{slug(gid)}.html", page(title, desc, f"{SITE}/species/{slug(gid)}.html", body, ld,
                                                     [("WildTrace", SITE + "/"), ("Species", SITE + "/browse.html")]))
             continue
-        title = f"{label} in the illegal wildlife trade: {len(mine)} recorded cases — WildTrace"
+        title = f"{label} trafficking: {len(mine)} recorded cases | WildTrace"
         desc = (f"{len(mine)} seizures, arrests and convictions involving {label.lower()} recorded from public reports "
                 f"in {len(by_country)} countries, {window[0]} to {window[1]}. Open data, each case graded by evidence.")
         body = f"""
@@ -290,9 +296,9 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
    Counts show where this trade is <b>reported</b>, not where it happens: reporting is uneven between countries and
    languages, and cases whose reports name no place are counted but cannot be mapped.</p>
 <h2>Where {esc(label.lower())} cases are reported</h2>
-<ul class="cols">{"".join(f'<li><a href="{SITE}/country/{cc.lower()}.html">{esc(cc_name(cc))}</a> <span class="muted">{n}</span></li>' for cc, n in top)}</ul>
+<ul class="cols">{"".join(f'<li><a href="{SITE}/country/{cc.lower()}.html"><span>{esc(cc_name(cc))}</span> <span class="muted">{n}</span></a></li>' for cc, n in top)}</ul>
 <h2>Recent cases</h2>
-<ul class="cases">{"".join(f'<li><a href="{SITE}/case/{c["id"]}.html">{esc(c.get("summary", ""))}</a> <span class="muted">{esc(c.get("date", ""))} · {esc(c.get("verification", ""))}</span></li>' for c in recent)}</ul>
+<ul class="cases">{"".join(f'<li><a href="{SITE}/case/{c["id"]}.html"><span>{esc(c.get("summary", ""))}<br><span class="muted">{esc(c.get("date", ""))} · {esc(c.get("verification", ""))}</span></span></a></li>' for c in recent)}</ul>
 {cites_html}
 <p><a class="pill" href="{SITE}/#species/{esc(gid)}">See {esc(label.lower())} on the map →</a>
    <a class="pill" href="{SITE}/data/cases.csv">Download all cases (CSV)</a></p>
@@ -321,7 +327,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
                 by_sp[s] = by_sp.get(s, 0) + 1
         top = sorted(by_sp.items(), key=lambda kv: -kv[1])[:12]
         recent = sorted(mine, key=lambda c: c.get("date") or "", reverse=True)[:25]
-        title = f"Wildlife trafficking in {name}: {len(mine)} recorded cases — WildTrace"
+        title = f"Wildlife trafficking in {name}: {len(mine)} recorded cases | WildTrace"
         desc = (f"{len(mine)} wildlife seizures, arrests and convictions recorded in {name} from public reports, "
                 f"{window[0]} to {window[1]}, by species and by strength of evidence. Open data.")
         body = f"""
@@ -331,9 +337,9 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
 <p>These are cases <b>reported</b> in the newsrooms and government sites searched. A country with active reporters and
   a government that publishes its seizures will show more cases than one without, whatever the trade is doing.</p>
 <h2>Most reported species groups in {esc(name)}</h2>
-<ul class="cols">{"".join(f'<li><a href="{SITE}/species/{slug(g)}.html">{esc(sp_label(g))}</a> <span class="muted">{n}</span></li>' for g, n in top)}</ul>
+<ul class="cols">{"".join(f'<li><a href="{SITE}/species/{slug(g)}.html"><span>{esc(sp_label(g))}</span> <span class="muted">{n}</span></a></li>' for g, n in top)}</ul>
 <h2>Recent cases</h2>
-<ul class="cases">{"".join(f'<li><a href="{SITE}/case/{c["id"]}.html">{esc(c.get("summary", ""))}</a> <span class="muted">{esc(c.get("date", ""))} · {esc(c.get("verification", ""))}</span></li>' for c in recent)}</ul>
+<ul class="cases">{"".join(f'<li><a href="{SITE}/case/{c["id"]}.html"><span>{esc(c.get("summary", ""))}<br><span class="muted">{esc(c.get("date", ""))} · {esc(c.get("verification", ""))}</span></span></a></li>' for c in recent)}</ul>
 <p><a class="pill" href="{SITE}/#country/{esc(cc)}">See {esc(name)} on the map →</a></p>
 """
         ld = {"@context": "https://schema.org", "@type": "Dataset",
@@ -348,13 +354,13 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
 
     # ---------------------------------------------------------------- browse index
     sp_rows = "".join(
-        f'<li><a href="{SITE}/species/{slug(gid)}.html">{esc(g.get("label", gid))}</a> '
-        f'<span class="muted">{sum(1 for c in cases if gid in c.get("species", []))}</span></li>'
+        f'<li><a href="{SITE}/species/{slug(gid)}.html"><span>{esc(g.get("label", gid))}</span> '
+        f'<span class="muted">{_count_label(sum(1 for c in cases if gid in c.get("species", [])), (cites.get(gid) or {}).get("n", 0))}</span></a></li>'
         for gid, g in sorted(species.items(), key=lambda kv: -sum(1 for c in cases if kv[0] in c.get("species", [])))
         if any(gid in c.get("species", []) for c in cases) or (cites.get(gid) or {}).get("n", 0) >= 5)
     cc_rows = "".join(
-        f'<li><a href="{SITE}/country/{cc.lower()}.html">{esc(cc_name(cc))}</a> '
-        f'<span class="muted">{sum(1 for c in cases if (c.get("place") or {}).get("country") == cc)}</span></li>'
+        f'<li><a href="{SITE}/country/{cc.lower()}.html"><span>{esc(cc_name(cc))}</span> '
+        f'<span class="muted">{sum(1 for c in cases if (c.get("place") or {}).get("country") == cc)}</span></a></li>'
         for cc in sorted(seen_cc, key=lambda cc: -sum(1 for c in cases if (c.get("place") or {}).get("country") == cc)))
     body = f"""
 <h1>Browse illegal wildlife trade cases</h1>
@@ -364,11 +370,11 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
 <h2>By species group</h2><ul class="cols">{sp_rows}</ul>
 <h2>By country</h2><ul class="cols">{cc_rows}</ul>
 <h2>The data</h2>
-<p><a href="{SITE}/data/cases.csv">cases.csv</a> — one row per case, CC BY 4.0.
+<p><a href="{SITE}/data/cases.csv">cases.csv</a>: one row per case, CC BY 4.0.
    <a href="{SITE}/">The interactive Atlas</a> maps the same data, with a timeline, filters by evidence, and a
    link-analysis workbench that runs in your browser.</p>
 """
-    write("browse.html", page("Browse illegal wildlife trade cases by species and country — WildTrace",
+    write("browse.html", page("Browse illegal wildlife trade cases by species and country | WildTrace",
                               f"Index of {len(cases):,} recorded wildlife trafficking cases by species group and country, "
                               "from public reports worldwide. Open data, CC BY 4.0.",
                               f"{SITE}/browse.html", body,

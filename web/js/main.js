@@ -269,7 +269,9 @@ async function boot() {
   // A first-time visitor sees the 2-minute video first (it offers the tour); a returning reader who
   // never finished the tour still gets it.
   const welcome = firstVisit() && location.hash !== "#guide";
-  if (welcome) { const w = setInterval(() => { if ($("#boot").classList.contains("done")) { clearInterval(w); openGuide({ first: true }); } }, 200); }
+  // The welcome waits until the Atlas has painted and the browser is idle, so the first thing drawn is the Atlas itself.
+  const idle = (fn) => (window.requestIdleCallback ? requestIdleCallback(fn, { timeout: 2500 }) : setTimeout(fn, 1200));
+  if (welcome) { const w = setInterval(() => { if ($("#boot").classList.contains("done")) { clearInterval(w); idle(() => openGuide({ first: true })); } }, 200); }
   mountTrivia($("#trivia-root")).then(() => { if (!welcome) setTimeout(() => startTour({ auto: true }), 1200); });
   addEventListener("wildtrace:tour", () => (innerWidth < 860 ? toast("The guided tour needs a wider screen; the video covers the same ground.") : startTour()));
   // The Tour button opens a menu: full tour, this section's tour, section tips on or off.

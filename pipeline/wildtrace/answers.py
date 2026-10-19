@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from datetime import date
 from pathlib import Path
 
 PERSONAS = {"journalists": "Journalists", "researchers": "Researchers", "policy": "Policy & enforcement", "everyone": "Everyone"}
@@ -167,10 +168,12 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, data: P
         out.append({"slug": "how-accurate-is-wildtrace", "domain": "network", "personas": ["everyone", "researchers", "journalists", "policy"],
                     "q": "How accurate is WildTrace?",
                     "a": f"In a blind audit of {acc['n']} randomly sampled cases, {acc['relevant']} were genuine wildlife-trade enforcement "
-                         f"events ({acc['precision']:.1%}; 95% interval {acc['ci'][0]:.1%} to {acc['ci'][1]:.1%}), and species were right in "
-                         f"{acc['species_ok']:.1%} of them.",
+                         f"events ({acc['precision']:.1%}; 95% interval {acc['ci'][0]:.1%} to {acc['ci'][1]:.1%})"
+                         + (f", and species were right in {acc['species_ok']:.1%} of them." if acc.get("species_ok") is not None else "."),
                     "number": {"v": f"{acc['precision']:.1%}", "k": f"of audited cases are real events ({acc['date']})"},
                     "chart": [[k, n] for k, n in acc.get("errors", {}).items()],
+                    "chart_title": f"The {acc['n'] - acc['relevant']} audited cases that were not real events, by reason (bars against all {acc['n']} audited)",
+                    "chart_max": acc["n"],
                     "who": [{"name": "WildTrace accuracy audit", "detail": acc.get("method", ""), "url": "https://github.com/tarunv13/wildtrace/blob/main/docs/ACCURACY.md"}, news],
                     "limit": "Precision is measured; recall (events WildTrace misses) is not, and coverage follows the sources searched.",
                     "go": {"label": "Read the method", "href": "./#methods"}})
@@ -198,36 +201,47 @@ def publish(answers: list[dict], out_dir: Path, page, esc, site: str, write) -> 
     (out_dir / "data" / "answers.json").write_text(json.dumps({"personas": PERSONAS, "answers": answers}, ensure_ascii=False,
                                                               separators=(",", ":")), encoding="utf-8")
     for a in answers:
-        mx = max([n for _, n in a["chart"]] or [1]) or 1
+        mx = a.get("chart_max") or max([n for _, n in a["chart"]] or [1]) or 1
+        today = date.today().isoformat()
+        url = f"{site}/answers/{a['slug']}.html"
+        ink = f"color-mix(in srgb, {a['color']} 62%, #000)"     # small text in the darker ink of the colour (4.5:1)
         bars = "".join(f'<li><span class="l">{esc(l)}</span><span class="b"><i style="width:{max(2, 100 * n / mx):.0f}%;background:{a["color"]}"></i></span>'
                        f'<span class="n">{n:,}</span></li>' for l, n in a["chart"])
         who = "".join(f'<li><a href="{esc(w["url"] if w["url"].startswith("http") else site + "/" + w["url"].lstrip("./"))}">{esc(w["name"])}</a>'
                       f' <span class="muted">{esc(w["detail"])}</span></li>' for w in a["who"])
         go = a["go"]["href"]
         body = f"""
-<p class="eyebrow" style="color:{a['color']}">Answer · for {esc(', '.join(a['for']))}</p>
+<p class="eyebrow" style="color:{ink}">Answer · for {esc(', '.join(a['for']))} · updated {today}</p>
 <h1>{esc(a['q'])}</h1>
 <div class="answer"><p class="lede">{esc(a['a'])}</p>
   <p class="big" style="color:{a['color']}">{esc(a['number']['v'])} <span>{esc(a['number']['k'])}</span></p></div>
-{f'<ul class="bars">{bars}</ul>' if bars else ''}
-<h2>Who answers</h2><ul class="who">{who}</ul>
-<h2>What the number cannot tell you</h2><p>{esc(a['limit'])}</p>
+{f'<figure class="pw"><figcaption class="chart-t">{esc(a["chart_title"])}</figcaption><ul class="bars">{bars}</ul></figure>' if bars and a.get("chart_title") else (f'<ul class="bars">{bars}</ul>' if bars else '')}
+<h2>What you should know</h2><p>{esc(a['limit'])}</p>
+<h2>Sources and processing</h2><ul class="who">{who}</ul>
+<p class="small">Figures are computed from the published WildTrace data on every daily build; counts are counts of public
+  reports collected, not the true incidence of the crime.</p>
+<h2>Cite this answer</h2>
+<pre class="cite">Verma, T. K. (2026). {esc(a['q'])} WildTrace: the open atlas of illegal wildlife trade. {url} (version of {today}). doi:10.5281/zenodo.22902819</pre>
+<p class="small">Data: <a href="{site}/data/answers.json">answers.json</a> · <a href="{site}/data/cases.csv">cases.csv</a> (CC BY 4.0) ·
+  <a href="https://doi.org/10.5281/zenodo.22902819">archived releases on Zenodo</a></p>
 <p><a class="pill" href="{esc(site + '/' + go.lstrip('./')) if not go.startswith('http') else esc(go)}">{esc(a['go']['label'])} →</a>
    <a class="pill" href="{site}/answers.html">All questions →</a></p>
-<p class="small">Rebuilt daily from the WildTrace data. Cite: Verma, T. K. (2026). WildTrace: the open atlas of illegal wildlife trade.
-  Zenodo. doi:10.5281/zenodo.22902819</p>"""
+"""
         ld = {"@context": "https://schema.org", "@type": "QAPage", "mainEntity": {"@type": "Question", "name": a["q"], "answerCount": 1,
-              "acceptedAnswer": {"@type": "Answer", "text": f"{a['a']} {a['limit']}", "url": f"{site}/answers/{a['slug']}.html"}}}
-        write(f"answers/{a['slug']}.html", page(f"{a['q']} — WildTrace", a["a"][:155], f"{site}/answers/{a['slug']}.html", body, ld,
+              "acceptedAnswer": {"@type": "Answer", "text": f"{a['a']} {a['limit']}", "url": url, "dateModified": today,
+              "author": {"@type": "Person", "name": "Tarun Kumar Verma"}}}, "dateModified": today}
+        write(f"answers/{a['slug']}.html", page(f"{a['q']} | WildTrace", a["a"][:155], f"{site}/answers/{a['slug']}.html", body, ld,
                                                 [("WildTrace", site + "/"), ("Questions", f"{site}/answers.html")]))
     groups = "".join(f"<h2>For {esc(label)}</h2><ul class=\"cases\">" + "".join(
-        f'<li><a href="{site}/answers/{a["slug"]}.html">{esc(a["q"])}</a> <span class="muted">{esc(a["number"]["v"])} {esc(a["number"]["k"])}</span></li>'
+        f'<li><a href="{site}/answers/{a["slug"]}.html"><span><span class="qn">Q{answers.index(a) + 1:02d}</span> {esc(a["q"])}<br>'
+        f'<span class="muted">{esc(a["number"]["v"])} {esc(a["number"]["k"])}</span></span></a></li>'
         for a in answers if key in a["personas"]) + "</ul>" for key, label in PERSONAS.items())
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": a["q"], "acceptedAnswer": {"@type": "Answer", "text": a["a"]}} for a in answers]}
-    write("answers.html", page("Questions WildTrace answers about illegal wildlife trade — WildTrace",
+    write("answers.html", page("Questions WildTrace answers about illegal wildlife trade | WildTrace",
                                "Live answers about illegal wildlife trade: what is seized, where it goes, whether online sales are caught, how often seizures "
                                "end in convictions, and how accurate the data is. Each with its sources and limits.",
                                f"{site}/answers.html", f"<p class=\"eyebrow\">Questions</p><h1>What WildTrace answers, and for whom</h1>"
-                               f"<p class=\"lede\">Every answer names its sources and says what its number cannot tell you. Figures are rebuilt daily.</p>{groups}",
+                               f"<p class=\"lede\">Every answer names its sources and says what its number cannot tell you. {len(answers)} questions, "
+                               f"numbered; figures rebuilt daily, last on {date.today().isoformat()}.</p>{groups}",
                                ld, [("WildTrace", site + "/"), ("Questions", f"{site}/answers.html")]))

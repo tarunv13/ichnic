@@ -2,6 +2,38 @@
 
 All notable changes to WildTrace. Dates are the release date, newest first.
 
+## Unreleased (planned 1.12.0)
+
+### Added
+- **Recall, measured.** `wildtrace recall <reference.json>` scores WildTrace against an independent, hand-validated
+  case list. Against the Illegal Wildlife Trafficking Global Observatory's 1,080 cases, WildTrace found 150 of the
+  576 it could have found (26%); with the agency collectors below, 180 (31.2%; 95% interval 27.6% to 35.1%).
+  Reference rows stay private; method and caveats in
+  docs/ACCURACY.md.
+- **Agency press releases, read directly.** `collect --agency` reads official RSS (Hong Kong GovNews, French customs,
+  US Department of Justice) every day; `collect --hk-archive <date>` backfills Hong Kong Government press releases
+  from their public daily index. A third of the missed events were government releases.
+- **Enforcement videos.** `collect --video` (local only): YouTube search with yt-dlp and captions with
+  youtube-transcript-api, kind `news_video`, through the same event gate as news. A video counts only with its upload
+  date, read from its public page, and only as corroboration: video-only cases were 82% real in two blind audits and
+  are held back. Channel names are never published.
+- **Other topics on the same engine.** `wildtrace new-topic <folder> --title T --group id=terms` starts an evidence
+  project on another enforcement beat (tested on illegal sand mining: blind audit 94.1%, 32 of 34). `WILDTRACE_LEXICON`
+  points the engine at that project's vocabulary.
+- Codebook words with everyday meanings ("black", "cardinal", "canary", "vanilla", "sheng", "mamba") now need
+  context, and the penalty paragraph of agency releases is ignored, so seizures are no longer read as convictions.
+- Ambiguous words can now name their other meaning with `blocks_regex`, which vetoes a hit (for example "illegal
+  mining" next to "coal").
+
+### Changed
+- The welcome video opens as a poster after the Atlas has drawn, plays on a click, and keeps keyboard focus moving
+  through its buttons. A skip link and a `<main>` landmark were added; the home has one h1.
+- Static pages share the Atlas design: glass cards, one logotype, whole-tile links with 44 px targets, hover answers,
+  cross-fading page changes, and small text in the darker ink of each colour.
+- Answer pages follow a citation-first layout: what you should know, sources and processing, a copy-ready citation
+  with the version date, and links to the data. The questions index is numbered and dated.
+- Page titles use "|" instead of a dash and stay shorter.
+
 ## 1.11.0 — 2026-09-29
 
 ### Added

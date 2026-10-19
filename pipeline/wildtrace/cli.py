@@ -8,7 +8,9 @@
   wildtrace captive <folder>                             captive-bred claims in CITES trade (web/data/captive_claims.json)
   wildtrace ecosolve <csv>                               ECO-SOLVE adverts vs WildTrace cases (web/data/online_gap.json)
   wildtrace vision  <image|folder> [--captions csv]       OCR + BioCLIP species evidence for images (private)
+  wildtrace recall  <reference.json>                     recall against an independent validated case list (private)
   wildtrace accuracy sample|score [file]                 blind audit: sample cases, then score precision (web/data/accuracy.json)
+  wildtrace new-topic <folder> --title T --group id=terms  start an evidence project on another topic
   wildtrace lemis   <folder> [--taxonomy <codebook>]     US LEMIS seizures by origin + product (web/data/lemis.json)
   wildtrace zoonoses [--offline]                         VIRION + WHO outbreaks (web/data/zoonoses.json)
   wildtrace relabel                                      merge reviewed labels into corrections.csv
@@ -44,9 +46,22 @@ def _collect(a) -> None:
         from .collect import social
         print("YouTube (yt-dlp, metadata only)")
         print("  ->", write_jsonl(social.collect_youtube(), "youtube"))
+    if getattr(a, "video", False):
+        from .collect import video
+        print("YouTube enforcement videos (yt-dlp + captions; local, not CI)")
+        groups = {g.strip() for g in (getattr(a, "groups", "") or "").split(",") if g.strip()} or None
+        print("  ->", write_jsonl(video.collect_videos(sorted(groups) if groups else None), "video"))
     if getattr(a, "official", False):
         print("Official sources (government, enforcement, judicial domains)")
         print("  ->", write_jsonl(feeds.collect_official(), "official"))
+    if getattr(a, "agency", False):
+        from .collect import agency
+        print("Agency press-release feeds (direct RSS)")
+        print("  ->", write_jsonl(agency.collect_agency_feeds(), "agency"))
+    if getattr(a, "hk_archive", ""):
+        from .collect import agency
+        print(f"Hong Kong GovNews archive since {a.hk_archive}")
+        print("  ->", write_jsonl(agency.collect_hk_archive(a.hk_archive), "hk_archive"))
     if getattr(a, "history", 0):
         print(f"History backfill: {a.history} months")
         print("  ->", write_jsonl(feeds.collect_history(a.history), "history"))
@@ -111,6 +126,9 @@ def main(argv=None) -> None:
         c.add_argument("--history", type=int, default=0, help="backfill this many past months (Google News date ranges)")
         c.add_argument("--no-gdelt", action="store_true", help="skip GDELT (heavily throttled)")
         c.add_argument("--online", action="store_true", help="also search for online wildlife crime reaching enforcement")
+        c.add_argument("--agency", action="store_true", help="agency press-release RSS (Hong Kong, French customs, US DOJ)")
+        c.add_argument("--hk-archive", default="", help="backfill Hong Kong GovNews press releases since this date")
+        c.add_argument("--video", action="store_true", help="YouTube enforcement videos with captions (local)")
         c.add_argument("--rotate", action="store_true", help="query a third of the English editions each day (daily runs)")
         c.add_argument("--groups", default="", help="limit the news search to these species groups (comma-separated)")
         c.add_argument("--gnews-window", default="30d", help="how far back Google News searches reach (daily runs use 3d)")
@@ -125,6 +143,9 @@ def main(argv=None) -> None:
     vi = sub.add_parser("vision"); vi.add_argument("path"); vi.add_argument("--captions", default="", help="CSV with image,caption")
     ac = sub.add_parser("accuracy"); ac.add_argument("action", choices=["sample", "score"]); ac.add_argument("file", nargs="?", default="")
     ac.add_argument("--n", type=int, default=200); ac.add_argument("--seed", type=int, default=29)
+    rc = sub.add_parser("recall"); rc.add_argument("reference"); rc.add_argument("--label", default="")
+    nt = sub.add_parser("new-topic"); nt.add_argument("folder"); nt.add_argument("--title", required=True)
+    nt.add_argument("--group", action="append", default=[], help='id="term,term" or id="en:a,b;hi:c"')
     le = sub.add_parser("lemis"); le.add_argument("folder")
     le.add_argument("--taxonomy", default="", help="PMC8579131 zip or folder (genus -> family/order), improves matching")
     le.add_argument("--min-year", type=int, default=2000)
@@ -167,6 +188,13 @@ def main(argv=None) -> None:
     elif a.cmd == "accuracy":
         from .accuracy import sample as acc_sample, score as acc_score
         print(acc_sample(a.n, a.seed) if a.action == "sample" else acc_score(a.file))
+    elif a.cmd == "recall":
+        import json as _json
+        from .recall import score as recall_score
+        print(_json.dumps(recall_score(a.reference, a.label), indent=1))
+    elif a.cmd == "new-topic":
+        from .newtopic import create
+        print(create(a.folder, a.title, a.group))
     elif a.cmd == "lemis":
         from .collect.lemis import aggregate as lemis_aggregate, publish as lemis_publish
         print(lemis_publish(lemis_aggregate(a.folder, a.taxonomy or None, a.min_year)))

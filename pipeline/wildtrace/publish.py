@@ -274,7 +274,14 @@ def enrich(cands, limit: int = 200) -> None:
 def build(min_relevance: float | None = None, fetch_text: bool = True) -> dict:
     ensure_dirs()
     recs = read_all_raw()
-    news = [r for r in recs if r.kind in ("news", "official", "court")]  # "official": government releases
+    # A video counts only with its upload date: search results carry none, and an undated video may be years old.
+    from .collect.video import GENRE as _VIDEO_GENRE
+    from .collect.agency import clean as _agency_clean
+    for r in recs:
+        if r.source in ("agency_rss", "agency_hk_archive"):
+            r.text = _agency_clean(r.text)
+    news = [r for r in recs if r.kind in ("news", "official", "court")
+            or (r.kind == "news_video" and r.published and not _VIDEO_GENRE.search(r.title))]  # "official": government releases; "news_video": enforcement videos
     listings = [r for r in recs if r.kind in ("listing", "video")]
     scores = score_records(news + listings)
 
@@ -299,6 +306,12 @@ def build(min_relevance: float | None = None, fetch_text: bool = True) -> dict:
             f.write(json.dumps(e.to_dict(), ensure_ascii=False) + "\n")
 
     cases = [summarise(g) for g in cluster(events)]
+    # A video corroborates a case but does not make one: two blind audits of video-only cases found 82% real events
+    # (41/50, 33/40; docs/ACCURACY.md), against 96.5% for news. Video-only cases stay out until that gap closes.
+    n_video_only = sum(1 for c in cases if c["sources"] and all("youtube.com" in (s.get("url") or "") for s in c["sources"]))
+    cases = [c for c in cases if not (c["sources"] and all("youtube.com" in (s.get("url") or "") for s in c["sources"]))]
+    if n_video_only:
+        print(f"  video-only cases held back: {n_video_only}")
     # Human review (resources/validations.yaml) outranks every automatic status.
     vpath = RESOURCES / "validations.yaml"
     reviews = (yaml.safe_load(vpath.read_text(encoding="utf-8")) or {}) if vpath.exists() else {}

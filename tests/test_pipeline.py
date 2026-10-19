@@ -453,3 +453,92 @@ def test_leftmost_longest_species_and_wilson_interval():
     assert L.species_groups("Mais de 600 tartarugas tigre-d’água são apreendidas") == ["turtles"]
     lo, hi = wilson(191, 200)
     assert round(lo, 3) == 0.917 and round(hi, 3) == 0.976
+
+
+def _reset_lexicon():
+    from wildtrace import lexicon as L
+    for f in (L.load, L._mask_re, L._ambiguous_words, L._ambiguous, L._context_sets, L._ambiguous_any, L._compiled, L.cues):
+        f.cache_clear()
+
+
+def test_new_topic_reuses_engine_with_its_own_vocabulary(tmp_path, monkeypatch):
+    import yaml
+    from wildtrace import lexicon as L
+    from wildtrace.newtopic import create, parse_group
+    gid, g = parse_group("sand_mining=en:illegal sand mining,sand mafia;hi:बालू माफिया")
+    assert gid == "sand_mining" and g["terms"] == {"en": ["illegal sand mining", "sand mafia"], "hi": ["बालू माफिया"]}
+    out = create(tmp_path / "sandtrace", "SandTrace", ["sand_mining=en:illegal sand mining,sand mafia"])
+    for f in ("lexicon.yaml", "README.md", "CURATION.md", "run.sh", "run.ps1", ".gitignore"):
+        assert (out / f).exists(), f
+    lex = yaml.safe_load((out / "lexicon.yaml").read_text(encoding="utf-8"))
+    assert set(lex["groups"]) == {"sand_mining", "wildlife_general"}
+    assert not any(a.get("group") for a in lex["ambiguous"])      # wildlife-group ambiguities dropped
+    # A word with a second meaning stays, with a veto for the other meaning (blocks_regex).
+    lex["ambiguous"].append({"term": "अवैध खनन", "group": "sand_mining", "needs": ["enforcement", "quantity"],
+                             "blocks_regex": "कोयला|तांबा"})
+    (out / "lexicon.yaml").write_text(yaml.safe_dump(lex, allow_unicode=True), encoding="utf-8")
+    monkeypatch.setenv("WILDTRACE_LEXICON", str(out / "lexicon.yaml"))
+    _reset_lexicon()
+    try:
+        assert L.species_groups("Sand mafia arrested, 3 tippers seized") == ["sand_mining"]
+        assert L.species_groups("Rhino horn seized at airport") == []
+        assert L.species_groups("अवैध खनन में पांच गिरफ्तार, तीन जेसीबी जब्त") == ["sand_mining"]
+        assert L.species_groups("अवैध खनन व कोयला चोरी, 50 टन जब्त") == []
+    finally:
+        monkeypatch.delenv("WILDTRACE_LEXICON")
+        _reset_lexicon()
+
+
+def test_video_records_go_through_the_news_gate():
+    from wildtrace.collect import video
+    assert video.video_id("https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=3") == "dQw4w9WgXcQ"
+    assert video.video_id("https://youtube.com/shorts/abcdefghijk") == "abcdefghijk"
+    qs = video.queries(["pangolin"])
+    assert ("en", "pangolin seized") in qs or any(l == "en" and "seized" in q for l, q in qs)
+    r = video.as_news(Record(url="https://www.youtube.com/watch?v=dQw4w9WgXcQ", title="Pangolin scales seized, two arrested"))
+    assert (r.kind, r.source, r.outlet) == ("news_video", "youtube_news", "youtube.com")
+
+
+def test_recall_matches_by_species_date_and_distance(tmp_path, monkeypatch):
+    from wildtrace import recall
+    web = tmp_path / "web"; web.mkdir()
+    (web / "cases.json").write_text(json.dumps([
+        {"date": "2026-09-19", "species": ["turtles"], "countries": ["HK"], "sources": [],
+         "places": [{"name": "Hong Kong", "lat": 22.3, "lon": 114.2}]},
+        {"date": "2026-01-01", "species": ["pangolin"], "countries": ["NG"], "sources": [], "places": []}]), encoding="utf-8")
+    ref = tmp_path / "ref.json"
+    ref.write_text(json.dumps({"cases": [
+        {"id": "a", "publication_date": "2026-09-18", "title_en": "Ten live turtles seized", "country": "Hong Kong",
+         "coordinates": {"lat": 22.32, "lon": 114.17}},
+        {"id": "b", "publication_date": "2026-01-05", "title_en": "Pangolin scales seized in Lagos", "country": "Nigéria",
+         "coordinates": {"lat": 6.5, "lon": 3.4}},
+        {"id": "c", "publication_date": "2026-05-01", "title_en": "Parrots seized", "country": "Brasil",
+         "coordinates": {"lat": -15, "lon": -47}},
+        {"id": "d", "publication_date": "2019-01-01", "title_en": "Ivory seized", "country": "Quênia"},
+        {"id": "e", "publication_date": "2026-03-01", "title_en": "Shark fins seized", "exclude_from_totals": True}]}),
+        encoding="utf-8")
+    monkeypatch.setattr(recall, "WEB_DATA", web)
+    monkeypatch.setattr(recall, "INTERIM", tmp_path / "interim")
+    r = recall.score(ref)
+    assert (r["eligible"], r["found"]) == (3, 2)          # turtles by distance, pangolin by country; parrots missed
+    assert r["skipped"]["outside_window"] == 1 and r["by_country"]["BR"] == [0, 1]
+
+
+def test_hk_archive_index_titles_are_filtered_to_wildlife():
+    from wildtrace.collect import agency
+    html = ('<a href="/gia/general/202609/19/P2026091900804.htm">Hong Kong Customs seizes live turtles of suspected '
+            'scheduled endangered species (with photo)</a><a href="/gia/general/202609/19/P2026091900754.htm">'
+            'Sixth GBA Legal Professional Examination held</a>')
+    titles = [t for _, _, _, t in agency._LINK.findall(html)]
+    assert [agency._candidate(t) for t in titles] == [True, False]
+
+
+def test_agency_boilerplate_and_video_genres_are_filtered():
+    from wildtrace.collect import agency, video
+    t = agency.clean("Customs seized 10 turtles. Any person found guilty is liable to a maximum fine of $10 million and "
+                     "imprisonment for 10 years. The case is under investigation.")
+    assert "imprisonment" not in t and "10 turtles" in t
+    assert video.GENRE.search("Rescuing A Slow Loris | Season 8 Episode 16")
+    assert not video.GENRE.search("Tiger Skin Seized in Jaipur, 3 arrested")
+    from wildtrace import lexicon as L
+    assert L.species_groups("Judiciary arrangements during Black Rainstorm Warning, hearings adjourned") == []

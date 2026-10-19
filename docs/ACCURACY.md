@@ -35,10 +35,43 @@ so no figure is measured on cases the rules were tuned on.
 
 - **Recall** (events WildTrace misses) is not measured by these audits. After the first round of rules,
   148 of the 163 genuine events in audit 1 were still published (90.8%); later verb additions recovered
-  some of the rest.
+  some of the rest. Recall against an independent list is measured separately (next section).
 - **Coverage** follows the sources searched: newsrooms, government sites and the languages WildTrace reads.
 - **Place** accuracy is not yet audited systematically; known errors come from towns that share a name with
   a place elsewhere.
+
+## Recall against an independent list (19 October 2026)
+
+Precision says how many published cases are real; it cannot say how many real events are missing. For
+that we need a list made by someone else. The Illegal Wildlife Trafficking Global Observatory
+(github.com/acarvalho-wcs/wildlife-trafficking-data) publishes 1,080 hand-validated cases with dates,
+coordinates and source links. Its files carry no licence, so we use them only to measure, keep the rows
+private, and report the aggregate here with attribution.
+
+`wildtrace recall <cases.json>` counts a reference case as found when a WildTrace case names the same
+species group, falls within 14 days of it, and lies within 300 km (or, for a case located only to a
+country, in the same country), or carries the same source link. Only cases WildTrace could have found are
+scored: 576 fell inside WildTrace's dates and named a species group it tracks.
+
+**WildTrace found 150 of the 576 (26%; 95% interval 22.6% to 29.8%).** Recall is highest where the Google
+News editions and languages are strongest (Brazil 58 of 118, India 31 of 51) and lowest where the cases come
+from government press releases or from languages WildTrace does not read (Hong Kong 5 of 37, mainland China
+0 of 30, Mexico 3 of 26). Of the 426 missed cases, 150 (35%) came from government sites such as Hong Kong
+GovNews and Customs, PROFEPA, Brazilian state governments, US FWS, the Australian Border Force and French
+customs. Google News indexes these sites poorly, so WildTrace now reads agency feeds directly
+(`collect --agency`, daily) and has backfilled Hong Kong Government press releases from January 2024
+(`collect --hk-archive`). The next gaps are Chinese-language sources and the Mexican, Peruvian and
+Brazilian agency sites, which publish no feed.
+
+**After the Hong Kong backfill (20 October 2026): 180 of 576 (31.2%; 95% interval 27.6% to 35.1%).** Hong Kong rose from
+5 to 31 of 38. Two blind audits checked the new sources before publication. Hong Kong press releases: 23 of 30 real
+events at first (weather notices matched the codebook word "black"); after the fixes in CURATION.md, 29 of 30 on a fresh
+sample. Video-only cases: 41 of 50 and then 33 of 40 (82%), because video titles include documentaries, explainers,
+series and toys. So a video now corroborates a case but cannot make one on its own; 95 video-only cases are held back.
+
+The figure is a floor in one sense and generous in another. The reference list leans to Brazil and to
+cases its curators found, so it is not a random sample of all events; and a match on species, date and
+distance can pair two different events in the same district.
 
 ## Ambiguous-word review (29 September 2026)
 
