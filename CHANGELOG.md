@@ -18,7 +18,7 @@ All notable changes to WildTrace. Dates are the release date, newest first.
   date, read from its public page, and only as corroboration: video-only cases were 82% real in two blind audits and
   are held back. Channel names are never published.
 - **Other topics on the same engine.** `wildtrace new-topic <folder> --title T --group id=terms` starts an evidence
-  project on another enforcement beat (tested on illegal sand mining: blind audit 94.1%, 32 of 34). `WILDTRACE_LEXICON`
+  project on another enforcement beat (tested on illegal sand mining: blind audit 86.5%, 32 of 37; after one rule fix, 32 of 34 on a re-check that overlaps the first sample, so not yet an independent figure). `WILDTRACE_LEXICON`
   points the engine at that project's vocabulary.
 - Codebook words with everyday meanings ("black", "cardinal", "canary", "vanilla", "sheng", "mamba") now need
   context, and the penalty paragraph of agency releases is ignored, so seizures are no longer read as convictions.
