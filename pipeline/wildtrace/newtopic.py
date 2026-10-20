@@ -1,8 +1,8 @@
-"""Start a WildTrace-style evidence project on another topic, reusing the tested engine.
+"""Start a Ichnic-style evidence project on another topic, reusing the tested engine.
 
     wildtrace new-topic D:/GitHub/sandtrace --title "SandTrace" --group sand_mining="illegal sand mining,sand mafia"
 
-The new project inherits every rule WildTrace learned from its blind audits (event verbs, topic words,
+The new project inherits every rule Ichnic learned from its blind audits (event verbs, topic words,
 genre, statistics and rescue filters, masks, the ambiguous-word machinery, platforms, agencies) and
 replaces only the species groups with the new topic's groups. Its data, labels and public output live
 in the new folder; the engine is the installed `wildtrace` package, so a fix in one project reaches all.
@@ -24,7 +24,7 @@ from .config import RESOURCES
 
 README = """# {title}
 
-An evidence project built on the WildTrace engine ({engine}).
+An evidence project built on the Ichnic engine ({engine}).
 
 Topic groups: {groups}.
 

@@ -1,10 +1,12 @@
 <div align="center">
 
-<img src="docs/img/logo.svg" width="104" alt="WildTrace mark: a trail from source (green) through transit (blue) to market (amber), across the globe">
+<img src="docs/img/logo.svg" width="104" alt="Ichnic mark: a trail from source (green) through transit (blue) to market (amber), across the globe">
 
-# WildTrace
+# Ichnic
 
 **The open atlas of illegal wildlife trade. Follow the trade.**
+
+*Ichnic* (ICK-nick), from the Greek *ichnos*, a track or trace: the science of reading tracks is ichnology. Formerly WildTrace.
 
 One map of seizures, arrests and convictions worldwide, in fauna and flora, with every case
 graded by the strength of its evidence, and a link-analysis workbench that runs in your browser.
@@ -32,7 +34,7 @@ crime revenue, disease risk and the loss of ecosystems people depend on.
 </div>
 
 <p align="center">
-  <img src="docs/img/atlas.png" alt="The WildTrace globe with clustered case markers across Africa, South Asia and South America, a summary panel on the left and a timeline along the bottom" width="100%">
+  <img src="docs/img/atlas.png" alt="The Ichnic globe with clustered case markers across Africa, South Asia and South America, a summary panel on the left and a timeline along the bottom" width="100%">
   <br>
   <sub>The Atlas (screenshot from an earlier build; now 1,871 audited cases in 61 countries). Colour is the kind of event, paler dots are single reports, the glow is density of reporting.</sub>
 </p>
@@ -41,7 +43,7 @@ crime revenue, disease risk and the loss of ecosystems people depend on.
 
 ## Ask it a question
 
-WildTrace opens with questions, not a dashboard: **What do you want to know?** Eleven live answers, filtered
+Ichnic opens with questions, not a dashboard: **What do you want to know?** Eleven live answers, filtered
 for journalists, researchers, policy and everyone, each giving the answer, its number, a chart, **who answers**
 (the sources and their standing), **what the number cannot tell you**, and where to explore it on the map.
 Every answer also has a citable page for readers and answer engines:
@@ -52,7 +54,7 @@ Every answer also has a citable page for readers and answer engines:
 | Is wildlife sold online ever caught? | [answers/is-wildlife-sold-online-ever-caught](https://tarunv13.github.io/wildtrace/answers/is-wildlife-sold-online-ever-caught.html) |
 | How often does a seizure end in a conviction? | [answers/how-often-a-seizure-ends-in-conviction](https://tarunv13.github.io/wildtrace/answers/how-often-a-seizure-ends-in-conviction.html) |
 | Can "captive-bred" labels be trusted? | [answers/can-captive-bred-labels-be-trusted](https://tarunv13.github.io/wildtrace/answers/can-captive-bred-labels-be-trusted.html) |
-| How accurate is WildTrace? | [answers/how-accurate-is-wildtrace](https://tarunv13.github.io/wildtrace/answers/how-accurate-is-wildtrace.html) |
+| How accurate is Ichnic? | [answers/how-accurate-is-wildtrace](https://tarunv13.github.io/wildtrace/answers/how-accurate-is-wildtrace.html) |
 
 All eleven: [answers.html](https://tarunv13.github.io/wildtrace/answers.html).
 
@@ -69,9 +71,9 @@ The Oxford Agile Initiative's *Environment and National Security: Exploring the 
 (September 2026) maps how environmental damage reaches national security, and notes that its
 pathway diagrams "could be linked to a database showing relevant evidence for each link". Wildlife
 crime appears in its agenda mainly as a revenue source for hostile actors and organised crime
-(R1.37). WildTrace supplies the evidence for that pathway, link by link:
+(R1.37). Ichnic supplies the evidence for that pathway, link by link:
 
-| Link | Open evidence in WildTrace |
+| Link | Open evidence in Ichnic |
 | --- | --- |
 | Nature is taken | strong: cases, 24,786 CITES seizures, 19,346 US port seizures |
 | It moves through routes and hubs | partial: CITES transit, multi-country cases |
@@ -83,19 +85,19 @@ crime appears in its agenda mainly as a revenue source for hostile actors and or
 
 Read [Risk pathways](https://tarunv13.github.io/wildtrace/pathways.html) for the numbers, rebuilt
 daily, and the [open research agenda](docs/RESEARCH_AGENDA.md) for the questions that would close the
-gaps, from open event-extraction benchmarks to court-outcome data. WildTrace takes the security frame
+gaps, from open event-extraction benchmarks to court-outcome data. Ichnic takes the security frame
 on one condition: **security without militarisation**. Claims carry their evidence, enforcement is
-counted and never glorified, and no accused person is named (see [how WildTrace speaks](docs/VOICE.md)).
+counted and never glorified, and no accused person is named (see [how Ichnic speaks](docs/VOICE.md)).
 
-## What WildTrace sees that others do not
+## What Ichnic sees that others do not
 
 **Offered online, rarely caught.** [ECO-SOLVE](https://www.ecosolve.eco/dashboard) (Global Initiative
 Against Transnational Organized Crime) records wildlife adverts online: 30,934 adverts for 440 species
 through 11 regional hubs, 14 April 2024 to 24 September 2026, three in five on Facebook, and no plants.
-WildTrace records where trade met enforcement. Set side by side for the same species, country and period,
+Ichnic records where trade met enforcement. Set side by side for the same species, country and period,
 they show where wildlife is sold openly while almost nothing reaches the public record of seizures:
 
-| Country | Group | Adverts (ECO-SOLVE) | Cases (WildTrace) |
+| Country | Group | Adverts (ECO-SOLVE) | Cases (Ichnic) |
 | --- | --- | --- | --- |
 | Thailand | Bears | 1,303 | 0 |
 | Thailand | Parrots & songbirds | 1,046 | 0 |
@@ -105,9 +107,9 @@ they show where wildlife is sold openly while almost nothing reaches the public 
 | Thailand | Elephant (ivory) | 2,917 | 2 |
 
 It is not a detection rate (the sources watch different things with different effort), and part of the
-gap was WildTrace's own: 10,313 of the adverts are in Thai, so WildTrace now reads Thai news too. Only
+gap was Ichnic's own: 10,313 of the adverts are in Thai, so Ichnic now reads Thai news too. Only
 aggregated counts are published ([`online_gap.csv`](https://tarunv13.github.io/wildtrace/data/online_gap.csv)),
-with attribution; the advert rows are not redistributed. Species offered online but in no WildTrace group
+with attribution; the advert rows are not redistributed. Species offered online but in no Ichnic group
 yet (pirarucu, otters, small wild cats, serows) are listed for the next groups. Side-by-side coverage:
 [docs/OBSERVATORIES.md](docs/OBSERVATORIES.md).
 
@@ -132,7 +134,7 @@ the text in an image and [BioCLIP](https://huggingface.co/imageomics/bioclip) re
 Vora et al. (2026, *Nature*): more than half of traded reptiles and two in five traded amphibians are taken
 from the wild, and legal and illegal animals are hard to tell apart.
 
-## Why WildTrace
+## Why Ichnic
 
 - **Every case says how well it is evidenced.** Validated, official, corroborated or single
   report, shown on the map, in the case panel and in the CSV. A case built on one local news
@@ -148,7 +150,7 @@ from the wild, and legal and illegal animals are hard to tell apart.
 - **Nobody accused is named.** No names, phone numbers, addresses or seller identities are ever
   published. The build fails if one gets through, and CI checks again.
 
-|  | WildTrace | Commercial and closed IWT dashboards |
+|  | Ichnic | Commercial and closed IWT dashboards |
 | --- | --- | --- |
 | Cost | Free | Licence, subscription or membership |
 | Source code | Open (MIT) | Closed |
@@ -158,14 +160,14 @@ from the wild, and legal and illegal animals are hard to tell apart.
 | Your own data | Stays in your browser | Uploaded to a server |
 | Scope | Global, fauna and flora | Often one region or one taxon |
 
-WildTrace is young, and it does not replace the field's reference datasets. It points to them
+Ichnic is young, and it does not replace the field's reference datasets. It points to them
 instead: the [observatory network](docs/OBSERVATORIES.md) lists 33 datasets, dashboards and
 codebooks, with what each holds and its access terms. The CITES Trade Database, ETIS, LEMIS,
-UNODC World WISE and TRAFFIC's portal hold records WildTrace will never match.
+UNODC World WISE and TRAFFIC's portal hold records Ichnic will never match.
 
 ## Who it's for
 
-| You are | What WildTrace gives you |
+| You are | What Ichnic gives you |
 | --- | --- |
 | Investigative journalism | A searchable base of public seizures with every source link, and a link chart to find what connects them |
 | Enforcement and customs analysis | Reported routes, transport modes, commodities and the agencies named, exportable as CSV, GraphML or JSON |
@@ -187,17 +189,17 @@ losing your place.
 | **Globe** | Cases by kind, a density glow, reported routes as arcs, observatories. Globe or flat, slow rotation, legend toggle |
 | **Flows** | Where wildlife is taken, where it passes through and where it is seized, from 24,786 seized shipments reported to CITES and imports seized at US ports (LEMIS). You build the view: follow a species or a country, choose source and market countries, how many routes, which evidence (CITES seized, seized at US ports, declared legal trade, news routes), and colour lines by region, role or species. Every route can be switched off; a story sentence rewrites itself from what is on; the whole view lives in the link |
 | **Who supplies whom** | A heatmap of source countries (or regions) against the countries that seized them, for plants, animals or both, with or without the United States; click a cell to draw it |
-| **Zoonoses** | A separate lens: 2,116 WHO outbreak reports of animal-borne disease, grouped by how they reach people, with WildTrace cases as rings over them, and a table of the viruses confirmed in each traded species group (VIRION). A shared map, not a cause |
+| **Zoonoses** | A separate lens: 2,116 WHO outbreak reports of animal-borne disease, grouped by how they reach people, with Ichnic cases as rings over them, and a table of the viruses confirmed in each traded species group (VIRION). A shared map, not a cause |
 | **Analysis** | What the evidence shows on one sheet: cases per month, events, species, source or market, transport, CITES seizures per year |
 | **Search** (`/`) | Cases, species, countries and observatories in one box |
 | **Pulse** | A live summary of what is in view; every bar is a filter |
 | **Inspector** | A written account of the case, then the documented facts, analytical context and limits of the evidence, with every source listed. Back, forward and a shareable link |
 | **Timeline** | Cases per week. Drag to pick a period; ▶ glides through them in time order |
-| **Why this matters** | A collapsible trivia box: the scale of the trade, each figure from a named report you can open, plus facts counted from WildTrace's own cases |
+| **Why this matters** | A collapsible trivia box: the scale of the trade, each figure from a named report you can open, plus facts counted from Ichnic's own cases |
 | **Tour** | A one-minute walkthrough that spotlights each part of the live interface. Runs once for a new reader, replayable from the Tour button |
 | **Table** | Every case, sortable and filterable, with CSV download |
 | **Investigate** | A link chart of cases, species, places and agencies, plus your own imported data |
-| **Network** | The 33 observatories, databases and codebooks, each checked, with how WildTrace uses them |
+| **Network** | The 33 observatories, databases and codebooks, each checked, with how Ichnic uses them |
 | **Methods** and **About** | Pipeline, classifier, evidence definitions, coverage, licence and citation |
 
 <p align="center">
@@ -225,7 +227,7 @@ losing your place.
 </p>
 
 <p align="center">
-  <img src="docs/img/zoonoses.png" alt="The Zoonoses view: WHO outbreak reports as bubbles coloured by how the disease reaches people, WildTrace cases as rings, and a list of countries with both" width="100%">
+  <img src="docs/img/zoonoses.png" alt="The Zoonoses view: WHO outbreak reports as bubbles coloured by how the disease reaches people, Ichnic cases as rings, and a list of countries with both" width="100%">
   <br>
   <sub>Zoonoses: animal-borne outbreaks beside the trade, stated on every surface as a shared map, not a cause.</sub>
 </p>
@@ -264,7 +266,7 @@ Found a mistake? Use **Report a correction** on any case, which opens a pre-fill
   [`lemis_seized_flows.csv`](https://tarunv13.github.io/wildtrace/data/lemis_seized_flows.csv)
   (imports seized at US ports per species group and origin, CC BY 4.0),
   [`online_gap.csv`](https://tarunv13.github.io/wildtrace/data/online_gap.csv)
-  (ECO-SOLVE adverts against WildTrace cases per group and country; aggregated, with attribution),
+  (ECO-SOLVE adverts against Ichnic cases per group and country; aggregated, with attribution),
   [`captive_claims.csv`](https://tarunv13.github.io/wildtrace/data/captive_claims.csv)
   (commercial CITES exports declared captive-bred, per exporter and group, 2015-18 vs 2020-23; CITES terms),
   [`zoonotic_outbreak_reports.csv`](https://tarunv13.github.io/wildtrace/data/zoonotic_outbreak_reports.csv)
@@ -390,7 +392,7 @@ wildtrace build                                        # cases, graph, CSV, site
 wildtrace cites path/to/Trade_database_download_v2026.1 # yearly: CITES supply -> demand flows
 wildtrace lemis data/raw/lemis --taxonomy path/to/codebook # US port seizures (LEMIS, CC BY)
 wildtrace captive path/to/Trade_database_download_v2026.1 # yearly: captive-bred claims in CITES trade
-wildtrace ecosolve data/raw/ecosolve/adverts-data.csv  # ECO-SOLVE adverts vs WildTrace cases
+wildtrace ecosolve data/raw/ecosolve/adverts-data.csv  # ECO-SOLVE adverts vs Ichnic cases
 wildtrace vision path/to/images                        # OCR + BioCLIP species evidence (pip install -e ".[vision]")
 wildtrace zoonoses                                     # weekly: VIRION + WHO outbreak reports
 python scripts/make_og.py                              # redraw the share card with the new counts
@@ -470,7 +472,7 @@ irrelevant ones. Contradictory labels, not the model, set the ceiling.
 
 ## Privacy
 
-WildTrace never publishes a person's name, a phone number, an e-mail address or a seller
+Ichnic never publishes a person's name, a phone number, an e-mail address or a seller
 identity; the build fails if one slips through, and CI checks again. Imported data stays in your
 browser's local storage and is never uploaded. There are no accounts, and fonts are self-hosted.
 
@@ -499,7 +501,7 @@ Ideas, not promises. Discuss them in [Issues](https://github.com/tarunv13/wildtr
 - Three in four cases rest on a single report, and 905 of 1,871 name no place.
 - Measured precision is 96.5% (target 98%, not yet reached); recall is not measured. See [docs/ACCURACY.md](docs/ACCURACY.md).
 - Platform names come from headlines only for Google News records: Google's robots.txt forbids fetching
-  its article links, and WildTrace respects that.
+  its article links, and Ichnic respects that.
 - Image evidence (`wildtrace vision`) runs locally on images you supply; the daily build does not yet
   collect images.
 - Coverage is thinner before late 2025, and reporting is uneven between countries and languages,
@@ -509,19 +511,19 @@ Ideas, not promises. Discuss them in [Issues](https://github.com/tarunv13/wildtr
 
 ## How to cite
 
-If WildTrace helps your work, please cite it. Use the **Cite this repository** button
+If Ichnic helps your work, please cite it. Use the **Cite this repository** button
 (it reads [`CITATION.cff`](CITATION.cff)) or copy one of these.
 
 **APA 7**
 
-> Verma, T. K. (2026). *WildTrace: the open atlas of illegal wildlife trade* (Version 1.11.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22902819
+> Verma, T. K. (2026). *Ichnic: the open atlas of illegal wildlife trade* (Version 1.11.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22902819
 
 **BibTeX**
 
 ```bibtex
 @software{verma_wildtrace_2026,
   author  = {Verma, Tarun Kumar},
-  title   = {WildTrace: the open atlas of illegal wildlife trade},
+  title   = {Ichnic: the open atlas of illegal wildlife trade},
   year    = {2026},
   version = {1.11.0},
   doi     = {10.5281/zenodo.22902819},
@@ -547,7 +549,7 @@ latest version. To cite the exact data you used, cite its version DOI:
 
 Brand, colours and mark: [docs/BRAND.md](docs/BRAND.md). Supporting the project: [docs/FUNDING.md](docs/FUNDING.md).
 
-Please also cite the data WildTrace builds on when you use those layers: the CITES Trade Database
+Please also cite the data Ichnic builds on when you use those layers: the CITES Trade Database
 (UNEP-WCMC), Marshall et al. 2025 and Eskew et al. 2020 (LEMIS), Carlson et al. 2022 (VIRION), Stringham
 et al. 2021 (seized-wildlife codebook) and ECO-SOLVE (Global Initiative Against Transnational Organized Crime).
 

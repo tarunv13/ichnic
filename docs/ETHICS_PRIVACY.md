@@ -1,6 +1,6 @@
 # Ethics, privacy and responsible OSINT
 
-WildTrace publishes information about crimes. That creates duties towards the
+Ichnic publishes information about crimes. That creates duties towards the
 people named in reports, towards the sources, and towards readers who may act on
 the data.
 
@@ -31,7 +31,7 @@ the data.
 
 ## 4. Measuring how the site is used
 
-WildTrace runs **Microsoft Clarity** on the published site. Clarity records interactions (clicks,
+Ichnic runs **Microsoft Clarity** on the published site. Clarity records interactions (clicks,
 scrolling, pointer movement), replays sessions, and sets cookies; the data is processed by
 Microsoft under its
 [privacy statement](https://privacy.microsoft.com/privacystatement).
@@ -54,7 +54,7 @@ cases they opened. The mitigations are:
 - **Stated where readers are.** The About panel says Clarity runs, and links to Microsoft's
   privacy statement, rather than burying it here.
 
-If you re-deploy WildTrace for a community where this is not acceptable, remove the attribute.
+If you re-deploy Ichnic for a community where this is not acceptable, remove the attribute.
 Nothing else in the site depends on it.
 
 ## 5. Security

@@ -1,4 +1,4 @@
-"""Questions WildTrace answers: computed from the published data at every build.
+"""Questions Ichnic answers: computed from the published data at every build.
 
 Every answer has the same shape, so the Atlas, the static pages and answer engines read it the same
 way (docs/VOICE.md): the question; who it is for; a one-sentence answer with its number; a small
@@ -33,7 +33,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, data: P
     flows, lemis, zoo = _load(data / "flows.json"), _load(data / "lemis.json"), _load(data / "zoonoses.json")
     gap, cap, acc = _load(data / "online_gap.json"), _load(data / "captive_claims.json"), _load(data / "accuracy.json")
     v = meta.get("verification", {})
-    news = {"name": "Public reports (WildTrace)", "detail": f"{v.get('official', 0):,} official, {v.get('corroborated', 0):,} corroborated, "
+    news = {"name": "Public reports (Ichnic)", "detail": f"{v.get('official', 0):,} official, {v.get('corroborated', 0):,} corroborated, "
             f"{v.get('single', 0):,} single report", "url": "#methods"}
     cites = {"name": "CITES Trade Database", "detail": "seized shipments (source I), reported by governments to UNEP-WCMC", "url": "https://trade.cites.org/"}
     out: list[dict] = []
@@ -78,7 +78,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, data: P
             out.append({"slug": "is-wildlife-sold-online-ever-caught", "domain": "network", "personas": ["journalists", "policy"],
                         "q": "Is wildlife sold online ever caught?",
                         "a": f"Rarely, in the public record: {sp(r0['group'])} in {cc(r0['country'])} drew {r0['adverts']:,} adverts and "
-                             f"{r0['cases']} WildTrace cases in the same period.",
+                             f"{r0['cases']} Ichnic cases in the same period.",
                         "number": {"v": f"{gap['adverts']:,}", "k": f"adverts recorded by ECO-SOLVE, {gap['window'][0][:7]} to {gap['window'][1][:7]}"},
                         "chart": [[f"{sp(p['group'])}, {cc(p['country'])}", p["adverts"]] for p in rows],
                         "who": [{"name": "ECO-SOLVE (Global Initiative Against Transnational Organized Crime)", "detail": "adverts recorded by regional hubs", "url": gap["url"]}, news],
@@ -119,7 +119,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, data: P
         t = sum(r[4] for r in lemis["seized"])
         out.append({"slug": "what-is-seized-at-us-ports", "domain": "trade", "personas": ["researchers", "journalists"],
                     "q": "What is seized at US ports, and where does it come from?",
-                    "a": f"US wildlife inspectors seized {t:,} import records of the groups WildTrace follows; most came from "
+                    "a": f"US wildlife inspectors seized {t:,} import records of the groups Ichnic follows; most came from "
                          + ", ".join(cc(c) for c, _ in org.most_common(3)) + ".",
                     "number": {"v": f"{t:,}", "k": "import records seized by US inspectors"},
                     "chart": [[cc(c), n] for c, n in org.most_common(6)],
@@ -160,21 +160,21 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, data: P
                 "a": "It reaches security through seven links, from extraction to crime revenue, disease and ecosystem loss; the weakest in open "
                      "data is who profits.",
                 "number": {"v": "7", "k": "links from nature to security, each rated"},
-                "chart": [], "who": [{"name": "WildTrace Risk pathways", "detail": "after the Oxford Agile Initiative agenda (2026)", "url": "pathways.html"}],
+                "chart": [], "who": [{"name": "Ichnic Risk pathways", "detail": "after the Oxford Agile Initiative agenda (2026)", "url": "pathways.html"}],
                 "limit": "Security framing must not become militarisation: evidence first, rights respected.",
                 "go": {"label": "Read Risk pathways", "href": "pathways.html"}})
 
     if acc:
         out.append({"slug": "how-accurate-is-wildtrace", "domain": "network", "personas": ["everyone", "researchers", "journalists", "policy"],
-                    "q": "How accurate is WildTrace?",
+                    "q": "How accurate is Ichnic?",
                     "a": f"In a blind audit of {acc['n']} randomly sampled cases, {acc['relevant']} were genuine wildlife-trade enforcement "
                          f"events ({acc['precision']:.1%}; 95% interval {acc['ci'][0]:.1%} to {acc['ci'][1]:.1%})"
                          + (f", and species were right in {acc['species_ok']:.1%} of them." if acc.get("species_ok") is not None else "."),
                     "number": {"v": f"{acc['precision']:.1%}", "k": f"of audited cases are real events ({acc['date']})"},
                     "chart": [[k, n] for k, n in acc.get("errors", {}).items()],
                     "chart_title": f"The {acc['n'] - acc['relevant']} of {acc['n']} audited cases that were not real events, by reason",
-                    "who": [{"name": "WildTrace accuracy audit", "detail": acc.get("method", ""), "url": "https://github.com/tarunv13/wildtrace/blob/main/docs/ACCURACY.md"}, news],
-                    "limit": "Precision says how many published cases are real, not how many real events are missed. Recall, the share of real events WildTrace finds, is about 20% to 25%: that is how many of 576 hand-checked events on an independent list it matched, after removing matches that happen by chance. Coverage follows the sources searched.",
+                    "who": [{"name": "Ichnic accuracy audit", "detail": acc.get("method", ""), "url": "https://github.com/tarunv13/wildtrace/blob/main/docs/ACCURACY.md"}, news],
+                    "limit": "Precision says how many published cases are real, not how many real events are missed. Recall, the share of real events Ichnic finds, is about 20% to 25%: that is how many of 576 hand-checked events on an independent list it matched, after removing matches that happen by chance. Coverage follows the sources searched.",
                     "go": {"label": "Read the method", "href": "./#methods"}})
 
     latest = sorted((c for c in cases if c.get("date")), key=lambda c: c["date"], reverse=True)
@@ -217,10 +217,10 @@ def publish(answers: list[dict], out_dir: Path, page, esc, site: str, write) -> 
 {f'<figure class="pw"><figcaption class="chart-t">{esc(a["chart_title"])}</figcaption><ul class="bars">{bars}</ul></figure>' if bars and a.get("chart_title") else (f'<ul class="bars">{bars}</ul>' if bars else '')}
 <h2>What you should know</h2><p>{esc(a['limit'])}</p>
 <h2>Sources and processing</h2><ul class="who">{who}</ul>
-<p class="small">Figures are computed from the published WildTrace data on every daily build; counts are counts of public
+<p class="small">Figures are computed from the published Ichnic data on every daily build; counts are counts of public
   reports collected, not the true incidence of the crime.</p>
 <h2>Cite this answer</h2>
-<pre class="cite">Verma, T. K. (2026). {esc(a['q'])} WildTrace: the open atlas of illegal wildlife trade. {url} (version of {today}). doi:10.5281/zenodo.22902819</pre>
+<pre class="cite">Verma, T. K. (2026). {esc(a['q'])} Ichnic: the open atlas of illegal wildlife trade. {url} (version of {today}). doi:10.5281/zenodo.22902819</pre>
 <p class="small">Data: <a href="{site}/data/answers.json">answers.json</a> · <a href="{site}/data/cases.csv">cases.csv</a> (CC BY 4.0) ·
   <a href="https://doi.org/10.5281/zenodo.22902819">archived releases on Zenodo</a></p>
 <p><a class="pill" href="{esc(site + '/' + go.lstrip('./')) if not go.startswith('http') else esc(go)}">{esc(a['go']['label'])} →</a>
@@ -229,8 +229,8 @@ def publish(answers: list[dict], out_dir: Path, page, esc, site: str, write) -> 
         ld = {"@context": "https://schema.org", "@type": "QAPage", "mainEntity": {"@type": "Question", "name": a["q"], "answerCount": 1,
               "acceptedAnswer": {"@type": "Answer", "text": f"{a['a']} {a['limit']}", "url": url, "dateModified": today,
               "author": {"@type": "Person", "name": "Tarun Kumar Verma"}}}, "dateModified": today}
-        write(f"answers/{a['slug']}.html", page(f"{a['q']} | WildTrace", a["a"][:155], f"{site}/answers/{a['slug']}.html", body, ld,
-                                                [("WildTrace", site + "/"), ("Questions", f"{site}/answers.html")]))
+        write(f"answers/{a['slug']}.html", page(f"{a['q']} | Ichnic", a["a"][:155], f"{site}/answers/{a['slug']}.html", body, ld,
+                                                [("Ichnic", site + "/"), ("Questions", f"{site}/answers.html")]))
     # Each question once, in number order, with the audiences it serves as labels.
     groups = "<ul class=\"cases qlist\">" + "".join(
         f'<li><a href="{site}/answers/{a["slug"]}.html"><span><span class="qn">Q{i:02d}</span> <span class="qq">{esc(a["q"])}</span><br>'
@@ -239,10 +239,10 @@ def publish(answers: list[dict], out_dir: Path, page, esc, site: str, write) -> 
         for i, a in enumerate(answers, 1)) + "</ul>"
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": a["q"], "acceptedAnswer": {"@type": "Answer", "text": a["a"]}} for a in answers]}
-    write("answers.html", page("Questions WildTrace answers about illegal wildlife trade | WildTrace",
+    write("answers.html", page("Questions Ichnic answers about illegal wildlife trade | Ichnic",
                                "Live answers about illegal wildlife trade: what is seized, where it goes, how often it ends in conviction, "
                                "and how accurate the data is, each with its sources.",
-                               f"{site}/answers.html", f"<h1>What WildTrace answers, and for whom</h1>"
+                               f"{site}/answers.html", f"<h1>What Ichnic answers, and for whom</h1>"
                                f"<p class=\"lede\">Every answer names its sources and says what its number cannot tell you. {len(answers)} questions, "
                                f"numbered; figures rebuilt daily, last on {date.today().isoformat()}.</p>{groups}",
-                               ld, [("WildTrace", site + "/"), ("Questions", f"{site}/answers.html")]))
+                               ld, [("Ichnic", site + "/"), ("Questions", f"{site}/answers.html")]))

@@ -96,7 +96,7 @@ def page(title: str, desc: str, canonical: str, body: str, jsonld: dict | None =
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
-<header class="top"><a class="brand" href="{SITE}/"><img src="{SITE}/brand/mark.svg" alt="" width="26" height="26">WildTrace</a>
+<header class="top"><a class="brand" href="{SITE}/"><img src="{SITE}/brand/mark.svg" alt="" width="26" height="26">Ichnic</a>
   <span class="tag">Follow the trade. Open evidence on illegal wildlife trade.</span></header>
 <main id="main">
 {crumb}
@@ -105,7 +105,7 @@ def page(title: str, desc: str, canonical: str, body: str, jsonld: dict | None =
 <footer>
   <p><a href="{SITE}/">Open the interactive Atlas</a> · <a href="{SITE}/browse.html">Browse every species and country</a>
      · <a href="{SITE}/data/cases.csv">Download the data (CSV)</a> · <a href="https://github.com/tarunv13/wildtrace">Source code</a></p>
-  <p class="small">Data CC BY 4.0. Cite as: Verma, T. K. (2026). <i>WildTrace: the open atlas of illegal wildlife trade.</i>
+  <p class="small">Data CC BY 4.0. Cite as: Verma, T. K. (2026). <i>Ichnic: the open atlas of illegal wildlife trade.</i>
      Zenodo. <a href="https://doi.org/10.5281/zenodo.22902819">https://doi.org/10.5281/zenodo.22902819</a></p>
   <p class="small">Counts show where wildlife crime is <b>reported</b>, in the newsrooms and government sites searched,
      not where it happens. No person accused is ever named.</p>
@@ -129,7 +129,7 @@ def _case_account(c: dict, sp_label) -> str:
         out.append(f"The reports give the quantity as {', '.join(sorted(qs))}.")
     if c.get("people_arrested"):
         n = c["people_arrested"]
-        out.append(f"{n} {'person was' if n == 1 else 'people were'} reported arrested. WildTrace records the number "
+        out.append(f"{n} {'person was' if n == 1 else 'people were'} reported arrested. Ichnic records the number "
                    "only, never who they are, and an arrest is not a conviction.")
     if c.get("agencies"):
         out.append(f"{', '.join(c['agencies'])} {'is' if len(c['agencies']) == 1 else 'are'} named as acting in the reports.")
@@ -172,10 +172,10 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         place = c.get("place") or {}
         where = place.get("name") or "location not reported"
         sp = [sp_label(s) for s in c.get("species", [])]
-        title = f"{c.get('summary', 'Wildlife trade case')} | WildTrace"
+        title = f"{c.get('summary', 'Wildlife trade case')} | Ichnic"
         desc = (f"{', '.join(sp) or 'Wildlife'} case reported {long_date(c.get('date'))}"
                 + (f" in {where}" if place else "") + f". {c.get('n_sources', 1)} source(s), evidence: "
-                f"{c.get('verification', 'single')}. Open data from WildTrace.")
+                f"{c.get('verification', 'single')}. Open data from Ichnic.")
         rows = "".join(
             f'<li><a href="{esc(s.get("url"))}" rel="nofollow noopener" target="_blank">{esc(s.get("outlet") or "report")}</a>'
             f' <span class="muted">{esc(s.get("date") or "")}{" · official source" if s.get("tier") == "official" else ""}</span></li>'
@@ -204,7 +204,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         ld = {"@context": "https://schema.org", "@type": "Report", "name": c.get("summary", ""),
               "datePublished": c.get("date", ""), "url": f"{SITE}/case/{cid}.html",
               "about": [{"@type": "Thing", "name": s} for s in sp] or [{"@type": "Thing", "name": "Illegal wildlife trade"}],
-              "isPartOf": {"@type": "Dataset", "name": "WildTrace", "url": SITE + "/",
+              "isPartOf": {"@type": "Dataset", "name": "Ichnic", "url": SITE + "/",
                            "identifier": "https://doi.org/10.5281/zenodo.22902819"},
               "license": LICENCE, "creator": {"@type": "Person", "name": "Tarun Kumar Verma",
                                               "identifier": "https://orcid.org/0009-0009-4130-2455"}}
@@ -212,7 +212,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
             ld["contentLocation"] = {"@type": "Place", "name": where,
                                      "geo": {"@type": "GeoCoordinates", "latitude": place["lat"], "longitude": place["lon"]}}
         write(f"case/{cid}.html", page(title, desc, f"{SITE}/case/{cid}.html", body, ld,
-                                       [("WildTrace", SITE + "/"), ("Cases", SITE + "/browse.html")]))
+                                       [("Ichnic", SITE + "/"), ("Cases", SITE + "/browse.html")]))
 
     # ---------------------------------------------------------------- species pages
     # CITES seizure records (flows.json, from `wildtrace cites`): a group the news rarely covers,
@@ -275,29 +275,29 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         recent = sorted(mine, key=lambda c: c.get("date") or "", reverse=True)[:25]
         official = sum(1 for c in mine if c.get("verification") in ("official", "validated"))
         if not mine:   # CITES-only page
-            title = f"{label} trafficking: {cz['n']:,} seizures reported to CITES | WildTrace"
+            title = f"{label} trafficking: {cz['n']:,} seizures reported to CITES | Ichnic"
             desc = (f"{cz['n']:,} seized or confiscated shipments of {label.lower()} reported to CITES since {cites_since}: "
                     f"where they came from and where they were seized. Open data.")
             body = f"""
 <h1>{esc(label)} in the illegal wildlife trade</h1>
-<p class="lede">No news report of a {esc(label.lower())} seizure has reached WildTrace yet. The trade is still recorded:
+<p class="lede">No news report of a {esc(label.lower())} seizure has reached Ichnic yet. The trade is still recorded:
   countries report seized and confiscated shipments to CITES.</p>
 <p>{f"CITES appendix {esc(g.get('cites'))}. " if g.get("cites") else ""}{f"Taxa covered: {esc(', '.join(g.get('taxa', [])))}. " if g.get("taxa") else ""}</p>
 {cites_html}"""
             ld = {"@context": "https://schema.org", "@type": "Dataset", "name": f"Seized shipments of {label} reported to CITES",
                   "description": desc, "url": f"{SITE}/species/{slug(gid)}.html", "license": LICENCE,
-                  "isPartOf": {"@type": "Dataset", "name": "WildTrace", "url": SITE + "/"}}
+                  "isPartOf": {"@type": "Dataset", "name": "Ichnic", "url": SITE + "/"}}
             write(f"species/{slug(gid)}.html", page(title, desc, f"{SITE}/species/{slug(gid)}.html", body, ld,
-                                                    [("WildTrace", SITE + "/"), ("Species", SITE + "/browse.html")]))
+                                                    [("Ichnic", SITE + "/"), ("Species", SITE + "/browse.html")]))
             continue
-        title = f"{label} trafficking: {len(mine)} recorded cases | WildTrace"
+        title = f"{label} trafficking: {len(mine)} recorded cases | Ichnic"
         if len(title) > 70:
             title = title.replace(" recorded cases", " cases")
         desc = (f"{len(mine)} seizures, arrests and convictions involving {label.lower()} from public reports "
                 f"in {len(by_country)} countries since {window[0][:4]}. Open data, graded by evidence.")
         body = f"""
 <h1>{esc(label)} in the illegal wildlife trade</h1>
-<p class="lede">WildTrace has recorded <b>{len(mine)}</b> cases involving {esc(label.lower())} from public reports
+<p class="lede">Ichnic has recorded <b>{len(mine)}</b> cases involving {esc(label.lower())} from public reports
   between {esc(window[0])} and {esc(window[1])}, in <b>{len(by_country)}</b> countries.
   {official} of them rest on an official or validated source.</p>
 <p>{f"CITES appendix {esc(g.get('cites'))}. " if g.get("cites") else ""}
@@ -315,7 +315,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         ld = {"@context": "https://schema.org", "@type": "Dataset",
               "name": f"Illegal wildlife trade cases involving {label}",
               "description": desc, "url": f"{SITE}/species/{slug(gid)}.html", "license": LICENCE,
-              "isPartOf": {"@type": "Dataset", "name": "WildTrace", "url": SITE + "/"},
+              "isPartOf": {"@type": "Dataset", "name": "Ichnic", "url": SITE + "/"},
               "temporalCoverage": f"{window[0]}/{window[1]}", "keywords": [label, "illegal wildlife trade",
               "wildlife trafficking", "seizures", "CITES"],
               "creator": {"@type": "Person", "name": "Tarun Kumar Verma",
@@ -323,7 +323,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
               "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
                                 "contentUrl": f"{SITE}/data/cases.csv"}]}
         write(f"species/{slug(gid)}.html", page(title, desc, f"{SITE}/species/{slug(gid)}.html", body, ld,
-                                                [("WildTrace", SITE + "/"), ("Species", SITE + "/browse.html")]))
+                                                [("Ichnic", SITE + "/"), ("Species", SITE + "/browse.html")]))
 
     # ---------------------------------------------------------------- country pages
     seen_cc = {(c.get("place") or {}).get("country") for c in cases if (c.get("place") or {}).get("country")}
@@ -336,12 +336,12 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
                 by_sp[s] = by_sp.get(s, 0) + 1
         top = sorted(by_sp.items(), key=lambda kv: -kv[1])[:12]
         recent = sorted(mine, key=lambda c: c.get("date") or "", reverse=True)[:25]
-        title = f"Wildlife trafficking in {name}: {len(mine)} recorded cases | WildTrace"
+        title = f"Wildlife trafficking in {name}: {len(mine)} recorded cases | Ichnic"
         desc = (f"{len(mine)} wildlife seizures, arrests and convictions in {name} from public reports "
                 f"since {window[0][:4]}, by species and strength of evidence. Open data.")
         body = f"""
 <h1>Wildlife trafficking cases reported in {esc(name)}</h1>
-<p class="lede">WildTrace has recorded <b>{len(mine)}</b> cases in {esc(name)} from public reports between
+<p class="lede">Ichnic has recorded <b>{len(mine)}</b> cases in {esc(name)} from public reports between
   {esc(window[0])} and {esc(window[1])}.</p>
 <p>These are cases <b>reported</b> in the newsrooms and government sites searched. A country with active reporters and
   a government that publishes its seizures will show more cases than one without, whatever the trade is doing.</p>
@@ -356,10 +356,10 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
               "url": f"{SITE}/country/{cc.lower()}.html", "license": LICENCE,
               "spatialCoverage": {"@type": "Place", "name": name},
               "temporalCoverage": f"{window[0]}/{window[1]}",
-              "isPartOf": {"@type": "Dataset", "name": "WildTrace", "url": SITE + "/"},
+              "isPartOf": {"@type": "Dataset", "name": "Ichnic", "url": SITE + "/"},
               "creator": {"@type": "Person", "name": "Tarun Kumar Verma"}}
         write(f"country/{cc.lower()}.html", page(title, desc, f"{SITE}/country/{cc.lower()}.html", body, ld,
-                                                 [("WildTrace", SITE + "/"), ("Countries", SITE + "/browse.html")]))
+                                                 [("Ichnic", SITE + "/"), ("Countries", SITE + "/browse.html")]))
 
     # ---------------------------------------------------------------- browse index
     n_sp = {gid: sum(1 for c in cases if gid in c.get("species", [])) for gid in species}
@@ -375,7 +375,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
 <h1>Browse illegal wildlife trade cases</h1>
 <p class="lede">{len(cases):,} cases from {meta.get('n_reports', '')} public reports, {esc(window[0])} to {esc(window[1])},
   covering both animals and plants. Every case links to its sources and says how strongly it is evidenced.</p>
-<p><a class="pill" href="{SITE}/answers.html">Questions WildTrace answers →</a> <a class="pill" href="{SITE}/pathways.html">Is wildlife crime a security risk? →</a></p>
+<p><a class="pill" href="{SITE}/answers.html">Questions Ichnic answers →</a> <a class="pill" href="{SITE}/pathways.html">Is wildlife crime a security risk? →</a></p>
 <h2>By species group</h2><ul class="cols">{sp_rows}</ul>
 <h2>By country</h2><ul class="cols">{cc_rows}</ul>
 <h2>The data</h2>
@@ -383,20 +383,20 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
    <a href="{SITE}/">The interactive Atlas</a> maps the same data, with a timeline, filters by evidence, and a
    link-analysis workbench that runs in your browser.</p>
 """
-    write("browse.html", page("Browse illegal wildlife trade cases by species and country | WildTrace",
+    write("browse.html", page("Browse illegal wildlife trade cases by species and country | Ichnic",
                               f"Index of {len(cases):,} recorded wildlife trafficking cases by species group and country, "
                               "from public reports worldwide. Open data, CC BY 4.0.",
                               f"{SITE}/browse.html", body,
                               {"@context": "https://schema.org", "@type": "CollectionPage",
                                "name": "Browse illegal wildlife trade cases", "url": f"{SITE}/browse.html"},
-                              [("WildTrace", SITE + "/")]))
+                              [("Ichnic", SITE + "/")]))
 
     # ---------------------------------------------------------------- risk pathways
     from . import pathways
     pw_path, pw_html = pathways.build(cases, species, countries, meta, out, page, esc, SITE)
     write(pw_path, pw_html)
 
-    # ---------------------------------------------------------------- questions WildTrace answers
+    # ---------------------------------------------------------------- questions Ichnic answers
     from . import answers as _answers
     _answers.publish(_answers.build(cases, species, countries, meta, out / "data"), out, page, esc, SITE, write)
 
@@ -407,20 +407,20 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         f'<url><loc>{SITE}/</loc><lastmod>{today}</lastmod><priority>1.0</priority></url>{entries}</urlset>\n',
         encoding="utf-8")
     (out / "robots.txt").write_text(
-        "# WildTrace: open data, open to crawlers, including the ones that answer questions.\n"
+        "# Ichnic: open data, open to crawlers, including the ones that answer questions.\n"
         "User-agent: *\nAllow: /\n\n"
         "# Named explicitly so there is no doubt: the data is CC BY 4.0, and attribution is the only ask.\n"
         + "".join(f"User-agent: {a}\nAllow: /\n\n" for a in
                   ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "anthropic-ai",
                    "PerplexityBot", "Google-Extended", "Applebot-Extended", "CCBot", "Bingbot", "DuckDuckBot"])
         + f"Sitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
-    (out / "llms.txt").write_text(f"""# WildTrace
+    (out / "llms.txt").write_text(f"""# Ichnic
 
 > The open atlas of illegal wildlife trade: seizures, arrests and convictions of wild animals and
 > plants worldwide, each case graded by the strength of its evidence, with the underlying data
 > published as CSV under CC BY 4.0.
 
-WildTrace collects public reports (government, customs, police and judicial releases first, then
+Ichnic collects public reports (government, customs, police and judicial releases first, then
 news in {len(set(c.get('place', {}).get('country') for c in cases if c.get('place')))} countries and several languages), screens them,
 extracts the species, place, quantity, agency and route, merges reports about the same incident
 into one case, and publishes the result.
@@ -438,7 +438,7 @@ into one case, and publishes the result.
 
 ## Wildlife crime and security
 
-WildTrace maps seven links from nature to national security (extraction, routes, borders, crime
+Ichnic maps seven links from nature to national security (extraction, routes, borders, crime
 revenue, disease risk, ecosystem loss, evidence and trust) and rates the open evidence for each.
 The weakest link is who profits: seizures are common in the record, convictions rare, financial
 flows absent. Security framing should not become militarisation (Duffy 2015; Massé et al. 2020).
@@ -449,14 +449,14 @@ Security: Exploring the Risk Pathways" (2026), research questions R1.37 and R5.2
 
 - Atlas (interactive map): {SITE}/
 - Browse by species and country: {SITE}/browse.html
-- Questions WildTrace answers (live, with sources and limits): {SITE}/answers.html
+- Questions Ichnic answers (live, with sources and limits): {SITE}/answers.html
 - Risk pathways (wildlife crime and national security): {SITE}/pathways.html
 - US port seizures (CSV, CC BY 4.0): {SITE}/data/lemis_seized_flows.csv
 - Open research agenda: https://github.com/tarunv13/wildtrace/blob/main/docs/RESEARCH_AGENDA.md
 - Data (CSV, CC BY 4.0): {SITE}/data/cases.csv
 - Method and limits: {SITE}/#methods
 - Source code: https://github.com/tarunv13/wildtrace
-- Citation: Verma, T. K. (2026). WildTrace: the open atlas of illegal wildlife trade. Zenodo.
+- Citation: Verma, T. K. (2026). Ichnic: the open atlas of illegal wildlife trade. Zenodo.
   https://doi.org/10.5281/zenodo.22902819
 """, encoding="utf-8")
     (out / "404.html").write_text(not_found_page(), encoding="utf-8")
@@ -467,11 +467,11 @@ def not_found_page() -> str:
     """GitHub Pages serves this for any missing path, at any depth, so its links stay absolute."""
     body = f"""
 <h1>That page is not here</h1>
-<p class="lede">The address may be old, or mistyped. Everything WildTrace publishes is one step away.</p>
+<p class="lede">The address may be old, or mistyped. Everything Ichnic publishes is one step away.</p>
 <ul class="cases">
   <li><a href="{SITE}/"><span>Open the Atlas: questions, the map and every case</span></a></li>
-  <li><a href="{SITE}/answers.html"><span>Questions WildTrace answers, with their sources</span></a></li>
+  <li><a href="{SITE}/answers.html"><span>Questions Ichnic answers, with their sources</span></a></li>
   <li><a href="{SITE}/browse.html"><span>Browse by species group and country</span></a></li>
 </ul>"""
-    return page("Page not found | WildTrace", "This page is not on WildTrace. Open the Atlas, the questions or the browse index.",
+    return page("Page not found | Ichnic", "This page is not on Ichnic. Open the Atlas, the questions or the browse index.",
                 f"{SITE}/404.html", body).replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"', 1)

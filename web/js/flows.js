@@ -215,7 +215,7 @@ export function renderControls(el) {
     ${chk("f-ev-s", f.ev.seized, "Seized shipments", "CITES, source code I (confiscated or seized)")}
     ${chk("f-ev-l", f.ev.lemis, "Seized at US ports", "US Fish and Wildlife Service LEMIS, 2000–2022. Overlaps US-reported CITES seizures: compare, don't add")}
     ${chk("f-ev-d", f.ev.declared, "Declared trade", "CITES, all other sources: mostly legal, dashed")}
-    ${chk("f-ev-n", f.ev.news, "News routes", "origin and destination named in WildTrace cases")}
+    ${chk("f-ev-n", f.ev.news, "News routes", "origin and destination named in Ichnic cases")}
     ${chk("f-spread", f.spread, "Spread across markets", `at most ${PER_MARKET} routes into any one country, so no single market fills the list`)}
     ${chk("f-us", !f.noUS, "Include the United States", "it reports seizures more completely than most")}
     <div class="sec"><h3>Seizures per year</h3><span class="muted" style="font-size:11.5px">${last} still being reported</span></div>
@@ -446,10 +446,10 @@ export function routeView(key, ic) {
       <p style="margin:0 0 6px">This route is not built from news. Each record is a shipment a government reported to CITES in its annual report, with source code I: confiscated or seized. CITES anonymises individual shipments, so the counts, products, years and reporters above are the evidence.</p>
       <p style="margin:0"><a href="https://trade.cites.org/" target="_blank" rel="noopener">Check it in the CITES Trade Database ↗</a> (exporter ${esc(a)}, importer ${esc(b)}, source I, ${esc(String(d.year_min))} onward).</p></div>
     <div class="eyebrow" style="margin:16px 0 6px">${ic.ui("news")} In the news</div>
-    ${news.length ? `<p class="muted" style="font-size:12px;margin:0 0 6px">WildTrace cases involving the same species in ${[...ccs].map((c) => esc(name(c))).join(", ")}. They support the pattern; they are not the same shipments.</p>
+    ${news.length ? `<p class="muted" style="font-size:12px;margin:0 0 6px">Ichnic cases involving the same species in ${[...ccs].map((c) => esc(name(c))).join(", ")}. They support the pattern; they are not the same shipments.</p>
       ${news.map((c) => `<button class="link-row" data-go="case|${c.id}"><span style="display:inline-flex;gap:8px;align-items:center;min-width:0">${ic.kind(c.kind)}<span>${esc(c.summary)}</span></span>
         <span style="display:inline-flex;gap:4px;align-items:center">${(c.sources || []).slice(0, 3).map((s) => ic.outlet(s.outlet)).join("")}<span class="muted" style="font-size:12px;margin-left:4px">${esc(c.date || "")}</span></span></button>`).join("")}`
-      : `<p class="muted" style="font-size:13px">No news case in WildTrace matches these species in these countries yet. News covers few of the seizures that governments report.</p>`}
+      : `<p class="muted" style="font-size:13px">No news case in Ichnic matches these species in these countries yet. News covers few of the seizures that governments report.</p>`}
     <div class="row" style="margin-top:14px"><button class="btn" data-act="copy">Copy link</button></div>
     <p class="muted" style="font-size:11.5px;margin-top:10px">${esc(d.cite)}</p>`;
 }
@@ -459,10 +459,10 @@ function newsFor(ccs, groups, ic) {
   const news = S.data.cases.filter((c) => c.place && ccs.has(c.place.country) && c.species.some((s) => groups[s]))
     .sort((x, y) => (y.date || "").localeCompare(x.date || "")).slice(0, 10);
   return `<div class="eyebrow" style="margin:16px 0 6px">${ic.ui("news")} In the news</div>
-    ${news.length ? `<p class="muted" style="font-size:12px;margin:0 0 6px">WildTrace cases involving the same species in ${[...ccs].map((c) => esc(name(c))).join(", ")}. They support the pattern; they are not the same shipments.</p>
+    ${news.length ? `<p class="muted" style="font-size:12px;margin:0 0 6px">Ichnic cases involving the same species in ${[...ccs].map((c) => esc(name(c))).join(", ")}. They support the pattern; they are not the same shipments.</p>
       ${news.map((c) => `<button class="link-row" data-go="case|${c.id}"><span style="display:inline-flex;gap:8px;align-items:center;min-width:0">${ic.kind(c.kind)}<span>${esc(c.summary)}</span></span>
         <span style="display:inline-flex;gap:4px;align-items:center">${(c.sources || []).slice(0, 3).map((s) => ic.outlet(s.outlet)).join("")}<span class="muted" style="font-size:12px;margin-left:4px">${esc(c.date || "")}</span></span></button>`).join("")}`
-      : `<p class="muted" style="font-size:13px">No news case in WildTrace matches these species in these countries yet.</p>`}`;
+      : `<p class="muted" style="font-size:13px">No news case in Ichnic matches these species in these countries yet.</p>`}`;
 }
 
 // LEMIS product names carry their definition in brackets ("Shoe (including boots)"): the chip shows the

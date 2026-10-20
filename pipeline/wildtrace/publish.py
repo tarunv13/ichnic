@@ -41,7 +41,7 @@ def _cite() -> str:
     # Same form as GitHub's "Cite this repository" (APA): authors, version and DOI all from CITATION.cff.
     names = [f"{a['family-names']}, " + " ".join(f"{g[0]}." for g in a.get("given-names", "").split())
              for a in cff.get("authors", []) if a.get("family-names")] or ["Verma, T. K."]
-    title = cff.get("title", "WildTrace: the open atlas of illegal wildlife trade")
+    title = cff.get("title", "Ichnic: the open atlas of illegal wildlife trade")
     version = f" (Version {cff['version']})" if cff.get("version") else ""
     doi = cff.get("doi")
     where = f"Zenodo. https://doi.org/{doi}" if doi else "https://tarunv13.github.io/wildtrace/"
@@ -70,7 +70,7 @@ def trivia(cases: list[dict], species_meta: dict) -> list[dict]:
     """Cards for the trivia box: sourced report figures, plus a few facts derived
     from this dataset.
 
-    A derived card states something about WildTrace's own collected cases, never
+    A derived card states something about Ichnic's own collected cases, never
     about the world, and is computed here from the same list the site publishes,
     so a figure cannot drift from what a reader can count in cases.csv. Each one
     carries the caveat that collection, not the trade, decides what is in it.
@@ -81,7 +81,7 @@ def trivia(cases: list[dict], species_meta: dict) -> list[dict]:
     n = len(cases)
     if not n:
         return cards
-    ours, caveat = [], ("Counted in WildTrace's own cases, which come from the newsrooms and "
+    ours, caveat = [], ("Counted in Ichnic's own cases, which come from the newsrooms and "
                        "government sites searched, in the languages searched. It shows where "
                        "wildlife crime is reported, not where it happens.")
     counts: dict[str, int] = {}
@@ -94,7 +94,7 @@ def trivia(cases: list[dict], species_meta: dict) -> list[dict]:
     if top and top[1] > 1:
         label = species_meta.get(top[0], {}).get("label", top[0])
         ours.append({"id": "wt_top_species", "art": "bars", "kind": "ours",
-                     "fact": f"{label} appears in more WildTrace cases than any other group",
+                     "fact": f"{label} appears in more Ichnic cases than any other group",
                      "detail": f"{top[1]} of {n:,} cases name it, from {len({c['place']['country'] for c in cases if c.get('place') and c.get('place', {}).get('country')})} countries in all.",
                      "caveat": caveat})
     single = sum(1 for c in cases if c.get("verification") == "single")

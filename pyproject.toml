@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "wildtrace"
 version = "0.1.0"
-description = "WildTrace: open-source intelligence map and link-analysis workbench for the global illegal wildlife trade"
+description = "Ichnic: open-source intelligence map and link-analysis workbench for the global illegal wildlife trade"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"

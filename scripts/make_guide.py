@@ -1,4 +1,4 @@
-"""Record the 2-minute "How to use WildTrace" guide from the live site.
+"""Record the 2-minute "How to use Ichnic" guide from the live site.
 
     python scripts/make_guide.py [--base URL]
 
@@ -143,7 +143,7 @@ def main() -> None:
             pg.evaluate("s => window.__guide.point(s)", sel)
 
         # ---- Intro: the Atlas opens with a question
-        card("WildTrace in 2 minutes", "Ask a question. Get the answer, its sources and its limits.", "How to use", 3.4)
+        card("Ichnic in 2 minutes", "Ask a question. Get the answer, its sources and its limits.", "How to use", 3.4)
         pg.evaluate("s => window.__guide.point(s)", "#ask-h")
         say("The Atlas opens with a question, not a dashboard.", "Ask", 3.0)
         click('[data-persona="journalists"]', 0.6)
@@ -176,7 +176,7 @@ def main() -> None:
         click("#close", 0.8)
 
         # ---- Q3: can I trust it?
-        card("How accurate is WildTrace?", "", "Question 3 of 3", 2.4)
+        card("How accurate is Ichnic?", "", "Question 3 of 3", 2.4)
         click('[data-mode="cases"]', 1.0, ready="#ask-h")
         click('.qcard[data-answer="how-accurate-is-wildtrace"]', 1.0, ready="#insp-body .answer-lede")
         say("Measured, not asserted: a blind audit of 200 random cases.", "Question 3", 3.4)
@@ -196,7 +196,7 @@ def main() -> None:
         click('[data-sheet="analysis"]', 1.0, ready="#an-month svg")
         say("Analysis: the whole record on one sheet.", "Tools", 2.4)
         click("#sheet-close", 0.6)
-        card("Open data, free to reuse", "Every answer has a citable page · download every case as CSV · DOI 10.5281/zenodo.22902819", "WildTrace · Follow the trade", 4.2)
+        card("Open data, free to reuse", "Every answer has a citable page · download every case as CSV · DOI 10.5281/zenodo.22902819", "Ichnic · Follow the trade", 4.2)
         end = at()
         pg.close(); ctx.close(); b.close()
 

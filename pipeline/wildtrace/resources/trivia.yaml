@@ -6,7 +6,7 @@
 #   * a source a reader can open and check; no aggregator or news summary of a report
 #   * no estimate presented as a count, and no figure without the years it covers
 #   * if a newer edition of a report changes the figure, update the card and its year
-# Cards generated from WildTrace's own data are built in publish.py and are statements
+# Cards generated from Ichnic's own data are built in publish.py and are statements
 # about this dataset, never about the world; they carry their own caveat.
 cards:
   - id: species_affected

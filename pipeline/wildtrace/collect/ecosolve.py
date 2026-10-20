@@ -1,9 +1,9 @@
-"""Offered online vs caught: ECO-SOLVE adverts set against WildTrace enforcement cases.
+"""Offered online vs caught: ECO-SOLVE adverts set against Ichnic enforcement cases.
 
 ECO-SOLVE (Global Initiative Against Transnational Organized Crime, EU-funded) records adverts for
 protected wildlife on online platforms through regional data hubs, and publishes its advert table on
-its public dashboard (https://www.ecosolve.eco/dashboard, "download"). WildTrace records where trade
-met enforcement. This module maps each advert to a WildTrace species group and counts, per group and
+its public dashboard (https://www.ecosolve.eco/dashboard, "download"). Ichnic records where trade
+met enforcement. This module maps each advert to a Ichnic species group and counts, per group and
 country, adverts against enforcement cases in the same period.
 
 The ratio is not a detection rate: the two sources watch different things with different effort, and
@@ -88,7 +88,7 @@ def aggregate(csv_path: Path | str, cases: list[dict]) -> dict:
             ads_country[cc] += 1
         platforms[(r.get("platform") or "").strip()] += 1
         types[(r.get("item_type") or "").strip()] += 1
-    # WildTrace cases in the same window, by group and country.
+    # Ichnic cases in the same window, by group and country.
     win = [c for c in cases if c.get("date") and start <= c["date"] <= end]
     caught = Counter()
     for c in win:
@@ -114,7 +114,7 @@ def aggregate(csv_path: Path | str, cases: list[dict]) -> dict:
                 "Global Initiative Against Transnational Organized Crime.",
         "licence": "Aggregated counts derived from ECO-SOLVE's public dashboard data, with attribution; the advert rows are not redistributed.",
         "note": "Adverts and cases measure different things with different effort: ECO-SOLVE hubs choose their species and "
-                "platforms, and WildTrace counts what reached public reporting. A high ratio shows where wildlife is offered "
+                "platforms, and Ichnic counts what reached public reporting. A high ratio shows where wildlife is offered "
                 "openly while little reaches the record of seizures and arrests. It is not a detection rate.",
         "window": [start, end], "adverts": len(rows), "species_names": len({r.get("item_common_name") for r in rows}),
         "hubs": sorted({(r.get("datahub") or "").strip() for r in rows if (r.get("datahub") or "").strip() not in ("", "Management")}),
@@ -123,7 +123,7 @@ def aggregate(csv_path: Path | str, cases: list[dict]) -> dict:
         "cases_in_window": len(win),
         "by_group": by_group, "pairs": pairs,
         "ads_by_country": ads_country.most_common(20),
-        # Offered online but outside every WildTrace group: candidates for new groups.
+        # Offered online but outside every Ichnic group: candidates for new groups.
         "not_tracked": [[k, v] for k, v in unmatched.most_common(15)],
     }
 

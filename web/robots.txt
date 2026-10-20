@@ -1,4 +1,4 @@
-# WildTrace: open data, open to crawlers, including the ones that answer questions.
+# Ichnic: open data, open to crawlers, including the ones that answer questions.
 User-agent: *
 Allow: /
 

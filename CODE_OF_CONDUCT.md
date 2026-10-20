@@ -1,6 +1,6 @@
 # Code of conduct
 
-WildTrace documents wildlife crime. That work attracts strong feelings, and sometimes people with
+Ichnic documents wildlife crime. That work attracts strong feelings, and sometimes people with
 an interest in what is published. The rules here are short.
 
 **Be decent.** Discuss the evidence, not the person. No harassment, insults, or personal attacks.

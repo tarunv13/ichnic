@@ -1,4 +1,4 @@
-"""Render web/og.png, the card shown when a WildTrace link is shared.
+"""Render web/og.png, the card shown when a Ichnic link is shared.
 
 The card is a screenshot of the real Atlas with the panels hidden and a title
 block drawn over it, so it always carries the current case and country counts

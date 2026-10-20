@@ -1,11 +1,11 @@
-"""Recall against an independent, hand-validated case list: how many of its events WildTrace also found.
+"""Recall against an independent, hand-validated case list: how many of its events Ichnic also found.
 
     wildtrace recall data/raw/reference/wcs_observatory/cases.json
 
 Precision (accuracy.py) says how many published cases are real. Recall needs a list made by someone
-else. A reference case counts as found when a WildTrace case shares a species group, falls within
+else. A reference case counts as found when a Ichnic case shares a species group, falls within
 DAYS of it, and has a place within KM (or carries the same source URL). Only reference cases that
-WildTrace could have found are scored: inside its date window and naming a species group it tracks.
+Ichnic could have found are scored: inside its date window and naming a species group it tracks.
 
 The reference rows stay private (data/raw/reference, data/interim); only the aggregate is reported,
 with attribution, because reference lists rarely carry an open licence.
@@ -23,7 +23,7 @@ from .accuracy import wilson
 from .config import INTERIM, WEB_DATA
 
 DAYS, KM = 14, 300
-# Country names in the WCS Global Observatory (Portuguese) -> the ISO codes WildTrace uses.
+# Country names in the WCS Global Observatory (Portuguese) -> the ISO codes Ichnic uses.
 PT_ISO = dict(p.split("=") for p in (
     "Brasil=BR;Brazil=BR;Hong Kong=HK;Índia=IN;México=MX;Argentina=AR;Indonésia=ID;China=CN;Sri Lanka=LK;Peru=PE;"
     "Rússia=RU;Estados Unidos=US;África do Sul=ZA;Colômbia=CO;Paquistão=PK;Nigéria=NG;Austrália=AU;Malásia=MY;"

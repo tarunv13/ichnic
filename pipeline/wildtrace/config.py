@@ -20,7 +20,7 @@ WCS_OWT_DIR = Path(os.environ.get("WILDTRACE_WCS_OWT_DIR", DATA / "private" / "w
 
 USER_AGENT = os.environ.get(
     "WILDTRACE_USER_AGENT",
-    "WildTrace/0.1 (+https://github.com/; research OSINT; polite crawler)",
+    "Ichnic/0.1 (+https://github.com/; research OSINT; polite crawler)",
 )
 REQUEST_DELAY_S = float(os.environ.get("WILDTRACE_DELAY", "5"))
 

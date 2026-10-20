@@ -1,7 +1,7 @@
 # The observatory network
 
-WildTrace is one observatory among many. This document explains what the others
-do, how each one feeds WildTrace's pipeline and design, and which principles the
+Ichnic is one observatory among many. This document explains what the others
+do, how each one feeds Ichnic's pipeline and design, and which principles the
 project takes from them. The machine-readable registry is
 [`pipeline/wildtrace/resources/observatories.yaml`](../pipeline/wildtrace/resources/observatories.yaml).
 The site's **Network** section renders it.
@@ -12,7 +12,7 @@ The registry combines three inputs:
 
 1. the project owner's spreadsheet `illegal_wildlife_trade_observatories_comprehensive_2026.xlsx` (15 rows),
 2. notes from a Google Gemini conversation (September 2026),
-3. WildTrace's own collector registry (`sources.yaml`).
+3. Ichnic's own collector registry (`sources.yaml`).
 
 Inputs 1 and 2 were produced by a language model, so on 2026-09-22 every entry
 was re-checked. The HTTP status was tested, and the page was read to see whether
@@ -31,7 +31,7 @@ and shown on its card:
 | Wildlife Sentinel | aviation reporting app | no official page found: kept as **unverified** |
 | Codewords ("striped T-shirt", "four-wheeler", "teh", "penny" …) | "verified public list" | no primary source found: **watchlist only** |
 
-## How each kind of observatory feeds WildTrace
+## How each kind of observatory feeds Ichnic
 
 | Stage | What happens | Observatories that inform it |
 |---|---|---|
@@ -52,13 +52,13 @@ and shown on its card:
 5. **Bridge source and demand** (PMC8579131, EIA, Operation Jaguar). Map local names to taxa and taxa to end uses, so source-country listings and demand-country seizures meet in one chart.
 6. **Verify before you trust.** LLM-supplied claims are checked, corrections are shown, and unverified terms never drive automation.
 
-## WildTrace and ECO-SOLVE: two ends of the same trade
+## Ichnic and ECO-SOLVE: two ends of the same trade
 
-ECO-SOLVE (GI-TOC, EU-funded) is the most complete open view of wildlife adverts online. WildTrace does not
+ECO-SOLVE (GI-TOC, EU-funded) is the most complete open view of wildlife adverts online. Ichnic does not
 try to copy it. The two record different moments of the same trade, and read together they show something
 neither shows alone: which online markets are advertised heavily but rarely reach enforcement.
 
-| | ECO-SOLVE Global Monitoring System | WildTrace |
+| | ECO-SOLVE Global Monitoring System | Ichnic |
 | --- | --- | --- |
 | What is recorded | adverts for protected wildlife online | seizures, arrests, convictions and rescues; seized shipments (CITES, US ports) |
 | Moment in the trade | offer (supply online) | interception and outcome (enforcement), online and offline |
@@ -71,17 +71,17 @@ neither shows alone: which online markets are advertised heavily but rarely reac
 | Code | not open | MIT, reproducible pipeline |
 
 **Measured together** (`wildtrace ecosolve`, [`online_gap.csv`](https://tarunv13.github.io/wildtrace/data/online_gap.csv)):
-90% of adverts map to a WildTrace group. Bears in Thailand: 1,303 adverts, 0 WildTrace cases; parrots and
+90% of adverts map to a Ichnic group. Bears in Thailand: 1,303 adverts, 0 Ichnic cases; parrots and
 songbirds in Thailand: 1,046 adverts, 0 cases; tigers in Thailand: 2,232 adverts, 3 cases. A third of the
-adverts are in Thai, which WildTrace did not read before this comparison; it does now.
+adverts are in Thai, which Ichnic did not read before this comparison; it does now.
 
-**What WildTrace adds to the picture:** the enforcement end of online trade. Since v1.9.0 every case records
+**What Ichnic adds to the picture:** the enforcement end of online trade. Since v1.9.0 every case records
 the platforms its reports name (never the seller), and multilingual searches look for online wildlife crime
 that reached police, customs or courts in eight languages. Set against ECO-SOLVE's advert counts, this can
 show the gap between where wildlife is offered and where anyone is caught.
 
-**What WildTrace does not do:** monitor adverts. Scraping marketplaces raises consent and platform-terms
-problems that ECO-SOLVE's hubs and WILDTRADE handle with their own safeguards; WildTrace links to them.
+**What Ichnic does not do:** monitor adverts. Scraping marketplaces raises consent and platform-terms
+problems that ECO-SOLVE's hubs and WILDTRADE handle with their own safeguards; Ichnic links to them.
 
 ## Adding an observatory
 

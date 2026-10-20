@@ -1,5 +1,5 @@
 // The living map. MapLibre GL 5 on a light OpenFreeMap basemap, globe projection,
-// no API keys and no tracking. Every other surface of WildTrace floats over this.
+// no API keys and no tracking. Every other surface of Ichnic floats over this.
 import { esc } from "./charts.js";
 
 const STYLE = "https://tiles.openfreemap.org/styles/positron";
@@ -167,7 +167,7 @@ export function createGlobe(el, { onPick, onReady } = {}) {
     map.addLayer({ id: "flow-labels", type: "symbol", source: "flownodes", layout: { visibility: "none", "text-field": ["get", "name"], "text-font": ["Noto Sans Bold"],
       "text-size": 12, "text-offset": [0.9, 0], "text-anchor": "left", "text-optional": true },
       paint: { "text-color": "#0f1a17", "text-halo-color": "#f7f8f5", "text-halo-width": 1.6 } });
-    // ---- Zoonoses: WHO outbreak reports per country, and WildTrace cases as rings over them.
+    // ---- Zoonoses: WHO outbreak reports per country, and Ichnic cases as rings over them.
     map.addLayer({ id: "zoo", type: "circle", source: "zoo", layout: { visibility: "none" },
       paint: { "circle-radius": ["get", "r"], "circle-color": ["get", "c"], "circle-opacity": 0.5, "circle-stroke-color": ["get", "c"], "circle-stroke-width": 1.5 } });
     map.addLayer({ id: "zoo-cases", type: "circle", source: "zoocases", layout: { visibility: "none" },

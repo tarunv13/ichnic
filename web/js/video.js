@@ -22,9 +22,9 @@ export function openGuide({ first = false } = {}) {
   root.className = "guide";
   root.innerHTML = `
     <div class="guide-veil"></div>
-    <div class="guide-card glass" role="dialog" aria-modal="true" aria-label="WildTrace in 2 minutes: video guide">
-      ${first ? `<div class="guide-hello">Welcome to WildTrace, the open atlas of illegal wildlife trade</div>` : ""}
-      <div class="guide-head"><b>WildTrace in 2 minutes</b><span class="muted">Ask a question, read the answer, check the evidence</span>
+    <div class="guide-card glass" role="dialog" aria-modal="true" aria-label="Ichnic in 2 minutes: video guide">
+      ${first ? `<div class="guide-hello">Welcome to Ichnic, the open atlas of illegal wildlife trade</div>` : ""}
+      <div class="guide-head"><b>Ichnic in 2 minutes</b><span class="muted">Ask a question, read the answer, check the evidence</span>
         <button class="icon-btn" aria-label="Close the video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
       <video controls playsinline muted preload="${first ? "none" : "metadata"}" poster="media/guide.jpg">
         <source src="media/guide.mp4" type="video/mp4">

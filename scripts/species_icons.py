@@ -19,7 +19,7 @@ import requests
 WEB = Path(__file__).resolve().parents[1] / "web"
 OUT = WEB / "icons" / "species"
 API = "https://api.phylopic.org"
-UA = {"User-Agent": "WildTrace/1.5 (+https://github.com/tarunv13/wildtrace)"}
+UA = {"User-Agent": "Ichnic/1.5 (+https://github.com/tarunv13/wildtrace)"}
 OPEN = re.compile(r"publicdomain|/by/|/by-sa/", re.I)   # CC0, PDM, CC BY, CC BY-SA; not -nc
 
 TAXA = {

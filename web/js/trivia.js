@@ -1,7 +1,7 @@
 /* Trivia box: why this trade is worth watching.
  *
  * One card at a time, each carrying a figure from a major report with its source, or a fact
- * counted from WildTrace's own cases and labelled as such. The box collapses to a pill, and
+ * counted from Ichnic's own cases and labelled as such. The box collapses to a pill, and
  * remembers both that choice and where the reader had got to.
  *
  * The illustrations are drawn here rather than shipped as images: each one is a diagram of the
@@ -83,7 +83,7 @@ function draw() {
     <h3>${esc(c.fact)}</h3>
     <p>${esc(c.detail)}</p>
     ${c.kind === "ours"
-      ? `<p class="tv-src"><span class="tv-tag">From WildTrace's own cases</span> ${esc(c.caveat)}</p>`
+      ? `<p class="tv-src"><span class="tv-tag">From Ichnic's own cases</span> ${esc(c.caveat)}</p>`
       : `<p class="tv-src">${esc(c.source.name)}, ${esc(c.source.year)} · <a href="${esc(c.source.url)}" target="_blank" rel="noopener noreferrer">Read the source ↗</a></p>`}`;
   body.querySelector(".tv-art").classList.add("bloom");
   box.querySelector(".tv-count").textContent = `${i + 1} / ${cards.length}`;
@@ -131,8 +131,9 @@ export async function mountTrivia(root) {
     save({ ...state(), folded: !open });
   };
   toggle.addEventListener("click", () => setOpen(box.classList.contains("folded")));
-  // A phone has little room: the box starts folded unless the reader has opened it before.
-  if (st.folded || (st.folded === undefined && innerWidth <= 1180)) setOpen(false);
+  // Below 1600 px the open box would cover the globe's west coast: it starts folded (one line inviting a tap)
+  // unless the reader has opened it before.
+  if (st.folded || (st.folded === undefined && innerWidth < 1600)) setOpen(false);
   // Arrow keys move through the cards once the box has focus.
   box.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") { step(1); e.preventDefault(); }

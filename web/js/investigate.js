@@ -231,7 +231,7 @@ export function mountImport(root, { onLocalChange } = {}) {
     root.innerHTML = `<div class="imp">
       <div>
         <h3 style="font:650 17px/1.2 var(--display);margin:0 0 6px">Chart your own data</h3>
-        <p class="muted" style="margin:0 0 12px;font-size:13px">Load a spreadsheet of links (one row per relationship) or entities. Map its columns, and WildTrace adds them to the link chart and, if rows carry coordinates, to the globe. Nothing leaves this browser.</p>
+        <p class="muted" style="margin:0 0 12px;font-size:13px">Load a spreadsheet of links (one row per relationship) or entities. Map its columns, and Ichnic adds them to the link chart and, if rows carry coordinates, to the globe. Nothing leaves this browser.</p>
         <label class="drop" id="drop" tabindex="0"><input type="file" id="file" accept=".csv,.tsv,.txt,.xlsx,.xls,.json" hidden>
           <b>${rows ? esc(name) : "Drop a CSV, Excel or JSON file"}</b><div class="muted" style="font-size:12.5px;margin-top:4px">${rows ? `${rows.length - 1} rows · ${head.length} columns` : "or click to choose one"}</div></label>
         <div class="row" style="margin-top:10px"><button class="btn" id="sample">Load fictional sample</button>
@@ -257,7 +257,7 @@ export function mountImport(root, { onLocalChange } = {}) {
         : `<div class="prose" style="padding:0"><h3 style="margin-top:0">What you can do here</h3>
           <p>Rebuild a network from a case file or a public investigation. People, phones, accounts, vehicles, companies and shipments sit next to the public cases, species and places.</p>
           <p>Then use the chart tools: shortest path between two suspects, who brokers between groups (betweenness), and communities. Export to GraphML for Gephi, or CSV in the same layout i2 Analyst's Notebook imports.</p>
-          <p class="muted">WildTrace's public data never contains people. Yours stays on this device.</p></div>`}
+          <p class="muted">Ichnic's public data never contains people. Yours stays on this device.</p></div>`}
       </div></div>`;
     const drop = root.querySelector("#drop"), file = root.querySelector("#file");
     drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });

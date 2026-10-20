@@ -5,7 +5,7 @@ reader recognises who is speaking. Google News hides the publisher behind a redi
 names the publisher's home page (<source url>), kept by the collector as extra.source_url; that
 gives the domain. Icons are fetched once, at build time, from DuckDuckGo's icon service, shrunk
 to 32 px PNG and served from web/logos/: a reader's browser never contacts a third party for them.
-Icons identify a source (nominative use); they are not WildTrace's and carry no endorsement.
+Icons identify a source (nominative use); they are not Ichnic's and carry no endorsement.
 """
 from __future__ import annotations
 

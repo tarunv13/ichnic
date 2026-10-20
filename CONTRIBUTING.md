@@ -1,4 +1,4 @@
-# Contributing to WildTrace
+# Contributing to Ichnic
 
 Thank you for helping. The most valuable contributions here are not code.
 

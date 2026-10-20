@@ -7,7 +7,7 @@ Please report security issues privately through
 rather than a public issue. Include what you found and how to reproduce it. Expect a first reply
 within a week.
 
-## What WildTrace publishes
+## What Ichnic publishes
 
 The published data contains events, not people. The build applies a privacy gate that fails if a
 name, phone number, e-mail address, social handle or seller identity appears in any published

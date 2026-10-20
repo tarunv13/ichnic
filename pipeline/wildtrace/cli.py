@@ -6,7 +6,7 @@
   wildtrace run                                          collect + build
   wildtrace cites   <folder>                             CITES supply -> demand flows (web/data/flows.json)
   wildtrace captive <folder>                             captive-bred claims in CITES trade (web/data/captive_claims.json)
-  wildtrace ecosolve <csv>                               ECO-SOLVE adverts vs WildTrace cases (web/data/online_gap.json)
+  wildtrace ecosolve <csv>                               ECO-SOLVE adverts vs Ichnic cases (web/data/online_gap.json)
   wildtrace vision  <image|folder> [--captions csv]       OCR + BioCLIP species evidence for images (private)
   wildtrace recall  <reference.json>                     recall against an independent validated case list (private)
   wildtrace accuracy sample|score [file]                 blind audit: sample cases, then score precision (web/data/accuracy.json)

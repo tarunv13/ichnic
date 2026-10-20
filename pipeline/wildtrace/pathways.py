@@ -8,7 +8,7 @@ hostile actors and organised crime (R1.37), and asks whether "animal life" and
 "revenue-generating uses" belong in the weaponisation of nature (R5.2, R5.3).
 
 This page does that linking for the wildlife-crime pathway. Every link carries a number taken
-from WildTrace's published data at build time, a strength rating for the open evidence, the
+from Ichnic's published data at build time, a strength rating for the open evidence, the
 limit that stops the number meaning more, and the research question it speaks to. Where the
 open evidence runs out, the page says so: that is where research is needed, and a claim that
 outruns its evidence is how conservation gets securitised and militarised (Duffy 2015;
@@ -113,12 +113,12 @@ def links(e: dict, cc_name) -> list[dict]:
                   f"({e['modes'].get('air', 0)}) and online sale ({e['modes'].get('online', 0)}) lead, then road ({e['modes'].get('road', 0)}) and sea ({e['modes'].get('sea', 0)}). "
                   + (f"Where online trade reached enforcement, reports most often name {', '.join(f'{p} ({n})' for p, n in e['platforms'])}." if e["platforms"] else ""),
          "limit": "Only 2 news cases name both ends of a route, so routes come from trade records, not from reporting. "
-                  "Online adverts themselves are monitored by others (ECO-SOLVE, WILDTRADE); WildTrace records where online trade met enforcement.",
+                  "Online adverts themselves are monitored by others (ECO-SOLVE, WILDTRADE); Ichnic records where online trade met enforcement.",
          "question": "Theme III, shipping and trade chokepoints",
          "go": [("Follow routes on the Flows map", f"{site}/?mode=flows")]},
         {"id": "ports", "n": 3, "title": "It reaches the border: what inspectors intercept",
          "strength": "strong",
-         "shows": f"US wildlife inspectors seized {e.get('lemis', 0):,} import records of the groups WildTrace follows, from "
+         "shows": f"US wildlife inspectors seized {e.get('lemis', 0):,} import records of the groups Ichnic follows, from "
                   f"{e.get('lemis_origins', 0)} countries of origin; most often from {top}. "
                   f"Routes into the United States make up {_pct(e.get('cites_us', 0), e.get('cites', 0))} of CITES seizure records.",
          "limit": "This measures where inspection is strong and reported, above all in the United States, as much as where trade flows. "
@@ -132,7 +132,7 @@ def links(e: dict, cc_name) -> list[dict]:
                   "Documented links between wildlife products and armed groups exist for specific places and periods (Douglas & Alie 2014), "
                   "but the open evidence on who profits, and how much, is thin and contested (Duffy 2015; Massé et al. 2020).",
          "limit": "News reports convictions far less often than seizures, so the drop is partly a reporting gap. Financial flows are "
-                  "not in open data; they need financial intelligence that WildTrace does not have.",
+                  "not in open data; they need financial intelligence that Ichnic does not have.",
          "question": "R1.37 environmental crime as revenue for hostile actors; R5.2-R5.3 animal life and revenue-generating uses in the weaponisation of nature",
          "go": [("Arrests and convictions in the Atlas", f"{site}/")]},
         {"id": "health", "n": 5, "title": "It carries disease risk",
@@ -149,7 +149,7 @@ def links(e: dict, cc_name) -> list[dict]:
          "shows": "The groups seized most often include seed dispersers (hornbills, primates), predators (big cats, sharks, owls), reef "
                   "builders (corals) and forest trees (rosewood, agarwood, sandalwood). About one in five land vertebrate species is traded "
                   "(Scheffers et al. 2019), and ivory poaching alone drove the decline of African elephants (Wittemyer et al. 2014).",
-         "limit": "WildTrace records removals, not their ecological effect. The consequence for ecosystems comes from the literature, "
+         "limit": "Ichnic records removals, not their ecological effect. The consequence for ecosystems comes from the literature, "
                   "species by species.",
          "question": "Theme I, critical natural infrastructure (R1.3 cascading risks, R1.12 actionable indicators)",
          "go": [("Species pages", f"{site}/browse.html")]},
@@ -157,7 +157,7 @@ def links(e: dict, cc_name) -> list[dict]:
          "strength": "strong",
          "shows": f"Every case is graded: {e['ver'].get('official', 0)} rest on a government, customs, police or court source, "
                   f"{e['ver'].get('corroborated', 0)} on two or more independent outlets, and {e['ver'].get('single', 0):,} on a single "
-                  "report, which WildTrace treats as a lead, not a finding.",
+                  "report, which Ichnic treats as a lead, not a finding.",
          "limit": "Grades describe the sources, not the truth of every detail in them.",
          "question": "Section 11, communicating uncertainty and countering misinformation",
          "go": [("Method and limits", f"{site}/#methods")]},
@@ -211,7 +211,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, out_dir
         f'<section class="link" id="{l["id"]}"><div class="link-h"><span class="num" style="--c:{STRENGTH[l["strength"]][1]}">{l["n"]}</span>'
         f'<h2>{esc(l["title"])}</h2></div>'
         f'<p class="badge" style="--c:{STRENGTH[l["strength"]][1]}">{STRENGTH[l["strength"]][0]}</p>'
-        f'<p><b>What WildTrace shows.</b> {esc(l["shows"])}</p>'
+        f'<p><b>What Ichnic shows.</b> {esc(l["shows"])}</p>'
         f'<p><b>What the number cannot tell you.</b> {esc(l["limit"])}</p>'
         f'<p class="small"><b>Research agenda.</b> {esc(l["question"])}</p>'
         f'<p>{"".join(f"<a class=pill href={chr(34)}{esc(u)}{chr(34)}>{esc(t)} →</a>" for t, u in l["go"])}</p></section>'
@@ -221,7 +221,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, out_dir
     faq = [
         ("Is illegal wildlife trade a national security issue?",
          f"It reaches national security through several pathways: organised crime and corruption, disease risk, and the loss of species "
-         f"that ecosystems depend on. WildTrace maps seven links from nature to security and rates the open evidence for each: "
+         f"that ecosystems depend on. Ichnic maps seven links from nature to security and rates the open evidence for each: "
          f"{n_strong} are well evidenced in open data, and the link to crime revenue is the weakest. The 2026 Oxford research agenda on "
          f"environment and national security names environmental crime as a revenue source for hostile actors (R1.37)."),
         ("Does wildlife trafficking fund armed groups or terrorism?",
@@ -229,15 +229,15 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, out_dir
          "But open evidence on who profits and how much is thin, and researchers warn that overstating a poaching-terrorism nexus has been "
          "used to justify militarised conservation that harms local people (Duffy 2015; Massé et al. 2020)."),
         ("How much wildlife is seized at borders?",
-         f"CITES Parties reported {e.get('cites', 0):,} seized shipments of the species groups WildTrace follows since {e.get('cites_since', 2015)}, "
+         f"CITES Parties reported {e.get('cites', 0):,} seized shipments of the species groups Ichnic follows since {e.get('cites_since', 2015)}, "
          f"and US inspectors seized {e.get('lemis', 0):,} wildlife import records between 2000 and 2022. The United States reports far more "
          "completely than most countries, so these numbers show inspection effort as much as trade."),
         ("Can wildlife trade cause pandemics?",
          f"Traded wildlife can carry viruses: {e.get('zoo_groups', 0)} of the traded species groups have viruses confirmed in VIRION. "
-         "A shared location between a seizure and an outbreak does not show that the trade caused it; WildTrace shows the two together as a "
+         "A shared location between a seizure and an outbreak does not show that the trade caused it; Ichnic shows the two together as a "
          "shared map, not a cause."),
         ("Where can I get open data on wildlife seizures?",
-         f"WildTrace publishes cases, CITES seizure flows and US port seizures as CSV at {site}/data/, with a DOI on Zenodo "
+         f"Ichnic publishes cases, CITES seizure flows and US port seizures as CSV at {site}/data/, with a DOI on Zenodo "
          "(10.5281/zenodo.22902819). Case data are CC BY 4.0; CITES-derived files follow the CITES terms."),
     ]
     faq_html = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in faq)
@@ -267,7 +267,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, out_dir
   <a href="https://github.com/tarunv13/wildtrace/blob/main/docs/RESEARCH_AGENDA.md">Read the open research agenda</a> and pick a question.</p>
 <h2>Security without militarisation</h2>
 <p>Calling wildlife crime a security threat can bring money and attention. It has also justified shoot-on-sight policies, the
-  exclusion of local people from land they depend on, and "war by conservation" (Duffy 2015; Lunstrum 2014). WildTrace takes the
+  exclusion of local people from land they depend on, and "war by conservation" (Duffy 2015; Lunstrum 2014). Ichnic takes the
   security frame with three commitments: every claim carries its evidence and its limits; enforcement is counted, never glorified, and
   no accused person is named; and the harms to people who live alongside wildlife are part of the pathway, not a side effect.</p>
 <h2>What can be done</h2>
@@ -287,18 +287,18 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, out_dir
 <ol class="refs small">{refs}</ol>
 <h2>Cite this page</h2>
 <p class="small">Verma, T. K. ({meta.get('built', '')[:4] or '2026'}). Wildlife crime as an environment-to-security risk: seven links, and the evidence for each.
-  WildTrace. {site}/pathways.html. Figures rebuilt daily from the WildTrace data (doi:10.5281/zenodo.22902819).</p>
+  Ichnic. {site}/pathways.html. Figures rebuilt daily from the Ichnic data (doi:10.5281/zenodo.22902819).</p>
 """
-    title = "Is wildlife crime a security risk? Seven pathways | WildTrace"
+    title = "Is wildlife crime a security risk? Seven pathways | Ichnic"
     desc = ("How illegal wildlife trade reaches national security, from extraction and borders to crime revenue and disease: "
             "seven links, each rated by its open evidence.")
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": "Wildlife crime as an environment-to-security risk: seven links, and the evidence for each",
          "url": f"{site}/pathways.html", "description": desc, "inLanguage": "en",
          "author": {"@type": "Person", "name": "Tarun Kumar Verma", "identifier": "https://orcid.org/0009-0009-4130-2455"},
-         "isBasedOn": [{"@type": "Dataset", "name": "WildTrace", "identifier": "https://doi.org/10.5281/zenodo.22902819"},
+         "isBasedOn": [{"@type": "Dataset", "name": "Ichnic", "identifier": "https://doi.org/10.5281/zenodo.22902819"},
                        {"@type": "Report", "name": "Environment and National Security: Exploring the Risk Pathways (2026)"}],
          "citation": [u for _, u in REFS], "license": "https://creativecommons.org/licenses/by/4.0/",
          "about": ["illegal wildlife trade", "environmental security", "national security", "wildlife crime", "zoonoses"]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}]}
-    return "pathways.html", page(title, desc, f"{site}/pathways.html", body, ld, [("WildTrace", site + "/"), ("Risk pathways", f"{site}/pathways.html")])
+    return "pathways.html", page(title, desc, f"{site}/pathways.html", body, ld, [("Ichnic", site + "/"), ("Risk pathways", f"{site}/pathways.html")])

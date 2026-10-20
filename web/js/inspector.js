@@ -46,11 +46,11 @@ function narrative(c, place, qs) {
   if (qs.length) out.push(`The reports give the quantity as ${listOf(qs)}.`);
   if (c.people_arrested) {
     out.push(`${count(c.people_arrested)} ${c.people_arrested === 1 ? "person was" : "people were"} reported arrested. `
-      + `WildTrace records the number only, never who they are, and an arrest is not a conviction.`);
+      + `Ichnic records the number only, never who they are, and an arrest is not a conviction.`);
   }
   if (c.agencies.length) out.push(`${listOf(c.agencies.map(esc))} ${c.agencies.length > 1 ? "are" : "is"} named as acting in the reports.`);
   if (c.modes.length) out.push(`Transport named: ${listOf(c.modes.map(esc))}.`);
-  if (c.platforms?.length) out.push(`Platform named in the reports: ${listOf(c.platforms.map(esc))}. WildTrace records the platform, never the seller.`);
+  if (c.platforms?.length) out.push(`Platform named in the reports: ${listOf(c.platforms.map(esc))}. Ichnic records the platform, never the seller.`);
   if (c.route?.length === 2) {
     out.push(`The consignment is described as moving from <b>${esc(c.route[0])}</b> to <b>${esc(c.route[1])}</b>, as stated in the reports. `
       + `An origin and destination given by a source are not the same as an established route.`);
@@ -238,7 +238,7 @@ function obsView(id) {
       ${o.languages?.length ? `<dt>Languages</dt><dd>${esc(o.languages.join(", "))}</dd>` : ""}
     </dl>
     ${o.global_south ? `<div class="box"><h4>Global South relevance</h4>${esc(o.global_south)}</div>` : ""}
-    <div class="box" style="border-left:3px solid var(--network)"><h4>How WildTrace uses it</h4>${esc(o.wildtrace.how)}</div>
+    <div class="box" style="border-left:3px solid var(--network)"><h4>How Ichnic uses it</h4>${esc(o.wildtrace.how)}</div>
     ${o.status.note ? `<div class="box limit"><h4>Check note</h4>${esc(o.status.note)}</div>` : ""}
     <div class="row" style="margin-top:12px">${o.url ? `<a class="btn primary" href="${esc(o.url)}" target="_blank" rel="noopener noreferrer">Open ${esc(o.name.split(" (")[0].split(" ·")[0])} ↗</a>` : ""}
       <button class="btn" data-act="network">All observatories</button></div>
@@ -252,7 +252,7 @@ function entityView(id, ctx) {
   return `
     <div class="eyebrow">Your data · ${esc(n.type)}</div>
     <h2 class="title">${esc(n.label)}</h2>
-    <div class="note">Stored only in this browser. WildTrace never uploads it.</div>
+    <div class="note">Stored only in this browser. Ichnic never uploads it.</div>
     <dl class="facts">${Object.entries(n).filter(([k, v]) => !["id", "label", "type", "local"].includes(k) && v !== "" && v != null)
       .map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
     <div class="row"><button class="btn violet" data-act="chart-entity">Show in chart</button></div>`;

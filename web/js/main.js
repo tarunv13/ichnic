@@ -1,4 +1,4 @@
-// WildTrace: one map, everything else floats on it.
+// Ichnic: one map, everything else floats on it.
 import { esc } from "./charts.js";
 import { createGlobe, KIND } from "./globe.js";
 import { render as renderInspector, title } from "./inspector.js";
@@ -185,7 +185,7 @@ function act(what, item) {
 // ------------------------------------------------------------------ sheets
 const SHEETS = {
   table: { title: "All cases", tabs: [] },
-  about: { title: "About WildTrace", tabs: [] },
+  about: { title: "About Ichnic", tabs: [] },
   investigate: { title: "Investigate", tabs: [["chart", "Link chart"], ["import", "Your data"]] },
   network: { title: "The observatory network", tabs: [] },
   methods: { title: "Methods", tabs: [["pipeline", "Pipeline"], ["model", "Classifier"], ["privacy", "Privacy"], ["sources", "Sources"]] },
@@ -257,10 +257,16 @@ function setLayer(k, v) {
 // ------------------------------------------------------------------ boot
 async function boot() {
   await load();
-  globe = createGlobe($("#globe"), {
+  const makeGlobe = () => (globe = createGlobe($("#globe"), {
     onPick: (item) => go(item),
     onReady: () => { drawMap(); drawInspector(); if (S.mode !== "cases") setMode(S.mode); setTimeout(() => $("#boot").classList.add("done"), 250); },
-  });
+  }));
+  // On a phone the map sits below the questions: build it only when it is about to scroll into view, so the
+  // questions scroll smoothly and the phone does not draw a globe nobody is looking at.
+  if (innerWidth < 860 && "IntersectionObserver" in window && !location.hash) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); makeGlobe(); } }, { rootMargin: "300px 0px" });
+    io.observe($("#globe"));
+  } else makeGlobe();
   // Never let a slow tile server trap the page behind the splash.
   setTimeout(() => $("#boot").classList.add("done"), 6000);
   mountSearch($("#omni"), $("#q"), $("#omni-results"));

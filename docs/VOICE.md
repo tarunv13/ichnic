@@ -1,6 +1,6 @@
-# How WildTrace speaks
+# How Ichnic speaks
 
-WildTrace writes for three readers at once: someone who arrived from a search and has thirty seconds,
+Ichnic writes for three readers at once: someone who arrived from a search and has thirty seconds,
 a researcher or official who will check every number, and an answer engine that will quote a
 sentence out of context. These rules keep all three well served. They draw on the communication
 recommendations of the Oxford Agile Initiative's *Environment and National Security: Exploring the

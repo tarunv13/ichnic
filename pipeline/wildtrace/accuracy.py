@@ -9,7 +9,7 @@ wildlife-trade seizure, arrest, conviction or trade-linked rescue), `species_ok`
 computes precision with a 95% Wilson interval and writes web/data/accuracy.json (shown on the site)
 and docs/ACCURACY.md. The label file stays private (it holds headlines); only the counts are public.
 
-Precision is measured. Recall (events WildTrace misses) is not, and the site says so.
+Precision is measured. Recall (events Ichnic misses) is not, and the site says so.
 """
 from __future__ import annotations
 

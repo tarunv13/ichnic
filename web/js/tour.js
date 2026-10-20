@@ -25,7 +25,7 @@ const mode = (m) => () => dispatchEvent(new CustomEvent("wildtrace:mode", { deta
 
 export const TOURS = {
   main: { name: "The Atlas", steps: [
-    { el: null, title: "Welcome to WildTrace",
+    { el: null, title: "Welcome to Ichnic",
       body: "One open map of the illegal trade in wild animals and plants: seizures, arrests and convictions from public reports, where traded wildlife comes from and goes, and where animal-borne outbreaks are reported. About a minute; leave at any point. Prefer to watch? A 2-minute video shows how to ask a question, read the answer and check its evidence.",
       cta: [["▶ Watch the 2-minute video", () => dispatchEvent(new CustomEvent("wildtrace:video"))]] },
     { el: "#globe", place: "center", title: "The Atlas",
@@ -43,7 +43,7 @@ export const TOURS = {
     { el: '[data-sheet="table"]', title: "Every case as a table",
       body: "Sortable and filterable, with a CSV download. Cases with no mappable place are listed too, marked as not mapped rather than dropped." },
     { el: '[data-sheet="network"]', title: "The observatory network",
-      body: "The 33 databases, dashboards and codebooks that watch this trade, each checked, with what WildTrace takes from it." },
+      body: "The 33 databases, dashboards and codebooks that watch this trade, each checked, with what Ichnic takes from it." },
     { el: '[data-sheet="investigate"]', title: "Investigate: your own analysis bench",
       body: "A link chart of cases, species, places, agencies and outlets. Isolate a cluster, expand a node, find the shortest path between two entities, and export to PNG, GraphML, CSV or JSON. <b>Your data</b> lets you import a spreadsheet and chart it against the public record, in your browser only: nothing is uploaded. Any case can be sent here with <i>Chart this case</i>.",
       cta: [["Show me Investigate", () => { open("investigate")(); setTimeout(() => startSection("investigate", { force: true }), 900); }]] },
@@ -76,10 +76,10 @@ export const TOURS = {
       body: "WHO outbreak reports of animal-borne disease, beside the wildlife trade. An outbreak near a seizure does not mean the trade caused it; this view shows where to look closer." },
     { el: "[data-pw]", title: "How it reaches people",
       body: "Diseases are grouped by route to people: wildlife contact, birds, livestock, insects and ticks. Switch pathways on and off; pick a disease to see only it." },
-    { el: "#z-cases", title: "WildTrace cases as rings",
+    { el: "#z-cases", title: "Ichnic cases as rings",
       body: "Dark rings mark where trafficking cases are reported, so the two layers can be read together." },
     { el: "#fs-body", title: "Countries with both",
-      body: "Wildlife-contact outbreak reports next to seized shipments taken from the same country and WildTrace cases there. Click a country for its record." },
+      body: "Wildlife-contact outbreak reports next to seized shipments taken from the same country and Ichnic cases there. Click a country for its record." },
     { el: '[data-open="zoo"]', title: "Species and viruses",
       body: "Which traded species groups carry viruses also found in people, or close relatives of them, confirmed by sequencing or isolation (VIRION), with notes from the research literature." },
   ] },
@@ -125,7 +125,7 @@ export const TOURS = {
     { el: "#sheet-body .filters", place: "bottom", title: "Filter by kind",
       body: "Intelligence platforms, online-trade monitors, courts, trade statistics, reference data, tools, public reporting, journalism and funding." },
     { el: "#sheet-body .obs", place: "top", title: "Each observatory, checked",
-      body: "Its status when last checked, who runs it, what it does, and how WildTrace uses it. Click a card for its record and link." },
+      body: "Its status when last checked, who runs it, what it does, and how Ichnic uses it. Click a card for its record and link." },
   ] },
   table: { name: "Table", steps: [
     { el: "#t-q", place: "bottom", title: "Filter the record",

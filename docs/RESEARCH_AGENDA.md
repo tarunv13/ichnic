@@ -1,9 +1,9 @@
-# WildTrace open research agenda
+# Ichnic open research agenda
 
-WildTrace is an open, evidence-graded record of illegal wildlife trade: cases from public reports,
+Ichnic is an open, evidence-graded record of illegal wildlife trade: cases from public reports,
 seizures reported to CITES, and imports seized at US ports. This agenda sets out what that record can
 already answer, where it stops, and the research questions that would move it forward. Each question
-names the data WildTrace already holds, so a student, a lab or a newsroom can start this week.
+names the data Ichnic already holds, so a student, a lab or a newsroom can start this week.
 
 It is written against one frame: **wildlife crime as an environment-to-security risk**. The Oxford
 Agile Initiative's *Environment and National Security: Exploring the Risk Pathways* (September 2026)
@@ -11,7 +11,7 @@ maps how environmental damage reaches national security and lists almost 200 res
 Wildlife crime appears in only a few of them: environmental crime as revenue for hostile actors and
 organised crime (R1.37), and whether "animal life" and "revenue-generating uses" belong in the
 weaponisation of nature (R5.2, R5.3). The report also notes that its pathway diagrams "could be linked
-to a database showing relevant evidence for each link". WildTrace's
+to a database showing relevant evidence for each link". Ichnic's
 [Risk pathways](https://tarunv13.github.io/wildtrace/pathways.html) page does that for the
 wildlife-crime pathway, and this agenda covers the links it cannot yet evidence.
 
@@ -20,7 +20,7 @@ wildlife-crime pathway, and this agenda covers the links it cannot yet evidence.
 1. **Evidence before frame.** A security frame brings attention and money. It has also justified
    militarised conservation that harmed the people who live alongside wildlife (Duffy 2015;
    Lunstrum 2014; Massé et al. 2020). Every claim here carries its evidence and its limits.
-2. **Reported is not happened.** Every count in WildTrace measures reporting and inspection effort as
+2. **Reported is not happened.** Every count in Ichnic measures reporting and inspection effort as
    well as trade. The United States accounts for about four in five CITES seizure records in the data.
 3. **No person is named.** Arrests are counts. Research that needs identities belongs with the
    authorities, not in open data.
@@ -44,14 +44,14 @@ wildlife-crime pathway, and this agenda covers the links it cannot yet evidence.
 ### A. Language technology for wildlife-crime evidence
 
 Most evidence of wildlife crime is text: news reports, court records, marketplace listings. Recent
-natural language processing research addresses the exact problems WildTrace's pipeline hits.
+natural language processing research addresses the exact problems Ichnic's pipeline hits.
 
 - **A1. An open event-extraction benchmark for wildlife seizures.** One report often describes several
   seizures, arrests and court outcomes. Document-level multi-event extraction (Wang, Gui & He 2023)
-  handles this; WildTrace's merged cases, each traceable to phrases in its sources, are weak labels for
+  handles this; Ichnic's merged cases, each traceable to phrases in its sources, are weak labels for
   a benchmark in the style of PHEE for pharmacovigilance (Sun et al. 2022). *Data:* `cases.json`,
   the private record archive. *Output:* a public dataset and a baseline.
-- **A2. Selling, condemning or reporting? Stance for online listings.** WildTrace's listing classifier
+- **A2. Selling, condemning or reporting? Stance for online listings.** Ichnic's listing classifier
   plateaued because annotators disagreed on what counts as "trade". Framing the task as stance toward
   the sale of a species makes the definition explicit, and zero-shot stance detection (Liang et al.
   2022a, 2022b) transfers to species never labelled. *Data:* the OWT labelled set (available to
@@ -61,7 +61,7 @@ natural language processing research addresses the exact problems WildTrace's pi
   news and listings, for human review before any code word is trusted.
 - **A4. Checking claims against evidence.** Claims about wildlife trade and disease travel fast.
   Evidence-based claim verification (Dougrez-Lewis et al. 2025) and systems like PANACEA (Zhao et al.
-  2023) could grade claims against WildTrace's sources and the literature, extending the case grades
+  2023) could grade claims against Ichnic's sources and the literature, extending the case grades
   (official, corroborated, single report) to claims.
 - **A5. Narratives of trafficking.** How reports tell the story (who is blamed, who is absent) shapes
   policy. Narrative understanding (Zhu et al. 2023) applied to seizure reporting could measure how
@@ -74,7 +74,7 @@ natural language processing research addresses the exact problems WildTrace's pi
 
 ### B. Crime, money and justice
 
-- **B1. From seizure to sentence.** WildTrace holds far more seizures than convictions. How much of the
+- **B1. From seizure to sentence.** Ichnic holds far more seizures than convictions. How much of the
   drop is real attrition and how much is reporting? Court records (open judgments where they exist)
   are the missing source.
 - **B2. Who profits.** Financial flows are not in open data. What open signals (company registries,
@@ -117,7 +117,7 @@ natural language processing research addresses the exact problems WildTrace's pi
 | `web/data/zoonoses.json` | VIRION viruses per group, WHO outbreak reports | ODbL 1.0 |
 | `pipeline/wildtrace/resources/lexicon*.yaml` | multilingual species and trade vocabulary | CC BY 4.0 |
 
-Cite the data as: Verma, T. K. (2026). *WildTrace: the open atlas of illegal wildlife trade.* Zenodo.
+Cite the data as: Verma, T. K. (2026). *Ichnic: the open atlas of illegal wildlife trade.* Zenodo.
 https://doi.org/10.5281/zenodo.22902819
 
 ## How to contribute

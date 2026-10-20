@@ -1,10 +1,10 @@
-# WildTrace
+# Ichnic (formerly WildTrace)
 
 > The open atlas of illegal wildlife trade: seizures, arrests and convictions of wild animals and
 > plants worldwide, each case graded by the strength of its evidence, with the underlying data
 > published as CSV under CC BY 4.0.
 
-WildTrace collects public reports (government, customs, police and judicial releases first, then
+Ichnic collects public reports (government, customs, police and judicial releases first, then
 news in 65 countries and several languages), screens them,
 extracts the species, place, quantity, agency and route, merges reports about the same incident
 into one case, and publishes the result.
@@ -22,7 +22,7 @@ into one case, and publishes the result.
 
 ## Wildlife crime and security
 
-WildTrace maps seven links from nature to national security (extraction, routes, borders, crime
+Ichnic maps seven links from nature to national security (extraction, routes, borders, crime
 revenue, disease risk, ecosystem loss, evidence and trust) and rates the open evidence for each.
 The weakest link is who profits: seizures are common in the record, convictions rare, financial
 flows absent. Security framing should not become militarisation (Duffy 2015; Massé et al. 2020).
@@ -33,12 +33,12 @@ Security: Exploring the Risk Pathways" (2026), research questions R1.37 and R5.2
 
 - Atlas (interactive map): https://tarunv13.github.io/wildtrace/
 - Browse by species and country: https://tarunv13.github.io/wildtrace/browse.html
-- Questions WildTrace answers (live, with sources and limits): https://tarunv13.github.io/wildtrace/answers.html
+- Questions Ichnic answers (live, with sources and limits): https://tarunv13.github.io/wildtrace/answers.html
 - Risk pathways (wildlife crime and national security): https://tarunv13.github.io/wildtrace/pathways.html
 - US port seizures (CSV, CC BY 4.0): https://tarunv13.github.io/wildtrace/data/lemis_seized_flows.csv
 - Open research agenda: https://github.com/tarunv13/wildtrace/blob/main/docs/RESEARCH_AGENDA.md
 - Data (CSV, CC BY 4.0): https://tarunv13.github.io/wildtrace/data/cases.csv
 - Method and limits: https://tarunv13.github.io/wildtrace/#methods
 - Source code: https://github.com/tarunv13/wildtrace
-- Citation: Verma, T. K. (2026). WildTrace: the open atlas of illegal wildlife trade. Zenodo.
+- Citation: Verma, T. K. (2026). Ichnic: the open atlas of illegal wildlife trade. Zenodo.
   https://doi.org/10.5281/zenodo.22902819

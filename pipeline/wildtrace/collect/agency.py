@@ -1,7 +1,7 @@
 """Official press releases read straight from the agencies, not through Google News.
 
 The first recall check (`wildtrace recall`, against the WCS Global Observatory's validated cases,
-2026-10-19) found that 35% of the events WildTrace missed were government press releases: Hong Kong
+2026-10-19) found that 35% of the events Ichnic missed were government press releases: Hong Kong
 Customs, PROFEPA, Brazilian state governments, US FWS, Australian Border Force, French customs. Google
 News indexes these sites poorly, so the `site:` queries in feeds.collect_official rarely find them.
 

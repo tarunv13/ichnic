@@ -1,6 +1,6 @@
-# Curation log: every change to what WildTrace counts, and why
+# Curation log: every change to what Ichnic counts, and why
 
-WildTrace decides what counts as a wildlife-trade report through its vocabulary (lexicon), its
+Ichnic decides what counts as a wildlife-trade report through its vocabulary (lexicon), its
 screens and its sources. Those decisions shape every number on the site, so they are recorded
 here, like code changes: what changed, the evidence for it, and what it did to the data. The idea
 follows *Scrub Data* (Kay, Bar & Beery 2026, bioRxiv doi:10.64898/2026.09.19.752880): curation
@@ -42,7 +42,7 @@ Plural terms match their singular ("parakeets" finds "parakeet") unless the sing
 | 2026-09-29 | Online-crime searches in 8 languages | ECO-SOLVE comparison: online trade reaches enforcement in news | +582 reports, platforms per case |
 | 2026-09-29 | Enforcement verbs added (busts, foils, raid, charged, दबोचा, बरामद, khởi tố, thu giữ, diringkus, diamankan, autuado, aseguran, démantelé) | real missed reports in the online backfill, e.g. "Indonesia busts online trade in wildlife skulls" (TRAFFIC) | cases 1,999 -> 2,133 |
 | 2026-09-29 | "crackdown" moved to `ambiguous` (needs a number or a species) | it had pulled in policy announcements ("GIS mapping, CCTVs to boost wildlife crime crackdown") | announcements held, real operations with counts kept |
-| 2026-09-29 | Thai: species and enforcement words, Thai news edition, Thai place matching without word spaces | 10,313 of ECO-SOLVE's 30,934 adverts are in Thai; WildTrace searched only English Thai news | Thailand cases 25 -> 48 |
+| 2026-09-29 | Thai: species and enforcement words, Thai news edition, Thai place matching without word spaces | 10,313 of ECO-SOLVE's 30,934 adverts are in Thai; Ichnic searched only English Thai news | Thailand cases 25 -> 48 |
 | 2026-09-29 | Thai "เหี้ย" (water monitor; also a swear word) moved to `ambiguous` instead of deleted | owner review: deleting polysemous words loses real reports | counted with trade, enforcement, wildlife or number context |
 | 2026-09-29 | Codebook common words (monitor, coral, turtle, deer, parrot ...) kept as `ambiguous` instead of dropped | same principle; PMC8579131 names | 17 groups gain context-checked terms |
 | 2026-09-29 | Amphibians group (axolotls, dart frogs, salamanders, frog legs; "frog", "toad", Thai "กบ" ambiguous) | Vora et al. 2026, *Nature* (40% of traded amphibians wild-caught); ECO-SOLVE axolotl adverts; LEMIS amphibian imports | new group in cases, CITES, LEMIS, captive-bred claims |

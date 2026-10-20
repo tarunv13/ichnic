@@ -148,7 +148,7 @@ def aggregate(folder: Path | str, taxonomy: Path | str | None = None, min_year: 
             exp = _iso2(r.get("code_imp") or r.get("country_imp_exp"))
             add("marshall", g, org if org != "XX" else exp, exp, y, corr or f"{genus} {sp}".strip(),
                 (r.get("description") or "").strip(), (r.get("purpose") or "").strip(), (r.get("source") or "").strip())
-        print(f"  {f.name}: +{sum(seized.values()) - n0:,} seized records in WildTrace groups")
+        print(f"  {f.name}: +{sum(seized.values()) - n0:,} seized records in Ichnic groups")
 
     eskew = folder / ESKEW_FILE
     if eskew.exists():
@@ -174,7 +174,7 @@ def aggregate(folder: Path | str, taxonomy: Path | str | None = None, min_year: 
 
     if not seized:
         raise SystemExit(f"no seized LEMIS records found in {folder}: see the module docstring for the files")
-    print(f"  genera seized but in no WildTrace group (top): {no_group.most_common(12)}")
+    print(f"  genera seized but in no Ichnic group (top): {no_group.most_common(12)}")
     desc_names = codes.get("description", {})
     return {
         "source": "US Fish and Wildlife Service LEMIS (FOIA), cleaned by Marshall et al. 2025 and Eskew et al. 2020",

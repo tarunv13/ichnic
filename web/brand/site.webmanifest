@@ -1,6 +1,6 @@
 {
-  "name": "WildTrace: the open atlas of illegal wildlife trade",
-  "short_name": "WildTrace",
+  "name": "Ichnic: the open atlas of illegal wildlife trade",
+  "short_name": "Ichnic",
   "description": "Follow the trade. Open, evidence-graded data on illegal wildlife trade in animals and plants.",
   "start_url": "/wildtrace/",
   "scope": "/wildtrace/",

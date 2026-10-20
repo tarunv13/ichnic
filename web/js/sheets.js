@@ -24,7 +24,7 @@ export function mountNetwork(root) {
           <div class="row" style="justify-content:space-between;align-items:start;flex-wrap:nowrap"><h4 style="display:flex;gap:8px;align-items:center">${ic.org(o.id, o.name)}${esc(o.name.split(" (")[0])}</h4><span class="status ${c}">${l}</span></div>
           <div class="muted" style="font-size:12.5px">${esc(o.entity)}${o.hq ? ` · ${esc(o.hq.city)}` : ""}</div>
           <div>${esc(o.features)}</div>
-          <div class="use"><b>In WildTrace:</b> ${esc(o.wildtrace.how)}</div>
+          <div class="use"><b>In Ichnic:</b> ${esc(o.wildtrace.how)}</div>
         </article>`; }).join("")}</div>
       <div class="prose" style="max-width:none">
         <h3>What the network taught this project</h3>
@@ -60,7 +60,7 @@ export function mountMethods(root, tab = "pipeline") {
       <p><b>Link and publish.</b> Cases become a graph of species, places, agencies and outlets. A privacy gate blocks names, phones and handles before anything is published.</p>
       <h3>Flows: supply, transit and demand</h3>
       <p>News reports rarely name both ends of a route, so the Flows view draws on the <b>CITES Trade Database</b> (UNEP-WCMC for the CITES Secretariat, full download ${esc(S.data.flows?.version || "2026.1")}).
-        Every shipment since ${esc(String(S.data.flows?.year_min || 2015))} is matched to a WildTrace species group by species, genus, family, order or class. Shipments with source code I (confiscated or seized) become the seized layer, drawn from the country of origin to the country that seized them; all other shipments form the declared, mostly legal, layer. Only counts are published, never shipments or permit identifiers.</p>
+        Every shipment since ${esc(String(S.data.flows?.year_min || 2015))} is matched to a Ichnic species group by species, genus, family, order or class. Shipments with source code I (confiscated or seized) become the seized layer, drawn from the country of origin to the country that seized them; all other shipments form the declared, mostly legal, layer. Only counts are published, never shipments or permit identifiers.</p>
       <p>A country's role (source, transit hub or market) is whichever of the three counts is largest: taken from there, re-exported through there, or seized arriving there. Reporting to CITES is uneven, and the United States reports its seizures more completely than most, so it can look like a bigger market than it is. Regions follow the UN M49 sub-regions, grouped into eight.</p>
       <p>Species groups are matched on the taxa they list and, for trade records only, on the wider ranks their names imply (turtles = Testudines, bears = Ursidae, monitor lizards = <i>Varanus</i>, crocodilian skins with pythons). News matching keeps the narrower lists, which protect precision.</p>
       <h3>Seized at US ports</h3>
@@ -68,7 +68,7 @@ export function mountMethods(root, tab = "pipeline") {
       <p>Read it with three limits. A LEMIS seizure can follow missing or wrong paperwork as well as smuggling. It shows what US inspectors intercepted, so it measures US enforcement effort as much as trade. And the United States also reports seizures to CITES, so on routes into the US the two layers overlap: compare them, never add them. US-bound routes already make up about four in five CITES seizure records here, which is why "Spread across markets" is on by default.</p>
       <p>How these layers add up to an environment-to-security pathway, and where the open evidence stops, is set out in <a href="pathways.html">Risk pathways</a>.</p>
       <h3>Offered online, rarely caught</h3>
-      <p>ECO-SOLVE (Global Initiative Against Transnational Organized Crime) publishes the adverts its regional hubs record on its public dashboard. WildTrace maps each advert to a species group and sets the count against WildTrace cases for the same group and country in the same period. The sources watch different things with different effort, so the ratio is not a detection rate. Only aggregated counts are published, with attribution; the advert rows are not redistributed.</p>
+      <p>ECO-SOLVE (Global Initiative Against Transnational Organized Crime) publishes the adverts its regional hubs record on its public dashboard. Ichnic maps each advert to a species group and sets the count against Ichnic cases for the same group and country in the same period. The sources watch different things with different effort, so the ratio is not a detection rate. Only aggregated counts are published, with attribution; the advert rows are not redistributed.</p>
       <h3>Ambiguous words and image evidence</h3>
       <p>Words that name a traded species and also mean something else ("monitor", "horn", "python", Thai "เหี้ย") are never deleted. Each counts only with supporting context nearby (a species, an enforcement or sale word, a wildlife phrase or a number), every hit is kept for review, and a picture can confirm it: local OCR reads text inside images and BioCLIP recognises the species. The rules and their history are in <a href="https://github.com/tarunv13/wildtrace/blob/main/docs/CURATION.md" target="_blank" rel="noopener">the curation log</a>.</p>
       <h3>Captive-bred claims</h3>
@@ -86,7 +86,7 @@ export function mountMethods(root, tab = "pipeline") {
         <tr><td>ROC-AUC</td><td class="num">${t.roc_auc ?? "–"}</td></tr></tbody></table>
       <p>Scored once on a test set split by seller channel, so a seller's videos never appear on both sides. The learning curve has flattened (${esc(m.saturation || "")}); contradictory labels, not the model, set the ceiling.</p></div>`,
     privacy: `<div class="prose">
-      <h3 style="margin-top:0">What WildTrace will not publish</h3>
+      <h3 style="margin-top:0">What Ichnic will not publish</h3>
       <p><b>People.</b> Accused persons are presumed innocent. Case summaries are built from extracted facts, never copied headlines, and arrests are counts.</p>
       <p><b>Contacts.</b> Phone numbers, e-mails, messenger links and handles are removed; the build fails if any remain.</p>
       <p><b>Sellers.</b> Channel names are only used to keep one seller's listings on one side of the test split.</p>
@@ -141,7 +141,7 @@ export function mountAbout(root) {
   setTimeout(() => root.querySelector("#about-video")?.addEventListener("click", () => dispatchEvent(new CustomEvent("wildtrace:video"))), 0);
   root.innerHTML = `<div class="prose" style="max-width:80ch">
     <h3 style="margin-top:0">The open atlas of illegal wildlife trade</h3>
-    <p>WildTrace maps seizures, arrests and convictions involving wild fauna and flora, from ivory and pangolins to rosewood and agarwood. Every case links back to its public sources and states how strong its evidence is. The link-analysis workbench runs on your own data in your browser.</p>
+    <p>Ichnic maps seizures, arrests and convictions involving wild fauna and flora, from ivory and pangolins to rosewood and agarwood. Every case links back to its public sources and states how strong its evidence is. The link-analysis workbench runs on your own data in your browser.</p>
     <h3>How reliable is a case?</h3>
     <p><b>Validated</b> (${v.validated || 0}): checked by a person against its sources. <b>Official source</b> (${v.official || 0}): at least one government, customs, police or judicial release. <b>Corroborated</b> (${v.corroborated || 0}): two or more independent outlets. <b>Single report</b> (${v.single || 0}): one outlet; treat as a lead.</p>
     <p>${cov.mapped || 0} cases have a city- or district-level place, ${cov.country_only || 0} only a country, and ${cov.unmapped || 0} none. Coverage follows the newsrooms and government sites searched, so counts show where wildlife crime is <i>reported</i>, not where it happens.</p>
@@ -152,7 +152,7 @@ export function mountAbout(root) {
     <p>An open-source research project, maintained on GitHub by <a href="https://github.com/tarunv13" target="_blank" rel="noopener">@tarunv13</a>. It builds on the OWT labelled set of online listings and on the observatories listed under Network. Code and method: <a href="https://github.com/tarunv13/wildtrace" target="_blank" rel="noopener">github.com/tarunv13/wildtrace</a>.</p>
     <h3>Use and cite</h3>
     <p>Case data: <b>CC BY 4.0</b>. Code: MIT. The Flows data (<code>flows.json</code>) is derived from the CITES Trade Database and shared under its terms (non-commercial, with attribution); the virus counts in <code>zoonoses.json</code> come from VIRION under <b>ODbL 1.0</b>. Suggested citation:</p>
-    <p class="box mono" style="font-size:12.5px">${esc(m.cite || "WildTrace. The open atlas of illegal wildlife trade.")}</p>
+    <p class="box mono" style="font-size:12.5px">${esc(m.cite || "Ichnic. The open atlas of illegal wildlife trade.")}</p>
     <div class="row"><a class="btn primary" href="data/cases.csv" download>Download all cases (CSV)</a>
       <a class="btn" href="browse.html">Browse by species &amp; country</a></div>
     <h3>More open data</h3>

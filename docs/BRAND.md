@@ -1,4 +1,10 @@
-# WildTrace brand
+# Ichnic brand
+
+**Name:** Ichnic (ICK-nick), from the Greek *ichnos*, a track or trace; ichnology is the science of reading tracks.
+The project reads the traces wildlife crime leaves in public records. Formerly WildTrace (to October 2026), a name
+many other projects use. The Python package, the command and the URL path stay `wildtrace` so links and scripts
+keep working; a custom domain will carry the new name. Say it in full the first time: "Ichnic, the open atlas of
+illegal wildlife trade".
 
 **Motto:** Follow the trade.
 **Descriptor:** Open evidence on illegal wildlife trade.

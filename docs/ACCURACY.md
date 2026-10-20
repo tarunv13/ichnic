@@ -1,11 +1,11 @@
-# How accurate is WildTrace?
+# How accurate is Ichnic?
 
 Accuracy is measured, not asserted. A reviewer draws a random sample of published cases
 (`wildtrace accuracy sample`), reads each case's source headlines blind to how the pipeline scored it,
 and records whether it is a genuine wildlife-trade enforcement event (a seizure, arrest, prosecution,
 conviction, or a rescue linked to trade), whether its species are right, and why when it is not.
 `wildtrace accuracy score` computes precision with a 95% Wilson interval and publishes it on the site
-(`web/data/accuracy.json`, the "How accurate is WildTrace?" answer). Label files stay private because
+(`web/data/accuracy.json`, the "How accurate is Ichnic?" answer). Label files stay private because
 they contain headlines; the counts and error classes are public.
 
 ## Current figure
@@ -15,7 +15,7 @@ they contain headlines; the counts and error classes are public.
 audit measured 95.5% (91.7% to 97.6%); the intervals overlap, so precision is holding steady rather than
 proven higher.
 
-The target is 98%. It is not reached yet, and WildTrace does not claim it. Precision by evidence grade in
+The target is 98%. It is not reached yet, and Ichnic does not claim it. Precision by evidence grade in
 the same audit, with 95% Wilson intervals: corroborated 97.6% (40/41; 87.4% to 99.6%), single report 95.1%
 (135/142; 90.2% to 97.6%), official 94.1% (16/17; 73.0% to 99.0%). The intervals overlap widely, so the audit does
 not show that one grade is more precise than another; 17 official cases are too few to say.
@@ -35,10 +35,10 @@ so no figure is measured on cases the rules were tuned on.
 
 ## What the figure does not cover
 
-- **Recall** (events WildTrace misses) is not measured by these audits. After the first round of rules,
+- **Recall** (events Ichnic misses) is not measured by these audits. After the first round of rules,
   148 of the 163 genuine events in audit 1 were still published (90.8%); later verb additions recovered
   some of the rest. Recall against an independent list is measured separately (next section).
-- **Coverage** follows the sources searched: newsrooms, government sites and the languages WildTrace reads.
+- **Coverage** follows the sources searched: newsrooms, government sites and the languages Ichnic reads.
 - **Place** accuracy is not yet audited systematically; known errors come from towns that share a name with
   a place elsewhere.
 
@@ -50,17 +50,17 @@ that we need a list made by someone else. The Illegal Wildlife Trafficking Globa
 coordinates and source links. Its files carry no licence, so we use them only to measure, keep the rows
 private, and report the aggregate here with attribution.
 
-`wildtrace recall <cases.json>` counts a reference case as found when a WildTrace case names the same
+`wildtrace recall <cases.json>` counts a reference case as found when a Ichnic case names the same
 species group, falls within 14 days of it, and lies within 300 km (or, for a case located only to a
-country, in the same country), or carries the same source link. Only cases WildTrace could have found are
-scored: 576 fell inside WildTrace's dates and named a species group it tracks.
+country, in the same country), or carries the same source link. Only cases Ichnic could have found are
+scored: 576 fell inside Ichnic's dates and named a species group it tracks.
 
-**WildTrace found 150 of the 576 (26%; 95% interval 22.6% to 29.8%).** Recall is highest where the Google
+**Ichnic found 150 of the 576 (26%; 95% interval 22.6% to 29.8%).** Recall is highest where the Google
 News editions and languages are strongest (Brazil 58 of 118, India 31 of 51) and lowest where the cases come
-from government press releases or from languages WildTrace does not read (Hong Kong 5 of 37, mainland China
+from government press releases or from languages Ichnic does not read (Hong Kong 5 of 37, mainland China
 0 of 30, Mexico 3 of 26). Of the 426 missed cases, 150 (35%) came from government sites such as Hong Kong
 GovNews and Customs, PROFEPA, Brazilian state governments, US FWS, the Australian Border Force and French
-customs. Google News indexes these sites poorly, so WildTrace now reads agency feeds directly
+customs. Google News indexes these sites poorly, so Ichnic now reads agency feeds directly
 (`collect --agency`, daily) and has backfilled Hong Kong Government press releases from January 2024
 (`collect --hk-archive`). The next gaps are Chinese-language sources and the Mexican, Peruvian and
 Brazilian agency sites, which publish no feed.
@@ -76,14 +76,14 @@ series and toys. So a video now corroborates a case but cannot make one on its o
 looser rules. Recall moves a long way: 21.0% at 7 days and 150 km (121/576), 25.9% at 7 days and 300 km, 31.2% at
 the default 14 days and 300 km, 37.2% at 14 days and 500 km, and 45.7% at 30 days and 500 km (263/576). A looser
 rule finds more real matches, but it also pairs unrelated events: a district with frequent pangolin seizures will
-produce a WildTrace case within a month of almost any reference case there.
+produce a Ichnic case within a month of almost any reference case there.
 
 To measure those chance pairings, we ran a placebo: every reference date moved by 60 or 90 days, backwards and
 forwards, with link matches switched off, so that any "match" is a coincidence. Under the default rule 8.6% to 14.0%
 of the shifted cases still matched (77/561, 79/565, 37/328, 25/290; forward shifts leave fewer cases inside
-WildTrace's dates). Removing that chance rate, (observed − chance) / (1 − chance), gives about 20% to 25% under
+Ichnic's dates). Removing that chance rate, (observed − chance) / (1 − chance), gives about 20% to 25% under
 the default rule. The strict rule gives a similar 16% to 19% (chance 3.0% to 5.9%), while the loosest rule spreads
-to 18% to 29% because its chance rate is so high (23.8% to 33.7%). The honest summary is that WildTrace finds
+to 18% to 29% because its chance rate is so high (23.8% to 33.7%). The honest summary is that Ichnic finds
 about one in five of the events on this list. The headline 31.2% is kept above only because it is the figure the
 command reports; read it with this correction.
 

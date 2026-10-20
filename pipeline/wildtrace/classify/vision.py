@@ -8,7 +8,7 @@ local, key-free signals:
 * OCR (LiteParse, Apache-2.0, runs on the machine): the text inside the image, scrubbed of phone
   numbers and handles before it is kept, then matched against the lexicon and code words.
 * Visual species recognition (BioCLIP, imageomics/bioclip, MIT; a CLIP model trained on the
-  Tree of Life): zero-shot scores for the scientific names behind each WildTrace group, against
+  Tree of Life): zero-shot scores for the scientific names behind each Ichnic group, against
   look-alike distractors (a computer monitor, a car horn, jewellery, a person).
 
 `analyse()` combines them with the caption. An ambiguous term that lacked text context is
