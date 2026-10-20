@@ -60,6 +60,13 @@ def _count_label(news: int, cites: int) -> str:
     return f"{news:,}" if news or not cites else f"{cites:,} CITES"
 
 
+def _row(href: str, label: str, count: str, n: int, top: int, color: str = "var(--species)") -> str:
+    """One browse row: name, a right-aligned count, and a thin bar scaled to the largest row in its list."""
+    w = round(100 * n / top, 1) if top else 0
+    return (f'<li><a href="{href}" style="--w:{w};--bar:{color}"><span>{esc(label)}</span> '
+            f'<span class="muted n">{count}</span></a></li>')
+
+
 def page(title: str, desc: str, canonical: str, body: str, jsonld: dict | None = None,
          crumbs: list[tuple[str, str]] | None = None) -> str:
     """One small, fast, mobile-first document. No JavaScript: nothing here needs it."""
@@ -284,6 +291,8 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
                                                     [("WildTrace", SITE + "/"), ("Species", SITE + "/browse.html")]))
             continue
         title = f"{label} trafficking: {len(mine)} recorded cases | WildTrace"
+        if len(title) > 70:
+            title = title.replace(" recorded cases", " cases")
         desc = (f"{len(mine)} seizures, arrests and convictions involving {label.lower()} from public reports "
                 f"in {len(by_country)} countries since {window[0][:4]}. Open data, graded by evidence.")
         body = f"""
@@ -296,7 +305,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
    Counts show where this trade is <b>reported</b>, not where it happens: reporting is uneven between countries and
    languages, and cases whose reports name no place are counted but cannot be mapped.</p>
 <h2>Where {esc(label.lower())} cases are reported</h2>
-<ul class="cols">{"".join(f'<li><a href="{SITE}/country/{cc.lower()}.html"><span>{esc(cc_name(cc))}</span> <span class="muted">{n}</span></a></li>' for cc, n in top)}</ul>
+<ul class="cols">{"".join(_row(f"{SITE}/country/{cc.lower()}.html", cc_name(cc), f"{n:,}", n, top[0][1] if top else 0, "var(--place)") for cc, n in top)}</ul>
 <h2>Recent cases</h2>
 <ul class="cases">{"".join(f'<li><a href="{SITE}/case/{c["id"]}.html"><span>{esc(c.get("summary", ""))}<br><span class="muted">{esc(c.get("date", ""))} · {esc(c.get("verification", ""))}</span></span></a></li>' for c in recent)}</ul>
 {cites_html}
@@ -337,7 +346,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
 <p>These are cases <b>reported</b> in the newsrooms and government sites searched. A country with active reporters and
   a government that publishes its seizures will show more cases than one without, whatever the trade is doing.</p>
 <h2>Most reported species groups in {esc(name)}</h2>
-<ul class="cols">{"".join(f'<li><a href="{SITE}/species/{slug(g)}.html"><span>{esc(sp_label(g))}</span> <span class="muted">{n}</span></a></li>' for g, n in top)}</ul>
+<ul class="cols">{"".join(_row(f"{SITE}/species/{slug(g)}.html", sp_label(g), f"{n:,}", n, top[0][1] if top else 0) for g, n in top)}</ul>
 <h2>Recent cases</h2>
 <ul class="cases">{"".join(f'<li><a href="{SITE}/case/{c["id"]}.html"><span>{esc(c.get("summary", ""))}<br><span class="muted">{esc(c.get("date", ""))} · {esc(c.get("verification", ""))}</span></span></a></li>' for c in recent)}</ul>
 <p><a class="pill" href="{SITE}/#country/{esc(cc)}">See {esc(name)} on the map →</a></p>
@@ -353,15 +362,15 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
                                                  [("WildTrace", SITE + "/"), ("Countries", SITE + "/browse.html")]))
 
     # ---------------------------------------------------------------- browse index
-    sp_rows = "".join(
-        f'<li><a href="{SITE}/species/{slug(gid)}.html"><span>{esc(g.get("label", gid))}</span> '
-        f'<span class="muted">{_count_label(sum(1 for c in cases if gid in c.get("species", [])), (cites.get(gid) or {}).get("n", 0))}</span></a></li>'
-        for gid, g in sorted(species.items(), key=lambda kv: -sum(1 for c in cases if kv[0] in c.get("species", [])))
-        if any(gid in c.get("species", []) for c in cases) or (cites.get(gid) or {}).get("n", 0) >= 5)
-    cc_rows = "".join(
-        f'<li><a href="{SITE}/country/{cc.lower()}.html"><span>{esc(cc_name(cc))}</span> '
-        f'<span class="muted">{sum(1 for c in cases if (c.get("place") or {}).get("country") == cc)}</span></a></li>'
-        for cc in sorted(seen_cc, key=lambda cc: -sum(1 for c in cases if (c.get("place") or {}).get("country") == cc)))
+    n_sp = {gid: sum(1 for c in cases if gid in c.get("species", [])) for gid in species}
+    n_cc = {cc: sum(1 for c in cases if (c.get("place") or {}).get("country") == cc) for cc in seen_cc}
+    shown = [gid for gid in sorted(species, key=lambda g: -n_sp[g]) if n_sp[gid] or (cites.get(gid) or {}).get("n", 0) >= 5]
+    top_sp = max([n_sp[g] for g in shown] or [0])
+    sp_rows = "".join(_row(f"{SITE}/species/{slug(gid)}.html", species[gid].get("label", gid),
+                           _count_label(n_sp[gid], (cites.get(gid) or {}).get("n", 0)), n_sp[gid], top_sp) for gid in shown)
+    top_cc = max(n_cc.values() or [0])
+    cc_rows = "".join(_row(f"{SITE}/country/{cc.lower()}.html", cc_name(cc), f"{n_cc[cc]:,}", n_cc[cc], top_cc, "var(--place)")
+                      for cc in sorted(seen_cc, key=lambda cc: -n_cc[cc]))
     body = f"""
 <h1>Browse illegal wildlife trade cases</h1>
 <p class="lede">{len(cases):,} cases from {meta.get('n_reports', '')} public reports, {esc(window[0])} to {esc(window[1])},

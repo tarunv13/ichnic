@@ -31,8 +31,10 @@ export function createGlobe(el, { onPick, onReady } = {}) {
   if (!window.maplibregl) { el.innerHTML = `<p style="padding:120px 24px">The map library did not load. Check your connection and reload.</p>`; return null; }
   const small = innerWidth < 860;
   const map = new maplibregl.Map({
-    container: el, center: [30, 12], zoom: small ? 0.9 : 1.75, minZoom: 0.4,
+    container: el, center: [30, 12], zoom: small ? 1.2 : 1.75, minZoom: 0.4,
     attributionControl: { compact: true }, maxPitch: 60,
+    // On a phone the map sits inside a scrolling page: one finger scrolls the page, two move the map.
+    cooperativeGestures: small,
   });
   map.on("error", (e) => console.warn("[wildtrace map]", e?.error?.message || e));
   // Globe and sky are part of the style from the first frame (MapLibre's documented pattern).
@@ -66,7 +68,7 @@ export function createGlobe(el, { onPick, onReady } = {}) {
   const popup = new maplibregl.Popup({ closeButton: false, offset: 12, maxWidth: "280px" });
   map.on("load", () => {
     // Centre the globe in the space the panels leave free.
-    map.jumpTo({ center: [30, 12], zoom: small ? 0.9 : 1.75, padding: api.padding() });
+    map.jumpTo({ center: [30, 12], zoom: small ? 1.2 : 1.75, padding: api.padding() });
     // ---- satellite: EOxCloudless 2024 (Sentinel-2), CC BY-NC-SA 4.0 for non-commercial use.
     // Drawn under borders and labels; loads nothing until the reader switches it on.
     const under = map.getStyle().layers.find((l) => /boundary/.test(l.id) || l.type === "symbol")?.id;
@@ -294,7 +296,7 @@ export function createGlobe(el, { onPick, onReady } = {}) {
       map.setProjection({ type: on ? "mercator" : "globe" });
       map.setMinZoom(on ? 0 : 0.4);
     },
-    world() { const o = { center: [30, 12], zoom: small ? 0.9 : 1.75, pitch: 0, bearing: 0, padding: api.padding() };
+    world() { const o = { center: [30, 12], zoom: small ? 1.2 : 1.75, pitch: 0, bearing: 0, padding: api.padding() };
       reduced() ? map.jumpTo(o) : map.flyTo({ ...o, speed: 0.8 }); },
     toggleProjection() {
       const globe = map.getProjection()?.type === "globe";
@@ -303,7 +305,7 @@ export function createGlobe(el, { onPick, onReady } = {}) {
     },
     // Keep flights centred in the part of the map that panels do not cover.
     padding(extra = 0) {
-      if (innerWidth < 860) return { top: 140 + extra, bottom: innerHeight * 0.45, left: 20, right: 20 };
+      if (innerWidth < 860) return { top: 20 + extra, bottom: 36 + extra, left: 20, right: 20 };
       const side = !document.body.classList.contains("mode-cases") && innerWidth >= 860;
       const insp = document.body.classList.contains("inspecting") ? 450 : side ? 410 : 20;
       const pulse = document.getElementById("pulse")?.classList.contains("folded") ? 70 : 390;

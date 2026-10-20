@@ -232,16 +232,18 @@ def publish(answers: list[dict], out_dir: Path, page, esc, site: str, write) -> 
               "author": {"@type": "Person", "name": "Tarun Kumar Verma"}}}, "dateModified": today}
         write(f"answers/{a['slug']}.html", page(f"{a['q']} | WildTrace", a["a"][:155], f"{site}/answers/{a['slug']}.html", body, ld,
                                                 [("WildTrace", site + "/"), ("Questions", f"{site}/answers.html")]))
-    groups = "".join(f"<h2>For {esc(label)}</h2><ul class=\"cases\">" + "".join(
-        f'<li><a href="{site}/answers/{a["slug"]}.html"><span><span class="qn">Q{answers.index(a) + 1:02d}</span> {esc(a["q"])}<br>'
-        f'<span class="muted">{esc(a["number"]["v"])} {esc(a["number"]["k"])}</span></span></a></li>'
-        for a in answers if key in a["personas"]) + "</ul>" for key, label in PERSONAS.items())
+    # Each question once, in number order, with the audiences it serves as labels.
+    groups = "<ul class=\"cases qlist\">" + "".join(
+        f'<li><a href="{site}/answers/{a["slug"]}.html"><span><span class="qn">Q{i:02d}</span> {esc(a["q"])}<br>'
+        f'<span class="muted">{esc(a["number"]["v"])} {esc(a["number"]["k"])}</span>'
+        f'<span class="auds">{"".join(f"<span>{esc(PERSONAS[k])}</span>" for k in PERSONAS if k in a["personas"])}</span></span></a></li>'
+        for i, a in enumerate(answers, 1)) + "</ul>"
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": a["q"], "acceptedAnswer": {"@type": "Answer", "text": a["a"]}} for a in answers]}
     write("answers.html", page("Questions WildTrace answers about illegal wildlife trade | WildTrace",
                                "Live answers about illegal wildlife trade: what is seized, where it goes, how often it ends in conviction, "
                                "and how accurate the data is, each with its sources.",
-                               f"{site}/answers.html", f"<p class=\"eyebrow\">Questions</p><h1>What WildTrace answers, and for whom</h1>"
+                               f"{site}/answers.html", f"<h1>What WildTrace answers, and for whom</h1>"
                                f"<p class=\"lede\">Every answer names its sources and says what its number cannot tell you. {len(answers)} questions, "
                                f"numbered; figures rebuilt daily, last on {date.today().isoformat()}.</p>{groups}",
                                ld, [("WildTrace", site + "/"), ("Questions", f"{site}/answers.html")]))

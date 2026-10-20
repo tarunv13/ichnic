@@ -64,6 +64,7 @@ a { color: var(--place-ink); }
 /* ------------------------------------------------------------------ the map */
 #globe { position: fixed; inset: 0; }
 #globe canvas { outline: none; }
+#globe canvas:focus-visible { outline: 3px solid var(--place); outline-offset: -3px; }
 .maplibregl-ctrl-attrib { font-size: 10.5px; background: rgba(255,255,255,.7) !important; border-radius: 8px; }
 /* The map credit sits above the timeline dock, bottom right, under the legend. */
 .maplibregl-ctrl-bottom-right { bottom: calc(var(--dock) + 16px) !important; right: calc(var(--gutter) - 6px) !important; }
@@ -95,6 +96,7 @@ body.inspecting .maplibregl-ctrl-bottom-right { right: calc(var(--gutter) + 430p
 .omni-box svg { width: 18px; height: 18px; color: var(--ink-3); flex: none; }
 .omni input { flex: 1; border: 0; background: transparent; outline: none; font-size: 15px; min-width: 0; }
 .omni input::placeholder { color: var(--ink-3); }
+.omni-box:has(input:focus-visible) { outline: 2px solid var(--place); outline-offset: 2px; }
 .kbd { font: 500 11px/1 var(--mono); padding: 4px 6px; border-radius: 6px; border: 1px solid var(--line-2); color: var(--ink-3); background: rgba(255,255,255,.6); }
 .omni-results { position: absolute; top: 58px; left: 0; right: 0; max-height: min(60vh, 520px); overflow: auto; padding: 6px; display: none; }
 .omni.open .omni-results { display: block; animation: rise 260ms var(--ease) both; }
@@ -698,3 +700,51 @@ svg .hit { fill: transparent; cursor: default; }
 .skip:focus { top: 16px; }
 .brand { transition: transform 200ms var(--ease), box-shadow 200ms var(--ease); }
 .brand:hover { transform: translateY(-1px); box-shadow: var(--shadow), 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+
+/* v1.7: phones get a scrolling page instead of a fixed shell: the header, the map at about half the
+   screen, then the questions and the summary in the page's own flow. Overlays (inspector, sheets,
+   guide, tour) stay fixed. Desktop keeps the shell; the extra tools sit in the bar as before. */
+.lens-more { display: contents; }
+.more-btn { display: none; }
+@media (max-width: 860px) {
+  html, body { height: auto; }
+  body { overflow-x: hidden; overflow-y: auto; }
+  .topbar { position: relative; top: auto; left: auto; right: auto; padding: calc(10px + env(safe-area-inset-top, 0px)) 8px 0; }
+  .lenses { overflow: visible; -webkit-mask-image: none; mask-image: none; position: relative; }
+  .more-btn { display: inline-flex; margin-left: auto; }
+  .more-btn::after { content: ""; width: 7px; height: 7px; margin-left: 8px; border: solid currentColor; border-width: 0 1.5px 1.5px 0;
+    transform: translateY(-2px) rotate(45deg); transition: transform 200ms var(--ease); }
+  .more-btn[aria-expanded="true"]::after { transform: translateY(1px) rotate(-135deg); }
+  .lenses .sep { display: none; }
+  .lens-more { display: none; position: absolute; right: 0; top: calc(100% + 6px); z-index: 40; width: min(260px, calc(100vw - 16px));
+    padding: 6px; border-radius: 16px; background: var(--glass-2, #fff); border: 1px solid var(--edge); box-shadow: var(--shadow);
+    -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); flex-direction: column; gap: 2px; }
+  .lenses.open .lens-more { display: flex; animation: rise 200ms var(--ease) both; }
+  .lens-more .lens { width: 100%; justify-content: flex-start; min-height: 44px; }
+  #globe { position: relative; inset: auto; height: 54vh; flex: none; margin-top: 8px; }
+  /* The map comes first in the source (it is the backdrop on desktop); on a phone the header leads. */
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  .topbar { order: -2; }
+  #globe { order: -1; }
+  /* Map controls: one row over the top right of the map, taking no space in the flow (44 px tall). */
+  .mapctl, body:not(.inspecting) .mapctl, body:not(.mode-cases) .mapctl { position: relative; top: auto; right: auto; order: -1;
+    align-self: flex-end; grid-auto-flow: column; margin: 0 12px -44px 0; transform: translateY(calc(-54vh + 4px)); }
+  .pulse { position: relative; left: auto; right: auto; top: auto; bottom: auto; width: auto; height: auto;
+    margin: -28px 8px 12px; transform: none !important; }
+  .pulse-head #fold { display: none; }
+  .pulse.folded .pulse-body, .pulse.folded .pulse-head h2 { visibility: visible; }
+  .pulse-body { overflow: visible; }
+  .trivia { position: relative; left: auto; right: auto; bottom: auto; width: auto; margin: 0 8px 16px; }
+}
+
+/* Page changes (Impeccable: 300-500 ms for a view change, exit faster than entrance, natural ease-out).
+   The old page lets go with a short blur, the new one settles up into place; the logotype stays put. */
+.brand { view-transition-name: brand; }
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: 160ms cubic-bezier(0.4, 0, 1, 1) both vt-out; }
+::view-transition-new(root) { animation: 380ms cubic-bezier(0.16, 1, 0.3, 1) both vt-in; }
+@keyframes vt-out { to { opacity: 0; filter: blur(3px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(10px); } }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}

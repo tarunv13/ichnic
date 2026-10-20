@@ -284,6 +284,13 @@ async function boot() {
   });
   document.querySelectorAll("[data-layer]").forEach((b) => b.addEventListener("click", () => setLayer(b.dataset.layer, b.getAttribute("aria-pressed") !== "true")));
   document.querySelectorAll("[data-sheet]").forEach((b) => b.addEventListener("click", () => (sheetOpen === b.dataset.sheet ? closeSheet() : openSheet(b.dataset.sheet))));
+  // Phones fold the tools into a More menu; any choice, Escape or a tap elsewhere closes it.
+  const more = $("#more"), lenses = more.closest(".lenses");
+  const setMore = (on) => { lenses.classList.toggle("open", on); more.setAttribute("aria-expanded", String(on)); };
+  more.addEventListener("click", (e) => { e.stopPropagation(); setMore(!lenses.classList.contains("open")); });
+  $("#lens-more").addEventListener("click", () => setMore(false));
+  document.addEventListener("click", (e) => { if (!lenses.contains(e.target)) setMore(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && lenses.classList.contains("open")) { setMore(false); more.focus(); } });
   $("#sheet-close").addEventListener("click", closeSheet);
   $("#back").addEventListener("click", back); $("#fwd").addEventListener("click", fwd); $("#close").addEventListener("click", closeTrail);
   $("#fold").addEventListener("click", () => { const f = $("#pulse").classList.toggle("folded"); $("#fold").setAttribute("aria-expanded", String(!f)); });
