@@ -537,6 +537,7 @@ latest version. To cite the exact data you used, cite its version DOI:
 
 | Version | Date | What it added | DOI |
 | --- | --- | --- | --- |
+| 2.0.0 | 2026-10-20 | renamed Ichnic (formerly WildTrace); recall measured and corrected for chance; agency collectors; jury-led redesign; 2,264 cases | [10.5281/zenodo.23504501](https://doi.org/10.5281/zenodo.23504501) |
 | 1.11.0 | 2026-09-29 | ask a question, measured accuracy (95.5% in a blind audit), event gate, new brand; 1,871 cases | [10.5281/zenodo.23034475](https://doi.org/10.5281/zenodo.23034475) |
 | 1.10.0 | 2026-09-29 | ECO-SOLVE comparison, ambiguous words, image evidence, Thai, amphibians | [10.5281/zenodo.23033058](https://doi.org/10.5281/zenodo.23033058) |
 | 1.9.0 | 2026-09-29 | caught online, captive-bred claims, 2,126 cases | [10.5281/zenodo.23025869](https://doi.org/10.5281/zenodo.23025869) |
