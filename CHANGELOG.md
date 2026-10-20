@@ -16,6 +16,9 @@ All notable changes to WildTrace. Dates are the release date, newest first.
 - **Agency press releases, read directly.** `collect --agency` reads official RSS (Hong Kong GovNews, French customs,
   US Department of Justice) every day; `collect --hk-archive <date>` backfills Hong Kong Government press releases
   from their public daily index. A third of the missed events were government releases.
+- **Mexico's PROFEPA press releases.** `collect --profepa <date>` reads the agency's press archive (no feed). A blind
+  audit of PROFEPA-only cases found 60% real events (30 of 50), so for now a PROFEPA release only corroborates a
+  news case. Spanish official verbs and a headline rule for releases and relocations were added on the way.
 - **Enforcement videos.** `collect --video` (local only): YouTube search with yt-dlp and captions with
   youtube-transcript-api, kind `news_video`, through the same event gate as news. A video counts only with its upload
   date, read from its public page, and only as corroboration: video-only cases were 82% real in two blind audits and

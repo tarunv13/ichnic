@@ -1,8 +1,9 @@
+@import url("fonts.css");
 /* Static pages: the readable layer under the Atlas.
  *
- * Mobile first, one column, no JavaScript, no web fonts to wait for. A reader who arrives from a
- * search result on a phone should have text on screen immediately, so this file stays small and
- * every size is set in relative units that respect the reader's own font size.
+ * Mobile first, one column, no JavaScript. They use the Atlas's own faces (Geist, Bricolage Grotesque for
+ * headings and big numbers), loaded with font-display: swap so text is on screen at once in the fallback
+ * face. Every size is set in relative units that respect the reader's own font size.
  */
 :root {
   --ground: #edf1ef; --card: #fff; --ink: #0f1a17; --ink-2: #3c4a45; --ink-3: #5f6d68;
@@ -155,3 +156,17 @@ ul.cols li > a .n { text-align: right; font-variant-numeric: tabular-nums; }
 .qlist li > a:hover { text-decoration: none; }
 .qlist li > a:hover .qq { text-decoration: underline; text-decoration-color: var(--link); }
 footer a, .crumbs a { display: inline-block; min-height: 24px; line-height: 24px; }
+
+/* One system with the Atlas: its faces, its headline weight, tabular figures for numbers. */
+body { font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+h1, h2, .brand, .answer .num, .big { font-family: "Bricolage Grotesque", "Geist", "Segoe UI", sans-serif; letter-spacing: -0.03em; }
+h1 { font-weight: 700; }
+.num, .n, td.num { font-variant-numeric: tabular-nums; }
+/* The logotype answers the pointer: the mark turns and the word gains a drawn underline. */
+.brand { display: inline-flex; align-items: center; gap: 8px; background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 2px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 220ms cubic-bezier(0.16, 1, 0.3, 1); }
+.brand img { transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1); }
+.brand:hover { background-size: 100% 2px; }
+.brand:hover img { transform: rotate(-14deg) scale(1.06); }
+p.small a { display: inline-block; min-height: 24px; line-height: 24px; }
+@media (prefers-reduced-motion: reduce) { .brand, .brand img { transition: none; } }

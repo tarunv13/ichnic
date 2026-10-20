@@ -172,10 +172,9 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, data: P
                          + (f", and species were right in {acc['species_ok']:.1%} of them." if acc.get("species_ok") is not None else "."),
                     "number": {"v": f"{acc['precision']:.1%}", "k": f"of audited cases are real events ({acc['date']})"},
                     "chart": [[k, n] for k, n in acc.get("errors", {}).items()],
-                    "chart_title": f"The {acc['n'] - acc['relevant']} audited cases that were not real events, by reason (bars against all {acc['n']} audited)",
-                    "chart_max": acc["n"],
+                    "chart_title": f"The {acc['n'] - acc['relevant']} of {acc['n']} audited cases that were not real events, by reason",
                     "who": [{"name": "WildTrace accuracy audit", "detail": acc.get("method", ""), "url": "https://github.com/tarunv13/wildtrace/blob/main/docs/ACCURACY.md"}, news],
-                    "limit": "Precision says how many published cases are real, not how many real events are missed. Against an independent list of 576 hand-checked events, WildTrace finds about one in five once chance matches are removed (docs/ACCURACY.md); coverage follows the sources searched.",
+                    "limit": "Precision says how many published cases are real, not how many real events are missed. Recall, the share of real events WildTrace finds, is about 20% to 25%: that is how many of 576 hand-checked events on an independent list it matched, after removing matches that happen by chance. Coverage follows the sources searched.",
                     "go": {"label": "Read the method", "href": "./#methods"}})
 
     latest = sorted((c for c in cases if c.get("date")), key=lambda c: c["date"], reverse=True)

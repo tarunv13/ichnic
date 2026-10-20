@@ -301,6 +301,9 @@ def gate(text: str) -> tuple[bool, str]:
         return False, "genre"              # unambiguous features and period summaries, whatever their numbers
     if _any(text, [w for k, ws in (lex.get("genre_cues") or {}).items() if k != "hard" for w in ws]) and not _NUMBER.search(text):
         return False, "genre"
+    head = text.split(". ", 1)[0]
+    if _any(head, lex.get("headline_release_cues") or []) and not any(lexicon.count_cues(head, "enforcement_cues").values()):
+        return False, "release or conflict"   # care and human-wildlife conflict, not enforcement
     if set(ev) == {"rescue"} and not _any(text, lex.get("rescue_trade_context") or []) and not _MANY.search(text):
         return False, "rescue, no trade"      # a rescue of 10+ animals is almost always an interception
     return True, "event"

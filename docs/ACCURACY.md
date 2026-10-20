@@ -91,6 +91,22 @@ The figure is a floor in one sense and generous in another. The reference list l
 cases its curators found, so it is not a random sample of all events; and a match on species, date and
 distance can pair two different events in the same district.
 
+## Mexico's PROFEPA press releases (20 October 2026)
+
+PROFEPA, Mexico's environmental enforcement agency, publishes no feed, so `collect --profepa` reads its press archive
+(339 releases since January 2024). At first none passed the screen: the gate did not know Mexican official usage
+("asegura" for a seizure, "vinculan a proceso" for a charge), and every dateline ("19 de octubre de 2026") looked like
+a period summary. After those fixes, and after the extractor was limited to the release itself (the page sidebar had
+placed every case in Zacatecas), a first look at 40 PROFEPA-only cases found 26 real events; a headline rule for
+releases, relocations and animals loose in towns followed (CURATION.md). Those 40 were used to tune, so they do not count.
+
+**A fresh blind sample of 50 PROFEPA-only cases found 30 real enforcement events (60%; 95% interval 46.2% to 72.4%).**
+The rest were public campaigns (4), fishery equipment compliance (4), follow-ups such as a necropsy (3), logging
+operations with no event (3), nesting or protection operations (3), and single cases of a road named for a tiger, a
+checkpoint programme and wildlife conflict. Official releases use enforcement words far more densely than news, so
+the news-tuned screen lets these through. Until that gap closes, a PROFEPA release corroborates a news case but
+does not make one on its own, as with videos.
+
 ## How the audits are designed, and their limits
 
 - **Sampling frame.** Each audit draws a simple random sample, without replacement, from all cases published on the

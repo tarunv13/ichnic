@@ -278,7 +278,7 @@ def build(min_relevance: float | None = None, fetch_text: bool = True) -> dict:
     from .collect.video import GENRE as _VIDEO_GENRE
     from .collect.agency import clean as _agency_clean
     for r in recs:
-        if r.source in ("agency_rss", "agency_hk_archive"):
+        if r.source in ("agency_rss", "agency_hk_archive", "agency_profepa"):
             r.text = _agency_clean(r.text)
     news = [r for r in recs if r.kind in ("news", "official", "court")
             or (r.kind == "news_video" and r.published and not _VIDEO_GENRE.search(r.title))]  # "official": government releases; "news_video": enforcement videos
@@ -312,6 +312,13 @@ def build(min_relevance: float | None = None, fetch_text: bool = True) -> dict:
     cases = [c for c in cases if not (c["sources"] and all("youtube.com" in (s.get("url") or "") for s in c["sources"]))]
     if n_video_only:
         print(f"  video-only cases held back: {n_video_only}")
+    # PROFEPA releases corroborate but do not make a case yet: a blind audit of PROFEPA-only cases found 30 of 50
+    # real events (60%; docs/ACCURACY.md); campaigns, fishery compliance and follow-ups pass the news-tuned screen.
+    only_profepa = lambda c: c["sources"] and all("gob.mx/profepa" in (s.get("url") or "") for s in c["sources"])
+    n_profepa_only = sum(1 for c in cases if only_profepa(c))
+    cases = [c for c in cases if not only_profepa(c)]
+    if n_profepa_only:
+        print(f"  PROFEPA-only cases held back: {n_profepa_only}")
     # Human review (resources/validations.yaml) outranks every automatic status.
     vpath = RESOURCES / "validations.yaml"
     reviews = (yaml.safe_load(vpath.read_text(encoding="utf-8")) or {}) if vpath.exists() else {}

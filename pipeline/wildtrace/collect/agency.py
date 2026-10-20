@@ -60,8 +60,12 @@ _LINK = re.compile(r'href="(/gia/general/(\d{6})/(\d{2})/P\d+\.htm)"[^>]*>(.*?)<
 _BOILER = re.compile(r"[^.]*(?:liable to|maximum (?:fine|penalty)|24-hour hotline|hotline 182 8080|report any suspected)[^.]*\.", re.I)
 
 
+# A release's dateline ("19 de octubre de 2026") is not a period summary: drop it before the statistics rule reads "de 20".
+_DATELINE = re.compile(r"\b\d{1,2} de (?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre) de 20\d\d\b", re.I)
+
+
 def clean(text: str) -> str:
-    return re.sub(r"\s+", " ", _BOILER.sub(" ", text or "")).strip()
+    return re.sub(r"\s+", " ", _DATELINE.sub(" ", _BOILER.sub(" ", text or ""))).strip()
 
 
 def _text(html: str) -> str:
@@ -96,6 +100,16 @@ def collect_hk_archive(since: str = "2024-01-01", until: str | None = None) -> l
 _PROFEPA = re.compile(r'<time datetime=\\"(\d{4}-\d{2}-\d{2}).*?<h2>(.*?)<\\/h2>.*?href=\\"(/profepa/prensa/[^"\\]+)', re.S)
 
 
+def _profepa_text(html: str) -> str:
+    """The release itself: gob.mx pages carry a long sidebar (other states' offices, campaigns) that would
+    otherwise place every case in Zacatecas and lend it trade words it does not have."""
+    i = html.find('class="article-body"')
+    if i < 0:
+        return ""
+    body = html[i:html.find("</div>", i)]
+    return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", body.split(">", 1)[-1]))).strip()[:3000]
+
+
 def collect_profepa(since: str = "2024-01-01", max_pages: int = 400) -> list[Record]:
     """PROFEPA press releases back to `since`, page by page; a release is opened only when its title names a
     species group or protected species."""
@@ -111,7 +125,7 @@ def collect_profepa(since: str = "2024-01-01", max_pages: int = 400) -> list[Rec
                 continue
             url = "https://www.gob.mx" + path.split("?")[0]
             page = get(url, delay=2, cache_hours=24 * 365)
-            recs.append(Record(url=url, title=title, text=_text(page.text) if page is not None and page.ok else "",
+            recs.append(Record(url=url, title=title, text=_profepa_text(page.text) if page is not None and page.ok else "",
                                source="agency_profepa", outlet="gob.mx/profepa", published=day, lang="es",
                                country_hint="MX", kind="official"))
         if min(r[0] for r in rows) < since:
