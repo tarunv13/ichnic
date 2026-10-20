@@ -26,8 +26,12 @@ All notable changes to WildTrace. Dates are the release date, newest first.
   mining" next to "coal").
 
 ### Changed
-- The welcome video opens as a poster after the Atlas has drawn, plays on a click, and keeps keyboard focus moving
-  through its buttons. A skip link and a `<main>` landmark were added; the home has one h1.
+- Nothing opens by itself on a first visit: the Pulse card and the Guide button open the video, which plays on a
+  click and keeps keyboard focus moving through its buttons; the main tour runs from the second visit. The question
+  panel is in the page's HTML and the splash covers only the map, so phones show the question at once. A skip link
+  and a `<main>` landmark were added; the home has one h1.
+- The guide video was re-recorded from the live site (2,206 cases).
+- Species, country, answers and pathways pages have descriptions under 160 characters.
 - Static pages share the Atlas design: glass cards, one logotype, whole-tile links with 44 px targets, hover answers,
   cross-fading page changes, and small text in the darker ink of each colour.
 - Answer pages follow a citation-first layout: what you should know, sources and processing, a copy-ready citation
