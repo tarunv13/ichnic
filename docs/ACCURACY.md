@@ -16,7 +16,9 @@ audit measured 95.5% (91.7% to 97.6%); the intervals overlap, so precision is ho
 proven higher.
 
 The target is 98%. It is not reached yet, and WildTrace does not claim it. Precision by evidence grade in
-the same audit: corroborated 97.6% (40/41), single report 95.1% (135/142), official 94.1% (16/17).
+the same audit, with 95% Wilson intervals: corroborated 97.6% (40/41; 87.4% to 99.6%), single report 95.1%
+(135/142; 90.2% to 97.6%), official 94.1% (16/17; 73.0% to 99.0%). The intervals overlap widely, so the audit does
+not show that one grade is more precise than another; 17 official cases are too few to say.
 
 ## History
 
@@ -63,15 +65,47 @@ customs. Google News indexes these sites poorly, so WildTrace now reads agency f
 (`collect --hk-archive`). The next gaps are Chinese-language sources and the Mexican, Peruvian and
 Brazilian agency sites, which publish no feed.
 
-**After the Hong Kong backfill (20 October 2026): 180 of 576 (31.2%; 95% interval 27.6% to 35.1%).** Hong Kong rose from
+**After the Hong Kong backfill (20 October 2026): 180 of 576 (31.2%; 95% interval 27.6% to 35.1%) on the
+matching rule above. Corrected for chance matches (next paragraphs), recall is about 20% to 25%.** Hong Kong rose from
 5 to 31 of 38. Two blind audits checked the new sources before publication. Hong Kong press releases: 23 of 30 real
 events at first (weather notices matched the codebook word "black"); after the fixes in CURATION.md, 29 of 30 on a fresh
 sample. Video-only cases: 41 of 50 and then 33 of 40 (82%), because video titles include documentaries, explainers,
 series and toys. So a video now corroborates a case but cannot make one on its own; 95 video-only cases are held back.
 
+**How much the figure depends on the matching rule (20 October 2026).** We re-ran the score under stricter and
+looser rules. Recall moves a long way: 21.0% at 7 days and 150 km (121/576), 25.9% at 7 days and 300 km, 31.2% at
+the default 14 days and 300 km, 37.2% at 14 days and 500 km, and 45.7% at 30 days and 500 km (263/576). A looser
+rule finds more real matches, but it also pairs unrelated events: a district with frequent pangolin seizures will
+produce a WildTrace case within a month of almost any reference case there.
+
+To measure those chance pairings, we ran a placebo: every reference date moved by 60 or 90 days, backwards and
+forwards, with link matches switched off, so that any "match" is a coincidence. Under the default rule 8.6% to 14.0%
+of the shifted cases still matched (77/561, 79/565, 37/328, 25/290; forward shifts leave fewer cases inside
+WildTrace's dates). Removing that chance rate, (observed − chance) / (1 − chance), gives about 20% to 25% under
+the default rule. The strict rule gives a similar 16% to 19% (chance 3.0% to 5.9%), while the loosest rule spreads
+to 18% to 29% because its chance rate is so high (23.8% to 33.7%). The honest summary is that WildTrace finds
+about one in five of the events on this list. The headline 31.2% is kept above only because it is the figure the
+command reports; read it with this correction.
+
 The figure is a floor in one sense and generous in another. The reference list leans to Brazil and to
 cases its curators found, so it is not a random sample of all events; and a match on species, date and
 distance can pair two different events in the same district.
+
+## How the audits are designed, and their limits
+
+- **Sampling frame.** Each audit draws a simple random sample, without replacement, from all cases published on the
+  day of the audit (`wildtrace accuracy sample --seed <new seed>`); the Wilson interval assumes exactly that design.
+  Seeds are never reused, and a figure counts as independent only when its cases were neither judged before nor
+  used to tune the rules.
+- **One reviewer.** Every audit so far was judged by one person, the maintainer, who also writes the rules. The
+  reviewer judges from the headlines without seeing the pipeline's score, but knows how the pipeline works. No
+  second reviewer has yet judged the same cases, so agreement between reviewers (for example Cohen's kappa) is not
+  known. A second, independent reviewer on a share of each audit is the next step, and the figure should be read as
+  one careful reviewer's judgement until then.
+- **What counts as an error.** A case is "not genuine" when its headlines describe no enforcement event on wildlife
+  trade; the error class is recorded for each one, so the reasons can be checked and counted across audits.
+- **Software.** Python 3.11, the `wildtrace` package at the version named in each CHANGELOG entry; the interval is
+  computed in `pipeline/wildtrace/accuracy.py` (`wilson`).
 
 ## Ambiguous-word review (29 September 2026)
 

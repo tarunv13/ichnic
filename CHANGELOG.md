@@ -8,6 +8,9 @@ All notable changes to WildTrace. Dates are the release date, newest first.
 - **Recall, measured.** `wildtrace recall <reference.json>` scores WildTrace against an independent, hand-validated
   case list. Against the Illegal Wildlife Trafficking Global Observatory's 1,080 cases, WildTrace found 150 of the
   576 it could have found (26%); with the agency collectors below, 180 (31.2%; 95% interval 27.6% to 35.1%).
+  A placebo test (reference dates shifted by two to three months) shows that 9% to 14% of reference cases match by
+  chance under this rule, so the chance-corrected recall is about 20% to 25%; the figure also moves from 21% to 46%
+  between strict and loose matching rules. Both checks are in docs/ACCURACY.md.
   Reference rows stay private; method and caveats in
   docs/ACCURACY.md.
 - **Agency press releases, read directly.** `collect --agency` reads official RSS (Hong Kong GovNews, French customs,

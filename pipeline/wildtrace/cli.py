@@ -62,6 +62,10 @@ def _collect(a) -> None:
         from .collect import agency
         print(f"Hong Kong GovNews archive since {a.hk_archive}")
         print("  ->", write_jsonl(agency.collect_hk_archive(a.hk_archive), "hk_archive"))
+    if getattr(a, "profepa", ""):
+        from .collect import agency
+        print(f"PROFEPA press archive since {a.profepa}")
+        print("  ->", write_jsonl(agency.collect_profepa(a.profepa), "profepa"))
     if getattr(a, "history", 0):
         print(f"History backfill: {a.history} months")
         print("  ->", write_jsonl(feeds.collect_history(a.history), "history"))
@@ -128,6 +132,7 @@ def main(argv=None) -> None:
         c.add_argument("--online", action="store_true", help="also search for online wildlife crime reaching enforcement")
         c.add_argument("--agency", action="store_true", help="agency press-release RSS (Hong Kong, French customs, US DOJ)")
         c.add_argument("--hk-archive", default="", help="backfill Hong Kong GovNews press releases since this date")
+        c.add_argument("--profepa", default="", help="backfill PROFEPA (Mexico) press releases since this date")
         c.add_argument("--video", action="store_true", help="YouTube enforcement videos with captions (local)")
         c.add_argument("--rotate", action="store_true", help="query a third of the English editions each day (daily runs)")
         c.add_argument("--groups", default="", help="limit the news search to these species groups (comma-separated)")

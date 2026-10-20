@@ -175,7 +175,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, data: P
                     "chart_title": f"The {acc['n'] - acc['relevant']} audited cases that were not real events, by reason (bars against all {acc['n']} audited)",
                     "chart_max": acc["n"],
                     "who": [{"name": "WildTrace accuracy audit", "detail": acc.get("method", ""), "url": "https://github.com/tarunv13/wildtrace/blob/main/docs/ACCURACY.md"}, news],
-                    "limit": "Precision is measured; recall (events WildTrace misses) is not, and coverage follows the sources searched.",
+                    "limit": "Precision says how many published cases are real, not how many real events are missed. Against an independent list of 576 hand-checked events, WildTrace finds about one in five once chance matches are removed (docs/ACCURACY.md); coverage follows the sources searched.",
                     "go": {"label": "Read the method", "href": "./#methods"}})
 
     latest = sorted((c for c in cases if c.get("date")), key=lambda c: c["date"], reverse=True)

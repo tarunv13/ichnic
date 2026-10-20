@@ -542,3 +542,15 @@ def test_agency_boilerplate_and_video_genres_are_filtered():
     assert not video.GENRE.search("Tiger Skin Seized in Jaipur, 3 arrested")
     from wildtrace import lexicon as L
     assert L.species_groups("Judiciary arrangements during Black Rainstorm Warning, hearings adjourned") == []
+
+
+def test_profepa_index_parse():
+    from wildtrace.collect import agency
+    page = ('$("#prensa").append("<article><time datetime=\\"2026-10-16 10:00:00\\">16 de octubre <span class=\\"sr-only\\">x<\/span><\/time>'
+            '<h2>Profepa asegura seis ejemplares de psitácidos en Colima<\/h2><a class=\\"small-link\\" '
+            'href=\\"/profepa/prensa/profepa-asegura-seis?idiom=es\\">Continuar<\/a><\/article>")')
+    rows = agency._PROFEPA.findall(page)
+    assert rows == [("2026-10-16", "Profepa asegura seis ejemplares de psitácidos en Colima", "/profepa/prensa/profepa-asegura-seis?idiom=es")]
+    assert agency._candidate(rows[0][1])
+    assert agency._candidate("Profepa decomisa especies protegidas en Sonora")
+    assert not agency._candidate("Profepa clausura una planta de residuos peligrosos")

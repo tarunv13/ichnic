@@ -31,7 +31,8 @@ AGENCY_FEEDS = [
     ("https://www.justice.gov/news/rss?type=press_release", "US", "justice.gov"),
 ]
 # Titles that announce a wildlife case without naming the species ("suspected scheduled endangered species").
-PROTECTED = re.compile(r"endangered species|protected species|wildlife|espèces? protégées?|cites", re.I)
+PROTECTED = re.compile(r"endangered species|protected species|wildlife|espèces? protégées?|cites|"
+                       r"especies? (?:protegidas?|en riesgo|silvestres?)|vida silvestre", re.I)
 
 
 def _candidate(text: str) -> bool:
@@ -88,4 +89,33 @@ def collect_hk_archive(since: str = "2024-01-01", until: str | None = None) -> l
         if d.day == 1:
             print(f"  HK GovNews {d:%Y-%m}: {len(recs)} so far")
         d += timedelta(days=1)
+    return recs
+
+
+# PROFEPA (Mexico's environmental enforcement agency) publishes no feed; its press archive is a paged list.
+_PROFEPA = re.compile(r'<time datetime=\\"(\d{4}-\d{2}-\d{2}).*?<h2>(.*?)<\\/h2>.*?href=\\"(/profepa/prensa/[^"\\]+)', re.S)
+
+
+def collect_profepa(since: str = "2024-01-01", max_pages: int = 400) -> list[Record]:
+    """PROFEPA press releases back to `since`, page by page; a release is opened only when its title names a
+    species group or protected species."""
+    recs, stop = [], date.fromisoformat(since)
+    for n in range(1, max_pages + 1):
+        idx = get(f"https://www.gob.mx/profepa/archivo/prensa?idiom=es&page={n}", delay=2, cache_hours=24)
+        rows = _PROFEPA.findall(idx.text) if idx is not None and idx.ok else []
+        if not rows:
+            break
+        for day, title, path in rows:
+            title = re.sub(r"\s+", " ", unescape(title)).strip()
+            if day < since or not _candidate(title):
+                continue
+            url = "https://www.gob.mx" + path.split("?")[0]
+            page = get(url, delay=2, cache_hours=24 * 365)
+            recs.append(Record(url=url, title=title, text=_text(page.text) if page is not None and page.ok else "",
+                               source="agency_profepa", outlet="gob.mx/profepa", published=day, lang="es",
+                               country_hint="MX", kind="official"))
+        if min(r[0] for r in rows) < since:
+            break
+        if n % 10 == 0:
+            print(f"  PROFEPA page {n} ({rows[-1][0]}): {len(recs)} so far")
     return recs
