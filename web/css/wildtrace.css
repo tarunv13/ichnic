@@ -295,7 +295,8 @@ body:not(.inspecting) .mapctl { right: var(--gutter); }
 .skeleton::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 200%; background: linear-gradient(100deg, transparent 24%, rgba(255,255,255,.9) 50%, transparent 76%);
   background-size: 50% 100%; animation: sheen 2.6s linear infinite; }
 .bloom { animation: bloom 560ms var(--ease) both; }
-.boot { position: fixed; inset: 0; display: grid; place-items: center; z-index: 50; background: var(--ground); transition: opacity 600ms var(--ease); }
+/* The splash covers the map only: the panels above it (z 9 and up) paint at once with the static question. */
+.boot { position: fixed; inset: 0; display: grid; place-items: center; z-index: 5; background: var(--ground); transition: opacity 600ms var(--ease); }
 .boot.done { opacity: 0; pointer-events: none; }
 .boot svg { width: 56px; height: 56px; color: var(--ink); animation: breathe 1.6s ease-in-out infinite; }
 @keyframes breathe { 0%, 100% { opacity: 0.45; transform: scale(0.96); } 50% { opacity: 1; transform: scale(1); } }

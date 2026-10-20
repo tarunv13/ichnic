@@ -32,7 +32,7 @@ export function renderPulse(el) {
   const ask = any || !A.length ? "" : `
     <section class="ask" aria-labelledby="ask-h">
       <h1 class="headline" id="ask-h">What do you want to know?</h1>
-      <p class="lede">Questions this atlas answers from ${fmt(reports)} public reports and three government trade records, each with its sources and its limits.</p>
+      <p class="lede">Questions this atlas answers from public reports and three government trade records, each with its sources and its limits.</p>
       <div class="seg ask-for" role="group" aria-label="Answers for">${[["everyone", "Everyone"], ["journalists", "Journalists"], ["researchers", "Researchers"], ["policy", "Policy"]].map(([k, l]) =>
         `<button type="button" data-persona="${k}" aria-pressed="${k === persona}">${l}</button>`).join("")}</div>
       <div class="qcards">${qs.map((a) => `<button class="qcard" data-answer="${a.slug}" style="--qc:${a.color}">
