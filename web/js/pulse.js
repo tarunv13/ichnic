@@ -12,6 +12,9 @@ function bars(entries, facet, color, max = 8, icon = null) {
       style="--c:${color};--w:${Math.max(4, (n / top) * 100)}%"><i class="fill"></i><span>${icon ? icon(k) : ""}${esc(label)}</span><b class="n">${fmt(n)}</b></button>`).join("");
 }
 
+const ASK_HEAD = `<h1 class="headline" id="ask-h">What do you want to know?</h1>
+      <p class="lede">Questions this atlas answers from public reports and three government trade records, each with its sources and its limits.</p>`;
+
 export function renderPulse(el) {
   const cs = filtered();
   const countries = new Set(cs.map((c) => c.place?.country).filter(Boolean));
@@ -29,20 +32,23 @@ export function renderPulse(el) {
   const A = S.data.answers?.answers || [];
   const persona = S.persona || "everyone";
   const qs = A.filter((a) => persona === "all" || a.personas.includes(persona)).slice(0, 6);
-  const ask = any || !A.length ? "" : `
-    <section class="ask" aria-labelledby="ask-h">
-      <h1 class="headline" id="ask-h">What do you want to know?</h1>
-      <p class="lede">Questions this atlas answers from public reports and three government trade records, each with its sources and its limits.</p>
+  const ask = !(any || !A.length);
+  const askBody = ask ? `
       <div class="seg ask-for" role="group" aria-label="Answers for">${[["everyone", "Everyone"], ["journalists", "Journalists"], ["researchers", "Researchers"], ["policy", "Policy"]].map(([k, l]) =>
         `<button type="button" data-persona="${k}" aria-pressed="${k === persona}">${l}</button>`).join("")}</div>
       <div class="qcards">${qs.map((a) => `<button class="qcard" data-answer="${a.slug}" style="--qc:${a.color}">
         <span class="qq">${esc(a.q)}</span><span class="qn"><b>${esc(a.number.v)}</b> ${esc(a.number.k)}</span></button>`).join("")}</div>
-      <button class="linkish ask-all" data-all-q>All ${A.length} questions and their sources →</button>
-    </section>`;
-  // The question and its lede stay the same nodes when their text is unchanged, so the first paint (from the
-  // HTML) is not repainted as a new element once the data arrives.
-  const kept = [...el.querySelectorAll(".ask .headline, .ask .lede")];
-  el.innerHTML = `${ask}
+      <button class="linkish ask-all" data-all-q>All ${A.length} questions and their sources →</button>` : "";
+  // The question and its lede come from index.html and are never re-created while this view is open: the first
+  // paint stays the page's largest, instead of being repainted as a new element when the data arrives.
+  let sec = el.querySelector(":scope > section.ask"), rest = el.querySelector(":scope > .pulse-rest");
+  if (!sec || !rest) {
+    el.innerHTML = `<section class="ask" aria-labelledby="ask-h">${ASK_HEAD}<div class="ask-body"></div></section><div class="pulse-rest"></div>`;
+    sec = el.querySelector(":scope > section.ask"); rest = el.querySelector(":scope > .pulse-rest");
+  }
+  sec.hidden = !ask;
+  sec.querySelector(".ask-body").innerHTML = askBody;
+  rest.innerHTML = `
     <${ask ? "h2" : "h1"} class="headline${ask ? " sub" : ""}">${fmt(cs.length)} cases across ${countries.size} ${countries.size === 1 ? "country" : "countries"}</${ask ? "h2" : "h1"}>
     <p class="lede">${any ? "Filtered view. Click a chip to remove it." : `From ${fmt(reports)} public reports, ${esc(m.window?.[0] || "")} to ${esc(m.window?.[1] || "")}; <b>${fmt(mapped)}</b> pinned to a city or district. Nobody accused is named.`}</p>
     ${any ? "" : `<button class="guide-card-cta" data-guide aria-label="Watch the 2-minute video guide">
@@ -70,7 +76,6 @@ export function renderPulse(el) {
     <div class="sec"><h3>Latest</h3><button data-open="table">All ${fmt(cs.length)} as a table</button></div>
     <div class="feed">${latest.map((c) => `<button class="item" data-case="${c.id}" style="--kc:${KIND_COLOR[KIND(c.kind)]}"><i class="k ki">${ic.kind(c.kind)}</i><span><div class="t">${esc(c.summary)}</div>
       <div class="s">${esc(c.date || "undated")} · ${c.n_sources} report${c.n_sources > 1 ? "s" : ""}</div></span></button>`).join("") || `<p class="muted">Nothing matches these filters.</p>`}</div>`;
-  el.querySelectorAll(".ask .headline, .ask .lede").forEach((n, i) => { if (kept[i]?.isEqualNode(n)) n.replaceWith(kept[i]); });
   el.querySelectorAll("[data-f]").forEach((b) => b.addEventListener("click", () => toggle(b.dataset.f, b.dataset.v)));
   el.querySelectorAll("[data-persona]").forEach((b) => b.addEventListener("click", () => { S.persona = b.dataset.persona; renderPulse(el); }));
   el.querySelectorAll("[data-answer]").forEach((b) => b.addEventListener("click", () => go({ kind: "answer", id: b.dataset.answer })));
