@@ -53,7 +53,7 @@ jobs:
         run: |
           EXTRA="--no-gdelt"
           if [ "$(date -u +%u)" = "1" ] || [ "${{ inputs.full }}" = "true" ]; then EXTRA="--official"; fi
-          python -m wildtrace.cli collect --gnews --online --agency --rotate --countries ALL --timespan 1w --gnews-window 3d $EXTRA
+          python -m wildtrace.cli collect --gnews --online --agency --rotate --countries ALL --timespan 1w --gnews-window 3d --profepa "$(date -u -d "10 days ago" +%F)" $EXTRA
       - name: Outbreaks and viruses (WHO, VIRION)
         run: python -m wildtrace.cli zoonoses || echo "zoonoses refresh failed; keeping the last published file"
       - name: Build (refuses to publish if cases drop by more than 10%)
