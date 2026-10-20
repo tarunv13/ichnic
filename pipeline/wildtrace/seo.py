@@ -459,4 +459,19 @@ Security: Exploring the Risk Pathways" (2026), research questions R1.37 and R5.2
 - Citation: Verma, T. K. (2026). WildTrace: the open atlas of illegal wildlife trade. Zenodo.
   https://doi.org/10.5281/zenodo.22902819
 """, encoding="utf-8")
+    (out / "404.html").write_text(not_found_page(), encoding="utf-8")
     return len(urls) + 3
+
+
+def not_found_page() -> str:
+    """GitHub Pages serves this for any missing path, at any depth, so its links stay absolute."""
+    body = f"""
+<h1>That page is not here</h1>
+<p class="lede">The address may be old, or mistyped. Everything WildTrace publishes is one step away.</p>
+<ul class="cases">
+  <li><a href="{SITE}/"><span>Open the Atlas: questions, the map and every case</span></a></li>
+  <li><a href="{SITE}/answers.html"><span>Questions WildTrace answers, with their sources</span></a></li>
+  <li><a href="{SITE}/browse.html"><span>Browse by species group and country</span></a></li>
+</ul>"""
+    return page("Page not found | WildTrace", "This page is not on WildTrace. Open the Atlas, the questions or the browse index.",
+                f"{SITE}/404.html", body).replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"', 1)

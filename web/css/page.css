@@ -137,7 +137,7 @@ ul.who li { padding: 9px 12px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } @view-transition { navigation: none; } }
 .chart-t { font-size: 0.86rem; color: var(--ink-2); margin: 2px 4px 4px; }
 figure.pw ul.bars { box-shadow: none; border: 0; background: transparent; margin: 0; }
-pre.cite { white-space: pre-wrap; font: 0.84rem/1.5 ui-monospace, Consolas, monospace; background: rgba(255, 255, 255, 0.85);
+pre.cite { white-space: pre-wrap; overflow-wrap: anywhere; font: 0.84rem/1.5 ui-monospace, Consolas, monospace; background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; user-select: all; }
 .qn { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink-3); margin-right: 4px; }
 
@@ -151,3 +151,7 @@ ul.cols li > a .n { text-align: right; font-variant-numeric: tabular-nums; }
 /* Answers index: audience labels under each question. */
 .qlist .auds { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
 .qlist .auds span { font-size: 0.74rem; padding: 2px 8px; border-radius: 999px; background: rgba(15, 26, 23, 0.06); color: var(--ink-2); }
+/* Answer cards: the card lifts and tints; only the question is underlined. */
+.qlist li > a:hover { text-decoration: none; }
+.qlist li > a:hover .qq { text-decoration: underline; text-decoration-color: var(--link); }
+footer a, .crumbs a { display: inline-block; min-height: 24px; line-height: 24px; }

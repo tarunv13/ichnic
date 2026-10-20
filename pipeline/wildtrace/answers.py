@@ -234,7 +234,7 @@ def publish(answers: list[dict], out_dir: Path, page, esc, site: str, write) -> 
                                                 [("WildTrace", site + "/"), ("Questions", f"{site}/answers.html")]))
     # Each question once, in number order, with the audiences it serves as labels.
     groups = "<ul class=\"cases qlist\">" + "".join(
-        f'<li><a href="{site}/answers/{a["slug"]}.html"><span><span class="qn">Q{i:02d}</span> {esc(a["q"])}<br>'
+        f'<li><a href="{site}/answers/{a["slug"]}.html"><span><span class="qn">Q{i:02d}</span> <span class="qq">{esc(a["q"])}</span><br>'
         f'<span class="muted">{esc(a["number"]["v"])} {esc(a["number"]["k"])}</span>'
         f'<span class="auds">{"".join(f"<span>{esc(PERSONAS[k])}</span>" for k in PERSONAS if k in a["personas"])}</span></span></a></li>'
         for i, a in enumerate(answers, 1)) + "</ul>"
