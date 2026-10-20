@@ -170,3 +170,8 @@ h1 { font-weight: 700; }
 .brand:hover img { transform: rotate(-14deg) scale(1.06); }
 p.small a { display: inline-block; min-height: 24px; line-height: 24px; }
 @media (prefers-reduced-motion: reduce) { .brand, .brand img { transition: none; } }
+/* Breadcrumbs answer the pointer like the logotype: a drawn underline. */
+.crumbs a { text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-size: 0 1.5px;
+  background-position: 0 100%; background-repeat: no-repeat; transition: background-size 220ms cubic-bezier(0.16, 1, 0.3, 1); }
+.crumbs a:hover { background-size: 100% 1.5px; }
+ul.who a, ul.sources a, .answer a, main p a { display: inline-block; min-height: 24px; line-height: 24px; }

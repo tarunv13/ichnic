@@ -264,7 +264,7 @@ async function boot() {
   // On a phone the map sits below the questions: build it only when it is about to scroll into view, so the
   // questions scroll smoothly and the phone does not draw a globe nobody is looking at.
   if (innerWidth < 860 && "IntersectionObserver" in window && !location.hash) {
-    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); makeGlobe(); } }, { rootMargin: "300px 0px" });
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); makeGlobe(); } }, { rootMargin: "1200px 0px" });
     io.observe($("#globe"));
   } else makeGlobe();
   // Never let a slow tile server trap the page behind the splash.

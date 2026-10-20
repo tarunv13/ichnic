@@ -770,3 +770,4 @@ svg .hit { fill: transparent; cursor: default; }
 @media (max-width: 860px) { .boot { background: var(--ground); } .boot svg { left: 50%; top: 70%; } }
 #globe { background: radial-gradient(circle min(27vmin, 300px) at 63% 47%, #c8dbe6 0, #b4cddc 70%, #a9c6d8 97%, rgba(169, 198, 216, 0) 100%); }
 @media (max-width: 860px) { #globe { background: radial-gradient(circle min(36vw, 170px) at 50% 50%, #c8dbe6 0, #b4cddc 70%, #a9c6d8 97%, rgba(169, 198, 216, 0) 100%); } }
+.mode[aria-pressed="true"]:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(15, 26, 23, 0.16); }
