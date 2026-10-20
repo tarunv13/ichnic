@@ -39,6 +39,9 @@ export function renderPulse(el) {
         <span class="qq">${esc(a.q)}</span><span class="qn"><b>${esc(a.number.v)}</b> ${esc(a.number.k)}</span></button>`).join("")}</div>
       <button class="linkish ask-all" data-all-q>All ${A.length} questions and their sources →</button>
     </section>`;
+  // The question and its lede stay the same nodes when their text is unchanged, so the first paint (from the
+  // HTML) is not repainted as a new element once the data arrives.
+  const kept = [...el.querySelectorAll(".ask .headline, .ask .lede")];
   el.innerHTML = `${ask}
     <${ask ? "h2" : "h1"} class="headline${ask ? " sub" : ""}">${fmt(cs.length)} cases across ${countries.size} ${countries.size === 1 ? "country" : "countries"}</${ask ? "h2" : "h1"}>
     <p class="lede">${any ? "Filtered view. Click a chip to remove it." : `From ${fmt(reports)} public reports, ${esc(m.window?.[0] || "")} to ${esc(m.window?.[1] || "")}; <b>${fmt(mapped)}</b> pinned to a city or district. Nobody accused is named.`}</p>
@@ -67,6 +70,7 @@ export function renderPulse(el) {
     <div class="sec"><h3>Latest</h3><button data-open="table">All ${fmt(cs.length)} as a table</button></div>
     <div class="feed">${latest.map((c) => `<button class="item" data-case="${c.id}" style="--kc:${KIND_COLOR[KIND(c.kind)]}"><i class="k ki">${ic.kind(c.kind)}</i><span><div class="t">${esc(c.summary)}</div>
       <div class="s">${esc(c.date || "undated")} · ${c.n_sources} report${c.n_sources > 1 ? "s" : ""}</div></span></button>`).join("") || `<p class="muted">Nothing matches these filters.</p>`}</div>`;
+  el.querySelectorAll(".ask .headline, .ask .lede").forEach((n, i) => { if (kept[i]?.isEqualNode(n)) n.replaceWith(kept[i]); });
   el.querySelectorAll("[data-f]").forEach((b) => b.addEventListener("click", () => toggle(b.dataset.f, b.dataset.v)));
   el.querySelectorAll("[data-persona]").forEach((b) => b.addEventListener("click", () => { S.persona = b.dataset.persona; renderPulse(el); }));
   el.querySelectorAll("[data-answer]").forEach((b) => b.addEventListener("click", () => go({ kind: "answer", id: b.dataset.answer })));
