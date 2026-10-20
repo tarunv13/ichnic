@@ -1,9 +1,8 @@
 // The 2-minute video guide: a real recording of the question-first Atlas (ask, answer, evidence)
-// (scripts/make_guide.py). It opens by itself on a first visit, as a poster that plays on a click (no
-// autoplay, so the Atlas paints first and reduced-motion readers see a still); after that from the Guide button, the
-// card at the top of Pulse, About, or #guide. Captions are burned into the picture and also offered as
-// a text track for screen readers.
-const KEY = "wildtrace.guide";       // "seen" once a reader has been shown the video
+// (scripts/make_guide.py). It never opens by itself: the card at the top of Pulse, the Guide button, About
+// or #guide open it, as a poster that plays on a click (no autoplay, so reduced-motion readers see a
+// still). Captions are burned into the picture and also offered as a text track for screen readers.
+const KEY = "wildtrace.guide";       // "seen" after a reader's first visit
 const store = {
   get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
   set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* private window */ } },
@@ -12,6 +11,7 @@ let root = null, lastFocus = null;
 
 /** True for a reader who has never been shown the video in this browser. */
 export const firstVisit = () => store.get(KEY) !== "seen";
+export const markSeen = () => store.set(KEY, "seen");
 
 /** `first`: the welcome version, a poster with "take the tour / explore" choices underneath; it plays on a click. */
 export function openGuide({ first = false } = {}) {

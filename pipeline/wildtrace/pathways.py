@@ -289,10 +289,9 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, out_dir
 <p class="small">Verma, T. K. ({meta.get('built', '')[:4] or '2026'}). Wildlife crime as an environment-to-security risk: seven links, and the evidence for each.
   WildTrace. {site}/pathways.html. Figures rebuilt daily from the WildTrace data (doi:10.5281/zenodo.22902819).</p>
 """
-    title = "Is wildlife crime a security risk? Seven pathways and the evidence for each | WildTrace"
-    desc = (f"How illegal wildlife trade reaches national security: extraction, routes, borders, crime revenue, disease and "
-            f"ecosystem loss, each link rated by its open evidence. {e.get('cites', 0):,} CITES seizures, "
-            f"{e.get('lemis', 0):,} US port seizures, {e['cases']:,} cases.")
+    title = "Is wildlife crime a security risk? Seven pathways | WildTrace"
+    desc = ("How illegal wildlife trade reaches national security, from extraction and borders to crime revenue and disease: "
+            "seven links, each rated by its open evidence.")
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": "Wildlife crime as an environment-to-security risk: seven links, and the evidence for each",
          "url": f"{site}/pathways.html", "description": desc, "inLanguage": "en",

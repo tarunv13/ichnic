@@ -270,7 +270,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         if not mine:   # CITES-only page
             title = f"{label} trafficking: {cz['n']:,} seizures reported to CITES | WildTrace"
             desc = (f"{cz['n']:,} seized or confiscated shipments of {label.lower()} reported to CITES since {cites_since}: "
-                    f"where they were taken from and where they were seized. Open data.")
+                    f"where they came from and where they were seized. Open data.")
             body = f"""
 <h1>{esc(label)} in the illegal wildlife trade</h1>
 <p class="lede">No news report of a {esc(label.lower())} seizure has reached WildTrace yet. The trade is still recorded:
@@ -284,8 +284,8 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
                                                     [("WildTrace", SITE + "/"), ("Species", SITE + "/browse.html")]))
             continue
         title = f"{label} trafficking: {len(mine)} recorded cases | WildTrace"
-        desc = (f"{len(mine)} seizures, arrests and convictions involving {label.lower()} recorded from public reports "
-                f"in {len(by_country)} countries, {window[0]} to {window[1]}. Open data, each case graded by evidence.")
+        desc = (f"{len(mine)} seizures, arrests and convictions involving {label.lower()} from public reports "
+                f"in {len(by_country)} countries since {window[0][:4]}. Open data, graded by evidence.")
         body = f"""
 <h1>{esc(label)} in the illegal wildlife trade</h1>
 <p class="lede">WildTrace has recorded <b>{len(mine)}</b> cases involving {esc(label.lower())} from public reports
@@ -328,8 +328,8 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
         top = sorted(by_sp.items(), key=lambda kv: -kv[1])[:12]
         recent = sorted(mine, key=lambda c: c.get("date") or "", reverse=True)[:25]
         title = f"Wildlife trafficking in {name}: {len(mine)} recorded cases | WildTrace"
-        desc = (f"{len(mine)} wildlife seizures, arrests and convictions recorded in {name} from public reports, "
-                f"{window[0]} to {window[1]}, by species and by strength of evidence. Open data.")
+        desc = (f"{len(mine)} wildlife seizures, arrests and convictions in {name} from public reports "
+                f"since {window[0][:4]}, by species and strength of evidence. Open data.")
         body = f"""
 <h1>Wildlife trafficking cases reported in {esc(name)}</h1>
 <p class="lede">WildTrace has recorded <b>{len(mine)}</b> cases in {esc(name)} from public reports between

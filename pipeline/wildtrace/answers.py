@@ -239,8 +239,8 @@ def publish(answers: list[dict], out_dir: Path, page, esc, site: str, write) -> 
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": a["q"], "acceptedAnswer": {"@type": "Answer", "text": a["a"]}} for a in answers]}
     write("answers.html", page("Questions WildTrace answers about illegal wildlife trade | WildTrace",
-                               "Live answers about illegal wildlife trade: what is seized, where it goes, whether online sales are caught, how often seizures "
-                               "end in convictions, and how accurate the data is. Each with its sources and limits.",
+                               "Live answers about illegal wildlife trade: what is seized, where it goes, how often it ends in conviction, "
+                               "and how accurate the data is, each with its sources.",
                                f"{site}/answers.html", f"<p class=\"eyebrow\">Questions</p><h1>What WildTrace answers, and for whom</h1>"
                                f"<p class=\"lede\">Every answer names its sources and says what its number cannot tell you. {len(answers)} questions, "
                                f"numbered; figures rebuilt daily, last on {date.today().isoformat()}.</p>{groups}",
