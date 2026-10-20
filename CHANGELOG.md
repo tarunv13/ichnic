@@ -1,8 +1,22 @@
 # Changelog
 
-All notable changes to WildTrace. Dates are the release date, newest first.
+All notable changes to Ichnic (formerly WildTrace). Dates are the release date, newest first.
 
-## Unreleased (planned 1.12.0)
+## 2.0.0 (2026-10-20): Ichnic
+
+**WildTrace is now Ichnic**, from the Greek *ichnos*, a trace (ichnology is the science of reading tracks). Many
+other projects use the old name. The Python package, the `wildtrace` command, the URL path and settings keys keep
+the old name, so links, scripts and citations keep working; earlier releases stay citable under the same concept DOI.
+
+### Design (four blind jury scores: 5.4, 6.6, 6.25, 6.9 before the last round of fixes)
+- Phones get a scrolling page: the question first, then the summary and the map; the map is built only when it
+  scrolls into view; the tools fold into a More menu. Phone first paint 1.3 s (was 13.6 s).
+- Nothing opens by itself on a first visit; the question panel is in the page's HTML; the splash shows the globe it
+  will become while the map loads.
+- Authored view transitions between pages; hover states on every primary target; focus rings on the map and search;
+  a skip link and a WildTrace-system 404; static pages in the Atlas typefaces.
+- Browse rows read as data (aligned counts and bars); the answers index lists each question once with audiences.
+
 
 ### Added
 - **Recall, measured.** `wildtrace recall <reference.json>` scores WildTrace against an independent, hand-validated
