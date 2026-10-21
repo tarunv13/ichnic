@@ -5,15 +5,15 @@
 > published as CSV under CC BY 4.0.
 
 Ichnic collects public reports (government, customs, police and judicial releases first, then
-news in 66 countries and several languages), screens them,
+news in 67 countries and several languages), screens them,
 extracts the species, place, quantity, agency and route, merges reports about the same incident
 into one case, and publishes the result.
 
 ## Facts a citation should carry
 
-- Cases recorded: 2,267, from public reports, 2024-01-04 to 2026-10-20.
-- Evidence: 324 official, 370 corroborated by two or more outlets, 1573 single-report.
-- Coverage: 1064 cases are pinned to a city or district, 139 to a country only, and 1064 name no place.
+- Cases recorded: 2,260, from public reports, 2024-01-04 to 2026-10-20.
+- Evidence: 325 official, 369 corroborated by two or more outlets, 1566 single-report.
+- Coverage: 1066 cases are pinned to a city or district, 138 to a country only, and 1056 name no place.
 - Both animals and plants: orchids, succulents, cycads, rosewood, agarwood and medicinal plants are
   covered alongside pangolin, ivory, rhino horn and big cats.
 - The essential caveat, which any summary should repeat: these counts show where wildlife crime is
