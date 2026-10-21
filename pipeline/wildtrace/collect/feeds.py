@@ -167,22 +167,31 @@ ONLINE_QUERIES = {
 }
 
 
+# Trade names sellers use online in South Asia, confirmed in the WCS online-trade labels (weighted log-odds against
+# non-trade items; docs/CURATION.md). Searched with enforcement words, so the results are seizures and arrests of
+# exactly the products sold under these names. Keyed by edition country.
+TRADE_NAME_QUERIES = {
+    "IN": ['("हत्था जोड़ी" OR "सियार सिंगी" OR "दोमुंहा सांप" OR "शूकर दांत" OR "नाखून वाला कछुआ" OR "कस्तूरी मृग" OR "कस्तूरी नाभि") (गिरफ्तार OR बरामद OR जब्त)',
+           '("red sand boa" OR "double engine snake" OR "hatha jodi" OR "siyar singhi" OR "musk pod" OR "monitor lizard hemipenis") (arrested OR seized)'],
+}
+
+
 def collect_gnews_online(editions: list[str] | None = None, when: str = "30d") -> list[Record]:
     """Google News searches for online wildlife crime reaching enforcement (same terms as collect_gnews)."""
     recs, seen = [], set()
     for ed in editions or list(GNEWS_EDITIONS):
         hl, gl, ceid, lang = GNEWS_EDITIONS[ed]
-        q = ONLINE_QUERIES.get(lang)
-        if not q:
-            continue
-        q = f"{q} when:{_when(when)}"
-        url = f"https://news.google.com/rss/search?q={quote_plus(q)}&hl={hl}&gl={gl}&ceid={ceid}"
-        r = get(url, delay=3, check_robots=False)
-        got = [x for x in (parse(r.content, "gnews", gl, "news", q) if r is not None and r.ok else []) if x.id not in seen]
-        seen.update(x.id for x in got)
-        if got:
-            print(f"  gnews-online {ed}: {len(got)}")
-        recs += got
+        base = ONLINE_QUERIES.get(lang)
+        trade = [t for t in TRADE_NAME_QUERIES.get(gl, []) if ("(" in t) and (lang == "hi") == any("ऀ" <= ch <= "ॿ" for ch in t)]
+        for q in ([base] if base else []) + trade:
+            q = f"{q} when:{_when(when)}"
+            url = f"https://news.google.com/rss/search?q={quote_plus(q)}&hl={hl}&gl={gl}&ceid={ceid}"
+            r = get(url, delay=3, check_robots=False)
+            got = [x for x in (parse(r.content, "gnews", gl, "news", q) if r is not None and r.ok else []) if x.id not in seen]
+            seen.update(x.id for x in got)
+            if got:
+                print(f"  gnews-online {ed}: {len(got)}")
+            recs += got
     return recs
 
 

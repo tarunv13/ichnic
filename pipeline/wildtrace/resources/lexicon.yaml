@@ -35,8 +35,8 @@ groups:
     products: [musk pod]
     terms:
       en: [musk deer, musk pod, musk pods, deer musk]
-      hi_latn: [kasturi, asli kasturi, kasturi nabhi, kasturi mrig]  # owt
-      hi: [कस्तूरी, कस्तूरी मृग]
+      hi_latn: [kasturi, asli kasturi, kasturi nabhi, kasturi mrig, kasturi original, original kasturi]  # owt
+      hi: [कस्तूरी मृग]
       vi: [xạ hương]
   monitor_lizard:
     label: Monitor lizard
@@ -46,7 +46,7 @@ groups:
     terms:
       th: [ตะกวด, ตัวเงินตัวทอง]
       en: [monitor lizard, monitor lizards, bengal monitor, water monitor]
-      hi_latn: [hatha jodi, hattha jodi, hath jodi, ghorpad]  # owt
+      hi_latn: [hatha jodi, hattha jodi, hath jodi, ghorpad, hathajodi, hatha jori]  # owt
       hi: [हत्था जोड़ी, हाथा जोड़ी, गोह]
       id_ms: [biawak]
   jackal:
@@ -56,8 +56,8 @@ groups:
     products: ["siyar singhi (horn-like growth, often fake)"]
     terms:
       en: [jackal horn, golden jackal]
-      hi_latn: [siyar singhi, siyar singi, gidar singhi]  # owt
-      hi: [सियार सिंगी, सियार सींगी]
+      hi_latn: [siyar singhi, siyar singi, gidar singhi, siyar shingi]  # owt
+      hi: [सियार सिंगी, सियार सींगी, गीदड़ सिंगी, सियार सिंघी]
   sand_boa:
     label: Sand boa
     taxa: [Eryx johnii, Eryx conicus]
@@ -65,7 +65,7 @@ groups:
     products: [live]
     terms:
       en: [red sand boa, sand boa, sand boas, double engine snake, two headed snake, 2 headed snake, rice puller snake]  # owt
-      hi_latn: [do muha saap, do muh wala saap, domuha, do munha sanp, dumuhi]  # owt
+      hi_latn: [do muha saap, do muh wala saap, domuha, do munha sanp, dumuhi, do muhi saap, do muha sanp]  # owt
       hi: [दोमुंहा सांप, दो मुंहा सांप]
   wild_boar:
     label: Wild boar
@@ -75,7 +75,7 @@ groups:
     terms:
       en: [wild boar tusk, boar tusk]
       hi_latn: [shukar dant, sukar dant, suar dant]  # owt
-      hi: [शूकर दंत, सूअर दांत]
+      hi: [शूकर दंत, सूअर दांत, शूकर दांत]
   turtles:
     label: Turtles & tortoises
     taxa: [Geochelone elegans, Nilssonia gangetica, Lissemys punctata, Batagur spp.]
@@ -87,8 +87,8 @@ groups:
       pt: [tigre-d'água, tartarugas tigre-d'água, tartarugas, jabutis, quelônios, ovos de tartaruga]
       es: [tortugas, huevos de tortuga, caguama]
       fr: [tortues]
-      hi_latn: [kachua, kachhua]
-      hi: [कछुआ, कछुए]
+      hi_latn: [kachua, kachhua, nakhun wala kachua, nakhun wala kachhua]
+      hi: [कछुआ, कछुए, नाखून वाला कछुआ, नाखून वाले कछुए]
       vi: [rùa]
       id_ms: [kura-kura, penyu, labi-labi]
   sea_fan:
@@ -569,6 +569,8 @@ ambiguous:
   - {term: capturado, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
   - {term: capturada, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
   - {term: capturados, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
+  - {term: double engine, group: sand_boa, lang: en, needs_regex: 'saa?n?p|snake|boa|sarp|सांप|सर्प', note: "red sand boa code in online adverts (WCS labels: in 192 trade items and 3 others); also 'double-engine government'"}
+  - {term: कस्तूरी, group: musk_deer, lang: hi, needs_regex: 'मृग|हिरण|नाभि|तस्कर|शिकार|musk|बरामद|जब्त', blocks_regex: 'शराब|ब्रांड|अभिनेत्री|फिल्म|हल्दी', note: "musk; also a liquor brand, a film title and a personal name"}
   - {term: asegura, cue: seizure, lang: es, needs_regex: 'asegura\s+(?:[\d.,]+|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|cientos|miles)\b|ejemplares|piezas|kilos|kilogramos|toneladas|metros cubicos|madera', blocks_regex: 'asegura que|asegura la|asegura el|excluidor', note: "Mexican official usage for a seizure (Profepa asegura 719 ejemplares); also 'assures' (asegura que)"}
   - {term: denuncia, cue: arrest, lang: pt, needs_terms: [pessoas, suspeitos, acusados, investigados, réus, homens, mulher, homem, integrantes], note: "a prosecutor charging people; also an NGO complaining (Proyecto Santa María denuncia)"}
   - {term: frog, group: amphibians, lang: en, needs: [enforcement, trade, quantity], note: "also frog in general writing"}
