@@ -83,7 +83,7 @@ def upload_date(url: str) -> str:
     import requests, time
     try:      # not through base.get: watch pages are ~1 MB each and must not fill the HTTP cache
         time.sleep(1.5)
-        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Ichnic research; +https://tarunv13.github.io/wildtrace/)",
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Ichnic research; +https://tarunv13.github.io/ichnic/)",
                                        "Accept-Language": "en"}, timeout=40)
         m = _DATE.search(r.text) if r.ok else None
     except requests.RequestException:

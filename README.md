@@ -13,20 +13,20 @@ graded by the strength of its evidence, and a link-analysis workbench that runs 
 It traces wildlife crime from where nature is taken to where it touches national security:
 crime revenue, disease risk and the loss of ecosystems people depend on.
 
-[![CI](https://github.com/tarunv13/wildtrace/actions/workflows/ci.yml/badge.svg)](https://github.com/tarunv13/wildtrace/actions/workflows/ci.yml)
-[![Latest release](https://img.shields.io/github/v/release/tarunv13/wildtrace)](https://github.com/tarunv13/wildtrace/releases)
+[![CI](https://github.com/tarunv13/ichnic/actions/workflows/ci.yml/badge.svg)](https://github.com/tarunv13/ichnic/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/tarunv13/wildtrace)](https://github.com/tarunv13/ichnic/releases)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-green)](#data-licence-and-citation)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22902819.svg)](https://doi.org/10.5281/zenodo.22902819)
 
-[Open the Atlas](https://tarunv13.github.io/wildtrace/) ·
-[Risk pathways](https://tarunv13.github.io/wildtrace/pathways.html) ·
-[Questions](https://tarunv13.github.io/wildtrace/answers.html) ·
+[Open the Atlas](https://tarunv13.github.io/ichnic/) ·
+[Risk pathways](https://tarunv13.github.io/ichnic/pathways.html) ·
+[Questions](https://tarunv13.github.io/ichnic/answers.html) ·
 [Research agenda](docs/RESEARCH_AGENDA.md) ·
 [Accuracy](docs/ACCURACY.md) ·
 [Who it's for](#who-its-for) ·
 [How much to trust a case](#how-much-to-trust-a-case) ·
-[Download the data](https://tarunv13.github.io/wildtrace/data/cases.csv) ·
+[Download the data](https://tarunv13.github.io/ichnic/data/cases.csv) ·
 [Run it yourself](#run-it-yourself) ·
 [How to cite](#how-to-cite) ·
 [Contributing](CONTRIBUTING.md)
@@ -50,13 +50,13 @@ Every answer also has a citable page for readers and answer engines:
 
 | Question | Page |
 | --- | --- |
-| Which wildlife is seized most often? | [answers/what-wildlife-is-seized-most](https://tarunv13.github.io/wildtrace/answers/what-wildlife-is-seized-most.html) |
-| Is wildlife sold online ever caught? | [answers/is-wildlife-sold-online-ever-caught](https://tarunv13.github.io/wildtrace/answers/is-wildlife-sold-online-ever-caught.html) |
-| How often does a seizure end in a conviction? | [answers/how-often-a-seizure-ends-in-conviction](https://tarunv13.github.io/wildtrace/answers/how-often-a-seizure-ends-in-conviction.html) |
-| Can "captive-bred" labels be trusted? | [answers/can-captive-bred-labels-be-trusted](https://tarunv13.github.io/wildtrace/answers/can-captive-bred-labels-be-trusted.html) |
-| How accurate is Ichnic? | [answers/how-accurate-is-wildtrace](https://tarunv13.github.io/wildtrace/answers/how-accurate-is-wildtrace.html) |
+| Which wildlife is seized most often? | [answers/what-wildlife-is-seized-most](https://tarunv13.github.io/ichnic/answers/what-wildlife-is-seized-most.html) |
+| Is wildlife sold online ever caught? | [answers/is-wildlife-sold-online-ever-caught](https://tarunv13.github.io/ichnic/answers/is-wildlife-sold-online-ever-caught.html) |
+| How often does a seizure end in a conviction? | [answers/how-often-a-seizure-ends-in-conviction](https://tarunv13.github.io/ichnic/answers/how-often-a-seizure-ends-in-conviction.html) |
+| Can "captive-bred" labels be trusted? | [answers/can-captive-bred-labels-be-trusted](https://tarunv13.github.io/ichnic/answers/can-captive-bred-labels-be-trusted.html) |
+| How accurate is Ichnic? | [answers/how-accurate-is-wildtrace](https://tarunv13.github.io/ichnic/answers/how-accurate-is-wildtrace.html) |
 
-All eleven: [answers.html](https://tarunv13.github.io/wildtrace/answers.html).
+All eleven: [answers.html](https://tarunv13.github.io/ichnic/answers.html).
 
 ## How accurate is it?
 
@@ -83,7 +83,7 @@ crime appears in its agenda mainly as a revenue source for hostile actors and or
 | It erodes ecosystems | partial: removals by functional group |
 | It is fought with evidence or rumour | strong: every case graded |
 
-Read [Risk pathways](https://tarunv13.github.io/wildtrace/pathways.html) for the numbers, rebuilt
+Read [Risk pathways](https://tarunv13.github.io/ichnic/pathways.html) for the numbers, rebuilt
 daily, and the [open research agenda](docs/RESEARCH_AGENDA.md) for the questions that would close the
 gaps, from open event-extraction benchmarks to court-outcome data. Ichnic takes the security frame
 on one condition: **security without militarisation**. Claims carry their evidence, enforcement is
@@ -108,7 +108,7 @@ they show where wildlife is sold openly while almost nothing reaches the public 
 
 It is not a detection rate (the sources watch different things with different effort), and part of the
 gap was Ichnic's own: 10,313 of the adverts are in Thai, so Ichnic now reads Thai news too. Only
-aggregated counts are published ([`online_gap.csv`](https://tarunv13.github.io/wildtrace/data/online_gap.csv)),
+aggregated counts are published ([`online_gap.csv`](https://tarunv13.github.io/ichnic/data/online_gap.csv)),
 with attribution; the advert rows are not redistributed. Species offered online but in no Ichnic group
 yet (pirarucu, otters, small wild cats, serows) are listed for the next groups. Side-by-side coverage:
 [docs/OBSERVATORIES.md](docs/OBSERVATORIES.md).
@@ -118,7 +118,7 @@ Telegram, TikTok, OLX, Mercado Livre, Shopee ...), never a seller, and daily sea
 wildlife crime that reached police, customs or courts in nine languages.
 
 **Captive-bred claims.** Declaring wild-caught animals as captive-bred is a documented laundering route
-(Lyons & Natusch 2011). [`captive_claims.csv`](https://tarunv13.github.io/wildtrace/data/captive_claims.csv)
+(Lyons & Natusch 2011). [`captive_claims.csv`](https://tarunv13.github.io/ichnic/data/captive_claims.csv)
 shows, per exporter and animal group, how the captive-bred share of commercial CITES exports moved between
 2015-2018 and 2020-2023. A rise is a question to ask, never a finding: genuine breeding produces it too.
 
@@ -178,7 +178,7 @@ UNODC World WISE and TRAFFIC's portal hold records Ichnic will never match.
 
 ## The Atlas
 
-**New here? [Watch the 2-minute guide](https://tarunv13.github.io/wildtrace/#guide)** ([MP4](web/media/guide.mp4)).
+**New here? [Watch the 2-minute guide](https://tarunv13.github.io/ichnic/#guide)** ([MP4](web/media/guide.mp4)).
 It is a real recording of the Atlas: ask a question, read the answer with its sources and limits, then check the evidence on the map.
 
 Everything happens on one globe. The other surfaces float over it, so you can wander without
@@ -257,21 +257,21 @@ Found a mistake? Use **Report a correction** on any case, which opens a pre-fill
 
 ## Data, licence and citation
 
-- **Download:** [`cases.csv`](https://tarunv13.github.io/wildtrace/data/cases.csv), one row per
+- **Download:** [`cases.csv`](https://tarunv13.github.io/ichnic/data/cases.csv), one row per
   case, with status, place, species and source links. The JSON behind the map sits beside it in
   [`web/data/`](web/data).
-- **More downloads:** [`cites_seized_flows.csv`](https://tarunv13.github.io/wildtrace/data/cites_seized_flows.csv)
+- **More downloads:** [`cites_seized_flows.csv`](https://tarunv13.github.io/ichnic/data/cites_seized_flows.csv)
   (origin, exporter, importer, seized shipments per species group),
-  [`cites_declared_flows.csv`](https://tarunv13.github.io/wildtrace/data/cites_declared_flows.csv),
-  [`lemis_seized_flows.csv`](https://tarunv13.github.io/wildtrace/data/lemis_seized_flows.csv)
+  [`cites_declared_flows.csv`](https://tarunv13.github.io/ichnic/data/cites_declared_flows.csv),
+  [`lemis_seized_flows.csv`](https://tarunv13.github.io/ichnic/data/lemis_seized_flows.csv)
   (imports seized at US ports per species group and origin, CC BY 4.0),
-  [`online_gap.csv`](https://tarunv13.github.io/wildtrace/data/online_gap.csv)
+  [`online_gap.csv`](https://tarunv13.github.io/ichnic/data/online_gap.csv)
   (ECO-SOLVE adverts against Ichnic cases per group and country; aggregated, with attribution),
-  [`captive_claims.csv`](https://tarunv13.github.io/wildtrace/data/captive_claims.csv)
+  [`captive_claims.csv`](https://tarunv13.github.io/ichnic/data/captive_claims.csv)
   (commercial CITES exports declared captive-bred, per exporter and group, 2015-18 vs 2020-23; CITES terms),
-  [`zoonotic_outbreak_reports.csv`](https://tarunv13.github.io/wildtrace/data/zoonotic_outbreak_reports.csv)
+  [`zoonotic_outbreak_reports.csv`](https://tarunv13.github.io/ichnic/data/zoonotic_outbreak_reports.csv)
   (2,116 WHO reports with disease, pathway and countries) and
-  [`species_viruses.csv`](https://tarunv13.github.io/wildtrace/data/species_viruses.csv).
+  [`species_viruses.csv`](https://tarunv13.github.io/ichnic/data/species_viruses.csv).
 - **Licence:** case data CC BY 4.0, code MIT. `flows.json` is derived from the CITES Trade Database
   and shared under its terms (non-commercial, with attribution); the virus counts in
   `zoonoses.json` come from VIRION under ODbL 1.0.
@@ -430,10 +430,10 @@ listings    cues, minus arrests (count),  languages and     centrality      and 
 
 The Atlas is an application; search engines and AI answer engines need text. Every build also
 writes a plain HTML layer from the same data — a page per
-[species group](https://tarunv13.github.io/wildtrace/species/pangolin.html), per
-[country](https://tarunv13.github.io/wildtrace/country/in.html) and per case, all indexed from
-[browse.html](https://tarunv13.github.io/wildtrace/browse.html) — plus `sitemap.xml`, a `robots.txt`
-that welcomes AI crawlers, and [`llms.txt`](https://tarunv13.github.io/wildtrace/llms.txt), a plain-text
+[species group](https://tarunv13.github.io/ichnic/species/pangolin.html), per
+[country](https://tarunv13.github.io/ichnic/country/in.html) and per case, all indexed from
+[browse.html](https://tarunv13.github.io/ichnic/browse.html) — plus `sitemap.xml`, a `robots.txt`
+that welcomes AI crawlers, and [`llms.txt`](https://tarunv13.github.io/ichnic/llms.txt), a plain-text
 brief so an answer engine quoting the figures also carries the caveats. Each page states its numbers
 in text, names its licence, links its sources, and repeats the line that matters: these counts show
 where wildlife crime is *reported*, not where it happens.
@@ -487,7 +487,7 @@ See [`docs/ETHICS_PRIVACY.md`](docs/ETHICS_PRIVACY.md) and Microsoft's
 
 ## Roadmap
 
-Ideas, not promises. Discuss them in [Issues](https://github.com/tarunv13/wildtrace/issues).
+Ideas, not promises. Discuss them in [Issues](https://github.com/tarunv13/ichnic/issues).
 
 - [ ] Court judgments and prosecution outcomes (SHERLOC, Indian Kanoon)
 - [ ] More history: backfill beyond 12 months, and official archives before 2024
@@ -527,7 +527,7 @@ If Ichnic helps your work, please cite it. Use the **Cite this repository** butt
   year    = {2026},
   version = {1.11.0},
   doi     = {10.5281/zenodo.22902819},
-  url     = {https://github.com/tarunv13/wildtrace},
+  url     = {https://github.com/tarunv13/ichnic},
   license = {MIT}
 }
 ```

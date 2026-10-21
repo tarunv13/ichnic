@@ -70,7 +70,7 @@ neither shows alone: which online markets are advertised heavily but rarely reac
 | Beyond the trade | legal ambiguity, deception patterns | security pathways, disease risk, legal-trade baseline |
 | Code | not open | MIT, reproducible pipeline |
 
-**Measured together** (`wildtrace ecosolve`, [`online_gap.csv`](https://tarunv13.github.io/wildtrace/data/online_gap.csv)):
+**Measured together** (`wildtrace ecosolve`, [`online_gap.csv`](https://tarunv13.github.io/ichnic/data/online_gap.csv)):
 90% of adverts map to a Ichnic group. Bears in Thailand: 1,303 adverts, 0 Ichnic cases; parrots and
 songbirds in Thailand: 1,046 adverts, 0 cases; tigers in Thailand: 2,232 adverts, 3 cases. A third of the
 adverts are in Thai, which Ichnic did not read before this comparison; it does now.

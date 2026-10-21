@@ -39,4 +39,4 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-Sitemap: https://tarunv13.github.io/wildtrace/sitemap.xml
+Sitemap: https://tarunv13.github.io/ichnic/sitemap.xml

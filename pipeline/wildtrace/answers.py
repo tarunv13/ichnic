@@ -173,7 +173,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, data: P
                     "number": {"v": f"{acc['precision']:.1%}", "k": f"of audited cases are real events ({acc['date']})"},
                     "chart": [[k, n] for k, n in acc.get("errors", {}).items()],
                     "chart_title": f"The {acc['n'] - acc['relevant']} of {acc['n']} audited cases that were not real events, by reason",
-                    "who": [{"name": "Ichnic accuracy audit", "detail": acc.get("method", ""), "url": "https://github.com/tarunv13/wildtrace/blob/main/docs/ACCURACY.md"}, news],
+                    "who": [{"name": "Ichnic accuracy audit", "detail": acc.get("method", ""), "url": "https://github.com/tarunv13/ichnic/blob/main/docs/ACCURACY.md"}, news],
                     "limit": "Precision says how many published cases are real, not how many real events are missed. Recall, the share of real events Ichnic finds, is about 20% to 25%: that is how many of 576 hand-checked events on an independent list it matched, after removing matches that happen by chance. Coverage follows the sources searched.",
                     "go": {"label": "Read the method", "href": "./#methods"}})
 

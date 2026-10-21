@@ -44,7 +44,7 @@ def _cite() -> str:
     title = cff.get("title", "Ichnic: the open atlas of illegal wildlife trade")
     version = f" (Version {cff['version']})" if cff.get("version") else ""
     doi = cff.get("doi")
-    where = f"Zenodo. https://doi.org/{doi}" if doi else "https://tarunv13.github.io/wildtrace/"
+    where = f"Zenodo. https://doi.org/{doi}" if doi else "https://tarunv13.github.io/ichnic/"
     return (f"{' & '.join(names)} ({str(cff.get('date-released', ''))[:4] or time.strftime('%Y')}). {title}{version} "
             f"[Computer software]. {where} (data built {time.strftime('%Y-%m-%d')}).")
 

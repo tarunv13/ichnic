@@ -3,7 +3,7 @@
 ## Reporting a vulnerability
 
 Please report security issues privately through
-[GitHub Security Advisories](https://github.com/tarunv13/wildtrace/security/advisories/new)
+[GitHub Security Advisories](https://github.com/tarunv13/ichnic/security/advisories/new)
 rather than a public issue. Include what you found and how to reproduce it. Expect a first reply
 within a week.
 

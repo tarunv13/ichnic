@@ -16,7 +16,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-SITE = "https://tarunv13.github.io/wildtrace/"
+SITE = "https://tarunv13.github.io/ichnic/"
 HOST = "tarunv13.github.io"
 WEB = Path(__file__).resolve().parents[1] / "web"
 KEY = next(p.stem for p in WEB.glob("*.txt") if len(p.stem) == 32 and p.read_text().strip() == p.stem)

@@ -6,8 +6,8 @@ authors:
   - family-names: Verma
     given-names: "Tarun Kumar"
     orcid: "https://orcid.org/0009-0009-4130-2455"
-repository-code: "https://github.com/tarunv13/wildtrace"
-url: "https://tarunv13.github.io/wildtrace/"
+repository-code: "https://github.com/tarunv13/ichnic"
+url: "https://tarunv13.github.io/ichnic/"
 license: MIT
 doi: 10.5281/zenodo.22902819
 identifiers:

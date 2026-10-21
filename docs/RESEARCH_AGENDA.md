@@ -12,7 +12,7 @@ Wildlife crime appears in only a few of them: environmental crime as revenue for
 organised crime (R1.37), and whether "animal life" and "revenue-generating uses" belong in the
 weaponisation of nature (R5.2, R5.3). The report also notes that its pathway diagrams "could be linked
 to a database showing relevant evidence for each link". Ichnic's
-[Risk pathways](https://tarunv13.github.io/wildtrace/pathways.html) page does that for the
+[Risk pathways](https://tarunv13.github.io/ichnic/pathways.html) page does that for the
 wildlife-crime pathway, and this agenda covers the links it cannot yet evidence.
 
 ## Principles

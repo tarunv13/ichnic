@@ -100,7 +100,7 @@ than other countries do.
 
 ## Project: check one claim (homework, 45 minutes)
 
-Download `cases.csv` (CC BY 4.0) from tarunv13.github.io/wildtrace/data/cases.csv. Pick one species group and
+Download `cases.csv` (CC BY 4.0) from tarunv13.github.io/ichnic/data/cases.csv. Pick one species group and
 one country. Count the cases by grade and by year. Then open the group's page on the site and compare the news
 cases with the CITES seizure records. Write 200 words: what the data shows, what it cannot show, and which
 source you would ask for next. Cite the dataset as: Verma, T. K. (2026). Ichnic: the open atlas of illegal

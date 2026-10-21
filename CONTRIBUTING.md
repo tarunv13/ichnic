@@ -4,7 +4,7 @@ Thank you for helping. The most valuable contributions here are not code.
 
 ## Report a wrong case
 
-Every case panel on [the Atlas](https://tarunv13.github.io/wildtrace/) has **Report a
+Every case panel on [the Atlas](https://tarunv13.github.io/ichnic/) has **Report a
 correction**, which opens an issue with the case ID filled in. Say what is wrong and link a source
 that shows it. Wrong place, wrong species, two cases that are really one, or an item that is not
 wildlife trade at all: all are worth reporting.

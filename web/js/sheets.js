@@ -70,7 +70,7 @@ export function mountMethods(root, tab = "pipeline") {
       <h3>Offered online, rarely caught</h3>
       <p>ECO-SOLVE (Global Initiative Against Transnational Organized Crime) publishes the adverts its regional hubs record on its public dashboard. Ichnic maps each advert to a species group and sets the count against Ichnic cases for the same group and country in the same period. The sources watch different things with different effort, so the ratio is not a detection rate. Only aggregated counts are published, with attribution; the advert rows are not redistributed.</p>
       <h3>Ambiguous words and image evidence</h3>
-      <p>Words that name a traded species and also mean something else ("monitor", "horn", "python", Thai "เหี้ย") are never deleted. Each counts only with supporting context nearby (a species, an enforcement or sale word, a wildlife phrase or a number), every hit is kept for review, and a picture can confirm it: local OCR reads text inside images and BioCLIP recognises the species. The rules and their history are in <a href="https://github.com/tarunv13/wildtrace/blob/main/docs/CURATION.md" target="_blank" rel="noopener">the curation log</a>.</p>
+      <p>Words that name a traded species and also mean something else ("monitor", "horn", "python", Thai "เหี้ย") are never deleted. Each counts only with supporting context nearby (a species, an enforcement or sale word, a wildlife phrase or a number), every hit is kept for review, and a picture can confirm it: local OCR reads text inside images and BioCLIP recognises the species. The rules and their history are in <a href="https://github.com/tarunv13/ichnic/blob/main/docs/CURATION.md" target="_blank" rel="noopener">the curation log</a>.</p>
       <h3>Captive-bred claims</h3>
       <p>For animal groups, commercial CITES exports declared captive-bred (source C, F or D) are compared with those declared wild (W, R, U, X), per exporter, in 2015–2018 and 2020–2023. Declaring wild-caught animals as bred is a documented laundering route: green pythons exported from Indonesia as captive-bred were overwhelmingly wild-caught (Lyons &amp; Natusch 2011, <i>Biological Conservation</i>). A high or rising share tells an investigator where to ask; genuine breeding, ranching and coral mariculture produce it too. Only pairs with at least 30 records are shown.</p>
       <h3>Zoonoses</h3>
@@ -149,7 +149,7 @@ export function mountAbout(root) {
     <h3>Why it matters beyond conservation</h3>
     <p>Wildlife crime reaches national security through crime revenue, disease risk and the loss of ecosystems people depend on. <a href="pathways.html">Risk pathways</a> maps seven links from nature to security, rates the open evidence for each, and says where it runs out, with a commitment to security without militarisation.</p>
     <h3>Who runs it</h3>
-    <p>An open-source research project, maintained on GitHub by <a href="https://github.com/tarunv13" target="_blank" rel="noopener">@tarunv13</a>. It builds on the OWT labelled set of online listings and on the observatories listed under Network. Code and method: <a href="https://github.com/tarunv13/wildtrace" target="_blank" rel="noopener">github.com/tarunv13/wildtrace</a>.</p>
+    <p>An open-source research project, maintained on GitHub by <a href="https://github.com/tarunv13" target="_blank" rel="noopener">@tarunv13</a>. It builds on the OWT labelled set of online listings and on the observatories listed under Network. Code and method: <a href="https://github.com/tarunv13/ichnic" target="_blank" rel="noopener">github.com/tarunv13/ichnic</a>.</p>
     <h3>Use and cite</h3>
     <p>Case data: <b>CC BY 4.0</b>. Code: MIT. The Flows data (<code>flows.json</code>) is derived from the CITES Trade Database and shared under its terms (non-commercial, with attribution); the virus counts in <code>zoonoses.json</code> come from VIRION under <b>ODbL 1.0</b>. Suggested citation:</p>
     <p class="box mono" style="font-size:12.5px">${esc(m.cite || "Ichnic. The open atlas of illegal wildlife trade.")}</p>
@@ -163,7 +163,7 @@ export function mountAbout(root) {
       <a class="btn" href="data/cites_declared_flows.csv" download>Declared-trade flows (CSV)</a>
       <a class="btn" href="data/zoonotic_outbreak_reports.csv" download>Zoonotic outbreak reports (CSV)</a>
       <a class="btn" href="data/species_viruses.csv" download>Viruses by species group (CSV, ODbL)</a>
-      <a class="btn" href="https://github.com/tarunv13/wildtrace/issues/new?title=Correction%3A%20&labels=correction" target="_blank" rel="noopener">Report a correction</a></div>
+      <a class="btn" href="https://github.com/tarunv13/ichnic/issues/new?title=Correction%3A%20&labels=correction" target="_blank" rel="noopener">Report a correction</a></div>
     <p class="muted" style="font-size:12.5px">Every species group, country and case also has a plain page of its own,
       readable without JavaScript and linked from <a href="browse.html">the index</a>.</p>
     <h3>Icons and logos</h3>

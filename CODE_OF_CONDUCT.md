@@ -17,6 +17,6 @@ sharing of restricted datasets.
 
 Breaking these rules gets your contribution closed, and repeated breaches get you blocked from the
 repository. Report a problem privately through
-[GitHub Security Advisories](https://github.com/tarunv13/wildtrace/security/advisories/new) or by
+[GitHub Security Advisories](https://github.com/tarunv13/ichnic/security/advisories/new) or by
 opening an issue if it is safe to do so in public. The maintainer decides and will say what was
 decided.

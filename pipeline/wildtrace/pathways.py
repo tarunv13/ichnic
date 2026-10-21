@@ -93,7 +93,7 @@ def _pct(a, b):
 
 
 def links(e: dict, cc_name) -> list[dict]:
-    site = "https://tarunv13.github.io/wildtrace"
+    site = "https://tarunv13.github.io/ichnic"
     top = ", ".join(f"{cc_name(c)} ({n:,})" for c, n in e.get("lemis_top", []))
     k = e["kinds"]
     return [
@@ -264,7 +264,7 @@ def build(cases: list[dict], species: dict, countries: dict, meta: dict, out_dir
 <p>The gaps are the research agenda. Open data cannot yet show who profits from wildlife crime, how much wildlife is taken
   rather than seized, or how removals cascade through ecosystems. Language technology can narrow some gaps: extracting several
   events from one report, telling a sale from a condemnation or a news story, and checking claims against evidence.
-  <a href="https://github.com/tarunv13/wildtrace/blob/main/docs/RESEARCH_AGENDA.md">Read the open research agenda</a> and pick a question.</p>
+  <a href="https://github.com/tarunv13/ichnic/blob/main/docs/RESEARCH_AGENDA.md">Read the open research agenda</a> and pick a question.</p>
 <h2>Security without militarisation</h2>
 <p>Calling wildlife crime a security threat can bring money and attention. It has also justified shoot-on-sight policies, the
   exclusion of local people from land they depend on, and "war by conservation" (Duffy 2015; Lunstrum 2014). Ichnic takes the

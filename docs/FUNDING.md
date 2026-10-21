@@ -10,7 +10,7 @@ the [research agenda](RESEARCH_AGENDA.md) close.
 | Tier | What it pays for | Outcome |
 | --- | --- | --- |
 | **Keep it accurate** | a quarterly blind accuracy audit, review of ambiguous words and code words, source maintenance | precision measured and published every quarter ([ACCURACY.md](ACCURACY.md)) |
-| **Widen the evidence** | new languages (Chinese, Spanish-language Africa, Swahili), court-outcome sources, port-level trade data | fewer blind spots; link 4 of the [risk pathways](https://tarunv13.github.io/wildtrace/pathways.html) (who profits) begins to close |
+| **Widen the evidence** | new languages (Chinese, Spanish-language Africa, Swahili), court-outcome sources, port-level trade data | fewer blind spots; link 4 of the [risk pathways](https://tarunv13.github.io/ichnic/pathways.html) (who profits) begins to close |
 | **Partner deployments** | a version of the Atlas and workbench for one enforcement agency, NGO or newsroom, with their own private data kept on their machines | evidence that reaches a decision |
 | **Research** | an open event-extraction benchmark, stance detection for listings, image evidence at scale (agenda A1, A2, A6) | peer-reviewed methods and datasets anyone can use |
 

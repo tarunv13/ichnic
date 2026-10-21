@@ -29,7 +29,7 @@ import re
 from datetime import date
 from pathlib import Path
 
-SITE = "https://tarunv13.github.io/wildtrace"
+SITE = "https://tarunv13.github.io/ichnic"
 LICENCE = "https://creativecommons.org/licenses/by/4.0/"
 
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August",
@@ -104,7 +104,7 @@ def page(title: str, desc: str, canonical: str, body: str, jsonld: dict | None =
 </main>
 <footer>
   <p><a href="{SITE}/">Open the interactive Atlas</a> · <a href="{SITE}/browse.html">Browse every species and country</a>
-     · <a href="{SITE}/data/cases.csv">Download the data (CSV)</a> · <a href="https://github.com/tarunv13/wildtrace">Source code</a></p>
+     · <a href="{SITE}/data/cases.csv">Download the data (CSV)</a> · <a href="https://github.com/tarunv13/ichnic">Source code</a></p>
   <p class="small">Data CC BY 4.0. Cite as: Verma, T. K. (2026). <i>Ichnic: the open atlas of illegal wildlife trade.</i>
      Zenodo. <a href="https://doi.org/10.5281/zenodo.22902819">https://doi.org/10.5281/zenodo.22902819</a></p>
   <p class="small">Counts show where wildlife crime is <b>reported</b>, in the newsrooms and government sites searched,
@@ -199,7 +199,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
 <h2>Sources</h2><ul class="sources">{rows}</ul>
 <h2>Explore</h2><p>{links} <a class="pill" href="{SITE}/#case/{esc(cid)}">See this case on the map →</a></p>
 <p class="small">Case ID {esc(cid)}. Found a mistake?
-  <a href="https://github.com/tarunv13/wildtrace/issues/new?labels=correction&amp;title=Correction:%20case%20{esc(cid)}">Report a correction</a>.</p>
+  <a href="https://github.com/tarunv13/ichnic/issues/new?labels=correction&amp;title=Correction:%20case%20{esc(cid)}">Report a correction</a>.</p>
 """
         ld = {"@context": "https://schema.org", "@type": "Report", "name": c.get("summary", ""),
               "datePublished": c.get("date", ""), "url": f"{SITE}/case/{cid}.html",
@@ -452,10 +452,10 @@ Security: Exploring the Risk Pathways" (2026), research questions R1.37 and R5.2
 - Questions Ichnic answers (live, with sources and limits): {SITE}/answers.html
 - Risk pathways (wildlife crime and national security): {SITE}/pathways.html
 - US port seizures (CSV, CC BY 4.0): {SITE}/data/lemis_seized_flows.csv
-- Open research agenda: https://github.com/tarunv13/wildtrace/blob/main/docs/RESEARCH_AGENDA.md
+- Open research agenda: https://github.com/tarunv13/ichnic/blob/main/docs/RESEARCH_AGENDA.md
 - Data (CSV, CC BY 4.0): {SITE}/data/cases.csv
 - Method and limits: {SITE}/#methods
-- Source code: https://github.com/tarunv13/wildtrace
+- Source code: https://github.com/tarunv13/ichnic
 - Citation: Verma, T. K. (2026). Ichnic: the open atlas of illegal wildlife trade. Zenodo.
   https://doi.org/10.5281/zenodo.22902819
 """, encoding="utf-8")

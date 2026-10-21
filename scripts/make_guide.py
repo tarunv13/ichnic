@@ -22,7 +22,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "web" / "media"
-BASE = sys.argv[sys.argv.index("--base") + 1] if "--base" in sys.argv else "https://tarunv13.github.io/wildtrace/"
+BASE = sys.argv[sys.argv.index("--base") + 1] if "--base" in sys.argv else "https://tarunv13.github.io/ichnic/"
 EXE = os.environ.get("WILDTRACE_CHROMIUM") or None
 W, H = 1280, 720
 

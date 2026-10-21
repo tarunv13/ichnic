@@ -19,7 +19,7 @@ const VER = {
   single: ["warn", "○ Single report", "One outlet only. Treat it as a lead until it is corroborated."],
 };
 const TIER = { official: "Official", ngo: "NGO", media: "Media" };
-const correction = (c) => `https://github.com/tarunv13/wildtrace/issues/new?labels=correction&title=${encodeURIComponent(`Correction: case ${c.id}`)}&body=${encodeURIComponent(
+const correction = (c) => `https://github.com/tarunv13/ichnic/issues/new?labels=correction&title=${encodeURIComponent(`Correction: case ${c.id}`)}&body=${encodeURIComponent(
   `Case: ${c.summary}\nID: ${c.id}\nLink: ${location.origin}${location.pathname}#case/${c.id}\n\nWhat is wrong, and the source that shows it:\n`)}`;
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
