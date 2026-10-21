@@ -107,6 +107,13 @@ checkpoint programme and wildlife conflict. Official releases use enforcement wo
 the news-tuned screen lets these through. Until that gap closes, a PROFEPA release corroborates a news case but
 does not make one on its own, as with videos.
 
+**Second round (21 October 2026).** The error classes above became headline rules for official releases, and
+"captura" now counts as an arrest only with people nearby. Every PROFEPA release that passed the new screen and had
+never been judged (81) was judged blind: **66 real events (81.5%; 95% interval 71.7% to 88.4%)**, up from 60%. The
+remaining errors were care after a rescue, rescue and release, escapes, meetings, two stories outside trade and a
+mine named for turtles; rules for these followed. PROFEPA-only cases stay held back until a fresh sample reaches 90%,
+and since every release from 2024 on has now been judged, that sample has to come from new releases.
+
 ## How the audits are designed, and their limits
 
 - **Sampling frame.** Each audit draws a simple random sample, without replacement, from all cases published on the

@@ -445,7 +445,7 @@ sale_cues:
 # Words that signal an enforcement event (the news side).
 enforcement_cues:
   seizure: [ยึด, ตรวจยึด, crack down, cracks down, hunts down, stopped, intercepte, intercepté, interceptés, interceptée, blows lid off, intercepts, dismantled, dismantles, dismantling, forfeited, forfeiture, preservation order, recovers, recovery of, confiscates, confiscation, detenciones, allanamientos, allanamiento, incautación, incautaciones, decomisaron, decomisados, aseguraron, apreensões, apreendida, apreendido, desarticula, desarticulada, démantèlement, saisie de, thu hồi, penyitaan, menggagalkan, gagalkan, seized, seizure, seize, seizes, recovered, confiscated, intercepted, haul, bust, busted, busts, foils, foiled, raid, raided, racket busted, बरामद, thu giữ, tạm giữ, menyita, diamankan, aseguran, aseguramiento, ejemplares asegurados, asegurados por, démantelé, saisis, जब्त, bắt giữ, disita, ของกลาง, apreensão, apreende, apreendidos, apreendidas, decomiso, decomisan, incautan, incautación, incautaron, saisie, saisies, saisi]
-  arrest: [ผู้ต้องหา, vinculan a proceso, vinculado a proceso, vinculados a proceso, vinculada a proceso, remand, probe, denunciados, denunciadas, captura, capturan, capturaron, remanded, booked, nabs, nab, detains, detenido por, capturado, capturada, detidos, detidas, detido, detida, interpellé, interpellée, placés en garde à vue, ditetapkan tersangka, arrested, arrest, arrests, held, nabbed, detained, apprehended, charged, indicted, गिरफ्तार, दबोचा, दबोचे, पकड़ा, पकड़े, हिरासत, diringkus, khởi tố, autuado, flagrante, ditangkap, ditahan, จับกุม, preso, presos, presa, detenido, detenidos, capturados, arrêté, arrêtés, interpellés]
+  arrest: [ผู้ต้องหา, personas detenidas, personas detenidos, detenidas, detenidos, vinculan a proceso, vinculado a proceso, vinculados a proceso, vinculada a proceso, remand, probe, denunciados, denunciadas, remanded, booked, nabs, nab, detains, detenido por, detidos, detidas, detido, detida, interpellé, interpellée, placés en garde à vue, ditetapkan tersangka, arrested, arrest, arrests, held, nabbed, detained, apprehended, charged, indicted, गिरफ्तार, दबोचा, दबोचे, पकड़ा, पकड़े, हिरासत, diringkus, khởi tố, autuado, flagrante, ditangkap, ditahan, จับกุม, preso, presos, presa, detenido, detenidos, arrêté, arrêtés, interpellés]
   conviction: [faces, in prison, years in prison, prison, procès, trial, plead guilty, pleads guilty, fines, fined for, court fines, convicts, sentences, sentencia, sentenciados, condenada, condamnée, divonis, convicted, sentenced, jailed, imprisonment, rigorous imprisonment, pleaded guilty, fined, condamnés, सजा, dihukum, condenado, condenados, sentenciado, condamné]
   rescue: [sauvés, sauvées, sauvé, rescued, released into the wild, rehabilitated, resgata, resgatados, resgatadas, rescatan, rescatados, rescata, rescató]
   bail: [bail granted, granted bail, acquitted, discharged]
@@ -479,6 +479,10 @@ genre_cues:
 headline_release_cues: [libera, liberan, liberamos, libero, liberacion, reubica, reubican, reubicacion, reintegra, reintegran,
                         reintroduccion, resguarda, resguardan, hallado en, hallada en, deambulaba, via publica, zonas urbanas,
                         llama a la ciudadania, captura masiva, aclara profepa,
+                        exhorta, invita, alerta profepa, llama profepa, llaman a, dispositivos excluidores,
+                        dispositivo excluidor, excluidores de tortugas, necropsia, tratamiento médico, pláticas, capacitación,
+                        arribada, anidación, para la protección de, presencia de, certifica,
+                        atiende, atienden, atendió, escapó, escape de, búsqueda de, reconoce, mesa estatal, plática, imparte,
                         liberó, liberación, reubicación, reintroducción, vía pública, llama a la ciudadanía]
 
 # Aggregates: counts over a period, not one event. Hard negative: these are statistics, not cases.
@@ -495,7 +499,7 @@ rescue_trade_context: [trafic, traficados, traficadas, illegal, illegally, capti
 
 # Masks: known phrases that contain a species or cue word but name something else. They are blanked
 # before matching (the words themselves stay in the lexicon for every other context).
-masks: [tiger reserve, tiger reserves, leopard tortoise, leopard tortoises, al-monitor, sandalwood actress, sandalwood actor,
+masks: [camino real del tigre, mina tres tortugas, tiger reserve, tiger reserves, leopard tortoise, leopard tortoises, al-monitor, sandalwood actress, sandalwood actor,
         sandalwood filmmaker, sandalwood film, sandalwood films, sandalwood industry, sandalwood high school, kasturi kepala hitam,
         costa do marfim, costa de marfil, costa d'avorio, presas em rede, presa em rede, preso em rede, presos em rede, presas em redes,
         jaguarão, caburé, arrêtés préfectoraux, arrêté préfectoral, arrêté municipal, em araras, de araras, "araras, sp", araras (sp), araras-sp, tiger strike force, special tiger protection force, state tiger strike force, human trafficking, drug trafficking,
@@ -559,7 +563,13 @@ ambiguous:
   - {term: ivory, group: elephant, lang: en, needs: [enforcement, trade, quantity], note: "also a colour; Ivory Coast is a negative cue"}
   - {term: चंदन, group: sandalwood, lang: hi, needs_regex: 'लकड़ी|टन|किलो|क्विंटल|कुंतल|पेड़|लट्ठे|कट्टे|कंटेनर|जार|कस्टम|सीआईएसएफ|कीमती चंदन|चंदन तस्कर|चंदन चोरी|चोरी का चंदन', note: "sandalwood; also a common first name (चंदन यादव)"}
   - {term: chandan, group: sandalwood, lang: hi_latn, needs: [trade], needs_terms: [wood, logs, tonnes, kg, trees], note: "also a first name"}
-  - {term: asegura, cue: seizure, lang: es, needs_regex: 'asegura\s+(?:[\d.,]+|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|cientos|miles)\b|ejemplares|piezas|kilos|kilogramos|toneladas|metros cubicos|madera', blocks_regex: 'asegura que|asegura la|asegura el', note: "Mexican official usage for a seizure (Profepa asegura 719 ejemplares); also 'assures' (asegura que)"}
+  - {term: captura, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
+  - {term: capturan, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
+  - {term: capturaron, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
+  - {term: capturado, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
+  - {term: capturada, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
+  - {term: capturados, cue: arrest, lang: es, needs_regex: 'personas|persona|presuntos?|sujetos?|hombres?|mujer(?:es)?|detenidos?|traficantes?|responsables|infractores|imputados?|banda|delincuentes|sospechos[oa]s?|capturad[oa]s? con', note: "people arrested; also an animal captured (capturan cocodrilo)"}
+  - {term: asegura, cue: seizure, lang: es, needs_regex: 'asegura\s+(?:[\d.,]+|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|cientos|miles)\b|ejemplares|piezas|kilos|kilogramos|toneladas|metros cubicos|madera', blocks_regex: 'asegura que|asegura la|asegura el|excluidor', note: "Mexican official usage for a seizure (Profepa asegura 719 ejemplares); also 'assures' (asegura que)"}
   - {term: denuncia, cue: arrest, lang: pt, needs_terms: [pessoas, suspeitos, acusados, investigados, réus, homens, mulher, homem, integrantes], note: "a prosecutor charging people; also an NGO complaining (Proyecto Santa María denuncia)"}
   - {term: frog, group: amphibians, lang: en, needs: [enforcement, trade, quantity], note: "also frog in general writing"}
   - {term: frogs, group: amphibians, lang: en, needs: [enforcement, trade, quantity]}
