@@ -67,7 +67,17 @@ h1 { font: 700 clamp(2.4rem, 6.4vw, 4.9rem)/1.02 var(--display); letter-spacing:
 .step.on .card { opacity: 1; transform: none; }
 .step .no { font: 600 0.8rem/1 var(--font); color: var(--ink-3); margin: 0 0 12px; }
 .step h2 { font: 700 clamp(1.45rem, 2.6vw, 2rem)/1.12 var(--display); letter-spacing: -0.03em; margin: 0 0 14px; text-wrap: balance; }
-.step p { margin: 0 0 12px; text-wrap: pretty; }
+.step p { margin: 0 0 12px; text-wrap: pretty; font-size: 1.06rem; line-height: 1.66; }
+.guess { margin: 4px 0 16px; padding: 14px 16px; border-radius: 14px; background: rgba(214, 69, 61, 0.06); border: 1px dashed rgba(214, 69, 61, 0.35); }
+.guess label { display: block; font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+.g-row { display: flex; align-items: center; gap: 12px; }
+.g-row input { flex: 1; accent-color: var(--cases); min-height: 32px; }
+.g-row output { font: 700 1.1rem var(--display); min-width: 3.2rem; text-align: right; font-variant-numeric: tabular-nums; }
+.g-row button { font: 600 0.9rem var(--font); padding: 9px 14px; border-radius: 999px; border: 0; background: var(--ink); color: #fff; cursor: pointer; transition: transform 160ms var(--ease), background 160ms; }
+.g-row button:hover { background: #24332e; transform: translateY(-1px); }
+.verdict { margin: 10px 0 0 !important; font-weight: 600; }
+.card.pending .after { filter: blur(5px); opacity: 0.45; user-select: none; transition: filter 400ms var(--ease), opacity 400ms var(--ease); }
+.g-hint { font-size: 0.82rem; color: var(--ink-3); margin: 6px 0 0 !important; }
 .step p:last-child { margin-bottom: 0; }
 .step .hand { color: var(--ink-2); font-style: italic; }
 .n { font-variant-numeric: tabular-nums; font-weight: 650; }
@@ -146,19 +156,29 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
 <div class="scrolly">
   <div class="steps">
 
+    <section class="step" data-scene="dhar">
+      <div class="card">
+        <p class="no">1 · One snake, two names</p>
+        <h2>In June 2026, police in Dhar arrested a man with a red sand boa.</h2>
+        <p>The Hindi press reported that the snake had been hidden in a heap of straw, and that the police had begun to trace an interstate network. The red sand boa is harmless and protected. Online, it is seldom sold under its own name: sellers call it a "double engine" or a "do muha saap", a two-headed snake, and advertise it with promises of spells and success.</p>
+        <p>In the labelled online videos Ichnic uses to train its filters, "double engine" appears in <span class="n">192</span> of <span class="n">951</span> videos about the trade and in <span class="n">3</span> of <span class="n">352</span> others. Until October 2026, Ichnic searched for neither name, and this arrest entered the record only once it did.</p>
+        <p class="hand">What the record catches depends on what someone looks for. The rest of this story follows that idea through the data.</p>
+      </div>
+    </section>
+
     <section class="step" data-scene="registered">
       <div class="card">
-        <p class="no">1 · A drop that was not a drop</p>
+        <p class="no">2 · A drop that was not a drop</p>
         <h2>In 2020, recorded offences in Ranthambhore fell by more than half.</h2>
         <p>Offence records for the Ranthambhore tiger reserve in India went from <span class="n">225</span> in 2019 to <span class="n">98</span> in 2020. Read alone, the numbers say that offending fell. It did not: during the COVID-19 lockdowns, fewer cases were registered, because fewer people were registering them.</p>
         <p>So a record of enforcement measures two things at once: the crime, and the effort spent looking for it. Global reporting on biodiversity has the same weakness, as it rests mostly on what governments report about themselves (Milner-Gulland et al., 2026).</p>
-        <p class="hand">Keep that in mind, because the rest of this story is built on records of exactly this kind.</p>
+        <p class="hand">The rest of this story is built on records of exactly this kind.</p>
       </div>
     </section>
 
     <section class="step" data-scene="species">
       <div class="card">
-        <p class="no">2 · What is caught</p>
+        <p class="no">3 · What is caught</p>
         <h2>The public record holds <span data-v="cases">2,264</span> cases, and parrots lead it.</h2>
         <p>Ichnic reads news, government releases and court pages in many languages, keeps only reports of an enforcement event, and merges reports of the same event into one case. Parrots and songbirds come first, with <span class="n" data-v="sp0">343</span> cases, then turtles and tortoises and elephant ivory.</p>
         <p>This is a ranking of what was caught and written about. It is not a ranking of what is traded most, and the next step shows where the two part ways.</p>
@@ -167,8 +187,13 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
 
     <section class="step" data-scene="plants">
       <div class="card">
-        <p class="no">3 · What is missed in plain sight</p>
-        <h2>Plants are trafficked far more than they are reported.</h2>
+        <p class="no">4 · What is missed in plain sight</p>
+        <h2>How much of the trade is plants?</h2>
+        <div class="guess" data-guess="plants" data-unit="%">
+          <label for="g-plants">Before reading on: of every 100 wildlife shipments seized and reported to CITES, how many are plants?</label>
+          <div class="g-row"><input id="g-plants" type="range" min="0" max="60" value="30"><output>30%</output><button type="button">Show me</button></div>
+          <p class="verdict" aria-live="polite" hidden></p>
+        </div>
         <p>In the seizures governments report to CITES, plants make up <span class="n" data-v="plantsCites">15%</span> of shipments. In the news cases Ichnic collects, they make up <span class="n" data-v="plantsNews">10%</span>. Rosewood, orchids, cacti and medicinal roots are seized often and written about rarely.</p>
         <p>We think the reason is attention rather than enforcement: a pangolin makes a story, a container of timber seldom does. Whatever the cause, a reader who learns about wildlife crime from the news learns a version with most of its plants missing.</p>
       </div>
@@ -176,7 +201,7 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
 
     <section class="step" data-scene="routes">
       <div class="card">
-        <p class="no">4 · Where the trade moves</p>
+        <p class="no">5 · Where the trade moves</p>
         <h2>The busiest seized route outside the United States runs from India to China.</h2>
         <p>Government records draw the trade's shape better than news does. Leaving the United States aside, India to China is the busiest seized route, with <span class="n" data-v="route0">333</span> shipments since 2015; <span class="n">314</span> of them were red sanders, a timber that grows wild only in southern India, mostly shipped as logs.</p>
         <p>The United States sits at one end of <span class="n">83%</span> of all seized shipments in these records. That does not make it the centre of the trade: it reports its seizures far more completely than other countries do, which is the Ranthambhore lesson again, at the scale of nations.</p>
@@ -185,7 +210,7 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
 
     <section class="step" data-scene="online">
       <div class="card">
-        <p class="no">5 · Where almost no one is looking</p>
+        <p class="no">6 · Where almost no one is looking</p>
         <h2>Thousands of adverts, and almost no cases.</h2>
         <p>ECO-SOLVE, a monitoring project, recorded <span class="n" data-v="adverts">30,934</span> online adverts for wildlife between April 2024 and September 2026. Bears offered for sale in Thailand drew <span class="n">1,303</span> adverts; in the same period, the public record holds no case of a bear seized in Thailand.</p>
         <p>An advert is not proof of a sale, and a missing case is not proof of no enforcement. Still, a market this visible with so little recorded enforcement is where the record is quietest, and where a researcher or a regulator would learn the most.</p>
@@ -194,8 +219,13 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
 
     <section class="step" data-scene="funnel">
       <div class="card">
-        <p class="no">6 · What reaches a court</p>
-        <h2>For every conviction in the record, there are about ten seizures.</h2>
+        <p class="no">7 · What reaches a court</p>
+        <h2>How often does a seizure end in a conviction?</h2>
+        <div class="guess" data-guess="funnel" data-unit="">
+          <label for="g-funnel">Before reading on: for each conviction in the public record, how many seizures would you expect?</label>
+          <div class="g-row"><input id="g-funnel" type="range" min="1" max="40" value="3"><output>3</output><button type="button">Show me</button></div>
+          <p class="verdict" aria-live="polite" hidden></p>
+        </div>
         <p>The record holds <span class="n" data-v="seizures">1,351</span> seizures, <span class="n" data-v="arrests">585</span> arrest reports and <span class="n" data-v="convictions">130</span> convictions. Some of that gap is real attrition, as cases collapse or never reach a court. Some is silence, because a seizure makes the news on the day and a verdict two years later often does not.</p>
         <p>We cannot separate the two from public reports alone. That is itself the finding: the outcome that matters most for deterrence is the one the open record shows least.</p>
       </div>
@@ -203,7 +233,7 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
 
     <section class="step" data-scene="recall">
       <div class="card">
-        <p class="no">7 · What even a careful record misses</p>
+        <p class="no">8 · What even a careful record misses</p>
         <h2>Ichnic is right about what it shows, and still misses most events.</h2>
         <p>In a blind audit of 200 randomly drawn cases, <span class="n">193</span> were real enforcement events (<span class="n">96.5%</span>). Precision answers one question only. To ask how much is missed, we compared Ichnic with an independent, hand-checked list of <span class="n">576</span> events. After removing matches that happen by chance, Ichnic found about <span class="n">one in five</span> (20% to 25%).</p>
         <p>The figure tells a reader to treat every count in this story as a floor. It also tells funders and agencies where the record is thinnest: government releases outside the big news markets, and languages the tools do not yet read.</p>
@@ -265,7 +295,15 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
     }).join("");
   }
 
+  const G = {};
+  const waiting = (key) => { const g = document.querySelector(`[data-guess="${key}"]`); return !!g && g.closest(".card").classList.contains("pending"); };
   const scenes = {
+    dhar: () => ({
+      t: 'Share of online videos that use the phrase "double engine"',
+      s: "Labelled videos used to train Ichnic's filters.",
+      src: "Ichnic training labels for online trade (aggregate counts only).",
+      html: svg(2 * 46, bars([["Videos about the trade", 20.2], ["Other videos", 0.9]], "var(--cases)", { highlight: 0, unit: "%" }), "Double engine: 20.2% of trade videos, 0.9% of others"),
+    }),
     registered: () => ({
       t: "Recorded offences, Ranthambhore tiger reserve",
       s: "Fewer cases were registered in 2020; offending did not fall.",
@@ -285,17 +323,19 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
       html: svg(D.species.length * 46, bars(D.species, "var(--species)", { highlight: 0 }), "Cases by species group"),
     }),
     plants: () => {
+      const hide = waiting("plants");
       const grid = (pct, x, color) => Array.from({ length: 100 }, (_, i) => {
         const cx = x + (i % 10) * 22, cy = 20 + Math.floor(i / 10) * 22;
-        return `<circle class="dot" cx="${cx}" cy="${cy}" r="8" fill="${i < pct ? color : "#d7dedb"}" style="animation-delay:${i * 6}ms"></circle>`;
+        return `<circle class="dot" cx="${cx}" cy="${cy}" r="8" fill="${!hide && i < pct ? color : "#d7dedb"}" style="animation-delay:${i * 6}ms"></circle>`;
       }).join("");
       return {
         t: "Plants as a share of the record",
         s: "Each grid is 100 seizures; green dots are plants.",
         src: "CITES Trade Database (UNEP-WCMC), seized shipments since 2015; Ichnic news cases.",
         html: svg(300, grid(D.plants[0], 30, "var(--species)") + grid(D.plants[1], 310, "var(--species)") +
-          `<text class="big" x="30" y="282">${D.plants[0]}%</text><text class="lbl" x="120" y="270">in government</text><text class="lbl" x="120" y="286">seizure records</text>
-           <text class="big" x="310" y="282">${D.plants[1]}%</text><text class="lbl" x="400" y="270">in news</text><text class="lbl" x="400" y="286">cases</text>`,
+          `<text class="big" x="30" y="282">${hide ? "?" : D.plants[0] + "%"}</text><text class="lbl" x="120" y="270">in government</text><text class="lbl" x="120" y="286">seizure records</text>
+           <text class="big" x="310" y="282">${hide ? "?" : D.plants[1] + "%"}</text><text class="lbl" x="400" y="270">in news</text><text class="lbl" x="400" y="286">cases</text>` +
+          (G.plants != null ? `<text class="note" x="30" y="300" style="fill:var(--cases)">Your guess: ${G.plants}%</text>` : ""),
           `Plants: ${D.plants[0]}% of CITES seizures, ${D.plants[1]}% of news cases`),
       };
     },
@@ -312,17 +352,20 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
       html: svg(D.online.length * 46, bars(D.online, "var(--network)", { highlight: D.online.findIndex((r) => /^Bears/.test(r[0])) }), "Online adverts"),
     }),
     funnel: () => {
+      const hide = waiting("funnel");
       const max = D.funnel[0][1], cx = W / 2;
       const inner = D.funnel.map(([k, v], i) => {
-        const w = Math.max(30, (v / max) * (W - 80)), y = i * 92;
-        return `<rect class="bar" x="${cx - w / 2}" y="${y}" width="${w}" height="62" rx="10" fill="${["#8a948f", "#c27a06", "var(--cases)"][i]}" style="transform-origin:50% 50%;animation-delay:${i * 160}ms"></rect>
-          <text class="val" x="${cx}" y="${y + 38}" text-anchor="middle" fill="#fff" style="fill:#fff;font-size:16px">${fmt(v)} ${k.toLowerCase()}</text>`;
+        const w = hide ? W - 80 - i * 120 : Math.max(30, (v / max) * (W - 80)), y = i * 92;
+        const fill = hide ? "#d7dedb" : ["#8a948f", "#c27a06", "var(--cases)"][i];
+        const label = `${hide ? "?" : fmt(v)} ${k.toLowerCase()}`, inside = w >= 170;
+        return `<rect class="${hide ? "" : "bar"}" x="${cx - w / 2}" y="${y}" width="${w}" height="62" rx="10" fill="${fill}" style="transform-origin:50% 50%;animation-delay:${i * 160}ms"></rect>
+          <text class="val" x="${inside ? cx : cx + w / 2 + 12}" y="${y + 38}" text-anchor="${inside ? "middle" : "start"}" style="fill:${inside && !hide ? "#fff" : "#0f1a17"};font-size:16px">${label}</text>`;
       }).join("");
       return {
         t: "From seizure to conviction, in the public record",
-        s: `About ${Math.round(D.funnel[0][1] / D.funnel[2][1])} seizures for each conviction reported.`,
+        s: hide ? "Make your guess first." : `About ${Math.round(D.funnel[0][1] / D.funnel[2][1])} seizures for each conviction reported.`,
         src: "Ichnic cases by main event; convictions are reported less often than seizures.",
-        html: svg(270, inner, "Seizures, arrests and convictions"),
+        html: svg(290, inner + (G.funnel != null ? `<text class="note" x="${W / 2}" y="286" text-anchor="middle" style="fill:var(--cases)">Your guess: ${G.funnel} seizures for each conviction</text>` : ""), "Seizures, arrests and convictions"),
       };
     },
     recall: () => {
@@ -358,7 +401,34 @@ footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86
     es.forEach((e) => { if (e.isIntersecting) { steps.forEach((s) => s.classList.toggle("on", s === e.target)); show(e.target.dataset.scene); } });
   }, { rootMargin: "-45% 0px -45% 0px" });
   steps.forEach((s) => io.observe(s));
-  show("registered");
+  show("dhar");
+
+  // Guess first, then the record: the gap between the two is the finding.
+  document.querySelectorAll(".guess").forEach((g) => {
+    // The answer stays blurred until the reader guesses (or presses Show me to skip); without JavaScript it is plain text.
+    const card = g.closest(".card");
+    let el = g.nextElementSibling;
+    while (el) { el.classList.add("after"); el = el.nextElementSibling; }
+    card.classList.add("pending");
+    g.insertAdjacentHTML("beforeend", '<p class="g-hint">Move the slider, then press Show me. Press it straight away to skip.</p>');
+    const input = g.querySelector("input"), out = g.querySelector("output"), btn = g.querySelector("button"), v = g.querySelector(".verdict");
+    const unit = g.dataset.unit, key = g.dataset.guess;
+    input.addEventListener("input", () => (out.textContent = input.value + unit));
+    btn.addEventListener("click", () => {
+      const guess = +input.value;
+      G[key] = guess;
+      const truth = key === "plants" ? D.plants[0] : Math.round(D.funnel[0][1] / D.funnel[2][1]);
+      const gap = guess - truth;
+      v.hidden = false;
+      card.classList.remove("pending");
+      g.querySelector(".g-hint")?.remove();
+      v.textContent = key === "plants"
+        ? `You guessed ${guess}%. Government records say ${truth}%, and the news ${D.plants[1]}%. ${Math.abs(gap) <= 3 ? "Close to the records; most readers take their picture from the news." : gap > 0 ? "Higher than either: plants are seized often, yet rarely make the headlines." : "Lower than the records, which is the picture the news gives."}`
+        : `You guessed ${guess}. The record shows about ${truth} seizures for each conviction. ${Math.abs(gap) <= 2 ? "Close." : gap < 0 ? "Fewer convictions reach the record than most people expect." : "More convictions reach the record than you expected, though still few."}`;
+      const k = current; current = ""; show(k);
+      const sec = g.closest(".step"); if (sec && sec.dataset.scene !== k) show(sec.dataset.scene);
+    });
+  });
 
   const bar = $("#progress");
   addEventListener("scroll", () => {
