@@ -38,7 +38,8 @@ export function renderPulse(el) {
         `<button type="button" data-persona="${k}" aria-pressed="${k === persona}">${l}</button>`).join("")}</div>
       <div class="qcards">${qs.map((a) => `<button class="qcard" data-answer="${a.slug}" style="--qc:${a.color}">
         <span class="qq">${esc(a.q)}</span><span class="qn"><b>${esc(a.number.v)}</b> ${esc(a.number.k)}</span></button>`).join("")}</div>
-      <button class="linkish ask-all" data-all-q>All ${A.length} questions and their sources →</button>` : "";
+      <button class="linkish ask-all" data-all-q>All ${A.length} questions and their sources →</button>
+      <a class="story-cta" href="story.html"><b>Read the story: what the record catches</b><span>Seven steps through the gaps in the public record</span></a>` : "";
   // The question and its lede come from index.html and are never re-created while this view is open: the first
   // paint stays the page's largest, instead of being repainted as a new element when the data arrives.
   let sec = el.querySelector(":scope > section.ask"), rest = el.querySelector(":scope > .pulse-rest");

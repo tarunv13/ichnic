@@ -103,7 +103,7 @@ def page(title: str, desc: str, canonical: str, body: str, jsonld: dict | None =
 {body}
 </main>
 <footer>
-  <p><a href="{SITE}/">Open the interactive Atlas</a> · <a href="{SITE}/browse.html">Browse every species and country</a>
+  <p><a href="{SITE}/story.html">Read the story</a> · <a href="{SITE}/">Open the interactive Atlas</a> · <a href="{SITE}/browse.html">Browse every species and country</a>
      · <a href="{SITE}/data/cases.csv">Download the data (CSV)</a> · <a href="https://github.com/tarunv13/ichnic">Source code</a></p>
   <p class="small">Data CC BY 4.0. Cite as: Verma, T. K. (2026). <i>Ichnic: the open atlas of illegal wildlife trade.</i>
      Zenodo. <a href="https://doi.org/10.5281/zenodo.22902819">https://doi.org/10.5281/zenodo.22902819</a></p>
@@ -375,7 +375,7 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
 <h1>Browse illegal wildlife trade cases</h1>
 <p class="lede">{len(cases):,} cases from {meta.get('n_reports', '')} public reports, {esc(window[0])} to {esc(window[1])},
   covering both animals and plants. Every case links to its sources and says how strongly it is evidenced.</p>
-<p><a class="pill" href="{SITE}/answers.html">Questions Ichnic answers →</a> <a class="pill" href="{SITE}/pathways.html">Is wildlife crime a security risk? →</a></p>
+<p><a class="pill" href="{SITE}/story.html">Read the story: what the record catches →</a> <a class="pill" href="{SITE}/answers.html">Questions Ichnic answers →</a> <a class="pill" href="{SITE}/pathways.html">Is wildlife crime a security risk? →</a></p>
 <h2>By species group</h2><ul class="cols">{sp_rows}</ul>
 <h2>By country</h2><ul class="cols">{cc_rows}</ul>
 <h2>The data</h2>
@@ -404,7 +404,8 @@ def build_pages(cases: list[dict], species: dict, countries: dict, meta: dict, o
     entries = "".join(f"<url><loc>{SITE}/{u}</loc><lastmod>{m}</lastmod></url>" for u, m in urls)
     (out / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-        f'<url><loc>{SITE}/</loc><lastmod>{today}</lastmod><priority>1.0</priority></url>{entries}</urlset>\n',
+        f'<url><loc>{SITE}/</loc><lastmod>{today}</lastmod><priority>1.0</priority></url>'
+        f'<url><loc>{SITE}/story.html</loc><lastmod>{today}</lastmod><priority>0.9</priority></url>{entries}</urlset>\n',
         encoding="utf-8")
     (out / "robots.txt").write_text(
         "# Ichnic: open data, open to crawlers, including the ones that answer questions.\n"

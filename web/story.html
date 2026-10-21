@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the record catches | Ichnic</title>
+<meta name="description" content="A story told with Ichnic's data: the public record of wildlife crime shows where people look, not only where crime happens. Plants, online markets and courts are where it falls silent.">
+<link rel="canonical" href="https://tarunv13.github.io/ichnic/story.html">
+<meta property="og:title" content="What the record catches | Ichnic">
+<meta property="og:description" content="The public record of wildlife crime shows where people look. This story follows its gaps: plants, online markets, courts and the events no one records.">
+<meta property="og:image" content="https://tarunv13.github.io/ichnic/og.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What the record catches","description":"The public record of wildlife crime shows where people look, not only where crime happens.","author":{"@type":"Person","name":"Tarun Kumar Verma","identifier":"https://orcid.org/0009-0009-4130-2455"},"datePublished":"2026-10-21","isPartOf":{"@type":"Dataset","name":"Ichnic","url":"https://tarunv13.github.io/ichnic/"},"license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>
+:root {
+  --ground: #edf1ef; --ink: #0f1a17; --ink-2: #3c4a45; --ink-3: #5f6d68; --line: rgba(15, 26, 23, 0.12);
+  --cases: #d6453d; --species: #218a5b; --trade: #c27a06; --place: #2563eb; --network: #0f8b8d; --invest: #6d4aff;
+  --font: "Geist", -apple-system, "Segoe UI", system-ui, sans-serif; --display: "Bricolage Grotesque", "Geist", "Segoe UI", sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: radial-gradient(1100px 600px at 90% -10%, rgba(37, 99, 235, 0.07), transparent 60%),
+  radial-gradient(900px 500px at -10% 20%, rgba(33, 138, 91, 0.08), transparent 60%), var(--ground);
+  background-attachment: fixed; color: var(--ink); font: 17px/1.62 var(--font); -webkit-font-smoothing: antialiased; }
+::selection { background: rgba(214, 69, 61, 0.18); }
+a { color: var(--ink); text-decoration-color: rgba(29, 79, 191, 0.45); text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+a:hover { text-decoration-color: #1d4fbf; }
+:focus-visible { outline: 3px solid var(--place); outline-offset: 3px; border-radius: 6px; }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 50; padding: 10px 14px; border-radius: 10px; background: var(--ink); color: #fff; }
+.skip:focus { top: 12px; }
+@view-transition { navigation: auto; }
+
+header.top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 14px; padding: 12px 20px;
+  background: rgba(237, 241, 239, 0.82); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 8px; font: 800 1.15rem/1 var(--display); letter-spacing: -0.03em; text-decoration: none; view-transition-name: brand; }
+.brand img { transition: transform 260ms var(--ease); }
+.brand:hover img { transform: rotate(-14deg) scale(1.06); }
+header nav { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+header nav a { font-size: 0.9rem; text-decoration: none; padding: 7px 12px; border-radius: 999px; transition: background 160ms var(--ease); }
+header nav a:hover { background: rgba(255, 255, 255, 0.9); box-shadow: 0 1px 3px rgba(15, 26, 23, 0.12); }
+header nav a.cta { background: var(--ink); color: #fff; }
+header nav a.cta:hover { background: #24332e; }
+.progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--cases); transform-origin: 0 50%; transform: scaleX(0); }
+
+.hero { max-width: 900px; margin: 0 auto; padding: 14vh 20px 10vh; }
+.kicker-line { font-size: 0.95rem; color: var(--ink-3); margin: 0 0 18px; }
+h1 { font: 700 clamp(2.4rem, 6.4vw, 4.9rem)/1.02 var(--display); letter-spacing: -0.045em; margin: 0 0 24px; text-wrap: balance; }
+.dek { font-size: clamp(1.1rem, 2.1vw, 1.32rem); color: var(--ink-2); max-width: 44rem; margin: 0 0 26px; text-wrap: pretty; }
+.byline { font-size: 0.92rem; color: var(--ink-3); }
+.cue { margin-top: 9vh; font-size: 0.9rem; color: var(--ink-3); display: inline-flex; align-items: center; gap: 10px; }
+.cue i { width: 1px; height: 38px; background: linear-gradient(var(--ink-3), transparent); display: inline-block; animation: drip 2.2s var(--ease) infinite; transform-origin: top; }
+@keyframes drip { 0% { transform: scaleY(0); } 60% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* The scrolly: steps on the left, one figure pinned on the right that changes with each step. */
+.scrolly { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 4vw; max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+.steps { padding: 6vh 0 30vh; }
+.step { min-height: 88vh; display: flex; align-items: center; }
+.step .card { background: rgba(255, 255, 255, 0.78); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: 0 1px 2px rgba(15, 26, 23, 0.06), 0 14px 40px -18px rgba(15, 26, 23, 0.25);
+  border-radius: 20px; padding: 26px 28px; opacity: 0.38; transform: translateY(14px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); }
+.step.on .card { opacity: 1; transform: none; }
+.step .no { font: 600 0.8rem/1 var(--font); color: var(--ink-3); margin: 0 0 12px; }
+.step h2 { font: 700 clamp(1.45rem, 2.6vw, 2rem)/1.12 var(--display); letter-spacing: -0.03em; margin: 0 0 14px; text-wrap: balance; }
+.step p { margin: 0 0 12px; text-wrap: pretty; }
+.step p:last-child { margin-bottom: 0; }
+.step .hand { color: var(--ink-2); font-style: italic; }
+.n { font-variant-numeric: tabular-nums; font-weight: 650; }
+.fig { position: sticky; top: 12vh; height: 76vh; display: flex; flex-direction: column; justify-content: center; }
+.fig-card { position: relative; background: rgba(255, 255, 255, 0.62); border: 1px solid rgba(255, 255, 255, 0.85); border-radius: 24px;
+  box-shadow: 0 30px 70px -40px rgba(15, 26, 23, 0.35); padding: 26px 26px 18px; overflow: hidden; }
+.fig-title { font: 650 1rem/1.3 var(--display); margin: 0 0 4px; letter-spacing: -0.01em; }
+.fig-sub { font-size: 0.86rem; color: var(--ink-3); margin: 0 0 18px; }
+.fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+.fig-src { font-size: 0.78rem; color: var(--ink-3); margin: 10px 0 0; }
+.fig-card > .stage { transition: opacity 260ms var(--ease); }
+.fig-card.swap > .stage { opacity: 0; }
+
+/* Chart marks grow from their baseline; the eye follows the change, not a page of numbers. */
+.bar { transform-box: fill-box; transform-origin: 0 50%; animation: grow 900ms var(--ease) both; }
+.col { transform-box: fill-box; transform-origin: 50% 100%; animation: rise 900ms var(--ease) both; }
+.dot { animation: pop 500ms var(--ease) both; }
+@keyframes grow { from { transform: scaleX(0); } }
+@keyframes rise { from { transform: scaleY(0); } }
+@keyframes pop { from { opacity: 0; transform: scale(0.4); } }
+.lbl { font: 500 13px var(--font); fill: var(--ink-2); }
+.val { font: 650 13px var(--font); fill: var(--ink); font-variant-numeric: tabular-nums; }
+.big { font: 700 44px var(--display); letter-spacing: -0.04em; fill: var(--ink); }
+.note { font: 500 12px var(--font); fill: var(--ink-3); }
+
+.coda { max-width: 760px; margin: 0 auto; padding: 8vh 20px 12vh; }
+.coda h2 { font: 700 clamp(1.8rem, 3.6vw, 2.6rem)/1.08 var(--display); letter-spacing: -0.035em; margin: 0 0 18px; }
+.coda p { text-wrap: pretty; }
+.doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 28px 0; }
+.doors a { display: block; padding: 18px; border-radius: 16px; background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(255, 255, 255, 0.9);
+  text-decoration: none; box-shadow: 0 10px 30px -20px rgba(15, 26, 23, 0.3); transition: transform 200ms var(--ease), box-shadow 200ms var(--ease); }
+.doors a:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -20px rgba(15, 26, 23, 0.4); }
+.doors b { display: block; font: 650 1.02rem/1.3 var(--display); margin-bottom: 4px; }
+.doors span { font-size: 0.9rem; color: var(--ink-3); }
+.cite { font: 0.84rem/1.55 ui-monospace, Consolas, monospace; background: rgba(255, 255, 255, 0.85); border-radius: 12px; padding: 14px 16px; white-space: pre-wrap; overflow-wrap: anywhere; }
+footer { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; font-size: 0.86rem; color: var(--ink-3); }
+
+@media (max-width: 860px) {
+  body { font-size: 16px; }
+  header nav a:not(.cta) { display: none; }
+  .scrolly { display: flex; flex-direction: column; padding: 0 12px; }
+  .fig { order: -1; top: 58px; height: auto; z-index: 7; padding-top: 8px; margin: 0; background: linear-gradient(var(--ground) 85%, transparent); }
+  .fig svg { max-height: 30vh; }
+  .fig-card { min-height: 0; padding: 16px 16px 12px; border-radius: 18px; background: rgba(255, 255, 255, 0.9); }
+  .fig-sub { margin-bottom: 8px; }
+  .steps { position: relative; z-index: 6; padding-top: 4vh; }
+  .step { min-height: 92vh; align-items: flex-end; padding-bottom: 6vh; }
+  .step .card { opacity: 1; transform: none; padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .bar, .col, .dot, .cue i { animation: none; }
+  .step .card, .fig-card > .stage { transition: none; }
+  .step .card { opacity: 1; transform: none; }
+  @view-transition { navigation: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#story">Skip to the story</a>
+<header class="top">
+  <a class="brand" href="./"><img src="brand/mark.svg" alt="" width="24" height="24">Ichnic</a>
+  <nav aria-label="Ichnic"><a href="answers.html">Questions</a><a href="browse.html">Browse</a><a href="pathways.html">Security</a><a class="cta" href="./">Open the Atlas</a></nav>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<main id="story">
+<section class="hero">
+  <p class="kicker-line">A story told with Ichnic's data · October 2026</p>
+  <h1>What the record catches</h1>
+  <p class="dek">Every wildlife seizure leaves a trace in the public record. The record keeps some traces and loses others, and what it keeps tells us as much about the people watching as about the trade itself. This story follows the gaps.</p>
+  <p class="byline">Tarun K. Verma · Figures update daily from the <a href="./">Ichnic atlas</a> and the sources it cites.</p>
+  <p class="cue"><i></i>Scroll</p>
+</section>
+
+<div class="scrolly">
+  <div class="steps">
+
+    <section class="step" data-scene="registered">
+      <div class="card">
+        <p class="no">1 · A drop that was not a drop</p>
+        <h2>In 2020, recorded offences in Ranthambhore fell by more than half.</h2>
+        <p>Offence records for the Ranthambhore tiger reserve in India went from <span class="n">225</span> in 2019 to <span class="n">98</span> in 2020. Read alone, the numbers say that offending fell. It did not: during the COVID-19 lockdowns, fewer cases were registered, because fewer people were registering them.</p>
+        <p>So a record of enforcement measures two things at once: the crime, and the effort spent looking for it. Global reporting on biodiversity has the same weakness, as it rests mostly on what governments report about themselves (Milner-Gulland et al., 2026).</p>
+        <p class="hand">Keep that in mind, because the rest of this story is built on records of exactly this kind.</p>
+      </div>
+    </section>
+
+    <section class="step" data-scene="species">
+      <div class="card">
+        <p class="no">2 · What is caught</p>
+        <h2>The public record holds <span data-v="cases">2,264</span> cases, and parrots lead it.</h2>
+        <p>Ichnic reads news, government releases and court pages in many languages, keeps only reports of an enforcement event, and merges reports of the same event into one case. Parrots and songbirds come first, with <span class="n" data-v="sp0">343</span> cases, then turtles and tortoises and elephant ivory.</p>
+        <p>This is a ranking of what was caught and written about. It is not a ranking of what is traded most, and the next step shows where the two part ways.</p>
+      </div>
+    </section>
+
+    <section class="step" data-scene="plants">
+      <div class="card">
+        <p class="no">3 · What is missed in plain sight</p>
+        <h2>Plants are trafficked far more than they are reported.</h2>
+        <p>In the seizures governments report to CITES, plants make up <span class="n" data-v="plantsCites">15%</span> of shipments. In the news cases Ichnic collects, they make up <span class="n" data-v="plantsNews">10%</span>. Rosewood, orchids, cacti and medicinal roots are seized often and written about rarely.</p>
+        <p>We think the reason is attention rather than enforcement: a pangolin makes a story, a container of timber seldom does. Whatever the cause, a reader who learns about wildlife crime from the news learns a version with most of its plants missing.</p>
+      </div>
+    </section>
+
+    <section class="step" data-scene="routes">
+      <div class="card">
+        <p class="no">4 · Where the trade moves</p>
+        <h2>The busiest seized route outside the United States runs from India to China.</h2>
+        <p>Government records draw the trade's shape better than news does. Leaving the United States aside, India to China is the busiest seized route, with <span class="n" data-v="route0">333</span> shipments since 2015; <span class="n">314</span> of them were red sanders, a timber that grows wild only in southern India, mostly shipped as logs.</p>
+        <p>The United States sits at one end of <span class="n">83%</span> of all seized shipments in these records. That does not make it the centre of the trade: it reports its seizures far more completely than other countries do, which is the Ranthambhore lesson again, at the scale of nations.</p>
+      </div>
+    </section>
+
+    <section class="step" data-scene="online">
+      <div class="card">
+        <p class="no">5 · Where almost no one is looking</p>
+        <h2>Thousands of adverts, and almost no cases.</h2>
+        <p>ECO-SOLVE, a monitoring project, recorded <span class="n" data-v="adverts">30,934</span> online adverts for wildlife between April 2024 and September 2026. Bears offered for sale in Thailand drew <span class="n">1,303</span> adverts; in the same period, the public record holds no case of a bear seized in Thailand.</p>
+        <p>An advert is not proof of a sale, and a missing case is not proof of no enforcement. Still, a market this visible with so little recorded enforcement is where the record is quietest, and where a researcher or a regulator would learn the most.</p>
+      </div>
+    </section>
+
+    <section class="step" data-scene="funnel">
+      <div class="card">
+        <p class="no">6 · What reaches a court</p>
+        <h2>For every conviction in the record, there are about ten seizures.</h2>
+        <p>The record holds <span class="n" data-v="seizures">1,351</span> seizures, <span class="n" data-v="arrests">585</span> arrest reports and <span class="n" data-v="convictions">130</span> convictions. Some of that gap is real attrition, as cases collapse or never reach a court. Some is silence, because a seizure makes the news on the day and a verdict two years later often does not.</p>
+        <p>We cannot separate the two from public reports alone. That is itself the finding: the outcome that matters most for deterrence is the one the open record shows least.</p>
+      </div>
+    </section>
+
+    <section class="step" data-scene="recall">
+      <div class="card">
+        <p class="no">7 · What even a careful record misses</p>
+        <h2>Ichnic is right about what it shows, and still misses most events.</h2>
+        <p>In a blind audit of 200 randomly drawn cases, <span class="n">193</span> were real enforcement events (<span class="n">96.5%</span>). Precision answers one question only. To ask how much is missed, we compared Ichnic with an independent, hand-checked list of <span class="n">576</span> events. After removing matches that happen by chance, Ichnic found about <span class="n">one in five</span> (20% to 25%).</p>
+        <p>The figure tells a reader to treat every count in this story as a floor. It also tells funders and agencies where the record is thinnest: government releases outside the big news markets, and languages the tools do not yet read.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <figure class="fig" aria-live="polite">
+    <div class="fig-card" id="figcard">
+      <div class="stage" id="stage"></div>
+    </div>
+  </figure>
+</div>
+
+<section class="coda">
+  <h2>Reading the gaps</h2>
+  <p>Taken together, the steps make one argument. The open record of wildlife crime is a record of where people look: newsrooms look at charismatic animals, agencies report what they can, and courts are rarely followed to the end. So the gaps are not noise to be cleaned away. They show where attention, reporting and enforcement fall short, which makes them the most useful part of the record.</p>
+  <p>Each reader can act on a different gap. A journalist can ask what happened in court, months after the seizure. A researcher can study plants and online markets, where the record is quietest. An agency can publish its own outcomes, so that a conviction is as visible as a seizure. Ichnic keeps every number with its source and its limit, so that each of these starts from evidence rather than from the loudest story.</p>
+  <div class="doors">
+    <a href="./"><b>Open the Atlas</b><span>Every case on a globe, graded by its evidence</span></a>
+    <a href="answers.html"><b>The questions</b><span>Eleven answers, each with its sources and limits</span></a>
+    <a href="data/cases.csv"><b>Download the data</b><span>All cases as CSV, CC BY 4.0</span></a>
+    <a href="pathways.html"><b>Why it matters for security</b><span>Seven links from nature to national security</span></a>
+  </div>
+  <p><b>Cite this story.</b></p>
+  <div class="cite">Verma, T. K. (2026). What the record catches. In Ichnic: the open atlas of illegal wildlife trade (Version 2.0.0). Zenodo. https://doi.org/10.5281/zenodo.23504501</div>
+  <p class="fig-src" style="margin-top:22px">Sources: Ichnic cases from public reports (docs on method and accuracy in the repository); CITES Trade Database (UNEP-WCMC), seized shipments since 2015; ECO-SOLVE advert counts (aggregates only); Ranthambhore offence records (author's analysis); Milner-Gulland, E. J. et al. (2026) on self-reported biodiversity reporting; the Illegal Wildlife Trafficking Global Observatory, used only to measure recall.</p>
+</section>
+</main>
+<footer>Counts show where wildlife crime is <b>reported</b>, in the newsrooms and government sites searched, not where it happens. No person accused is ever named. Ichnic was called WildTrace until October 2026.</footer>
+
+<script>
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const fmt = (n) => Number(n).toLocaleString("en-US");
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  // Figures as of 20 October 2026; replaced by the live build's numbers when the data loads.
+  const D = {
+    cases: 2264,
+    species: [["Parrots & songbirds", 343], ["Turtles & tortoises", 267], ["Elephant (ivory)", 230], ["Pangolin", 224], ["Rosewood & timber", 95], ["Sharks, rays & sea cucumbers", 94]],
+    plants: [15, 10],
+    routes: [["India → China", 333], ["India → Hong Kong", 97], ["Vietnam → Canada", 66], ["Sri Lanka → UAE", 58], ["Vietnam → South Korea", 57], ["Guatemala → Germany", 44]],
+    adverts: 30934,
+    online: [["Elephant (ivory), Thailand", 2917], ["Tiger, Thailand", 2232], ["Bears, Thailand", 1303], ["Parrots & songbirds, Colombia", 1154], ["Parrots & songbirds, Thailand", 1046], ["Parrots & songbirds, Indonesia", 859]],
+    funnel: [["Seizures", 1351], ["Arrests", 585], ["Convictions", 130]],
+  };
+  const W = 560;
+  const svg = (h, inner, label) => `<svg viewBox="0 0 ${W} ${h}" role="img" aria-label="${esc(label)}">${inner}</svg>`;
+
+  function bars(rows, color, { highlight = -1, unit = "" } = {}) {
+    const max = Math.max(...rows.map((r) => r[1])), x0 = 200, bw = W - x0 - 60, rh = 46;
+    return rows.map(([k, v], i) => {
+      const w = Math.max(2, (v / max) * bw), y = i * rh;
+      const c = highlight < 0 || highlight === i ? color : "#c9d2ce";
+      return `<text class="lbl" x="${x0 - 12}" y="${y + 22}" text-anchor="end">${esc(k)}</text>
+        <rect class="bar" x="${x0}" y="${y + 6}" width="${w}" height="24" rx="5" fill="${c}" style="animation-delay:${i * 70}ms"></rect>
+        <text class="val" x="${x0 + w + 8}" y="${y + 23}">${fmt(v)}${unit}</text>`;
+    }).join("");
+  }
+
+  const scenes = {
+    registered: () => ({
+      t: "Recorded offences, Ranthambhore tiger reserve",
+      s: "Fewer cases were registered in 2020; offending did not fall.",
+      src: "Author's analysis of reserve offence records.",
+      html: svg(300, `
+        <rect class="col" x="110" y="${260 - 225}" width="120" height="225" rx="8" fill="#8a948f"></rect>
+        <rect class="col" x="330" y="${260 - 98}" width="120" height="98" rx="8" fill="var(--cases)" style="animation-delay:200ms"></rect>
+        <text class="big" x="170" y="${260 - 235}" text-anchor="middle">225</text>
+        <text class="big" x="390" y="${260 - 108}" text-anchor="middle">98</text>
+        <text class="lbl" x="170" y="284" text-anchor="middle">2019</text>
+        <text class="lbl" x="390" y="284" text-anchor="middle">2020, lockdowns</text>`, "Recorded offences: 225 in 2019, 98 in 2020"),
+    }),
+    species: () => ({
+      t: "Cases in the public record, by species group",
+      s: `${fmt(D.cases)} cases from public reports, January 2024 to October 2026.`,
+      src: "Ichnic cases (CC BY 4.0).",
+      html: svg(D.species.length * 46, bars(D.species, "var(--species)", { highlight: 0 }), "Cases by species group"),
+    }),
+    plants: () => {
+      const grid = (pct, x, color) => Array.from({ length: 100 }, (_, i) => {
+        const cx = x + (i % 10) * 22, cy = 20 + Math.floor(i / 10) * 22;
+        return `<circle class="dot" cx="${cx}" cy="${cy}" r="8" fill="${i < pct ? color : "#d7dedb"}" style="animation-delay:${i * 6}ms"></circle>`;
+      }).join("");
+      return {
+        t: "Plants as a share of the record",
+        s: "Each grid is 100 seizures; green dots are plants.",
+        src: "CITES Trade Database (UNEP-WCMC), seized shipments since 2015; Ichnic news cases.",
+        html: svg(300, grid(D.plants[0], 30, "var(--species)") + grid(D.plants[1], 310, "var(--species)") +
+          `<text class="big" x="30" y="282">${D.plants[0]}%</text><text class="lbl" x="120" y="270">in government</text><text class="lbl" x="120" y="286">seizure records</text>
+           <text class="big" x="310" y="282">${D.plants[1]}%</text><text class="lbl" x="400" y="270">in news</text><text class="lbl" x="400" y="286">cases</text>`,
+          `Plants: ${D.plants[0]}% of CITES seizures, ${D.plants[1]}% of news cases`),
+      };
+    },
+    routes: () => ({
+      t: "Busiest seized routes, leaving the United States aside",
+      s: "Shipments seized and reported to CITES, 2015 onward.",
+      src: "CITES Trade Database (UNEP-WCMC); the United States reports more completely than other countries.",
+      html: svg(D.routes.length * 46, bars(D.routes, "var(--trade)", { highlight: 0 }), "Seized routes"),
+    }),
+    online: () => ({
+      t: "Online adverts recorded, by species and country",
+      s: `${fmt(D.adverts)} adverts in all, April 2024 to September 2026. Bears in Thailand: no case in the record.`,
+      src: "ECO-SOLVE / GI-TOC advert dashboard (aggregates); Ichnic cases.",
+      html: svg(D.online.length * 46, bars(D.online, "var(--network)", { highlight: D.online.findIndex((r) => /^Bears/.test(r[0])) }), "Online adverts"),
+    }),
+    funnel: () => {
+      const max = D.funnel[0][1], cx = W / 2;
+      const inner = D.funnel.map(([k, v], i) => {
+        const w = Math.max(30, (v / max) * (W - 80)), y = i * 92;
+        return `<rect class="bar" x="${cx - w / 2}" y="${y}" width="${w}" height="62" rx="10" fill="${["#8a948f", "#c27a06", "var(--cases)"][i]}" style="transform-origin:50% 50%;animation-delay:${i * 160}ms"></rect>
+          <text class="val" x="${cx}" y="${y + 38}" text-anchor="middle" fill="#fff" style="fill:#fff;font-size:16px">${fmt(v)} ${k.toLowerCase()}</text>`;
+      }).join("");
+      return {
+        t: "From seizure to conviction, in the public record",
+        s: `About ${Math.round(D.funnel[0][1] / D.funnel[2][1])} seizures for each conviction reported.`,
+        src: "Ichnic cases by main event; convictions are reported less often than seizures.",
+        html: svg(270, inner, "Seizures, arrests and convictions"),
+      };
+    },
+    recall: () => {
+      const dots = Array.from({ length: 100 }, (_, i) => {
+        const cx = 40 + (i % 20) * 25, cy = 30 + Math.floor(i / 20) * 26;
+        const fill = i < 22 ? "var(--cases)" : "#d7dedb";
+        return `<circle class="dot" cx="${cx}" cy="${cy}" r="9" fill="${fill}" style="animation-delay:${i * 8}ms"></circle>`;
+      }).join("");
+      return {
+        t: "Of every 100 events on an independent list, about 22 are found",
+        s: "After removing chance matches; the estimate ranges from 20 to 25.",
+        src: "Illegal Wildlife Trafficking Global Observatory (576 events; rows not published); method in docs/ACCURACY.md.",
+        html: svg(200, dots + `<text class="note" x="40" y="186">Red: found by Ichnic. Grey: not in the record Ichnic reads.</text>`, "About 22 of 100 events found"),
+      };
+    },
+  };
+
+  const card = $("#figcard"), stage = $("#stage");
+  let current = "";
+  function show(name) {
+    if (name === current || !scenes[name]) return;
+    current = name;
+    const sc = scenes[name]();
+    card.classList.add("swap");
+    setTimeout(() => {
+      stage.innerHTML = `<p class="fig-title">${esc(sc.t)}</p><p class="fig-sub">${esc(sc.s)}</p>${sc.html}<p class="fig-src">${esc(sc.src)}</p>`;
+      card.classList.remove("swap");
+    }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 200);
+  }
+
+  const steps = [...document.querySelectorAll(".step")];
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { steps.forEach((s) => s.classList.toggle("on", s === e.target)); show(e.target.dataset.scene); } });
+  }, { rootMargin: "-45% 0px -45% 0px" });
+  steps.forEach((s) => io.observe(s));
+  show("registered");
+
+  const bar = $("#progress");
+  addEventListener("scroll", () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? Math.min(1, scrollY / h) : 0})`;
+  }, { passive: true });
+
+  // Live figures from the same build as the Atlas; the text above keeps its fallbacks if this fails.
+  Promise.all([fetch("data/answers.json").then((r) => r.json()), fetch("data/meta.json").then((r) => r.json())]).then(([a, m]) => {
+    const by = Object.fromEntries((a.answers || []).map((x) => [x.slug, x]));
+    const ch = (slug) => (by[slug] && by[slug].chart) || [];
+    if (m.cases) D.cases = m.cases;
+    if (ch("what-wildlife-is-seized-most").length) D.species = ch("what-wildlife-is-seized-most");
+    const pl = ch("are-plants-trafficked-too"); if (pl.length === 2) D.plants = [pl[0][1], pl[1][1]];
+    if (ch("where-seized-wildlife-comes-from-and-goes").length) D.routes = ch("where-seized-wildlife-comes-from-and-goes");
+    const on = ch("is-wildlife-sold-online-ever-caught"); if (on.length) D.online = [...on].sort((x, y) => y[1] - x[1]);
+    const fu = ch("how-often-a-seizure-ends-in-conviction").filter((r) => r[0] !== "Rescues"); if (fu.length === 3) D.funnel = fu;
+    const set = (k, v) => document.querySelectorAll(`[data-v="${k}"]`).forEach((el) => (el.textContent = v));
+    set("cases", fmt(D.cases)); set("sp0", fmt(D.species[0][1])); set("plantsCites", D.plants[0] + "%"); set("plantsNews", D.plants[1] + "%");
+    set("route0", fmt(D.routes[0][1])); set("seizures", fmt(D.funnel[0][1])); set("arrests", fmt(D.funnel[1][1])); set("convictions", fmt(D.funnel[2][1]));
+    const k = current; current = ""; show(k);
+  }).catch(() => {});
+})();
+</script>
+</body>
+</html>
