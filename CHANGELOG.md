@@ -2,6 +2,31 @@
 
 All notable changes to Ichnic (formerly WildTrace). Dates are the release date, newest first.
 
+## 2.1.0 (2026-10-21): the story, and work on our own failures
+
+### Added
+- **"What the record catches"** (`story.html`): a scrollytelling argument in eight steps, told with the data. The public
+  record of wildlife crime shows where people look, not only where crime happens: one seizure that entered the record
+  only once Ichnic searched for the snake's online names, a registration drop that was not a drop, plants (15% of
+  government seizure records, 10% of news), routes, online adverts with almost no recorded enforcement, the
+  seizure-to-conviction gap, and recall. Readers guess before two of the answers. Figures read live from the Atlas.
+- **Online-trade codes, searched.** Terms mined from labelled online videos (weighted log-odds of trade against
+  non-trade items) confirmed the names sellers use, such as "double engine" for the red sand boa. Most were already in
+  the vocabulary but no search used them; India's Hindi and English editions now run trade-name searches, which found
+  23 uncollected reports in a year, 6 of them real enforcement events.
+
+### Changed
+- **The repository and site are now `tarunv13/ichnic`** (`tarunv13.github.io/ichnic`). Old `/wildtrace/` addresses
+  forward to the same page; the Python package and command keep the name `wildtrace`.
+- **PROFEPA screen, second round:** a fresh blind sample went from 60% to 81.5% real events (66 of 81). PROFEPA-only
+  cases stay held back until a fresh sample reaches 90%; PROFEPA releases still corroborate news cases.
+- "Captura" counts as an arrest only with people nearby; Hindi "kasturi" (musk) needs musk context (it is also a
+  liquor brand); headline rules for official-release noise (campaigns, fishery compliance, care after rescue).
+
+### Known limits, stated plainly
+- Every audit so far was judged by one reviewer; agreement between reviewers is not yet measured.
+- Recall against an independent list is about one in five once chance matches are removed.
+
 ## 2.0.0 (2026-10-20): Ichnic
 
 **WildTrace is now Ichnic**, from the Greek *ichnos*, a trace (ichnology is the science of reading tracks). Many
