@@ -209,13 +209,58 @@
       <data key="d0">Outlet</data>
       <data key="d1">Radar Sorong</data>
     </node>
-    <node id="case:be0a53ae8586">
+    <node id="case:43f1042ffaba">
+      <data key="d0">Case</data>
+      <data key="d1">Seizure · Musk deer · location unknown</data>
+      <data key="d2">2026-11-07</data>
+      <data key="d3">seizure</data>
+      <data key="d4">0.6</data>
+      <data key="d5">1</data>
+    </node>
+    <node id="species:musk_deer">
+      <data key="d0">Species</data>
+      <data key="d1">Musk deer</data>
+      <data key="d6">I</data>
+      <data key="d7">Moschus spp.</data>
+    </node>
+    <node id="outlet:rri.co.id">
+      <data key="d0">Outlet</data>
+      <data key="d1">RRI.co.id</data>
+    </node>
+    <node id="case:0bca5c0cd8b4">
+      <data key="d0">Case</data>
+      <data key="d1">Rescue · Parrots &amp; songbirds · Santa Cruz de la Sierra</data>
+      <data key="d2">2026-11-07</data>
+      <data key="d3">rescue</data>
+      <data key="d4">0.7</data>
+      <data key="d5">1</data>
+    </node>
+    <node id="location:santa_cruz_de_la_sierra">
+      <data key="d0">Location</data>
+      <data key="d1">Santa Cruz de la Sierra</data>
+      <data key="d8">-17.78</data>
+      <data key="d9">-63.18</data>
+      <data key="d10">BO</data>
+      <data key="d11">Santa Cruz</data>
+      <data key="d12">city</data>
+    </node>
+    <node id="location:santa_cruz">
+      <data key="d0">Location</data>
+      <data key="d1">Santa Cruz</data>
+      <data key="d10">BO</data>
+      <data key="d12">state</data>
+    </node>
+    <node id="outlet:red_uno">
+      <data key="d0">Outlet</data>
+      <data key="d1">Red Uno</data>
+    </node>
+    <node id="case:53cd36ec135e">
       <data key="d0">Case</data>
       <data key="d1">Seizure · Pangolin · 2 pangolins · Rustenburg</data>
       <data key="d2">2026-11-06</data>
       <data key="d3">seizure</data>
       <data key="d4">1.0</data>
-      <data key="d5">6</data>
+      <data key="d5">7</data>
     </node>
     <node id="species:pangolin">
       <data key="d0">Species</data>
@@ -369,13 +414,13 @@
       <data key="d0">Outlet</data>
       <data key="d1">Facebook</data>
     </node>
-    <node id="case:619663802331">
+    <node id="case:127c03b7ceae">
       <data key="d0">Case</data>
       <data key="d1">Seizure · Wildlife (unspecified) · location unknown</data>
       <data key="d2">2026-11-06</data>
       <data key="d3">seizure</data>
       <data key="d4">1.0</data>
-      <data key="d5">4</data>
+      <data key="d5">5</data>
     </node>
     <node id="outlet:head_topics">
       <data key="d0">Outlet</data>
@@ -392,6 +437,10 @@
     <node id="outlet:เดลินิวส์">
       <data key="d0">Outlet</data>
       <data key="d1">เดลินิวส์</data>
+    </node>
+    <node id="outlet:banmuang.co.th">
+      <data key="d0">Outlet</data>
+      <data key="d1">banmuang.co.th</data>
     </node>
     <node id="case:f596d9546cbb">
       <data key="d0">Case</data>
@@ -713,13 +762,13 @@
       <data key="d0">Outlet</data>
       <data key="d1">OkDiario</data>
     </node>
-    <node id="case:0c2c522ac952">
+    <node id="case:5bdc9ca9c2ac">
       <data key="d0">Case</data>
       <data key="d1">Seizure · Wildlife (unspecified) · Odisha</data>
       <data key="d2">2026-11-05</data>
       <data key="d3">seizure</data>
       <data key="d4">1.0</data>
-      <data key="d5">4</data>
+      <data key="d5">5</data>
     </node>
     <node id="outlet:rediff">
       <data key="d0">Outlet</data>
@@ -2137,13 +2186,13 @@
       <data key="d0">Commodity</data>
       <data key="d1">Sharks, rays &amp; sea cucumbers – tonnes</data>
     </node>
-    <node id="case:ecb8ffb04fd9">
+    <node id="case:0d783db9162d">
       <data key="d0">Case</data>
       <data key="d1">Seizure · Wildlife (unspecified) · location unknown</data>
       <data key="d2">2026-10-29</data>
       <data key="d3">seizure</data>
       <data key="d4">1.0</data>
-      <data key="d5">24</data>
+      <data key="d5">26</data>
     </node>
     <node id="outlet:tribuna_do_sertão">
       <data key="d0">Outlet</data>
@@ -2192,6 +2241,10 @@
     <node id="outlet:7segundos">
       <data key="d0">Outlet</data>
       <data key="d1">7Segundos</data>
+    </node>
+    <node id="outlet:alagoas_24_horas">
+      <data key="d0">Outlet</data>
+      <data key="d1">Alagoas 24 Horas</data>
     </node>
     <node id="outlet:o_alagoano">
       <data key="d0">Outlet</data>
@@ -3027,10 +3080,6 @@
       <data key="d3">arrest</data>
       <data key="d4">0.6</data>
       <data key="d5">1</data>
-    </node>
-    <node id="outlet:banmuang.co.th">
-      <data key="d0">Outlet</data>
-      <data key="d1">banmuang.co.th</data>
     </node>
     <node id="case:c60e82dc2e14">
       <data key="d0">Case</data>
@@ -3928,13 +3977,13 @@
       <data key="d0">Outlet</data>
       <data key="d1">ANDA - Agência de Notícias de Direitos Animais</data>
     </node>
-    <node id="case:4de7ce02428f">
+    <node id="case:b72c4f15d3c4">
       <data key="d0">Case</data>
       <data key="d1">Seizure · Parrots &amp; songbirds · Vitória da Conquista</data>
       <data key="d2">2026-10-24</data>
       <data key="d3">seizure</data>
       <data key="d4">1.0</data>
-      <data key="d5">12</data>
+      <data key="d5">13</data>
     </node>
     <node id="location:vitória_da_conquista">
       <data key="d0">Location</data>
@@ -3990,6 +4039,10 @@
     <node id="outlet:aratu_on">
       <data key="d0">Outlet</data>
       <data key="d1">Aratu On</data>
+    </node>
+    <node id="outlet:taktá_no_ar">
+      <data key="d0">Outlet</data>
+      <data key="d1">Taktá No AR</data>
     </node>
     <node id="outlet:97news">
       <data key="d0">Outlet</data>
@@ -8859,10 +8912,6 @@
       <data key="d0">Outlet</data>
       <data key="d1">Kabar Kalimantan</data>
     </node>
-    <node id="outlet:rri.co.id">
-      <data key="d0">Outlet</data>
-      <data key="d1">RRI.co.id</data>
-    </node>
     <node id="outlet:detikcom">
       <data key="d0">Outlet</data>
       <data key="d1">detikcom</data>
@@ -9208,21 +9257,6 @@
       <data key="d4">0.7</data>
       <data key="d5">1</data>
     </node>
-    <node id="location:santa_cruz_de_la_sierra">
-      <data key="d0">Location</data>
-      <data key="d1">Santa Cruz de la Sierra</data>
-      <data key="d8">-17.78</data>
-      <data key="d9">-63.18</data>
-      <data key="d10">BO</data>
-      <data key="d11">Santa Cruz</data>
-      <data key="d12">city</data>
-    </node>
-    <node id="location:santa_cruz">
-      <data key="d0">Location</data>
-      <data key="d1">Santa Cruz</data>
-      <data key="d10">BO</data>
-      <data key="d12">state</data>
-    </node>
     <node id="outlet:la_razón_digital_bolivia">
       <data key="d0">Outlet</data>
       <data key="d1">La Razón Digital Bolivia</data>
@@ -9454,10 +9488,6 @@
     <node id="outlet:estadomaior.com.br">
       <data key="d0">Outlet</data>
       <data key="d1">estadomaior.com.br</data>
-    </node>
-    <node id="outlet:alagoas_24_horas">
-      <data key="d0">Outlet</data>
-      <data key="d1">Alagoas 24 Horas</data>
     </node>
     <node id="outlet:jornal_extra_alagoas">
       <data key="d0">Outlet</data>
@@ -10226,12 +10256,6 @@
       <data key="d3">seizure</data>
       <data key="d4">1.0</data>
       <data key="d5">9</data>
-    </node>
-    <node id="species:musk_deer">
-      <data key="d0">Species</data>
-      <data key="d1">Musk deer</data>
-      <data key="d6">I</data>
-      <data key="d7">Moschus spp.</data>
     </node>
     <node id="location:sonapur">
       <data key="d0">Location</data>
@@ -11217,13 +11241,13 @@
       <data key="d0">Outlet</data>
       <data key="d1">Ouest-France</data>
     </node>
-    <node id="case:f23240ee1e82">
+    <node id="case:ece6819b4d66">
       <data key="d0">Case</data>
       <data key="d1">Seizure · Parrots &amp; songbirds, Turtles &amp; tortoises · 1 nos · Guarulhos</data>
       <data key="d2">2026-09-22</data>
       <data key="d3">seizure</data>
       <data key="d4">1.0</data>
-      <data key="d5">221</data>
+      <data key="d5">222</data>
     </node>
     <node id="outlet:rádio_chapecó">
       <data key="d0">Outlet</data>
@@ -11640,6 +11664,10 @@
     <node id="outlet:paranahoje.com.br">
       <data key="d0">Outlet</data>
       <data key="d1">paranahoje.com.br</data>
+    </node>
+    <node id="outlet:minuto_rural">
+      <data key="d0">Outlet</data>
+      <data key="d1">Minuto Rural</data>
     </node>
     <node id="commodity:birds-nos">
       <data key="d0">Commodity</data>
@@ -28779,6 +28807,14 @@
       <data key="d11">Jharkhand</data>
       <data key="d12">district</data>
     </node>
+    <node id="case:a6181a0287fa">
+      <data key="d0">Case</data>
+      <data key="d1">Arrest · Turtles &amp; tortoises · location unknown</data>
+      <data key="d2">2026-01-22</data>
+      <data key="d3">arrest</data>
+      <data key="d4">0.6</data>
+      <data key="d5">1</data>
+    </node>
     <node id="case:aacd8a8c7ee9">
       <data key="d0">Case</data>
       <data key="d1">Seizure · Parrots &amp; songbirds · Yecapixtla</data>
@@ -32361,10 +32397,6 @@
       <data key="d10">BO</data>
       <data key="d11">Cochabamba</data>
       <data key="d12">city</data>
-    </node>
-    <node id="outlet:red_uno">
-      <data key="d0">Outlet</data>
-      <data key="d1">Red Uno</data>
     </node>
     <node id="case:ef60531ec15f">
       <data key="d0">Case</data>
@@ -37899,12 +37931,12 @@
       <data key="d16">2026-11-07</data>
       <data key="d17">d0cfbe29710e</data>
     </edge>
-    <edge source="outlet:the_citizen" target="case:be0a53ae8586">
+    <edge source="outlet:the_citizen" target="case:53cd36ec135e">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
     <edge source="outlet:the_citizen" target="case:02af4581159d">
       <data key="d13">reported</data>
@@ -38081,47 +38113,138 @@
       <data key="d16">2026-11-07</data>
       <data key="d17">5a59e9443096</data>
     </edge>
-    <edge source="case:be0a53ae8586" target="species:pangolin">
+    <edge source="case:43f1042ffaba" target="species:musk_deer">
+      <data key="d13">involves</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-11-07</data>
+      <data key="d16">2026-11-07</data>
+      <data key="d17">43f1042ffaba</data>
+    </edge>
+    <edge source="outlet:rri.co.id" target="case:43f1042ffaba">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-11-07</data>
+      <data key="d16">2026-11-07</data>
+      <data key="d17">43f1042ffaba</data>
+    </edge>
+    <edge source="outlet:rri.co.id" target="case:efd0e090c2f1">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-10-02</data>
+      <data key="d16">2026-10-02</data>
+      <data key="d17">efd0e090c2f1</data>
+    </edge>
+    <edge source="outlet:rri.co.id" target="case:f67630dd9612">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-10-02</data>
+      <data key="d16">2026-10-02</data>
+      <data key="d17">f67630dd9612</data>
+    </edge>
+    <edge source="outlet:rri.co.id" target="case:478dbeaf99fb">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-10-02</data>
+      <data key="d16">2026-10-02</data>
+      <data key="d17">478dbeaf99fb</data>
+    </edge>
+    <edge source="outlet:rri.co.id" target="case:e5b6330edd78">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-09-22</data>
+      <data key="d16">2026-09-22</data>
+      <data key="d17">e5b6330edd78</data>
+    </edge>
+    <edge source="outlet:rri.co.id" target="case:4fbc6e617319">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-08-09</data>
+      <data key="d16">2026-08-09</data>
+      <data key="d17">4fbc6e617319</data>
+    </edge>
+    <edge source="outlet:rri.co.id" target="case:e47520e49653">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-04-09</data>
+      <data key="d16">2026-04-09</data>
+      <data key="d17">e47520e49653</data>
+    </edge>
+    <edge source="case:0bca5c0cd8b4" target="species:birds">
+      <data key="d13">involves</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-11-07</data>
+      <data key="d16">2026-11-07</data>
+      <data key="d17">0bca5c0cd8b4</data>
+    </edge>
+    <edge source="case:0bca5c0cd8b4" target="location:santa_cruz_de_la_sierra">
+      <data key="d13">occurred_at</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-11-07</data>
+      <data key="d16">2026-11-07</data>
+      <data key="d17">0bca5c0cd8b4</data>
+    </edge>
+    <edge source="location:santa_cruz_de_la_sierra" target="location:santa_cruz">
+      <data key="d13">within</data>
+      <data key="d14">4</data>
+      <data key="d15">2024-05-10</data>
+      <data key="d16">2026-11-07</data>
+      <data key="d17">0bca5c0cd8b4;ddf29e69d03e;ee2b1e276755;f1bd5be40280</data>
+    </edge>
+    <edge source="outlet:red_uno" target="case:0bca5c0cd8b4">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-11-07</data>
+      <data key="d16">2026-11-07</data>
+      <data key="d17">0bca5c0cd8b4</data>
+    </edge>
+    <edge source="outlet:red_uno" target="case:28748c44c410">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2025-10-14</data>
+      <data key="d16">2025-10-14</data>
+      <data key="d17">28748c44c410</data>
+    </edge>
+    <edge source="case:53cd36ec135e" target="species:pangolin">
       <data key="d13">involves</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
-    <edge source="case:be0a53ae8586" target="location:rustenburg">
+    <edge source="case:53cd36ec135e" target="location:rustenburg">
       <data key="d13">occurred_at</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
-    <edge source="case:be0a53ae8586" target="mode:road">
+    <edge source="case:53cd36ec135e" target="mode:road">
       <data key="d13">via</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
-    <edge source="case:be0a53ae8586" target="commodity:pangolin-pangolins">
+    <edge source="case:53cd36ec135e" target="commodity:pangolin-pangolins">
       <data key="d13">seized</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
     <edge source="location:rustenburg" target="location:north_west">
       <data key="d13">within</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
-    <edge source="outlet:https://novanews.co.za/" target="case:be0a53ae8586">
+    <edge source="outlet:https://novanews.co.za/" target="case:53cd36ec135e">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
     <edge source="outlet:https://novanews.co.za/" target="case:2c309cbb72af">
       <data key="d13">reported</data>
@@ -38144,12 +38267,12 @@
       <data key="d16">2026-10-08</data>
       <data key="d17">5b3fc057ff79</data>
     </edge>
-    <edge source="outlet:the_witness_|_your_compass_in_the_community" target="case:be0a53ae8586">
+    <edge source="outlet:the_witness_|_your_compass_in_the_community" target="case:53cd36ec135e">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
     <edge source="outlet:the_witness_|_your_compass_in_the_community" target="case:47eb59d7c2d3">
       <data key="d13">reported</data>
@@ -38200,19 +38323,19 @@
       <data key="d16">2026-02-09</data>
       <data key="d17">a26f6ae05662</data>
     </edge>
-    <edge source="outlet:joburg_etc" target="case:be0a53ae8586">
+    <edge source="outlet:joburg_etc" target="case:53cd36ec135e">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
-    <edge source="outlet:arrive_alive" target="case:be0a53ae8586">
+    <edge source="outlet:arrive_alive" target="case:53cd36ec135e">
       <data key="d13">reported</data>
-      <data key="d14">1</data>
+      <data key="d14">2</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e;53cd36ec135e</data>
     </edge>
     <edge source="outlet:arrive_alive" target="case:0296f982865b">
       <data key="d13">reported</data>
@@ -38221,12 +38344,12 @@
       <data key="d16">2026-03-11</data>
       <data key="d17">0296f982865b</data>
     </edge>
-    <edge source="outlet:getaway_magazine" target="case:be0a53ae8586">
+    <edge source="outlet:getaway_magazine" target="case:53cd36ec135e">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">be0a53ae8586</data>
+      <data key="d17">53cd36ec135e</data>
     </edge>
     <edge source="outlet:getaway_magazine" target="case:b4a915f50cd4">
       <data key="d13">reported</data>
@@ -38515,19 +38638,19 @@
       <data key="d16">2026-02-18</data>
       <data key="d17">99cadabc66ec</data>
     </edge>
-    <edge source="case:619663802331" target="species:wildlife_general">
+    <edge source="case:127c03b7ceae" target="species:wildlife_general">
       <data key="d13">involves</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">619663802331</data>
+      <data key="d17">127c03b7ceae</data>
     </edge>
-    <edge source="outlet:head_topics" target="case:619663802331">
+    <edge source="outlet:head_topics" target="case:127c03b7ceae">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">619663802331</data>
+      <data key="d17">127c03b7ceae</data>
     </edge>
     <edge source="outlet:head_topics" target="case:f58c9c54d72e">
       <data key="d13">reported</data>
@@ -38592,19 +38715,19 @@
       <data key="d16">2026-09-27</data>
       <data key="d17">bd9abf8075f1</data>
     </edge>
-    <edge source="outlet:ภูมิใจ_ไทย" target="case:619663802331">
+    <edge source="outlet:ภูมิใจ_ไทย" target="case:127c03b7ceae">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">619663802331</data>
+      <data key="d17">127c03b7ceae</data>
     </edge>
-    <edge source="outlet:thaipost.net" target="case:619663802331">
+    <edge source="outlet:thaipost.net" target="case:127c03b7ceae">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">619663802331</data>
+      <data key="d17">127c03b7ceae</data>
     </edge>
     <edge source="outlet:thaipost.net" target="case:363c2c8adba6">
       <data key="d13">reported</data>
@@ -38620,12 +38743,12 @@
       <data key="d16">2026-10-25</data>
       <data key="d17">95ab0a8d5c79;95ab0a8d5c79</data>
     </edge>
-    <edge source="outlet:เดลินิวส์" target="case:619663802331">
+    <edge source="outlet:เดลินิวส์" target="case:127c03b7ceae">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-06</data>
       <data key="d16">2026-11-06</data>
-      <data key="d17">619663802331</data>
+      <data key="d17">127c03b7ceae</data>
     </edge>
     <edge source="outlet:เดลินิวส์" target="case:2b4677eecde5">
       <data key="d13">reported</data>
@@ -38703,6 +38826,34 @@
       <data key="d15">2026-02-06</data>
       <data key="d16">2026-02-06</data>
       <data key="d17">a579789a82e1</data>
+    </edge>
+    <edge source="outlet:banmuang.co.th" target="case:127c03b7ceae">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-11-06</data>
+      <data key="d16">2026-11-06</data>
+      <data key="d17">127c03b7ceae</data>
+    </edge>
+    <edge source="outlet:banmuang.co.th" target="case:98a4582a6385">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-10-27</data>
+      <data key="d16">2026-10-27</data>
+      <data key="d17">98a4582a6385</data>
+    </edge>
+    <edge source="outlet:banmuang.co.th" target="case:1f86b819fa6b">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-10-26</data>
+      <data key="d16">2026-10-26</data>
+      <data key="d17">1f86b819fa6b</data>
+    </edge>
+    <edge source="outlet:banmuang.co.th" target="case:6e7e48f5623e">
+      <data key="d13">reported</data>
+      <data key="d14">2</data>
+      <data key="d15">2026-10-06</data>
+      <data key="d16">2026-10-06</data>
+      <data key="d17">6e7e48f5623e;6e7e48f5623e</data>
     </edge>
     <edge source="case:f596d9546cbb" target="species:shark_ray">
       <data key="d13">involves</data>
@@ -39348,6 +39499,13 @@
       <data key="d16">2026-02-18</data>
       <data key="d17">6902ad1bea9f</data>
     </edge>
+    <edge source="outlet:nst_online" target="case:a6181a0287fa">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-01-22</data>
+      <data key="d16">2026-01-22</data>
+      <data key="d17">a6181a0287fa</data>
+    </edge>
     <edge source="case:569916c72445" target="species:wildlife_general">
       <data key="d13">involves</data>
       <data key="d14">1</data>
@@ -39376,12 +39534,12 @@
       <data key="d16">2026-11-05</data>
       <data key="d17">569916c72445;569916c72445</data>
     </edge>
-    <edge source="outlet:theprint" target="case:0c2c522ac952">
+    <edge source="outlet:theprint" target="case:5bdc9ca9c2ac">
       <data key="d13">reported</data>
-      <data key="d14">1</data>
+      <data key="d14">2</data>
       <data key="d15">2026-11-05</data>
       <data key="d16">2026-11-05</data>
-      <data key="d17">0c2c522ac952</data>
+      <data key="d17">5bdc9ca9c2ac;5bdc9ca9c2ac</data>
     </edge>
     <edge source="outlet:theprint" target="case:41a91bea1882">
       <data key="d13">reported</data>
@@ -39586,26 +39744,26 @@
       <data key="d16">2026-02-26</data>
       <data key="d17">2f51cbddfa50</data>
     </edge>
-    <edge source="case:0c2c522ac952" target="species:wildlife_general">
+    <edge source="case:5bdc9ca9c2ac" target="species:wildlife_general">
       <data key="d13">involves</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-05</data>
       <data key="d16">2026-11-05</data>
-      <data key="d17">0c2c522ac952</data>
+      <data key="d17">5bdc9ca9c2ac</data>
     </edge>
-    <edge source="case:0c2c522ac952" target="location:odisha">
+    <edge source="case:5bdc9ca9c2ac" target="location:odisha">
       <data key="d13">occurred_at</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-05</data>
       <data key="d16">2026-11-05</data>
-      <data key="d17">0c2c522ac952</data>
+      <data key="d17">5bdc9ca9c2ac</data>
     </edge>
-    <edge source="outlet:rediff" target="case:0c2c522ac952">
+    <edge source="outlet:rediff" target="case:5bdc9ca9c2ac">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-11-05</data>
       <data key="d16">2026-11-05</data>
-      <data key="d17">0c2c522ac952;0c2c522ac952</data>
+      <data key="d17">5bdc9ca9c2ac;5bdc9ca9c2ac</data>
     </edge>
     <edge source="outlet:rediff" target="case:fa1b639e15a0">
       <data key="d13">reported</data>
@@ -39684,12 +39842,12 @@
       <data key="d16">2026-04-15</data>
       <data key="d17">4e5b8cb246d6</data>
     </edge>
-    <edge source="outlet:orissapost" target="case:0c2c522ac952">
+    <edge source="outlet:orissapost" target="case:5bdc9ca9c2ac">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-11-05</data>
       <data key="d16">2026-11-05</data>
-      <data key="d17">0c2c522ac952</data>
+      <data key="d17">5bdc9ca9c2ac</data>
     </edge>
     <edge source="outlet:orissapost" target="case:647d8cd59387">
       <data key="d13">reported</data>
@@ -40916,12 +41074,12 @@
       <data key="d16">2026-09-23</data>
       <data key="d17">d308e2ba1878;d308e2ba1878</data>
     </edge>
-    <edge source="outlet:g1" target="case:f23240ee1e82">
+    <edge source="outlet:g1" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">21</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:g1" target="case:044cf33800f8">
       <data key="d13">reported</data>
@@ -43086,12 +43244,12 @@
       <data key="d16">2026-11-02</data>
       <data key="d17">e73227d1adae</data>
     </edge>
-    <edge source="outlet:repórter_maceió" target="case:ecb8ffb04fd9">
+    <edge source="outlet:repórter_maceió" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9;ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d;0d783db9162d</data>
     </edge>
     <edge source="case:41a91bea1882" target="species:elephant">
       <data key="d13">involves</data>
@@ -43408,12 +43566,12 @@
       <data key="d16">2026-11-02</data>
       <data key="d17">60d9940bb60f</data>
     </edge>
-    <edge source="outlet:portal_o_dia" target="case:f23240ee1e82">
+    <edge source="outlet:portal_o_dia" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:portal_o_dia" target="case:4efc6026cfab">
       <data key="d13">reported</data>
@@ -46201,19 +46359,19 @@
       <data key="d16">2026-10-29</data>
       <data key="d17">802da02d90a0</data>
     </edge>
-    <edge source="case:ecb8ffb04fd9" target="species:wildlife_general">
+    <edge source="case:0d783db9162d" target="species:wildlife_general">
       <data key="d13">involves</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
-    <edge source="outlet:tribuna_do_sertão" target="case:ecb8ffb04fd9">
+    <edge source="outlet:tribuna_do_sertão" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9;ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d;0d783db9162d</data>
     </edge>
     <edge source="outlet:tribuna_do_sertão" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -46222,19 +46380,19 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:tribuna_do_sertão" target="case:f23240ee1e82">
+    <edge source="outlet:tribuna_do_sertão" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:tnh1" target="case:ecb8ffb04fd9">
+    <edge source="outlet:tnh1" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">5</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9;ecb8ffb04fd9;ecb8ffb04fd9;ecb8ffb04fd9;ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d;0d783db9162d;0d783db9162d;0d783db9162d;0d783db9162d</data>
     </edge>
     <edge source="outlet:tnh1" target="case:7a9bd887f8e2">
       <data key="d13">reported</data>
@@ -46250,12 +46408,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609;5d164f60a609;5d164f60a609</data>
     </edge>
-    <edge source="outlet:tnh1" target="case:f23240ee1e82">
+    <edge source="outlet:tnh1" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:tnh1" target="case:0221276b692e">
       <data key="d13">reported</data>
@@ -46285,12 +46443,12 @@
       <data key="d16">2026-04-22</data>
       <data key="d17">28bf49fecef2</data>
     </edge>
-    <edge source="outlet:rede_brasil_de_televisão" target="case:ecb8ffb04fd9">
+    <edge source="outlet:rede_brasil_de_televisão" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9;ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d;0d783db9162d</data>
     </edge>
     <edge source="outlet:rede_brasil_de_televisão" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -46299,33 +46457,33 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:rede_brasil_de_televisão" target="case:f23240ee1e82">
+    <edge source="outlet:rede_brasil_de_televisão" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:governo_do_estado_de_alagoas" target="case:ecb8ffb04fd9">
+    <edge source="outlet:governo_do_estado_de_alagoas" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
-    <edge source="outlet:alagoas_na_net" target="case:ecb8ffb04fd9">
+    <edge source="outlet:alagoas_na_net" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
-    <edge source="outlet:gazetaweb" target="case:ecb8ffb04fd9">
+    <edge source="outlet:gazetaweb" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">3</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9;ecb8ffb04fd9;ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d;0d783db9162d;0d783db9162d</data>
     </edge>
     <edge source="outlet:gazetaweb" target="case:dabbe155190f">
       <data key="d13">reported</data>
@@ -46348,54 +46506,54 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609;5d164f60a609</data>
     </edge>
-    <edge source="outlet:gazetaweb" target="case:f23240ee1e82">
+    <edge source="outlet:gazetaweb" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">3</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:tribuna_do_norte" target="case:ecb8ffb04fd9">
+    <edge source="outlet:tribuna_do_norte" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
-    <edge source="outlet:bnews_rn" target="case:ecb8ffb04fd9">
+    <edge source="outlet:bnews_rn" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
-    <edge source="outlet:bnews_rn" target="case:f23240ee1e82">
+    <edge source="outlet:bnews_rn" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:ponta_negra_news" target="case:ecb8ffb04fd9">
+    <edge source="outlet:ponta_negra_news" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
-    <edge source="outlet:ponta_negra_news" target="case:f23240ee1e82">
+    <edge source="outlet:ponta_negra_news" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:cadaminuto" target="case:ecb8ffb04fd9">
+    <edge source="outlet:cadaminuto" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
     <edge source="outlet:cadaminuto" target="case:570b45129fea">
       <data key="d13">reported</data>
@@ -46404,19 +46562,19 @@
       <data key="d16">2026-10-22</data>
       <data key="d17">570b45129fea</data>
     </edge>
-    <edge source="outlet:cadaminuto" target="case:f23240ee1e82">
+    <edge source="outlet:cadaminuto" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:bnews_alagoas" target="case:ecb8ffb04fd9">
+    <edge source="outlet:bnews_alagoas" target="case:0d783db9162d">
       <data key="d13">reported</data>
-      <data key="d14">1</data>
+      <data key="d14">2</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d;0d783db9162d</data>
     </edge>
     <edge source="outlet:bnews_alagoas" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -46425,19 +46583,19 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:bnews_alagoas" target="case:f23240ee1e82">
+    <edge source="outlet:bnews_alagoas" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:7segundos" target="case:ecb8ffb04fd9">
+    <edge source="outlet:7segundos" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
     <edge source="outlet:7segundos" target="case:a5a4da8ee6d5">
       <data key="d13">reported</data>
@@ -46453,19 +46611,40 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:7segundos" target="case:f23240ee1e82">
+    <edge source="outlet:7segundos" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:o_alagoano" target="case:ecb8ffb04fd9">
+    <edge source="outlet:alagoas_24_horas" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
+    </edge>
+    <edge source="outlet:alagoas_24_horas" target="case:5d164f60a609">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-10-01</data>
+      <data key="d16">2026-10-01</data>
+      <data key="d17">5d164f60a609</data>
+    </edge>
+    <edge source="outlet:alagoas_24_horas" target="case:ece6819b4d66">
+      <data key="d13">reported</data>
+      <data key="d14">3</data>
+      <data key="d15">2026-09-22</data>
+      <data key="d16">2026-09-22</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
+    </edge>
+    <edge source="outlet:o_alagoano" target="case:0d783db9162d">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-10-29</data>
+      <data key="d16">2026-10-29</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
     <edge source="outlet:o_alagoano" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -46474,19 +46653,19 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609;5d164f60a609</data>
     </edge>
-    <edge source="outlet:o_alagoano" target="case:f23240ee1e82">
+    <edge source="outlet:o_alagoano" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portal_nn1" target="case:ecb8ffb04fd9">
+    <edge source="outlet:portal_nn1" target="case:0d783db9162d">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-29</data>
       <data key="d16">2026-10-29</data>
-      <data key="d17">ecb8ffb04fd9</data>
+      <data key="d17">0d783db9162d</data>
     </edge>
     <edge source="outlet:portal_nn1" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -47998,7 +48177,7 @@
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-10-28</data>
-      <data key="d17">f763102a54e5;f23240ee1e82</data>
+      <data key="d17">f763102a54e5;ece6819b4d66</data>
     </edge>
     <edge source="outlet:guarulhos_hoje" target="case:f763102a54e5">
       <data key="d13">reported</data>
@@ -48014,12 +48193,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609;5d164f60a609</data>
     </edge>
-    <edge source="outlet:guarulhos_hoje" target="case:f23240ee1e82">
+    <edge source="outlet:guarulhos_hoje" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">6</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="case:9c4431a120eb" target="species:elephant">
       <data key="d13">involves</data>
@@ -48973,27 +49152,6 @@
       <data key="d16">2026-10-27</data>
       <data key="d17">98a4582a6385</data>
     </edge>
-    <edge source="outlet:banmuang.co.th" target="case:98a4582a6385">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-10-27</data>
-      <data key="d16">2026-10-27</data>
-      <data key="d17">98a4582a6385</data>
-    </edge>
-    <edge source="outlet:banmuang.co.th" target="case:1f86b819fa6b">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-10-26</data>
-      <data key="d16">2026-10-26</data>
-      <data key="d17">1f86b819fa6b</data>
-    </edge>
-    <edge source="outlet:banmuang.co.th" target="case:6e7e48f5623e">
-      <data key="d13">reported</data>
-      <data key="d14">2</data>
-      <data key="d15">2026-10-06</data>
-      <data key="d16">2026-10-06</data>
-      <data key="d17">6e7e48f5623e;6e7e48f5623e</data>
-    </edge>
     <edge source="case:c60e82dc2e14" target="species:wildlife_general">
       <data key="d13">involves</data>
       <data key="d14">1</data>
@@ -49232,12 +49390,12 @@
       <data key="d16">2026-10-27</data>
       <data key="d17">2887ce09e77a</data>
     </edge>
-    <edge source="outlet:click_xaxim" target="case:f23240ee1e82">
+    <edge source="outlet:click_xaxim" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:fato_amazônico" target="case:2887ce09e77a">
       <data key="d13">reported</data>
@@ -49309,12 +49467,12 @@
       <data key="d16">2026-10-27</data>
       <data key="d17">2887ce09e77a</data>
     </edge>
-    <edge source="outlet:jornal_correio" target="case:4de7ce02428f">
+    <edge source="outlet:jornal_correio" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
     <edge source="outlet:jornal_correio" target="case:371f38aee66d">
       <data key="d13">reported</data>
@@ -51479,47 +51637,47 @@
       <data key="d16">2026-10-06</data>
       <data key="d17">902db9f50075</data>
     </edge>
-    <edge source="outlet:anda_-_agência_de_notícias_de_direitos_animais" target="case:f23240ee1e82">
+    <edge source="outlet:anda_-_agência_de_notícias_de_direitos_animais" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="case:4de7ce02428f" target="species:birds">
+    <edge source="case:b72c4f15d3c4" target="species:birds">
       <data key="d13">involves</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
-    <edge source="case:4de7ce02428f" target="location:vitória_da_conquista">
+    <edge source="case:b72c4f15d3c4" target="location:vitória_da_conquista">
       <data key="d13">occurred_at</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
     <edge source="location:vitória_da_conquista" target="location:bahia">
       <data key="d13">within</data>
       <data key="d14">5</data>
       <data key="d15">2025-11-18</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f;718a81234041;3d495efdb17a;5c1a7759d990;6b6c5d760276</data>
+      <data key="d17">b72c4f15d3c4;718a81234041;3d495efdb17a;5c1a7759d990;6b6c5d760276</data>
     </edge>
-    <edge source="outlet:blogdoredacao.com.br" target="case:4de7ce02428f">
+    <edge source="outlet:blogdoredacao.com.br" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
-    <edge source="outlet:bahia_notícias" target="case:4de7ce02428f">
+    <edge source="outlet:bahia_notícias" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
     <edge source="outlet:bahia_notícias" target="case:109cd30ac223">
       <data key="d13">reported</data>
@@ -51535,26 +51693,26 @@
       <data key="d16">2026-05-18</data>
       <data key="d17">10c0b6a01320</data>
     </edge>
-    <edge source="outlet:agora_sudoeste" target="case:4de7ce02428f">
+    <edge source="outlet:agora_sudoeste" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
-    <edge source="outlet:rádio_portal_sudoeste_104,3" target="case:4de7ce02428f">
+    <edge source="outlet:rádio_portal_sudoeste_104,3" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
-    <edge source="outlet:instagram" target="case:4de7ce02428f">
+    <edge source="outlet:instagram" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
     <edge source="outlet:instagram" target="case:df9ed6ca520c">
       <data key="d13">reported</data>
@@ -51570,26 +51728,26 @@
       <data key="d16">2026-10-06</data>
       <data key="d17">d0074dce4ce2</data>
     </edge>
-    <edge source="outlet:bnews" target="case:4de7ce02428f">
+    <edge source="outlet:bnews" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
-    <edge source="outlet:relata_bahia" target="case:4de7ce02428f">
+    <edge source="outlet:relata_bahia" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
-    <edge source="outlet:acorda_cidade" target="case:4de7ce02428f">
+    <edge source="outlet:acorda_cidade" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
     <edge source="outlet:acorda_cidade" target="case:0c66f4d74fa8">
       <data key="d13">reported</data>
@@ -51619,12 +51777,12 @@
       <data key="d16">2026-04-13</data>
       <data key="d17">90608f33ab4c</data>
     </edge>
-    <edge source="outlet:varela_net" target="case:4de7ce02428f">
+    <edge source="outlet:varela_net" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
     <edge source="outlet:varela_net" target="case:0ed8265377ca">
       <data key="d13">reported</data>
@@ -51633,19 +51791,26 @@
       <data key="d16">2026-08-31</data>
       <data key="d17">0ed8265377ca</data>
     </edge>
-    <edge source="outlet:aratu_on" target="case:4de7ce02428f">
+    <edge source="outlet:aratu_on" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
-    <edge source="outlet:97news" target="case:4de7ce02428f">
+    <edge source="outlet:taktá_no_ar" target="case:b72c4f15d3c4">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-10-24</data>
       <data key="d16">2026-10-24</data>
-      <data key="d17">4de7ce02428f</data>
+      <data key="d17">b72c4f15d3c4</data>
+    </edge>
+    <edge source="outlet:97news" target="case:b72c4f15d3c4">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-10-24</data>
+      <data key="d16">2026-10-24</data>
+      <data key="d17">b72c4f15d3c4</data>
     </edge>
     <edge source="case:5da6f9e24ef0" target="species:wildlife_general">
       <data key="d13">involves</data>
@@ -51682,12 +51847,12 @@
       <data key="d16">2026-10-20</data>
       <data key="d17">396676033f3d</data>
     </edge>
-    <edge source="outlet:rádio_independente" target="case:f23240ee1e82">
+    <edge source="outlet:rádio_independente" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="case:976db133e268" target="species:birds">
       <data key="d13">involves</data>
@@ -53096,12 +53261,12 @@
       <data key="d16">2026-10-23</data>
       <data key="d17">44ae884f65dc</data>
     </edge>
-    <edge source="outlet:portal_98_fm_natal" target="case:f23240ee1e82">
+    <edge source="outlet:portal_98_fm_natal" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="case:0ced6d3800ce" target="species:wildlife_general">
       <data key="d13">involves</data>
@@ -54062,12 +54227,12 @@
       <data key="d16">2026-10-21</data>
       <data key="d17">f251d7a89322</data>
     </edge>
-    <edge source="outlet:tapiraí_tv" target="case:f23240ee1e82">
+    <edge source="outlet:tapiraí_tv" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:o_tempo_betim" target="case:f251d7a89322">
       <data key="d13">reported</data>
@@ -54328,12 +54493,12 @@
       <data key="d16">2026-10-20</data>
       <data key="d17">4be6d25a6936</data>
     </edge>
-    <edge source="outlet:band" target="case:f23240ee1e82">
+    <edge source="outlet:band" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">3</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="case:396676033f3d" target="species:wildlife_general">
       <data key="d13">involves</data>
@@ -55182,12 +55347,12 @@
       <data key="d16">2026-10-16</data>
       <data key="d17">ea7f3735822b</data>
     </edge>
-    <edge source="outlet:inteligência_brasil_imprensa" target="case:f23240ee1e82">
+    <edge source="outlet:inteligência_brasil_imprensa" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:a_província_do_pará" target="case:ea7f3735822b">
       <data key="d13">reported</data>
@@ -55917,12 +56082,12 @@
       <data key="d16">2026-09-27</data>
       <data key="d17">bd9abf8075f1</data>
     </edge>
-    <edge source="outlet:youtube.com" target="case:f23240ee1e82">
+    <edge source="outlet:youtube.com" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:youtube.com" target="case:097cd24a4dab">
       <data key="d13">reported</data>
@@ -56330,12 +56495,12 @@
       <data key="d16">2026-10-14</data>
       <data key="d17">091ed0356552;091ed0356552</data>
     </edge>
-    <edge source="outlet:governo_do_estado_do_ceará" target="case:f23240ee1e82">
+    <edge source="outlet:governo_do_estado_do_ceará" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">4</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:governo_do_estado_do_ceará" target="case:eef442654583">
       <data key="d13">reported</data>
@@ -57933,12 +58098,12 @@
       <data key="d16">2026-10-09</data>
       <data key="d17">c7ab8b3c885c</data>
     </edge>
-    <edge source="outlet:folha_do_es" target="case:f23240ee1e82">
+    <edge source="outlet:folha_do_es" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="case:0ae2149d1c87" target="species:wildlife_general">
       <data key="d13">involves</data>
@@ -59256,12 +59421,12 @@
       <data key="d16">2026-10-07</data>
       <data key="d17">18e3c52a4d87</data>
     </edge>
-    <edge source="outlet:sampi.net.br" target="case:f23240ee1e82">
+    <edge source="outlet:sampi.net.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="case:2900562c1615" target="species:wildlife_general">
       <data key="d13">involves</data>
@@ -60516,48 +60681,6 @@
       <data key="d16">2026-10-02</data>
       <data key="d17">efd0e090c2f1</data>
     </edge>
-    <edge source="outlet:rri.co.id" target="case:efd0e090c2f1">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-10-02</data>
-      <data key="d16">2026-10-02</data>
-      <data key="d17">efd0e090c2f1</data>
-    </edge>
-    <edge source="outlet:rri.co.id" target="case:f67630dd9612">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-10-02</data>
-      <data key="d16">2026-10-02</data>
-      <data key="d17">f67630dd9612</data>
-    </edge>
-    <edge source="outlet:rri.co.id" target="case:478dbeaf99fb">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-10-02</data>
-      <data key="d16">2026-10-02</data>
-      <data key="d17">478dbeaf99fb</data>
-    </edge>
-    <edge source="outlet:rri.co.id" target="case:e5b6330edd78">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-09-22</data>
-      <data key="d16">2026-09-22</data>
-      <data key="d17">e5b6330edd78</data>
-    </edge>
-    <edge source="outlet:rri.co.id" target="case:4fbc6e617319">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-08-09</data>
-      <data key="d16">2026-08-09</data>
-      <data key="d17">4fbc6e617319</data>
-    </edge>
-    <edge source="outlet:rri.co.id" target="case:e47520e49653">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-04-09</data>
-      <data key="d16">2026-04-09</data>
-      <data key="d17">e47520e49653</data>
-    </edge>
     <edge source="outlet:detikcom" target="case:efd0e090c2f1">
       <data key="d13">reported</data>
       <data key="d14">1</data>
@@ -61418,13 +61541,6 @@
       <data key="d15">2026-10-02</data>
       <data key="d16">2026-10-02</data>
       <data key="d17">ddf29e69d03e</data>
-    </edge>
-    <edge source="location:santa_cruz_de_la_sierra" target="location:santa_cruz">
-      <data key="d13">within</data>
-      <data key="d14">3</data>
-      <data key="d15">2024-05-10</data>
-      <data key="d16">2026-10-02</data>
-      <data key="d17">ddf29e69d03e;ee2b1e276755;f1bd5be40280</data>
     </edge>
     <edge source="outlet:la_razón_digital_bolivia" target="case:ddf29e69d03e">
       <data key="d13">reported</data>
@@ -62301,12 +62417,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:diário_do_estado" target="case:f23240ee1e82">
+    <edge source="outlet:diário_do_estado" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">3</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:r7" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -62350,12 +62466,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:fato_paulista" target="case:f23240ee1e82">
+    <edge source="outlet:fato_paulista" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:portal_de_notícias_da_pmesp" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -62364,12 +62480,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:portal_de_notícias_da_pmesp" target="case:f23240ee1e82">
+    <edge source="outlet:portal_de_notícias_da_pmesp" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:portal_de_notícias_da_pmesp" target="case:257ddb242627">
       <data key="d13">reported</data>
@@ -62427,12 +62543,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:opina_news" target="case:f23240ee1e82">
+    <edge source="outlet:opina_news" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:atanews" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -62441,12 +62557,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:atanews" target="case:f23240ee1e82">
+    <edge source="outlet:atanews" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:diário_do_estado_de_s._paulo" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -62497,12 +62613,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:abcd_jornal" target="case:f23240ee1e82">
+    <edge source="outlet:abcd_jornal" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">4</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:meon" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -62518,26 +62634,12 @@
       <data key="d16">2026-10-01</data>
       <data key="d17">5d164f60a609</data>
     </edge>
-    <edge source="outlet:estadomaior.com.br" target="case:f23240ee1e82">
+    <edge source="outlet:estadomaior.com.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
-    </edge>
-    <edge source="outlet:alagoas_24_horas" target="case:5d164f60a609">
-      <data key="d13">reported</data>
-      <data key="d14">1</data>
-      <data key="d15">2026-10-01</data>
-      <data key="d16">2026-10-01</data>
-      <data key="d17">5d164f60a609</data>
-    </edge>
-    <edge source="outlet:alagoas_24_horas" target="case:f23240ee1e82">
-      <data key="d13">reported</data>
-      <data key="d14">3</data>
-      <data key="d15">2026-09-22</data>
-      <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:jornal_extra_alagoas" target="case:5d164f60a609">
       <data key="d13">reported</data>
@@ -63190,12 +63292,12 @@
       <data key="d16">2026-09-29</data>
       <data key="d17">e08bbcae9ff0</data>
     </edge>
-    <edge source="outlet:região_noroeste" target="case:f23240ee1e82">
+    <edge source="outlet:região_noroeste" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:região_noroeste" target="case:4c7d66893b20">
       <data key="d13">reported</data>
@@ -64541,12 +64643,12 @@
       <data key="d16">2026-09-25</data>
       <data key="d17">a30cef703209</data>
     </edge>
-    <edge source="outlet:correio_braziliense" target="case:f23240ee1e82">
+    <edge source="outlet:correio_braziliense" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:correio_braziliense" target="case:61197dfad31d">
       <data key="d13">reported</data>
@@ -65528,12 +65630,12 @@
       <data key="d16">2026-09-23</data>
       <data key="d17">d308e2ba1878</data>
     </edge>
-    <edge source="outlet:chapeco.fm" target="case:f23240ee1e82">
+    <edge source="outlet:chapeco.fm" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:clicrdc" target="case:d308e2ba1878">
       <data key="d13">reported</data>
@@ -65542,12 +65644,12 @@
       <data key="d16">2026-09-23</data>
       <data key="d17">d308e2ba1878</data>
     </edge>
-    <edge source="outlet:clicrdc" target="case:f23240ee1e82">
+    <edge source="outlet:clicrdc" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:portal49" target="case:d308e2ba1878">
       <data key="d13">reported</data>
@@ -65556,12 +65658,12 @@
       <data key="d16">2026-09-23</data>
       <data key="d17">d308e2ba1878</data>
     </edge>
-    <edge source="outlet:portal49" target="case:f23240ee1e82">
+    <edge source="outlet:portal49" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:rco.com.br" target="case:d308e2ba1878">
       <data key="d13">reported</data>
@@ -65822,89 +65924,89 @@
       <data key="d16">2025-12-15</data>
       <data key="d17">7cf688f466fc</data>
     </edge>
-    <edge source="case:f23240ee1e82" target="species:birds">
+    <edge source="case:ece6819b4d66" target="species:birds">
       <data key="d13">involves</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="case:f23240ee1e82" target="species:turtles">
+    <edge source="case:ece6819b4d66" target="species:turtles">
       <data key="d13">involves</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="case:f23240ee1e82" target="location:guarulhos">
+    <edge source="case:ece6819b4d66" target="location:guarulhos">
       <data key="d13">occurred_at</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="case:f23240ee1e82" target="mode:air">
+    <edge source="case:ece6819b4d66" target="mode:air">
       <data key="d13">via</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="case:f23240ee1e82" target="commodity:birds-nos">
+    <edge source="case:ece6819b4d66" target="commodity:birds-nos">
       <data key="d13">seized</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="case:f23240ee1e82" target="commodity:turtles-nos">
+    <edge source="case:ece6819b4d66" target="commodity:turtles-nos">
       <data key="d13">seized</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:rádio_chapecó" target="case:f23240ee1e82">
+    <edge source="outlet:rádio_chapecó" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:tv_são_bernardo" target="case:f23240ee1e82">
+    <edge source="outlet:tv_são_bernardo" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:jornal_do_cariri" target="case:f23240ee1e82">
+    <edge source="outlet:jornal_do_cariri" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:grupo_jota_sidney" target="case:f23240ee1e82">
+    <edge source="outlet:grupo_jota_sidney" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:g1.globo.com" target="case:f23240ee1e82">
+    <edge source="outlet:g1.globo.com" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">6</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:opovo.com.br" target="case:f23240ee1e82">
+    <edge source="outlet:opovo.com.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:opovo.com.br" target="case:fe75927ad4fc">
       <data key="d13">reported</data>
@@ -65913,40 +66015,40 @@
       <data key="d16">2024-09-23</data>
       <data key="d17">fe75927ad4fc</data>
     </edge>
-    <edge source="outlet:caririceara.com" target="case:f23240ee1e82">
+    <edge source="outlet:caririceara.com" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:rca1.com.br" target="case:f23240ee1e82">
+    <edge source="outlet:rca1.com.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:news_cariri" target="case:f23240ee1e82">
+    <edge source="outlet:news_cariri" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:gcmais" target="case:f23240ee1e82">
+    <edge source="outlet:gcmais" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portal_m1" target="case:f23240ee1e82">
+    <edge source="outlet:portal_m1" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:portal_m1" target="case:110320ebe465">
       <data key="d13">reported</data>
@@ -65955,33 +66057,33 @@
       <data key="d16">2026-04-17</data>
       <data key="d17">110320ebe465</data>
     </edge>
-    <edge source="outlet:pirassununguense" target="case:f23240ee1e82">
+    <edge source="outlet:pirassununguense" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">4</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:diário_do_noroeste" target="case:f23240ee1e82">
+    <edge source="outlet:diário_do_noroeste" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:a_cidade_costa_verde" target="case:f23240ee1e82">
+    <edge source="outlet:a_cidade_costa_verde" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:o_dia" target="case:f23240ee1e82">
+    <edge source="outlet:o_dia" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:o_dia" target="case:b8509b57a893">
       <data key="d13">reported</data>
@@ -65990,75 +66092,75 @@
       <data key="d16">2026-08-05</data>
       <data key="d17">b8509b57a893</data>
     </edge>
-    <edge source="outlet:rdmonline.com.br" target="case:f23240ee1e82">
+    <edge source="outlet:rdmonline.com.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:agenciasp.sp.gov.br" target="case:f23240ee1e82">
+    <edge source="outlet:agenciasp.sp.gov.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">3</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portal_be_news" target="case:f23240ee1e82">
+    <edge source="outlet:portal_be_news" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portal_vv8" target="case:f23240ee1e82">
+    <edge source="outlet:portal_vv8" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:o_alto_uruguai" target="case:f23240ee1e82">
+    <edge source="outlet:o_alto_uruguai" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:grupo_chiru" target="case:f23240ee1e82">
+    <edge source="outlet:grupo_chiru" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:guarulhosweb" target="case:f23240ee1e82">
+    <edge source="outlet:guarulhosweb" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">3</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:planetaosasco.com" target="case:f23240ee1e82">
+    <edge source="outlet:planetaosasco.com" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:porto_ferreira_hoje" target="case:f23240ee1e82">
+    <edge source="outlet:porto_ferreira_hoje" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:rd_foco" target="case:f23240ee1e82">
+    <edge source="outlet:rd_foco" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:rd_foco" target="case:42c9b640b15d">
       <data key="d13">reported</data>
@@ -66067,26 +66169,26 @@
       <data key="d16">2026-09-15</data>
       <data key="d17">42c9b640b15d</data>
     </edge>
-    <edge source="outlet:sou_mais_pop" target="case:f23240ee1e82">
+    <edge source="outlet:sou_mais_pop" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:foco_regional" target="case:f23240ee1e82">
+    <edge source="outlet:foco_regional" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:carazinho_news" target="case:f23240ee1e82">
+    <edge source="outlet:carazinho_news" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:carazinho_news" target="case:42c9b640b15d">
       <data key="d13">reported</data>
@@ -66102,19 +66204,19 @@
       <data key="d16">2026-08-29</data>
       <data key="d17">ef4ea56fa7d8</data>
     </edge>
-    <edge source="outlet:a_gazeta_rm" target="case:f23240ee1e82">
+    <edge source="outlet:a_gazeta_rm" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:o_diário_de_mogi" target="case:f23240ee1e82">
+    <edge source="outlet:o_diário_de_mogi" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:o_diário_de_mogi" target="case:80030efffe48">
       <data key="d13">reported</data>
@@ -66123,12 +66225,12 @@
       <data key="d16">2026-04-01</data>
       <data key="d17">80030efffe48</data>
     </edge>
-    <edge source="outlet:band.com.br" target="case:f23240ee1e82">
+    <edge source="outlet:band.com.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:band.com.br" target="case:0acaf7f37d0a">
       <data key="d13">reported</data>
@@ -66137,33 +66239,33 @@
       <data key="d16">2026-09-10</data>
       <data key="d17">0acaf7f37d0a</data>
     </edge>
-    <edge source="outlet:informa_cidade" target="case:f23240ee1e82">
+    <edge source="outlet:informa_cidade" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:jornal_paraná_centro" target="case:f23240ee1e82">
+    <edge source="outlet:jornal_paraná_centro" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:pb_agora" target="case:f23240ee1e82">
+    <edge source="outlet:pb_agora" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:clickpb" target="case:f23240ee1e82">
+    <edge source="outlet:clickpb" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:clickpb" target="case:fea952414fd3">
       <data key="d13">reported</data>
@@ -66179,26 +66281,26 @@
       <data key="d16">2025-12-16</data>
       <data key="d17">c894c6718f5d</data>
     </edge>
-    <edge source="outlet:blog_do_márcio_rangel" target="case:f23240ee1e82">
+    <edge source="outlet:blog_do_márcio_rangel" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:repórter_beto_ribeiro" target="case:f23240ee1e82">
+    <edge source="outlet:repórter_beto_ribeiro" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:cbn_recife" target="case:f23240ee1e82">
+    <edge source="outlet:cbn_recife" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:cbn_recife" target="case:99d75ea186d5">
       <data key="d13">reported</data>
@@ -66214,26 +66316,26 @@
       <data key="d16">2026-04-13</data>
       <data key="d17">e74ec8c611e3</data>
     </edge>
-    <edge source="outlet:tribuna_do_agreste" target="case:f23240ee1e82">
+    <edge source="outlet:tribuna_do_agreste" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:já_é_notícia" target="case:f23240ee1e82">
+    <edge source="outlet:já_é_notícia" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">4</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:terra" target="case:f23240ee1e82">
+    <edge source="outlet:terra" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:terra" target="case:02e84ae2075d">
       <data key="d13">reported</data>
@@ -66249,54 +66351,54 @@
       <data key="d16">2026-05-21</data>
       <data key="d17">094e137fdefe</data>
     </edge>
-    <edge source="outlet:life_informa" target="case:f23240ee1e82">
+    <edge source="outlet:life_informa" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portalozk.com" target="case:f23240ee1e82">
+    <edge source="outlet:portalozk.com" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:radar_litoral" target="case:f23240ee1e82">
+    <edge source="outlet:radar_litoral" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:são_francisco_24hs" target="case:f23240ee1e82">
+    <edge source="outlet:são_francisco_24hs" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:rp10" target="case:f23240ee1e82">
+    <edge source="outlet:rp10" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portal_aquivale" target="case:f23240ee1e82">
+    <edge source="outlet:portal_aquivale" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:costa_norte" target="case:f23240ee1e82">
+    <edge source="outlet:costa_norte" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:costa_norte" target="case:3e65e2d4096c">
       <data key="d13">reported</data>
@@ -66312,33 +66414,33 @@
       <data key="d16">2026-03-15</data>
       <data key="d17">ec287899ab0a</data>
     </edge>
-    <edge source="outlet:agora_no_vale" target="case:f23240ee1e82">
+    <edge source="outlet:agora_no_vale" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:studio_notícias" target="case:f23240ee1e82">
+    <edge source="outlet:studio_notícias" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:prefeitura_de_são_josé_dos_pinhais_-_pr" target="case:f23240ee1e82">
+    <edge source="outlet:prefeitura_de_são_josé_dos_pinhais_-_pr" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:folha_vitória" target="case:f23240ee1e82">
+    <edge source="outlet:folha_vitória" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:folha_vitória" target="case:9cc38636836d">
       <data key="d13">reported</data>
@@ -66375,12 +66477,12 @@
       <data key="d16">2025-08-29</data>
       <data key="d17">c2b3e3f5757a</data>
     </edge>
-    <edge source="outlet:tribuna_online" target="case:f23240ee1e82">
+    <edge source="outlet:tribuna_online" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:tribuna_online" target="case:9cc38636836d">
       <data key="d13">reported</data>
@@ -66389,26 +66491,26 @@
       <data key="d16">2026-09-09</data>
       <data key="d17">9cc38636836d</data>
     </edge>
-    <edge source="outlet:sobral_online" target="case:f23240ee1e82">
+    <edge source="outlet:sobral_online" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:a10+" target="case:f23240ee1e82">
+    <edge source="outlet:a10+" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:cidadeverde.com" target="case:f23240ee1e82">
+    <edge source="outlet:cidadeverde.com" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:cidadeverde.com" target="case:38d56366e62a">
       <data key="d13">reported</data>
@@ -66424,19 +66526,19 @@
       <data key="d16">2025-02-16</data>
       <data key="d17">ddc8b6665d91</data>
     </edge>
-    <edge source="outlet:portal_az" target="case:f23240ee1e82">
+    <edge source="outlet:portal_az" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:polícia_militar_do_ceará" target="case:f23240ee1e82">
+    <edge source="outlet:polícia_militar_do_ceará" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
     <edge source="outlet:polícia_militar_do_ceará" target="case:cba6f8a311f0">
       <data key="d13">reported</data>
@@ -66445,96 +66547,96 @@
       <data key="d16">2026-05-20</data>
       <data key="d17">cba6f8a311f0</data>
     </edge>
-    <edge source="outlet:portal_rdx" target="case:f23240ee1e82">
+    <edge source="outlet:portal_rdx" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portal_da_cidade_-_união_da_vitória_/_pr" target="case:f23240ee1e82">
+    <edge source="outlet:portal_da_cidade_-_união_da_vitória_/_pr" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:jornal_-_folha_popular" target="case:f23240ee1e82">
+    <edge source="outlet:jornal_-_folha_popular" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">4</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:campo_erê.com" target="case:f23240ee1e82">
+    <edge source="outlet:campo_erê.com" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portal_tempo_novo" target="case:f23240ee1e82">
+    <edge source="outlet:portal_tempo_novo" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:guaíra_informa" target="case:f23240ee1e82">
+    <edge source="outlet:guaíra_informa" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:nossagente.info" target="case:f23240ee1e82">
+    <edge source="outlet:nossagente.info" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:gazeta_news_guarulhos" target="case:f23240ee1e82">
+    <edge source="outlet:gazeta_news_guarulhos" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">3</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:hoje_diário" target="case:f23240ee1e82">
+    <edge source="outlet:hoje_diário" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:litorânea" target="case:f23240ee1e82">
+    <edge source="outlet:litorânea" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:paranashop" target="case:f23240ee1e82">
+    <edge source="outlet:paranashop" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:guarulhos_em_destaque" target="case:f23240ee1e82">
+    <edge source="outlet:guarulhos_em_destaque" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:grupo_a_hora" target="case:f23240ee1e82">
+    <edge source="outlet:grupo_a_hora" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:grupo_a_hora" target="case:212653dbea61">
       <data key="d13">reported</data>
@@ -66550,19 +66652,19 @@
       <data key="d16">2026-03-16</data>
       <data key="d17">d62d3e4ec251</data>
     </edge>
-    <edge source="outlet:clickfoz" target="case:f23240ee1e82">
+    <edge source="outlet:clickfoz" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:leiajá" target="case:f23240ee1e82">
+    <edge source="outlet:leiajá" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:leiajá" target="case:818f078163bc">
       <data key="d13">reported</data>
@@ -66571,26 +66673,26 @@
       <data key="d16">2026-09-22</data>
       <data key="d17">818f078163bc</data>
     </edge>
-    <edge source="outlet:oesteagora.com.br" target="case:f23240ee1e82">
+    <edge source="outlet:oesteagora.com.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:policial_padrão" target="case:f23240ee1e82">
+    <edge source="outlet:policial_padrão" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:tamoios_news" target="case:f23240ee1e82">
+    <edge source="outlet:tamoios_news" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:tamoios_news" target="case:20f45b74a5cf">
       <data key="d13">reported</data>
@@ -66599,61 +66701,61 @@
       <data key="d16">2025-10-16</data>
       <data key="d17">20f45b74a5cf</data>
     </edge>
-    <edge source="outlet:abc+" target="case:f23240ee1e82">
+    <edge source="outlet:abc+" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:opiniãoce" target="case:f23240ee1e82">
+    <edge source="outlet:opiniãoce" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:caco_da_rosa" target="case:f23240ee1e82">
+    <edge source="outlet:caco_da_rosa" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:nova_imprensa" target="case:f23240ee1e82">
+    <edge source="outlet:nova_imprensa" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:ceará_agora" target="case:f23240ee1e82">
+    <edge source="outlet:ceará_agora" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:diário_do_iguaçu" target="case:f23240ee1e82">
+    <edge source="outlet:diário_do_iguaçu" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:oimagem.com.br" target="case:f23240ee1e82">
+    <edge source="outlet:oimagem.com.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:br104" target="case:f23240ee1e82">
+    <edge source="outlet:br104" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="outlet:br104" target="case:0a6f7db348b2">
       <data key="d13">reported</data>
@@ -66662,145 +66764,152 @@
       <data key="d16">2026-05-12</data>
       <data key="d17">0a6f7db348b2</data>
     </edge>
-    <edge source="outlet:éder_luiz_notícias" target="case:f23240ee1e82">
+    <edge source="outlet:éder_luiz_notícias" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:rádio_nativa_fm_98,7" target="case:f23240ee1e82">
+    <edge source="outlet:rádio_nativa_fm_98,7" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:oeste_mais" target="case:f23240ee1e82">
+    <edge source="outlet:oeste_mais" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:lê_notícias" target="case:f23240ee1e82">
+    <edge source="outlet:lê_notícias" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">2</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:sertão_na_hora" target="case:f23240ee1e82">
+    <edge source="outlet:sertão_na_hora" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:leouve" target="case:f23240ee1e82">
+    <edge source="outlet:leouve" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:governo_federal" target="case:f23240ee1e82">
+    <edge source="outlet:governo_federal" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">3</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82;f23240ee1e82;f23240ee1e82</data>
+      <data key="d17">ece6819b4d66;ece6819b4d66;ece6819b4d66</data>
     </edge>
-    <edge source="outlet:juruá_comunicação" target="case:f23240ee1e82">
+    <edge source="outlet:juruá_comunicação" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:acreonline" target="case:f23240ee1e82">
+    <edge source="outlet:acreonline" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:acessa.com" target="case:f23240ee1e82">
+    <edge source="outlet:acessa.com" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:portal_da_cidade_-_foz_do_iguaçu_/_pr" target="case:f23240ee1e82">
+    <edge source="outlet:portal_da_cidade_-_foz_do_iguaçu_/_pr" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:vertentes_das_gerais" target="case:f23240ee1e82">
+    <edge source="outlet:vertentes_das_gerais" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:tribuna_de_minas" target="case:f23240ee1e82">
+    <edge source="outlet:tribuna_de_minas" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:h2foz" target="case:f23240ee1e82">
+    <edge source="outlet:h2foz" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:rcwtv" target="case:f23240ee1e82">
+    <edge source="outlet:rcwtv" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:ppnews" target="case:f23240ee1e82">
+    <edge source="outlet:ppnews" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:tá_no_site" target="case:f23240ee1e82">
+    <edge source="outlet:tá_no_site" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:busão_curitiba" target="case:f23240ee1e82">
+    <edge source="outlet:busão_curitiba" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:mega_cidade" target="case:f23240ee1e82">
+    <edge source="outlet:mega_cidade" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
-    <edge source="outlet:paranahoje.com.br" target="case:f23240ee1e82">
+    <edge source="outlet:paranahoje.com.br" target="case:ece6819b4d66">
       <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2026-09-22</data>
       <data key="d16">2026-09-22</data>
-      <data key="d17">f23240ee1e82</data>
+      <data key="d17">ece6819b4d66</data>
+    </edge>
+    <edge source="outlet:minuto_rural" target="case:ece6819b4d66">
+      <data key="d13">reported</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-09-22</data>
+      <data key="d16">2026-09-22</data>
+      <data key="d17">ece6819b4d66</data>
     </edge>
     <edge source="case:7876bc7c94a5" target="species:wildlife_general">
       <data key="d13">involves</data>
@@ -93486,6 +93595,13 @@
       <data key="d16">2026-01-22</data>
       <data key="d17">2834d9462a93;11b125d4f07f;4cabf7a871a1</data>
     </edge>
+    <edge source="case:a6181a0287fa" target="species:turtles">
+      <data key="d13">involves</data>
+      <data key="d14">1</data>
+      <data key="d15">2026-01-22</data>
+      <data key="d16">2026-01-22</data>
+      <data key="d17">a6181a0287fa</data>
+    </edge>
     <edge source="case:aacd8a8c7ee9" target="species:birds">
       <data key="d13">involves</data>
       <data key="d14">1</data>
@@ -98731,13 +98847,6 @@
     </edge>
     <edge source="case:28748c44c410" target="location:cochabamba">
       <data key="d13">occurred_at</data>
-      <data key="d14">1</data>
-      <data key="d15">2025-10-14</data>
-      <data key="d16">2025-10-14</data>
-      <data key="d17">28748c44c410</data>
-    </edge>
-    <edge source="outlet:red_uno" target="case:28748c44c410">
-      <data key="d13">reported</data>
       <data key="d14">1</data>
       <data key="d15">2025-10-14</data>
       <data key="d16">2025-10-14</data>

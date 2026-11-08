@@ -11,9 +11,9 @@ into one case, and publishes the result.
 
 ## Facts a citation should carry
 
-- Cases recorded: 2,550, from public reports, 2024-01-04 to 2026-11-07.
-- Evidence: 358 official, 430 corroborated by two or more outlets, 1762 single-report.
-- Coverage: 1178 cases are pinned to a city or district, 162 to a country only, and 1210 name no place.
+- Cases recorded: 2,553, from public reports, 2024-01-04 to 2026-11-07.
+- Evidence: 358 official, 430 corroborated by two or more outlets, 1765 single-report.
+- Coverage: 1179 cases are pinned to a city or district, 162 to a country only, and 1212 name no place.
 - Both animals and plants: orchids, succulents, cycads, rosewood, agarwood and medicinal plants are
   covered alongside pangolin, ivory, rhino horn and big cats.
 - The essential caveat, which any summary should repeat: these counts show where wildlife crime is
